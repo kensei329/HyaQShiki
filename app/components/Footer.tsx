@@ -2,8 +2,11 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-neutral-900 text-white py-12 border-t border-neutral-700">
       <div className="max-w-7xl mx-auto px-4">
@@ -15,16 +18,16 @@ export default function Footer() {
             </span>
           </div>
           <ul className="flex flex-wrap justify-center gap-4 text-sm">
-            <li><Link href="/" className="hover:text-yellow-400">トップ</Link></li>
-            <li><Link href="/curriculum" className="hover:text-yellow-400">カリキュラム</Link></li>
-            <li><Link href="/pricing" className="hover:text-yellow-400">価格</Link></li>
-            <li><Link href="/certification" className="hover:text-yellow-400">資格</Link></li>
-            <li><Link href="/corporate" className="hover:text-yellow-400">企業連携</Link></li>
-            <li><Link href="/philosophy" className="hover:text-yellow-400">理念</Link></li>
-            <li><Link href="/contact" className="hover:text-yellow-400">お問い合わせ</Link></li>
+            <li><Link href="/" className="hover:text-yellow-400">{t('nav.home')}</Link></li>
+            <li><Link href="/curriculum" className="hover:text-yellow-400">{t('nav.curriculum')}</Link></li>
+            <li><Link href="/pricing" className="hover:text-yellow-400">{t('nav.pricing')}</Link></li>
+            <li><Link href="/certification" className="hover:text-yellow-400">{t('nav.certification')}</Link></li>
+            <li><Link href="/corporate" className="hover:text-yellow-400">{t('nav.corporate')}</Link></li>
+            <li><Link href="/philosophy" className="hover:text-yellow-400">{t('nav.philosophy')}</Link></li>
+            <li><Link href="/contact" className="hover:text-yellow-400">{t('nav.contact')}</Link></li>
           </ul>
         </div>
-        <p className="text-center text-xs text-gray-400">&copy; {new Date().getFullYear()} HyaQShix百式. All rights reserved.</p>
+        <p className="text-center text-xs text-gray-400">{t('footer.copyright')}</p>
       </div>
     </footer>
   );

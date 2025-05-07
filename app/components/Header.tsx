@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef(null);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -20,6 +22,11 @@ export default function Header() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  const handleLanguageChange = (lang: 'ja' | 'en') => {
+    setLanguage(lang);
+    setLangOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur text-white shadow">
@@ -39,25 +46,25 @@ export default function Header() {
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex gap-6 items-center text-sm">
             <Link href="/" className="hover:text-yellow-400 flex items-center gap-1">
-              <i className="fas fa-home" /><span>トップ</span>
+              <i className="fas fa-home" /><span>{t('nav.home')}</span>
             </Link>
             <Link href="/curriculum" className="hover:text-yellow-400 flex items-center gap-1">
-              <i className="fas fa-book" /><span>カリキュラム</span>
+              <i className="fas fa-book" /><span>{t('nav.curriculum')}</span>
             </Link>
             <Link href="/pricing" className="hover:text-yellow-400 flex items-center gap-1">
-              <i className="fas fa-yen-sign" /><span>価格</span>
+              <i className="fas fa-yen-sign" /><span>{t('nav.pricing')}</span>
             </Link>
             <Link href="/certification" className="hover:text-yellow-400 flex items-center gap-1">
-              <i className="fas fa-certificate" /><span>資格</span>
+              <i className="fas fa-certificate" /><span>{t('nav.certification')}</span>
             </Link>
             <Link href="/corporate" className="hover:text-yellow-400 flex items-center gap-1">
-              <i className="fas fa-building" /><span>企業連携</span>
+              <i className="fas fa-building" /><span>{t('nav.corporate')}</span>
             </Link>
             <Link href="/philosophy" className="hover:text-yellow-400 flex items-center gap-1">
-              <i className="fas fa-lightbulb" /><span>理念</span>
+              <i className="fas fa-lightbulb" /><span>{t('nav.philosophy')}</span>
             </Link>
             <Link href="/contact" className="ml-3 px-3 py-1 bg-yellow-400 text-black rounded font-bold hover:bg-yellow-300 transition flex items-center gap-1">
-              <i className="fas fa-envelope" /><span>お問い合わせ</span>
+              <i className="fas fa-envelope" /><span>{t('nav.contact')}</span>
             </Link>
           </nav>
 
@@ -67,12 +74,22 @@ export default function Header() {
               onClick={() => setLangOpen(!langOpen)}
               className="border border-white text-white px-3 py-1 rounded hover:bg-white hover:text-black transition"
             >
-              言語 ▾
+              {t('nav.language')} {language.toUpperCase()} ▾
             </button>
             {langOpen && (
               <div className="absolute right-0 mt-2 w-32 bg-white text-black rounded shadow-md z-50">
-                <button className="block w-full text-left px-4 py-2 hover:bg-yellow-100">日本語</button>
-                <button className="block w-full text-left px-4 py-2 hover:bg-yellow-100">English</button>
+                <button 
+                  className={`block w-full text-left px-4 py-2 hover:bg-yellow-100 ${language === 'ja' ? 'bg-yellow-200' : ''}`}
+                  onClick={() => handleLanguageChange('ja')}
+                >
+                  日本語
+                </button>
+                <button 
+                  className={`block w-full text-left px-4 py-2 hover:bg-yellow-100 ${language === 'en' ? 'bg-yellow-200' : ''}`}
+                  onClick={() => handleLanguageChange('en')}
+                >
+                  English
+                </button>
               </div>
             )}
           </div>
