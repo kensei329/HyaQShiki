@@ -59,6 +59,28 @@ export default function ContactPage() {
       <div className="py-16 sm:py-20 md:py-24 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+            {/* Promotional Banner */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="md:col-span-2 mb-8 bg-gradient-to-r from-gray-900 to-yellow-900/20 rounded-xl p-6 border border-yellow-500/20 shadow-lg"
+            >
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <div className="bg-yellow-500 p-3 rounded-full shadow-xl shadow-yellow-500/20">
+                  <i className="fas fa-comments text-gray-900 text-2xl"></i>
+                </div>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white text-center sm:text-left">
+                    {t('promo.line1')}
+                  </h3>
+                  <p className="text-gray-300 text-center sm:text-left">
+                    {t('promo.contact.subtitle')}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+            
             {/* Form Section */}
             <motion.section 
               initial={{ opacity: 0, y: 30 }}

@@ -225,6 +225,74 @@ export default function HomePage() {
         </motion.div>
       </section>
 
+      {/* Promotional Quotes Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+        <div className="absolute inset-0 bg-[url('/images/pattern-bg.png')] opacity-10 bg-repeat"></div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+                {t('promo.section.title')}
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-yellow-400 mx-auto mb-4"></div>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              {t('promo.section.subtitle')}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { quote: 'promo.line1', icon: 'comments' },
+              { quote: 'promo.line2', icon: 'keyboard' },
+              { quote: 'promo.line3', icon: 'code' },
+              { quote: 'promo.line4', icon: 'microphone' },
+              { quote: 'promo.line5', icon: 'bolt' },
+              { quote: 'promo.line6', icon: 'lightbulb' }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-yellow-500/50 shadow-xl transition-all duration-300 hover:shadow-yellow-500/10 group"
+              >
+                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20 group-hover:scale-110 transition-transform duration-300">
+                  <i className={`fas fa-${item.icon} text-gray-900 text-xl`}></i>
+                </div>
+                <p className="text-gray-100 leading-relaxed group-hover:text-white transition-colors duration-300">
+                  {t(item.quote)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="mt-10 text-center"
+          >
+            <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-yellow-500/50 shadow-xl transition-all duration-300 hover:shadow-yellow-500/10 max-w-lg mx-auto">
+              <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20 mx-auto">
+                <i className="fas fa-twitter text-gray-900 text-xl"></i>
+              </div>
+              <p className="text-gray-100 leading-relaxed">
+                {t('promo.line7')}
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Certifications */}
       <section className="py-24 text-white relative bg-black">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern-bg.png')] opacity-5 bg-repeat"></div>

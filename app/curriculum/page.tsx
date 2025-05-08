@@ -198,6 +198,122 @@ export default function CurriculumPage() {
         </motion.div>
       </section>
 
+      {/* Conversational Development Approach */}
+      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4 text-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+                {t('promo.conversational.title')}
+              </span> Development
+            </h2>
+            <div className="w-24 h-1 bg-yellow-400 mx-auto mb-4"></div>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              {t('promo.conversational.subtitle')}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-10 mb-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 shadow-xl transition-all duration-300"
+            >
+              <div className="flex gap-5 mb-6">
+                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0">
+                  <i className="fas fa-comments text-gray-900 text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold text-white self-center">{t('promo.cards.convo')}</h3>
+              </div>
+              <p className="text-gray-300 mb-5 leading-relaxed">
+                {t('promo.line1')}
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                {t('promo.line6')}
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 shadow-xl transition-all duration-300"
+            >
+              <div className="flex gap-5 mb-6">
+                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0">
+                  <i className="fas fa-keyboard text-gray-900 text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold text-white self-center">{t('promo.cards.natural')}</h3>
+              </div>
+              <p className="text-gray-300 mb-5 leading-relaxed">
+                {t('promo.line2')}
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                {t('promo.line5')}
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 gap-10"
+          >
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 shadow-xl transition-all duration-300">
+              <div className="flex gap-5 mb-6">
+                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0">
+                  <i className="fas fa-code text-gray-900 text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold text-white self-center">{t('promo.cards.zero')}</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                {t('promo.line3')}
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 shadow-xl transition-all duration-300">
+              <div className="flex gap-5 mb-6">
+                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0">
+                  <i className="fas fa-microphone text-gray-900 text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold text-white self-center">{t('promo.cards.speak')}</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                {t('promo.line4')}
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30 shadow-yellow-500/5 shadow-lg max-w-2xl mx-auto">
+              <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20 mx-auto">
+                <i className="fas fa-lightbulb text-gray-900 text-xl"></i>
+              </div>
+              <p className="text-yellow-100 text-lg leading-relaxed font-medium">
+                {t('promo.line7')}
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Learning Flow Timeline */}
       <section ref={sectionRef} className="py-16 bg-black text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
@@ -229,7 +345,7 @@ export default function CurriculumPage() {
           
           {/* Sticky Progress Bar - only visible within the Learning Flow section */}
           <div 
-            className={`hidden md:block fixed top-17 left-0 right-0 z-50 bg-black shadow-md transition-all duration-300 transform ${isSticky && isInLearningFlowSection ? 'translate-y-0' : '-translate-y-full'}`}
+            className={`hidden md:block fixed top-16 left-0 right-0 z-50 bg-black shadow-md transition-all duration-300 transform ${isSticky && isInLearningFlowSection ? 'translate-y-0' : '-translate-y-full'}`}
             style={{ 
               opacity: isInLearningFlowSection ? 1 : 0,
               visibility: isInLearningFlowSection ? 'visible' : 'hidden'

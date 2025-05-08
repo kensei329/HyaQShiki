@@ -19,6 +19,14 @@ type TranslationKeys =
   | 'home.methodology.title' | 'home.methodology.subtitle' | 'home.methodology.card1' 
   | 'home.methodology.card2' | 'home.methodology.card3' | 'home.methodology.viewCurriculum'
   
+  // Promotional Text
+  | 'promo.line1' | 'promo.line2' | 'promo.line3' | 'promo.line4'
+  | 'promo.line5' | 'promo.line6' | 'promo.line7'
+  | 'promo.section.title' | 'promo.section.subtitle'
+  | 'promo.conversational.title' | 'promo.conversational.subtitle'
+  | 'promo.contact.subtitle'
+  | 'promo.cards.convo' | 'promo.cards.natural' | 'promo.cards.zero' | 'promo.cards.speak'
+  
   // Footer
   | 'footer.copyright'
   
@@ -169,6 +177,24 @@ const ja: TranslationsType = {
   'home.methodology.card3': 'あなたの内なる「起業家」「技術者」「マーケター」「マネージャー」を活性化する未来の教育道場',
   'home.methodology.viewCurriculum': 'カリキュラムの詳細を見る',
 
+  // Promotional Text
+  'promo.line1': 'コードではなく会話で構築—初心者でも10倍の速さでアプリを完成させましょう！',
+  'promo.line2': '複雑なコーディング不要—会話するだけで、AIがあなたの言葉を瞬時に実用的なウェブアプリに変換します！',
+  'promo.line3': 'プログラミング知識不要：自然な会話で即座にプロトタイプを作成できます。',
+  'promo.line4': '話すだけで機能追加—初心者でも簡単な開発が可能です！',
+  'promo.line5': 'キーボードを休ませましょう—会話式の超高速アプリ開発が可能です。',
+  'promo.line6': '話す方がコーディングより速い—あなたの言葉がコードになります！',
+  'promo.line7': '初心者大歓迎：アイデアをツイートするだけで、ウェブアプリが形になるのを見てください。',
+  'promo.section.title': 'AIを活用した開発',
+  'promo.section.subtitle': '会話形式のアプローチで、ウェブ開発の未来を体験してください。',
+  'promo.conversational.title': '会話形式の',
+  'promo.conversational.subtitle': '私たちの革新的なアプローチは、会話をアプリ開発の中心に据えています',
+  'promo.contact.subtitle': '会話形式の開発アプローチについて質問がありますか？今すぐお問い合わせください！',
+  'promo.cards.convo': '会話 vs コード',
+  'promo.cards.natural': '自然言語プロンプト',
+  'promo.cards.zero': 'プログラミング不要',
+  'promo.cards.speak': '話すだけで機能追加',
+  
   // Footer
   'footer.copyright': '© 2024 HyaQShix百式. All rights reserved.',
   
@@ -438,6 +464,24 @@ const en: TranslationsType = {
   'home.methodology.card3': 'A future education dojo that activates the "entrepreneur," "technologist," "marketer," and "manager" within you',
   'home.methodology.viewCurriculum': 'View Curriculum Details',
 
+  // Promotional Text
+  'promo.line1': 'Build with conversation, not code—finish your app at 10× the speed, even as a beginner!',
+  'promo.line2': 'No heavy typing—just talk, and AI turns your words into a working web app in no time!',
+  'promo.line3': 'Zero programming required: prototype instantly with natural conversation.',
+  'promo.line4': 'Add features by speaking—effortless development for first‑timers!',
+  'promo.line5': 'Let your keyboard rest—conversational, lightning‑fast app creation.',
+  'promo.line6': 'Talking is faster than coding—your words become code!',
+  'promo.line7': 'Beginners welcome: tweet your idea and watch your web app come to life.',
+  'promo.section.title': 'AI-Powered Development',
+  'promo.section.subtitle': 'Experience the future of web development with our conversational approach.',
+  'promo.conversational.title': 'Conversational',
+  'promo.conversational.subtitle': 'Our revolutionary approach puts conversation at the center of app development',
+  'promo.contact.subtitle': 'Have questions about our conversational development approach? Reach out to us today!',
+  'promo.cards.convo': 'Conversation vs Code',
+  'promo.cards.natural': 'Natural Language Prompting',
+  'promo.cards.zero': 'Zero Programming',
+  'promo.cards.speak': 'Speak Your Features',
+  
   // Footer
   'footer.copyright': '© 2024 HyaQShix百式. All rights reserved.',
   
@@ -603,7 +647,7 @@ const en: TranslationsType = {
   'certification.silver.desc': 'Certifies that you have basic development skills using AI',
   'certification.gold.title': 'Gold Certification',
   'certification.gold.desc': 'Certifies that you have reached a level where you can develop practical applications',
-  'certification.platina.title': 'Platina Certification',
+  'certification.platina.title': 'Platinum Certification',
   'certification.platina.desc': 'Certifies advanced-level skills in AI integration and applied design',
   'certification.black.title': 'Black Certification',
   'certification.black.desc': 'Certifies the highest level capable of creating innovation independently',
