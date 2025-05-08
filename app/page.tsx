@@ -1,103 +1,452 @@
 'use client';
 
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { useLanguage } from './context/LanguageContext';
+import { motion } from 'framer-motion';
+import { Parallax } from 'react-parallax';
 
 export default function HomePage() {
   const { t } = useLanguage();
 
+  useEffect(() => {
+    // Add smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = '';
+    };
+  }, []);
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
   return (
-    <>
+    <div className="font-['Poppins',sans-serif] bg-black text-white">
       <Header />
 
-      {/* Hero */}
-      <section
-        className="relative min-h-screen bg-cover bg-center flex items-center justify-center px-4 text-white"
-        style={{ backgroundImage: 'url(/images/slide1.jpg)' }}
-      >
-        <div className="absolute inset-0 bg-black opacity-70 z-0" />
-        <div className="relative z-10 text-center font-[\'Noto Sans JP\']">
-          <h1 className="main-title mt-10 text-[1.8em] md:text-[2.4em] leading-[1.4] font-bold mb-4">
-            {t('home.title')}
-          </h1>
-          <p className="subtitle text-[1.1em] md:text-[1.4em] leading-[1.5]">
-            {t('home.subtitle')}
-          </p>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <div className="relative w-full">
+        <Parallax
+          blur={{ min: -15, max: 15 }}
+          bgImage="/images/slide1.jpg"
+          bgImageAlt="Hero Background"
+          strength={400}
+          className="min-h-screen flex items-center justify-center"
+          bgImageStyle={{opacity: 0.5}}
+          renderLayer={percentage => (
+            <div 
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'black',
+                opacity: 0.6
+              }}
+            />
+          )}
+        >
+          <motion.div 
+            className="relative z-20 text-center max-w-4xl px-6"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.h1 
+              className="text-4xl md:text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
+              variants={fadeInUp}
+            >
+              {t('home.title')}
+            </motion.h1>
+            <motion.p 
+              className="text-xl md:text-2xl font-light text-yellow-50 leading-relaxed mb-10"
+              variants={fadeInUp}
+            >
+              {t('home.subtitle')}
+            </motion.p>
+            <motion.div variants={fadeInUp}>
+              <a 
+                href="#features" 
+                className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                {t('learnMore')}
+              </a>
+            </motion.div>
+          </motion.div>
+        </Parallax>
+      </div>
 
-      {/* Curriculum Visual */}
-      <section className="py-20 bg-gray-100">
-        <div className="max-w-5xl mx-auto px-4">
-          <img src="/images/slide2.jpg" alt="Curriculum" className="rounded-xl shadow-xl w-full" />
+      {/* YouTube Video Section */}
+      <section className="py-24 relative overflow-hidden bg-black">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">{t('watchVideo')}</h2>
+            <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <iframe 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" 
+              title="HyaQShix Introductory Video"
+              className="absolute top-0 left-0 w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+            
+            <div className="absolute -bottom-5 -right-5 h-24 w-24 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+              <i className="fab fa-youtube text-white text-3xl"></i>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-white text-gray-900">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t('home.reasons')}</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <i className="fas fa-bolt text-3xl text-yellow-500 mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">{t('home.instant')}</h3>
-              <p>{t('home.instant.desc')}</p>
-            </div>
-            <div className="text-center">
-              <i className="fas fa-brain text-3xl text-yellow-500 mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">{t('home.ai')}</h3>
-              <p>{t('home.ai.desc')}</p>
-            </div>
-            <div className="text-center">
-              <i className="fas fa-certificate text-3xl text-yellow-500 mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">{t('home.certification')}</h3>
-              <p>{t('home.certification.desc')}</p>
-            </div>
-            <div className="text-center">
-              <i className="fas fa-users text-3xl text-yellow-500 mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">{t('home.community')}</h3>
-              <p>{t('home.community.desc')}</p>
-            </div>
+      <section id="features" className="py-24 relative overflow-hidden bg-black">
+        <motion.div 
+          className="max-w-6xl mx-auto px-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-4 text-white"
+            variants={fadeInUp}
+          >
+            {t('home.reasons')}
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-yellow-400 mx-auto mb-16"
+            variants={fadeInUp}
+          ></motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+            {[
+              { 
+                icon: 'bolt-lightning', 
+                title: 'home.instant', 
+                desc: 'home.instant.desc',
+                color: 'from-blue-400 to-blue-600'
+              },
+              { 
+                icon: 'microchip', 
+                title: 'home.ai', 
+                desc: 'home.ai.desc',
+                color: 'from-purple-400 to-purple-600'
+              },
+              { 
+                icon: 'crown', 
+                title: 'home.certification', 
+                desc: 'home.certification.desc',
+                color: 'from-green-400 to-green-600'
+              },
+              { 
+                icon: 'people-group', 
+                title: 'home.community', 
+                desc: 'home.community.desc',
+                color: 'from-red-400 to-red-600'
+              }
+            ].map((feature, index) => (
+              <motion.div 
+                key={index}
+                className="bg-black rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group backdrop-blur-sm border border-gray-800"
+                variants={{
+                  hidden: { opacity: 0, y: 60, scale: 0.95 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0, 
+                    scale: 1,
+                    transition: { 
+                      duration: 0.6, 
+                      ease: 'easeOut',
+                      delay: index * 0.15
+                    }
+                  }
+                }}
+                whileHover={{
+                  y: -8,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.div 
+                  className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg transform rotate-3`}
+                  whileHover={{ rotate: 0, scale: 1.05 }}
+                  animate={{ 
+                    boxShadow: ['0px 0px 0px rgba(0,0,0,0.2)', '0px 0px 20px rgba(0,0,0,0.1)', '0px 0px 0px rgba(0,0,0,0.2)']
+                  }}
+                  transition={{ 
+                    boxShadow: { repeat: Infinity, duration: 2, ease: 'easeInOut' }
+                  }}
+                >
+                  <i className={`fas fa-${feature.icon} text-3xl text-white`}></i>
+                </motion.div>
+                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors duration-300">{t(feature.title)}</h3>
+                <p className="text-gray-300">{t(feature.desc)}</p>
+                <motion.div 
+                  className="mt-6 w-10 h-1 bg-gray-800 mx-auto"
+                  whileHover={{ width: 60, backgroundColor: '#FFD700' }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Certifications */}
-      <section className="py-20 text-white" style={{ background: 'linear-gradient(145deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.8))' }}>
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t('home.certifications')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="rounded-xl p-6 text-center transition transform hover:-translate-y-1" style={{ backgroundColor: 'rgba(128, 128, 128, 0.95)' }}>
-              <h3 className="text-xl font-bold mb-2 text-white">Silver</h3>
-              <p className="text-white">{t('home.silver')}</p>
-            </div>
-            <div className="rounded-xl p-6 text-center transition transform hover:-translate-y-1" style={{ background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.95), rgba(255, 215, 0, 0.95))' }}>
-              <h3 className="text-xl font-bold mb-2 text-white">Gold</h3>
-              <p className="text-white">{t('home.gold')}</p>
-            </div>
-            <div className="rounded-xl p-6 text-center transition transform hover:-translate-y-1" style={{ background: 'linear-gradient(135deg, rgba(192, 192, 192, 0.95), rgba(230, 230, 230, 0.95))' }}>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Platina</h3>
-              <p className="text-gray-900">{t('home.platina')}</p>
-            </div>
-            <div className="rounded-xl p-6 text-center transition transform hover:-translate-y-1" style={{ backgroundColor: 'rgba(20, 20, 20, 0.95)' }}>
-              <h3 className="text-xl font-bold mb-2 text-white">Black</h3>
-              <p className="text-white">{t('home.black')}</p>
-            </div>
+      <section className="py-24 text-white relative bg-black">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern-bg.png')] opacity-5 bg-repeat"></div>
+        <motion.div 
+          className="max-w-6xl mx-auto px-6 relative z-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-4"
+            variants={fadeInUp}
+          >
+            {t('home.certifications')}
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
+            variants={fadeInUp}
+          ></motion.div>
+          <motion.p
+            className="text-center text-gray-300 max-w-2xl mx-auto mb-16"
+            variants={fadeInUp}
+          >
+            {t('home.certifications.subtitle')}
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: 'Silver', desc: 'home.silver', passRate: '72%', bg: 'bg-gradient-to-br from-gray-400 to-gray-600', textColor: 'text-white', icon: 'medal' },
+              { title: 'Gold', desc: 'home.gold', passRate: '48%', bg: 'bg-gradient-to-br from-yellow-500 to-amber-600', textColor: 'text-white', icon: 'trophy' },
+              { title: 'Platina', desc: 'home.platina', passRate: '26%', bg: 'bg-gradient-to-br from-gray-100 to-gray-300', textColor: 'text-gray-900', icon: 'gem' },
+              { title: 'Black', desc: 'home.black', passRate: '9%', bg: 'bg-gradient-to-br from-gray-900 to-black', textColor: 'text-white', icon: 'crown' }
+            ].map((cert, index) => (
+              <motion.div 
+                key={index}
+                className="group perspective"
+                variants={fadeInUp}
+                whileHover={{
+                  z: 50,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.div 
+                  className={`rounded-xl overflow-hidden shadow-lg ${cert.title === 'Black' ? 'shadow-yellow-500/20' : ''} h-full transform-gpu transition-all duration-500 group-hover:shadow-2xl border border-gray-800`}
+                  whileHover={{ 
+                    scale: 1.05,
+                    rotateY: 5,
+                    transition: { duration: 0.4 }
+                  }}
+                >
+                  <div className={`${cert.bg} h-24 relative flex items-center justify-center`}>
+                    <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('/images/certificate-pattern.png')]"></div>
+                    <i className={`fas fa-${cert.icon} text-4xl ${cert.title === 'Platina' ? 'text-gray-900' : 'text-white'}`}></i>
+                    <div className="absolute -bottom-5 right-5 w-20 h-20 rounded-full bg-black/80 backdrop-blur-sm border border-gray-700 shadow-lg flex flex-col items-center justify-center">
+                      <span className={`text-sm font-semibold ${cert.title === 'Platina' ? 'text-gray-200' : 'text-white'}`}>{t('passRate')}</span>
+                      <span className={`text-lg font-bold ${cert.title === 'Gold' ? 'text-yellow-500' : cert.title === 'Platina' ? 'text-gray-200' : 'text-white'}`}>{cert.passRate}</span>
+                    </div>
+                  </div>
+                  <div className="p-8 bg-black flex-grow flex flex-col justify-between">
+                    <div>
+                      <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-xs font-semibold mb-6 backdrop-blur-sm">CERTIFICATION</span>
+                      <h3 className={`text-2xl font-bold mb-4 ${cert.title === 'Gold' ? 'text-yellow-500' : cert.title === 'Platina' ? 'text-gray-200' : cert.textColor}`}>{cert.title}</h3>
+                      <p className="text-gray-300 opacity-90 mb-6">{t(cert.desc)}</p>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <button className="px-6 py-3 bg-white/10 rounded-lg text-white backdrop-blur-sm hover:bg-white/20 transition-colors group-hover:bg-yellow-500 group-hover:text-black">
+                        {t('learnMore')}
+                      </button>
+                      <motion.div 
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        className="w-10 h-10 rounded-full flex items-center justify-center"
+                      >
+                        <i className="fas fa-arrow-right text-yellow-400"></i>
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
+      </section>
+
+      {/* HyaQShix Methodology */}
+      <section className="py-24 relative overflow-hidden bg-black">
+        <div className="absolute -top-40 -right-40 w-96 h-96  rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96  rounded-full opacity-20 blur-3xl"></div>
+        
+        <motion.div 
+          className="max-w-5xl mx-auto px-6 relative z-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-4"
+            variants={fadeInUp}
+          >
+            {t('home.methodology.title')}
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
+            variants={fadeInUp}
+          ></motion.div>
+          <motion.h3
+            className="text-center text-2xl font-bold text-white mb-14"
+            variants={fadeInUp}
+          >
+            {t('home.methodology.subtitle')}
+          </motion.h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {[
+              { 
+                icon: 'crystal-ball', 
+                title: '🔮', 
+                desc: t('home.methodology.card1'),
+                color: 'from-purple-500 to-indigo-700'
+              },
+              { 
+                icon: 'rocket', 
+                title: '🚀', 
+                desc: t('home.methodology.card2'),
+                color: 'from-blue-500 to-cyan-700'
+              },
+              { 
+                icon: 'fire', 
+                title: '🔥', 
+                desc: t('home.methodology.card3'),
+                color: 'from-orange-500 to-red-700'
+              }
+            ].map((method, index) => (
+              <motion.div 
+                key={index}
+                className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
+                variants={{
+                  hidden: { opacity: 0, y: 60, scale: 0.95 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0, 
+                    scale: 1,
+                    transition: { 
+                      duration: 0.6, 
+                      ease: 'easeOut',
+                      delay: index * 0.15
+                    }
+                  }
+                }}
+                whileHover={{
+                  y: -8,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <div className={`text-5xl mb-6 text-center`}>
+                  {method.title}
+                </div>
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent my-4"></div>
+                <p className="text-gray-300 text-center leading-relaxed">
+                  {method.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+          
+          <motion.div 
+            className="text-center"
+            variants={fadeInUp}
+          >
+            <a 
+              href="/curriculum" 
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              {t('home.methodology.viewCurriculum')}
+              <i className="fas fa-arrow-right"></i>
+            </a>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Guarantee */}
-      <section className="py-20 bg-yellow-50 text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900">{t('home.guarantee')}</h2>
-          <p className="text-lg mb-6 text-gray-800">{t('home.guarantee.desc')}</p>
-          <img src="/images/satisfaction-guarantee.png" alt="Guarantee" className="h-24 mx-auto" />
-        </div>
+      <section className="py-24 relative overflow-hidden bg-black">
+        <div className="absolute -top-40 -left-40 w-96 h-96  rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute -bottom-40 -right-40 w-96 h-96  rounded-full opacity-30 blur-3xl"></div>
+        
+        <motion.div 
+          className="max-w-3xl mx-auto px-6 text-center relative z-10"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <span className="inline-block px-4 py-1 rounded-full bg-yellow-700 text-yellow-100 text-xs font-semibold mb-6">100% SATISFACTION</span>
+          <h2 className="text-4xl font-bold mb-6 text-white">{t('home.guarantee')}</h2>
+          <p className="text-xl mb-10 text-gray-300 leading-relaxed">{t('home.guarantee.desc')}</p>
+          
+          <div className="relative inline-block">
+            <motion.div
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                repeatType: "reverse" 
+              }}
+            >
+              <img 
+                src="/images/satisfaction-guarantee.png" 
+                alt="Guarantee" 
+                className="h-32 mx-auto drop-shadow-xl" 
+              />
+            </motion.div>
+            <div className="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-xs">✓</span>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }
