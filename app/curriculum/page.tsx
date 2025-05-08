@@ -423,7 +423,7 @@ export default function CurriculumPage() {
           <div className="space-y-8">
             {/* Phase 1 */}
             <motion.div 
-              ref={el => phaseRefs.current[0] = el}
+              ref={el => { phaseRefs.current[0] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 1 ? 'border-l-4 border-yellow-500' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -448,7 +448,7 @@ export default function CurriculumPage() {
 
             {/* Phase 2 */}
             <motion.div 
-              ref={el => phaseRefs.current[1] = el}
+              ref={el => { phaseRefs.current[1] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 2 ? 'border-l-4 border-yellow-500' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -473,7 +473,7 @@ export default function CurriculumPage() {
 
             {/* Phase 3 */}
             <motion.div 
-              ref={el => phaseRefs.current[2] = el}
+              ref={el => { phaseRefs.current[2] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 3 ? 'border-l-4 border-yellow-500' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -498,7 +498,7 @@ export default function CurriculumPage() {
 
             {/* Phase 4 */}
             <motion.div 
-              ref={el => phaseRefs.current[3] = el}
+              ref={el => { phaseRefs.current[3] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 4 ? 'border-l-4 border-yellow-500' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -523,7 +523,7 @@ export default function CurriculumPage() {
 
             {/* Phase 5 */}
             <motion.div 
-              ref={el => phaseRefs.current[4] = el}
+              ref={el => { phaseRefs.current[4] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 5 ? 'border-l-4 border-yellow-500' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

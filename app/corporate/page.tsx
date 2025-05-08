@@ -695,7 +695,7 @@ export default function Corporate() {
           
           <div className="space-y-6">
             <motion.div 
-              ref={el => stepRefs.current[0] = el}
+              ref={el => { stepRefs.current[0] = el; }}
               className={`flex items-start gap-6 ${currentStep === 1 ? 'border-l-4 border-yellow-500 pl-2' : ''}`}
               variants={fadeInUp}
             >
@@ -713,7 +713,7 @@ export default function Corporate() {
             </motion.div>
             
             <motion.div 
-              ref={el => stepRefs.current[1] = el}
+              ref={el => { stepRefs.current[1] = el; }}
               className={`flex items-start gap-6 ${currentStep === 2 ? 'border-l-4 border-yellow-500 pl-2' : ''}`}
               variants={fadeInUp}
             >
@@ -731,7 +731,7 @@ export default function Corporate() {
             </motion.div>
             
             <motion.div 
-              ref={el => stepRefs.current[2] = el}
+              ref={el => { stepRefs.current[2] = el; }}
               className={`flex items-start gap-6 ${currentStep === 3 ? 'border-l-4 border-yellow-500 pl-2' : ''}`}
               variants={fadeInUp}
             >
@@ -749,7 +749,7 @@ export default function Corporate() {
             </motion.div>
             
             <motion.div 
-              ref={el => stepRefs.current[3] = el}
+              ref={el => { stepRefs.current[3] = el; }}
               className={`flex items-start gap-6 ${currentStep === 4 ? 'border-l-4 border-yellow-500 pl-2' : ''}`}
               variants={fadeInUp}
             >
@@ -767,7 +767,7 @@ export default function Corporate() {
             </motion.div>
             
             <motion.div 
-              ref={el => stepRefs.current[4] = el}
+              ref={el => { stepRefs.current[4] = el; }}
               className={`flex items-start gap-6 ${currentStep === 5 ? 'border-l-4 border-yellow-500 pl-2' : ''}`}
               variants={fadeInUp}
             >
@@ -785,7 +785,7 @@ export default function Corporate() {
             </motion.div>
             
             <motion.div 
-              ref={el => stepRefs.current[5] = el}
+              ref={el => { stepRefs.current[5] = el; }}
               className={`flex items-start gap-6 ${currentStep === 6 ? 'border-l-4 border-yellow-500 pl-2' : ''}`}
               variants={fadeInUp}
             >
