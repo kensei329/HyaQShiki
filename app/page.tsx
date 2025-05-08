@@ -283,7 +283,7 @@ export default function HomePage() {
           >
             <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-yellow-500/50 shadow-xl transition-all duration-300 hover:shadow-yellow-500/10 max-w-lg mx-auto">
               <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20 mx-auto">
-                <i className="fas fa-twitter text-gray-900 text-xl"></i>
+                <i className="fas fa-robot text-gray-900 text-xl"></i>
               </div>
               <p className="text-gray-100 leading-relaxed">
                 {t('promo.line7')}
