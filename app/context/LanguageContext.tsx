@@ -18,6 +18,7 @@ type TranslationKeys =
   | 'home.black' | 'home.guarantee' | 'home.guarantee.desc' 
   | 'home.methodology.title' | 'home.methodology.subtitle' | 'home.methodology.card1' 
   | 'home.methodology.card2' | 'home.methodology.card3' | 'home.methodology.viewCurriculum'
+  | 'home.slideshow.title2' | 'home.slideshow.subtitle2' | 'home.slideshow.title3' | 'home.slideshow.subtitle3'
   
   // Promotional Text
   | 'promo.line1' | 'promo.line2' | 'promo.line3'
@@ -168,7 +169,18 @@ const ja: TranslationsType = {
   'home.guarantee': '満足保証制度',
   'home.guarantee.desc': '30日以内の返金対応で安心してご参加いただけます。',
   'home.methodology.viewCurriculum': 'カリキュラムの詳細を見る',
-
+  'home.slideshow.title2': ' 毎日のカタ練習 ',
+  'home.slideshow.subtitle2': '100の専門的なエクササイズを通じて、コミュニケーション能力を完璧にします。HyaQShix百式メソッドで練習を重ね、完璧を目指しましょう！',
+  'home.slideshow.title3': ' 認定資格を取得しよう ',
+  'home.slideshow.subtitle3': 'BLACKレベル認定を取得した9%のエリートグループに参加しましょう。優れたコミュニケーションスキルを持つ当社の卒業生は、世界中の一流企業から認められています。',
+  'home.outline': 'カリキュラム概要',
+  'home.outline.desc': '包括的な学習プログラム',
+  'home.methodology.title': '独自メソドロジー',
+  'home.methodology.subtitle': '効果的な学習方法',
+  'home.methodology.card1': '実践型学習',
+  'home.methodology.card2': '反復練習',
+  'home.methodology.card3': 'フィードバック',
+  
   // Promotional Text
   'promo.line1': '🎙会話中心\n「こうしたい」「こんな見た目がいい」などの話し言葉で開発を進めます。',
   'promo.line2': '⚡ 超高速開発\nコードを書く時間をほぼゼロにし、数分〜数時間でアプリが形になります。',
@@ -348,7 +360,7 @@ const ja: TranslationsType = {
   'certification.silver.desc': 'AIを活用した基本的な開発スキルを有することを証明',
   'certification.gold.title': 'Gold認定',
   'certification.gold.desc': '実践的なアプリ開発ができるレベルに到達したことを証明',
-  'certification.platina.title': 'Platina認定',
+  'certification.platina.title': 'Platinum認定',
   'certification.platina.desc': '高度なAI統合と応用設計ができる上級者レベルの証明',
   'certification.black.title': 'Black認定',
   'certification.black.desc': '自立してイノベーションを起こせる最高レベルの証明',
@@ -444,7 +456,18 @@ const en: TranslationsType = {
   "home.guarantee": "Satisfaction Guarantee",
   "home.guarantee.desc": "Join with confidence—full refunds available within 30 days.",
   "home.methodology.viewCurriculum": "View Full Curriculum",
-
+  "home.slideshow.title2": " DAILY KATA PRACTICE",
+  "home.slideshow.subtitle2": "Perfect your communication skills through our structured program with 100 specialized exercises - Practice makes perfect with the HyaQShix百式 method!",
+  "home.slideshow.title3": " BECOME CERTIFIED ",
+  "home.slideshow.subtitle3": "Join the elite 9% who achieve BLACK certification status - Our graduates are recognized by leading companies worldwide for their exceptional communication skills",
+  "home.outline": "Curriculum Overview",
+  "home.outline.desc": "Comprehensive Learning Program",
+  "home.methodology.title": "Unique Methodology",
+  "home.methodology.subtitle": "Effective Learning Methods",
+  "home.methodology.card1": "Practical Learning",
+  "home.methodology.card2": "Repeated Practice",
+  "home.methodology.card3": "Continuous Feedback",
+  
   // Promotional Text
   'promo.line1': 'Build with conversation, not code—finish your app at 10× the speed, even as a beginner!',
   'promo.line2': 'No heavy typing—just talk, and AI turns your words into a working web app in no time!',

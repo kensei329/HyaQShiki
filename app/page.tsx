@@ -1,23 +1,50 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { useLanguage } from './context/LanguageContext';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Parallax } from 'react-parallax';
+import Link from 'next/link';
 
 export default function HomePage() {
   const { t } = useLanguage();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Slideshow data with 3 slides
+  const slides = [
+    {
+      image: "/images/slide1.jpg",
+      title: t('home.title'),
+      subtitle: t('home.subtitle')
+    },
+    {
+      image: "/images/slide2.jpg",
+      title: t('home.slideshow.title2'),
+      subtitle: t('home.slideshow.subtitle2')
+    },
+    {
+      image: "/images/slide3.jpg",
+      title: t('home.slideshow.title3'),
+      subtitle: t('home.slideshow.subtitle3')
+    }
+  ];
 
   useEffect(() => {
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     
+    // Slideshow auto-rotation
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+    
     return () => {
       document.documentElement.style.scrollBehavior = '';
+      clearInterval(interval);
     };
-  }, []);
+  }, [slides.length]);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -38,61 +65,93 @@ export default function HomePage() {
     }
   };
 
+  // Slideshow navigation
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <div className="font-['Poppins',sans-serif] bg-black text-white">
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section with Slideshow */}
       <div className="relative w-full">
-        <Parallax
-          blur={{ min: -15, max: 15 }}
-          bgImage="/images/slide1.jpg"
-          bgImageAlt="Hero Background"
-          strength={400}
-          className="min-h-screen flex items-center justify-center"
-          bgImageStyle={{opacity: 0.5}}
-          renderLayer={percentage => (
-            <div 
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: 'black',
-                opacity: 0.6
-              }}
-            />
-          )}
-        >
-          <motion.div 
-            className="relative z-20 text-center max-w-4xl px-6"
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="relative w-full"
           >
-            <motion.h1 
-              className="text-4xl md:text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
-              variants={fadeInUp}
+            <Parallax
+              blur={{ min: -15, max: 15 }}
+              bgImage={slides[currentSlide].image}
+              bgImageAlt={`Slide ${currentSlide + 1} Background`}
+              strength={400}
+              className="min-h-screen flex items-center justify-center"
+              bgImageStyle={{opacity: 0.5}}
+              renderLayer={percentage => (
+                <div 
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'black',
+                    opacity: 0.6
+                  }}
+                />
+              )}
             >
-              {t('home.title')}
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl font-light text-yellow-50 leading-relaxed mb-10"
-              variants={fadeInUp}
-            >
-              {t('home.subtitle')}
-            </motion.p>
-            <motion.div variants={fadeInUp}>
-              <a 
-                href="#features" 
-                className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+              <motion.div 
+                className="relative z-20 text-center max-w-4xl px-6"
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer}
               >
-                {t('learnMore')}
-              </a>
-            </motion.div>
+                <motion.h1 
+                  className="text-4xl md:text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
+                  variants={fadeInUp}
+                >
+                  {slides[currentSlide].title}
+                </motion.h1>
+                <motion.p 
+                  className="text-xl md:text-2xl font-light text-yellow-50 leading-relaxed mb-10"
+                  variants={fadeInUp}
+                >
+                  {slides[currentSlide].subtitle}
+                </motion.p>
+                <motion.div variants={fadeInUp}>
+                  <a 
+                    href="#features" 
+                    className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+                  >
+                    {t('learnMore')}
+                  </a>
+                </motion.div>
+              </motion.div>
+            </Parallax>
           </motion.div>
-        </Parallax>
+        </AnimatePresence>
+        
+        {/* Slideshow navigation dots */}
+        <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-center space-x-3">
+          {Array.from({ length: slides.length }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentSlide === index 
+                  ? 'bg-yellow-400 w-6' 
+                  : 'bg-gray-400 bg-opacity-50 hover:bg-opacity-75'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Features */}
@@ -237,13 +296,13 @@ export default function HomePage() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <a 
+          <Link 
             href="/curriculum" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            className="inline-flex items-center relative gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
           >
             {t('home.methodology.viewCurriculum')}
             <i className="fas fa-arrow-right"></i>
-          </a>
+          </Link>
         </motion.div>
       </section>
 
@@ -314,9 +373,9 @@ export default function HomePage() {
                       <p className="text-gray-300 opacity-90 mb-6">{t(cert.desc)}</p>
                     </div>
                     <div className="flex justify-between items-center">
-                      <button className="px-6 py-3 bg-white/10 rounded-lg text-white backdrop-blur-sm hover:bg-white/20 transition-colors group-hover:bg-yellow-500 group-hover:text-black">
+                      <a href="/certification" className="px-6 py-3 bg-white/10 rounded-lg text-white backdrop-blur-sm hover:bg-yellow-500 transition-colors ">
                         {t('learnMore')}
-                      </button>
+                      </a>
                       <motion.div 
                         initial={{ scale: 1 }}
                         whileHover={{ scale: 1.2, rotate: 5 }}
@@ -371,14 +430,17 @@ export default function HomePage() {
           </div>
         </motion.div>
         <div className="text-center mt-8">
-          <motion.a 
-            href="/pricing" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+          <motion.div
             whileHover={{ scale: 1.05 }}
           >
-            {t('curriculum.cta.pricing')}
-            <i className="fas fa-arrow-right"></i>
-          </motion.a>
+            <Link 
+              href="/pricing" 
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              {t('curriculum.cta.pricing')}
+              <i className="fas fa-arrow-right"></i>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
