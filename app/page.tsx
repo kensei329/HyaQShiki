@@ -90,8 +90,14 @@ export default function HomePage() {
               bgImage={slides[currentSlide].image}
               bgImageAlt={`Slide ${currentSlide + 1} Background`}
               strength={400}
-              className="min-h-screen flex items-center justify-center"
-              bgImageStyle={{opacity: 0.5}}
+              className="min-h-[80vh] md:min-h-screen flex items-center justify-center"
+              bgImageStyle={{
+                opacity: 0.5,
+                objectFit: 'cover',
+                objectPosition: 'center',
+                height: '100%',
+                width: '100%'
+              }}
               renderLayer={percentage => (
                 <div 
                   style={{
@@ -107,19 +113,19 @@ export default function HomePage() {
               )}
             >
               <motion.div 
-                className="relative z-20 text-center max-w-4xl px-6"
+                className="relative z-20 text-center max-w-4xl px-4 sm:px-6 py-8 md:py-0"
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
               >
                 <motion.h1 
-                  className="text-4xl md:text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
                   variants={fadeInUp}
                 >
                   {slides[currentSlide].title}
                 </motion.h1>
                 <motion.p 
-                  className="text-xl md:text-2xl font-light text-yellow-50 leading-relaxed mb-10"
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10"
                   variants={fadeInUp}
                 >
                   {slides[currentSlide].subtitle}
@@ -127,7 +133,7 @@ export default function HomePage() {
                 <motion.div variants={fadeInUp}>
                   <a 
                     href="#features" 
-                    className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+                    className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
                   >
                     {t('learnMore')}
                   </a>
@@ -138,14 +144,14 @@ export default function HomePage() {
         </AnimatePresence>
         
         {/* Slideshow navigation dots */}
-        <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-center space-x-3">
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 z-30 flex justify-center space-x-2 sm:space-x-3">
           {Array.from({ length: slides.length }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full transition-all duration-300 ${
                 currentSlide === index 
-                  ? 'bg-yellow-400 w-6' 
+                  ? 'bg-yellow-400 w-4 sm:w-6' 
                   : 'bg-gray-400 bg-opacity-50 hover:bg-opacity-75'
               }`}
               aria-label={`Go to slide ${index + 1}`}
