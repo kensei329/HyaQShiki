@@ -601,9 +601,9 @@ export default function CurriculumPage() {
               variants={fadeInUp}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl mb-4">👥</div>
-              <h3 className="text-xl font-bold mb-3">{t('curriculum.approach.community.title')}</h3>
-              <p className="text-gray-300">{t('curriculum.approach.community.desc')}</p>
+              <div className="text-4xl mb-4">🧠</div>
+              <h3 className="text-xl font-bold mb-3">{t('curriculum.approach.mentoring.title')}</h3>
+              <p className="text-gray-300">{t('curriculum.approach.mentoring.desc')}</p>
             </motion.div>
 
             {/* Approach Card 4 */}
@@ -612,10 +612,11 @@ export default function CurriculumPage() {
               variants={fadeInUp}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl mb-4">🧠</div>
-              <h3 className="text-xl font-bold mb-3">{t('curriculum.approach.mentoring.title')}</h3>
-              <p className="text-gray-300">{t('curriculum.approach.mentoring.desc')}</p>
+              <div className="text-4xl mb-4">👥</div>
+              <h3 className="text-xl font-bold mb-3">{t('curriculum.approach.community.title')}</h3>
+              <p className="text-gray-300">{t('curriculum.approach.community.desc')}</p>
             </motion.div>
+
             </div>
         </motion.div>
       </section>

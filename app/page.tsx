@@ -95,43 +95,6 @@ export default function HomePage() {
         </Parallax>
       </div>
 
-      {/* YouTube Video Section */}
-      <section className="py-24 relative overflow-hidden bg-black">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">{t('watchVideo')}</h2>
-            <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl"
-          >
-            <iframe 
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" 
-              title="HyaQShix Introductory Video"
-              className="absolute top-0 left-0 w-full h-full"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            ></iframe>
-            
-            <div className="absolute -bottom-5 -right-5 h-24 w-24 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
-              <i className="fab fa-youtube text-white text-3xl"></i>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Features */}
       <section id="features" className="py-24 relative overflow-hidden bg-black">
         <motion.div 
@@ -152,18 +115,18 @@ export default function HomePage() {
             variants={fadeInUp}
           ></motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               { 
                 icon: 'bolt-lightning', 
-                title: 'home.instant', 
-                desc: 'home.instant.desc',
+                title: 'home.communication', 
+                desc: 'home.communication.desc',
                 color: 'from-blue-400 to-blue-600'
               },
               { 
                 icon: 'microchip', 
-                title: 'home.ai', 
-                desc: 'home.ai.desc',
+                title: 'home.code', 
+                desc: 'home.code.desc',
                 color: 'from-purple-400 to-purple-600'
               },
               { 
@@ -171,12 +134,6 @@ export default function HomePage() {
                 title: 'home.certification', 
                 desc: 'home.certification.desc',
                 color: 'from-green-400 to-green-600'
-              },
-              { 
-                icon: 'people-group', 
-                title: 'home.community', 
-                desc: 'home.community.desc',
-                color: 'from-red-400 to-red-600'
               }
             ].map((feature, index) => (
               <motion.div 
@@ -213,7 +170,7 @@ export default function HomePage() {
                   <i className={`fas fa-${feature.icon} text-3xl text-white`}></i>
                 </motion.div>
                 <h3 className="text-xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors duration-300">{t(feature.title)}</h3>
-                <p className="text-gray-300">{t(feature.desc)}</p>
+                <p className="text-gray-300 text-left whitespace-pre-line">{t(feature.desc)}</p>
                 <motion.div 
                   className="mt-6 w-10 h-1 bg-gray-800 mx-auto"
                   whileHover={{ width: 60, backgroundColor: '#FFD700' }}
@@ -251,10 +208,7 @@ export default function HomePage() {
             {[
               { quote: 'promo.line1', icon: 'comments' },
               { quote: 'promo.line2', icon: 'keyboard' },
-              { quote: 'promo.line3', icon: 'code' },
-              { quote: 'promo.line4', icon: 'microphone' },
-              { quote: 'promo.line5', icon: 'bolt' },
-              { quote: 'promo.line6', icon: 'lightbulb' }
+              { quote: 'promo.line3', icon: 'lightbulb' }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -267,31 +221,32 @@ export default function HomePage() {
                 <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20 group-hover:scale-110 transition-transform duration-300">
                   <i className={`fas fa-${item.icon} text-gray-900 text-xl`}></i>
                 </div>
-                <p className="text-gray-100 leading-relaxed group-hover:text-white transition-colors duration-300">
+                <p className="text-gray-100 leading-relaxed group-hover:text-white transition-colors duration-300 whitespace-pre-line">
                   {t(item.quote)}
                 </p>
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mt-10 text-center"
-          >
-            <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-yellow-500/50 shadow-xl transition-all duration-300 hover:shadow-yellow-500/10 max-w-lg mx-auto">
-              <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20 mx-auto">
-                <i className="fas fa-robot text-gray-900 text-xl"></i>
-              </div>
-              <p className="text-gray-100 leading-relaxed">
-                {t('promo.line7')}
-              </p>
-            </div>
-          </motion.div>
+
         </div>
+        <motion.div 
+          className="text-center mb-16 mt-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <a 
+            href="/curriculum" 
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+          >
+            {t('home.methodology.viewCurriculum')}
+            <i className="fas fa-arrow-right"></i>
+          </a>
+        </motion.div>
       </section>
+
 
       {/* Certifications */}
       <section className="py-24 text-white relative bg-black">
@@ -378,103 +333,6 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* HyaQShix Methodology */}
-      <section className="py-24 relative overflow-hidden bg-black">
-        <div className="absolute -top-40 -right-40 w-96 h-96  rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96  rounded-full opacity-20 blur-3xl"></div>
-        
-        <motion.div 
-          className="max-w-5xl mx-auto px-6 relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-4xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
-            {t('home.methodology.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
-            variants={fadeInUp}
-          ></motion.div>
-          <motion.h3
-            className="text-center text-2xl font-bold text-white mb-14"
-            variants={fadeInUp}
-          >
-            {t('home.methodology.subtitle')}
-          </motion.h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {[
-              { 
-                icon: 'crystal-ball', 
-                title: '🔮', 
-                desc: t('home.methodology.card1'),
-                color: 'from-purple-500 to-indigo-700'
-              },
-              { 
-                icon: 'rocket', 
-                title: '🚀', 
-                desc: t('home.methodology.card2'),
-                color: 'from-blue-500 to-cyan-700'
-              },
-              { 
-                icon: 'fire', 
-                title: '🔥', 
-                desc: t('home.methodology.card3'),
-                color: 'from-orange-500 to-red-700'
-              }
-            ].map((method, index) => (
-              <motion.div 
-                key={index}
-                className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
-                variants={{
-                  hidden: { opacity: 0, y: 60, scale: 0.95 },
-                  visible: { 
-                    opacity: 1, 
-                    y: 0, 
-                    scale: 1,
-                    transition: { 
-                      duration: 0.6, 
-                      ease: 'easeOut',
-                      delay: index * 0.15
-                    }
-                  }
-                }}
-                whileHover={{
-                  y: -8,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <div className={`text-5xl mb-6 text-center`}>
-                  {method.title}
-                </div>
-                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent my-4"></div>
-                <p className="text-gray-300 text-center leading-relaxed">
-                  {method.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-          
-          <motion.div 
-            className="text-center"
-            variants={fadeInUp}
-          >
-            <a 
-              href="/curriculum" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              {t('home.methodology.viewCurriculum')}
-              <i className="fas fa-arrow-right"></i>
-            </a>
-          </motion.div>
-        </motion.div>
-      </section>
-
       {/* Guarantee */}
       <section className="py-24 relative overflow-hidden bg-black">
         <div className="absolute -top-40 -left-40 w-96 h-96  rounded-full opacity-30 blur-3xl"></div>
@@ -512,6 +370,16 @@ export default function HomePage() {
             </div>
           </div>
         </motion.div>
+        <div className="text-center mt-8">
+          <motion.a 
+            href="/pricing" 
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            whileHover={{ scale: 1.05 }}
+          >
+            {t('curriculum.cta.pricing')}
+            <i className="fas fa-arrow-right"></i>
+          </motion.a>
+        </div>
       </section>
 
       <Footer />

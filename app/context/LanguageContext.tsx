@@ -10,9 +10,9 @@ type TranslationKeys =
   | 'nav.corporate' | 'nav.philosophy' | 'nav.contact' | 'nav.language'
   
   // HomePage
-  | 'home.title' | 'home.subtitle' | 'home.reasons' | 'home.instant' 
-  | 'home.instant.desc' | 'home.ai' | 'home.ai.desc' | 'home.certification' 
-  | 'home.certification.desc' | 'home.community' | 'home.community.desc' 
+  | 'home.title' | 'home.subtitle' | 'home.reasons' | 'home.communication' 
+  | 'home.communication.desc' | 'home.code' | 'home.code.desc' | 'home.certification' 
+  | 'home.certification.desc' | 'home.outline' | 'home.outline.desc' 
   | 'home.certifications' | 'home.certifications.subtitle' | 'passRate' | 'learnMore'
   | 'home.silver' | 'home.gold' | 'home.platina' 
   | 'home.black' | 'home.guarantee' | 'home.guarantee.desc' 
@@ -20,8 +20,7 @@ type TranslationKeys =
   | 'home.methodology.card2' | 'home.methodology.card3' | 'home.methodology.viewCurriculum'
   
   // Promotional Text
-  | 'promo.line1' | 'promo.line2' | 'promo.line3' | 'promo.line4'
-  | 'promo.line5' | 'promo.line6' | 'promo.line7'
+  | 'promo.line1' | 'promo.line2' | 'promo.line3'
   | 'promo.section.title' | 'promo.section.subtitle'
   | 'promo.conversational.title' | 'promo.conversational.subtitle'
   | 'promo.contact.subtitle'
@@ -145,21 +144,19 @@ const ja: TranslationsType = {
   'nav.certification': '資格',
   'nav.corporate': '企業連携',
   'nav.philosophy': '理念',
-  'nav.contact': 'お問い合わせ',
+  'nav.contact': 'お問合せ',
   'nav.language': '言語',
 
   // HomePage
-  'home.title': '100日、100テンプレート、100倍の生産性。',
-  'home.subtitle': 'AIで未来のアプリ開発スキルを爆速で身につける。',
-  'home.reasons': '選ばれる理由',
-  'home.instant': '即戦力育成',
-  'home.instant.desc': '実践的なプロジェクトで就業可能な人材を育成します。',
-  'home.ai': 'AI活用スキル',
-  'home.ai.desc': '生成AIを開発に活用するスキルを身につけます。',
-  'home.certification': '4段階の認定制度',
-  'home.certification.desc': 'シルバーからブラックまでの認定で能力を証明します。',
-  'home.community': '仲間と学ぶ',
-  'home.community.desc': '同じ志を持つ仲間と共に学び、成長できる環境。',
+  'home.title': 'VIBEコーディングで爆速アプリ開発。',
+  'home.subtitle': '100の型を身につけ100倍の生産性を実現。',
+  'home.reasons': 'HyaQShixの特徴',
+  'home.communication': '日常会話のみでアプリ開発',
+  'home.communication.desc': '難しいプログラミング言語を覚える必要はありません。\n普通の会話のような感覚で、誰でも簡単にWebアプリを開発できます。\n企画から要件定義・設計を含め、すべて会話形式で構築を行います。',
+  'home.code': 'アプリ完成品から逆算で学ぶ',
+  'home.code.desc': 'AIが日常会話を元に作ったソースコードを見ながら、仕組みを自然に学習できます。\n徐々に難易度を上げながら理解を深めていくので、無理なくプログラミングを身につけられます。',
+  'home.certification': '資格認定制度でスキル可視化',
+  'home.certification.desc': 'シルバー・ゴールド・プラチナ・ブラックの4段階の認定制度により、自分の習熟度や実力を客観的に証明できます。\n就職や案件獲得にも活用できる信頼性の高い評価制度です。',
   'home.certifications': '認定制度',
   'home.certifications.subtitle': '貴方のスキルを客観的に証明する4段階の認定レベル',
   'passRate': '合格率',
@@ -170,23 +167,14 @@ const ja: TranslationsType = {
   'home.black': '自立して価値創造できる最高レベル。',
   'home.guarantee': '満足保証制度',
   'home.guarantee.desc': '30日以内の返金対応で安心してご参加いただけます。',
-  'home.methodology.title': 'HyaQShix メソドロジー',
-  'home.methodology.subtitle': '制御、作成、販売、成長。すべて自分自身で。',
-  'home.methodology.card1': 'AIを「使用するツール」から「習得すべき武器」へと変革する学び',
-  'home.methodology.card2': '単なる技術ではなく、作成したものをどう提示し、配信し、収益化するかを学ぶ',
-  'home.methodology.card3': 'あなたの内なる「起業家」「技術者」「マーケター」「マネージャー」を活性化する未来の教育道場',
   'home.methodology.viewCurriculum': 'カリキュラムの詳細を見る',
 
   // Promotional Text
-  'promo.line1': 'コードではなく会話で構築—初心者でも10倍の速さでアプリを完成させましょう！',
-  'promo.line2': '複雑なコーディング不要—会話するだけで、AIがあなたの言葉を瞬時に実用的なウェブアプリに変換します！',
-  'promo.line3': 'プログラミング知識不要：自然な会話で即座にプロトタイプを作成できます。',
-  'promo.line4': '話すだけで機能追加—初心者でも簡単な開発が可能です！',
-  'promo.line5': 'キーボードを休ませましょう—会話式の超高速アプリ開発が可能です。',
-  'promo.line6': '話す方がコーディングより速い—あなたの言葉がコードになります！',
-  'promo.line7': '初心者大歓迎：アイデアをツイートするだけで、ウェブアプリが形になるのを見てください。',
-  'promo.section.title': 'AIを活用した開発',
-  'promo.section.subtitle': '会話形式のアプローチで、ウェブ開発の未来を体験してください。',
+  'promo.line1': '🎙会話中心\n「こうしたい」「こんな見た目がいい」などの話し言葉で開発を進めます。',
+  'promo.line2': '⚡ 超高速開発\nコードを書く時間をほぼゼロにし、数分〜数時間でアプリが形になります。',
+  'promo.line3': '🎨感覚で伝える\n色・動き・構成などを「雰囲気（vibe）」でAIに伝えることで、直感的にデザインできます。',
+  'promo.section.title': '日常会話でアプリ開発するVIBEコーディングとは？',
+  'promo.section.subtitle': 'VIBEコーディングは、会話形式のアプローチでWebアプリを作れる新しい開発スタイルです。',
   'promo.conversational.title': '会話形式の',
   'promo.conversational.subtitle': '私たちの革新的なアプローチは、会話をアプリ開発の中心に据えています',
   'promo.contact.subtitle': '会話形式の開発アプローチについて質問がありますか？今すぐお問い合わせください！',
@@ -430,39 +418,32 @@ const en: TranslationsType = {
   'nav.curriculum': 'Curriculum',
   'nav.pricing': 'Pricing',
   'nav.certification': 'Certification',
-  'nav.corporate': 'Corporate',
+  'nav.corporate': 'Partnerships',
   'nav.philosophy': 'Philosophy',
   'nav.contact': 'Contact',
   'nav.language': 'Language',
 
   // HomePage
-  'home.title': '100 Days, 100 Templates, 100x Productivity.',
-  'home.subtitle': 'Develop your future app development skills with AI, at lightning speed.',
-  'home.reasons': 'Why Choose Us',
-  'home.instant': 'Ready-to-Work Training',
-  'home.instant.desc': 'We build job-ready talent through practical projects.',
-  'home.ai': 'AI Implementation Skills',
-  'home.ai.desc': 'Develop skills to leverage generative AI in development.',
-  'home.certification': '4-Level Certification',
-  'home.certification.desc': 'Prove your abilities with Silver to Black certifications.',
-  'home.community': 'Learn with Peers',
-  'home.community.desc': 'An environment where like-minded people learn and grow together.',
-  'home.certifications': 'Certification System',
-  'home.certifications.subtitle': 'Four-level certification that objectively validates your skills',
-  'passRate': 'Pass Rate',
-  'learnMore': 'Learn More',
-  'home.silver': 'Proof of basic development skills.',
-  'home.gold': 'Skilled practitioners with daily development experience.',
-  'home.platina': 'Advanced users capable of strategic design and AI integration.',
-  'home.black': 'Highest level capable of independent value creation.',
-  'home.guarantee': 'Satisfaction Guarantee',
-  'home.guarantee.desc': 'Risk-free 30-day money-back guarantee for your peace of mind.',
-  'home.methodology.title': 'HyaQShix Methodology',
-  'home.methodology.subtitle': 'Control, Create, Sell, Grow. All by Yourself.',
-  'home.methodology.card1': 'Learning to transform AI from a "tool to be used" into a "weapon to master"',
-  'home.methodology.card2': 'Not just technology. How to present, deliver, and monetize what you create',
-  'home.methodology.card3': 'A future education dojo that activates the "entrepreneur," "technologist," "marketer," and "manager" within you',
-  'home.methodology.viewCurriculum': 'View Curriculum Details',
+  "home.title": "Lightning-Fast App Development with VIBE Coding",
+  "home.subtitle": "Master 100 coding patterns and boost your productivity 100x.",
+  "home.reasons": "Why Choose HyaQShix",
+  "home.communication": "Build Apps Using Only Everyday Conversations",
+  "home.communication.desc": "No need to learn complex programming languages.\nAnyone can develop web apps with ease, using natural conversation.\nFrom planning and requirements to design, everything is built through dialogue.",
+  "home.code": "Learn by Reverse-Engineering Completed Apps",
+  "home.code.desc": "AI generates source code based on your conversations, helping you understand how apps work naturally.\nDifficulty increases gradually, allowing you to learn programming without feeling overwhelmed.",
+  "home.certification": "Visualize Your Skills Through Certification",
+  "home.certification.desc": "Our four-level certification system—Silver, Gold, Platinum, and Black—objectively proves your skills and progress.\nIt's a trusted evaluation method, ideal for job hunting or securing freelance work.",
+  "home.certifications": "Certification Levels",
+  "home.certifications.subtitle": "Four Levels to Objectively Demonstrate Your Abilities",
+  "passRate": "Pass Rate",
+  "learnMore": "Learn More",
+  "home.silver": "Proof of foundational development skills.",
+  "home.gold": "Demonstrates strong daily development practice.",
+  "home.platina": "Advanced level with strategic design and AI integration capabilities.",
+  "home.black": "Top-level autonomy and value creation skills.",
+  "home.guarantee": "Satisfaction Guarantee",
+  "home.guarantee.desc": "Join with confidence—full refunds available within 30 days.",
+  "home.methodology.viewCurriculum": "View Full Curriculum",
 
   // Promotional Text
   'promo.line1': 'Build with conversation, not code—finish your app at 10× the speed, even as a beginner!',
