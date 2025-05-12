@@ -21,16 +21,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Preload upload-artifact v2
-        uses: actions/upload-artifact@v2
-        with:
-          name: dummy
-          path: README.md
-          if-no-files-found: ignore
       - run: npm ci
       - run: npm run build
       - run: npm run export
-      - uses: actions/upload-pages-artifact@v1
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
 
@@ -41,5 +38,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v1
-        id: deployment 
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2 
