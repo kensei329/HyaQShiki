@@ -21,6 +21,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Preload upload-artifact v2
+        uses: actions/upload-artifact@v2
+        with:
+          name: dummy
+          path: README.md
+          if-no-files-found: ignore
       - run: npm ci
       - run: npm run build
       - run: npm run export
