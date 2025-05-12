@@ -516,7 +516,7 @@ const en: TranslationsType = {
   'nav.philosophy': 'Philosophy',
   'nav.contact': 'Contact',
   'nav.language': 'Language',
-  
+
   // HomePage
   'home.title': 'Lightning-Fast App Development with VIBE Coding',
   'home.subtitle': 'Master 100 coding patterns and boost your productivity 100x.',
@@ -549,7 +549,7 @@ const en: TranslationsType = {
   'home.methodology.card1': 'Practical Learning',
   'home.methodology.card2': 'Repeated Practice',
   'home.methodology.card3': 'Continuous Feedback',
-  
+
   // Promotional Text
   'promo.line1': 'Build with conversation, not code—finish your app at 10× the speed, even as a beginner!',
   'promo.line2': 'No heavy typing—just talk, and AI turns your words into a working web app in no time!',
@@ -563,10 +563,10 @@ const en: TranslationsType = {
   'promo.cards.natural': 'Natural Language Prompting',
   'promo.cards.zero': 'Zero Programming',
   'promo.cards.speak': 'Speak Your Features',
-  
+
   // Footer
   'footer.copyright': '© 2024 HyaQShix百式. All rights reserved.',
-  
+
   // Pricing Page
   'pricing.title': 'Pricing & Guarantee',
   'pricing.subtitle': 'The perfect plan to accelerate your career in the AI era',
@@ -646,7 +646,7 @@ const en: TranslationsType = {
   'pricing.cta.title': 'Are you ready to invest in your future?',
   'pricing.cta.subtitle': 'Apply now and in 100 days you will be able to master AI and create business opportunities.',
   'pricing.cta.button': 'Apply for a Free Trial',
-  
+
   // FAQs
   'pricing.faq.q1': 'Is installment payment available?',
   'pricing.faq.a1': 'Yes, installment payments are available via credit card. Installment fees are free for up to 3 payments. Fees apply for 6 and 12 payment plans, but both options are available.',
@@ -654,7 +654,7 @@ const en: TranslationsType = {
   'pricing.faq.a2': 'Yes, you can extend the course period for an additional fee (¥49,800 per month). Extensions are available for up to 3 months.',
   'pricing.faq.q3': 'Is there support after the course?',
   'pricing.faq.a3': 'After graduation, you can join the alumni community. Additional mentor support and job/startup support programs are also available as options.',
-  
+
   // Payment methods
   'pricing.payment.method1.title': 'Credit Card',
   'pricing.payment.method1.desc': 'VISA, MasterCard, JCB, American Express, and Diners Club are accepted.',
@@ -662,7 +662,7 @@ const en: TranslationsType = {
   'pricing.payment.method2.desc': 'After application, we will provide bank transfer information. Transfer fees are the responsibility of the customer.',
   'pricing.payment.method3.title': 'Installment Payments',
   'pricing.payment.method3.desc': 'Installment payment plans are available through affiliated finance companies. Approval is required.',
-  
+
   // Certification Page
   'certification.title': 'Certification',
   'certification.subtitle': '4-level certification system to prove your abilities',
@@ -679,7 +679,7 @@ const en: TranslationsType = {
   'certification.eval.item1': 'Comprehensive evaluation including app completion, design skills, AI utilization, and implementation capability',
   'certification.eval.item2': 'Qualified individuals receive PDF certificates and are listed in the certification directory (with shareable URL)',
   'certification.eval.item3': 'Higher certifications have increased difficulty and are valuable for employment and VC evaluations',
-  
+
   // Corporate Page
   'corporate.title': 'Corporate Partnership',
   'corporate.subtitle': 'Developing next-generation IT talent together',
@@ -699,7 +699,7 @@ const en: TranslationsType = {
   'corporate.sponsor.item3': 'Early access to potential recruitment candidates',
   'corporate.cta.title': 'Next-generation Education × Social Implementation, Together.',
   'corporate.cta.desc': 'HyaQShix is a "practical learning field" beyond educational institutions. In our 100-day curriculum centered on app development with AI, handling real company challenges creates both learning and value.',
-  
+
   // Philosophy Page
   'philosophy.title': 'Our Philosophy',
   'philosophy.subtitle': 'Creating the future with technology',
@@ -711,7 +711,7 @@ const en: TranslationsType = {
   'philosophy.values.v1': 'Pragmatism: Learning comes from action',
   'philosophy.values.v2': 'Co-creation: Teaching and learning from each other',
   'philosophy.values.v3': 'Future-oriented: Always pursuing the next innovation',
-  
+
   // Contact Page
   'contact.title': 'Contact Us',
   'contact.subtitle': 'Questions and inquiries',
@@ -753,6 +753,102 @@ const en: TranslationsType = {
   'curriculum.stack.backend.head': 'Server-side Technology',
   'curriculum.stack.backend.list1': 'Node.js (server-side JavaScript)',
   'curriculum.stack.backend.list2': 'Express.js (lightweight backend framework)',
+  'curriculum.title': '',
+  'curriculum.subtitle': '',
+  'curriculum.explanation.title': '',
+  'curriculum.explanation.p1': '',
+  'curriculum.explanation.p2': '',
+  'curriculum.explanation.p3': '',
+  'curriculum.timeline.title': '',
+  'curriculum.timeline.days1.title': '',
+  'curriculum.timeline.days1.desc': '',
+  'curriculum.timeline.days2.title': '',
+  'curriculum.timeline.days2.desc': '',
+  'curriculum.timeline.days3.title': '',
+  'curriculum.timeline.days3.desc': '',
+  'curriculum.timeline.days4.title': '',
+  'curriculum.timeline.days4.desc': '',
+  'curriculum.flow.title': '',
+  'curriculum.flow.phase1.title': '',
+  'curriculum.flow.phase1.period': '',
+  'curriculum.flow.phase1.desc': '',
+  'curriculum.flow.phase1.point1': '',
+  'curriculum.flow.phase1.point2': '',
+  'curriculum.flow.phase1.point3': '',
+  'curriculum.flow.phase1.point4': '',
+  'curriculum.flow.phase2.title': '',
+  'curriculum.flow.phase2.period': '',
+  'curriculum.flow.phase2.desc': '',
+  'curriculum.flow.phase2.point1': '',
+  'curriculum.flow.phase2.point2': '',
+  'curriculum.flow.phase2.point3': '',
+  'curriculum.flow.phase2.point4': '',
+  'curriculum.flow.phase3.title': '',
+  'curriculum.flow.phase3.period': '',
+  'curriculum.flow.phase3.desc': '',
+  'curriculum.flow.phase3.point1': '',
+  'curriculum.flow.phase3.point2': '',
+  'curriculum.flow.phase3.point3': '',
+  'curriculum.flow.phase3.point4': '',
+  'curriculum.flow.phase4.title': '',
+  'curriculum.flow.phase4.period': '',
+  'curriculum.flow.phase4.desc': '',
+  'curriculum.flow.phase4.point1': '',
+  'curriculum.flow.phase4.point2': '',
+  'curriculum.flow.phase4.point3': '',
+  'curriculum.flow.phase4.point4': '',
+  'curriculum.flow.phase5.title': '',
+  'curriculum.flow.phase5.period': '',
+  'curriculum.flow.phase5.desc': '',
+  'curriculum.flow.phase5.point1': '',
+  'curriculum.flow.phase5.point2': '',
+  'curriculum.flow.phase5.point3': '',
+  'curriculum.flow.phase5.point4': '',
+  'curriculum.approach.title': '',
+  'curriculum.approach.output.title': '',
+  'curriculum.approach.output.desc': '',
+  'curriculum.approach.iteration.title': '',
+  'curriculum.approach.iteration.desc': '',
+  'curriculum.approach.community.title': '',
+  'curriculum.approach.community.desc': '',
+  'curriculum.approach.mentoring.title': '',
+  'curriculum.approach.mentoring.desc': '',
+  'curriculum.tools.title': '',
+  'curriculum.tools.ai.title': '',
+  'curriculum.tools.ai.tool1': '',
+  'curriculum.tools.ai.tool2': '',
+  'curriculum.tools.ai.tool3': '',
+  'curriculum.tools.ai.tool4': '',
+  'curriculum.tools.ai.tool5': '',
+  'curriculum.tools.dev.title': '',
+  'curriculum.tools.dev.tool1': '',
+  'curriculum.tools.dev.tool2': '',
+  'curriculum.tools.dev.tool3': '',
+  'curriculum.tools.dev.tool4': '',
+  'curriculum.tools.dev.tool5': '',
+  'curriculum.tools.marketing.title': '',
+  'curriculum.tools.marketing.tool1': '',
+  'curriculum.tools.marketing.tool2': '',
+  'curriculum.tools.marketing.tool3': '',
+  'curriculum.tools.marketing.tool4': '',
+  'curriculum.tools.marketing.tool5': '',
+  'curriculum.tools.business.title': '',
+  'curriculum.tools.business.tool1': '',
+  'curriculum.tools.business.tool2': '',
+  'curriculum.tools.business.tool3': '',
+  'curriculum.tools.business.tool4': '',
+  'curriculum.tools.business.tool5': '',
+  'curriculum.metrics.title': '',
+  'curriculum.metrics.apps.title': '',
+  'curriculum.metrics.apps.desc': '',
+  'curriculum.metrics.monetize.title': '',
+  'curriculum.metrics.monetize.desc': '',
+  'curriculum.metrics.main.title': '',
+  'curriculum.metrics.main.desc': '',
+  'curriculum.cta.title': '',
+  'curriculum.cta.subtitle': '',
+  'curriculum.cta.free_trial': '',
+  'curriculum.cta.pricing': ''
 };
 
 const translations: Record<Language, TranslationsType> = { ja, en };
