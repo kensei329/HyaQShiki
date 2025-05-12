@@ -48,89 +48,77 @@ export default function PricingPage() {
   // FAQ items (dual language)
   const faqItems = [
     {
-      questionJa: 'パソコンは必要ですか？',
-      answerJa: 'はい、必要です。ご要望に応じてパソコン取得のサポートも可能です。',
-      questionEn: 'Is installment payment available?',
-      answerEn: 'Yes, installment payments are available via credit card. Installment fees are free for up to 3 payments. Fees apply for 6 and 12 payment plans, but both options are available.'
+      question: 'pricing.faq.q1',
+      answer: 'pricing.faq.a1'
     },
     {
-      questionJa: '受講期間の延長は可能ですか？',
-      answerJa: 'はい、追加料金（月額49,800円）で受講期間を延長することができます。延長は最大3ヶ月まで可能です。',
-      questionEn: 'Can I extend the course period?',
-      answerEn: 'Yes, you can extend the course period for an additional fee (¥49,800 per month). Extensions are available for up to 3 months.'
+      question: 'pricing.faq.q2',
+      answer: 'pricing.faq.a2'
     },
     {
-      questionJa: '受講後のサポートはありますか？',
-      answerJa: '卒業後も、卒業生コミュニティに参加できます。また、追加のメンターサポートや、就職・起業支援プログラムもオプションでご用意しています。',
-      questionEn: 'Is there support after the course?',
-      answerEn: 'After graduation, you can join the alumni community. Additional mentor support and job/startup support programs are also available as options.'
+      question: 'pricing.faq.q3',
+      answer: 'pricing.faq.a3'
     }
   ];
   
-  // Plan features to display both languages
+  // Plan features
   const planFeatures = {
     basic: [
-      { ja: '一括払い割引き', en: '3 months of full course access' },
-      { ja: 'AIによる24時間サポート', en: '24-hour AI support' },
-      { ja: '隔週1回のグループメンタリング', en: 'Weekly group mentoring' },
-      { ja: 'コミュニティへのアクセス', en: 'Community access' },
-      { ja: '3ヶ月受講契約', en: 'HyaQShix Silver certification upon graduation' },
-      { ja: 'HyaQShix資格受験', en: 'Lump-sum payment discount available' }
+      'pricing.plans.basic.feature1',
+      'pricing.plans.basic.feature2',
+      'pricing.plans.basic.feature3',
+      'pricing.plans.basic.feature4',
+      'pricing.plans.basic.feature5',
+      'pricing.plans.basic.feature6'
     ],
     monthly: [
-      { ja: '月々分割払い', en: 'Monthly tuition payment' },
-      { ja: 'AIによる24時間サポート', en: '24-hour AI support' },
-      { ja: '隔週1回のグループメンタリング', en: 'Weekly group mentoring' },
-      { ja: 'コミュニティへのアクセス', en: 'Community access' },
-      { ja: '3ヶ月受講契約', en: 'Minimum 3-month contract' },
-      { ja: 'HyaQShix資格受験', en: 'HyaQShix Silver certification upon graduation' }
+      'pricing.plans.monthly.feature1',
+      'pricing.plans.monthly.feature2',
+      'pricing.plans.monthly.feature3',
+      'pricing.plans.monthly.feature4',
+      'pricing.plans.monthly.feature5',
+      'pricing.plans.monthly.feature6'
     ],
     sponsor: [
-      { ja: '授業料割引き', en: 'Tuition-free' },
-      { ja: '企業案件実務参加条件あり', en: 'Required participation in corporate projects' },
-      { ja: '審査制の選考あり', en: 'Selective screening process' },
-      { ja: '成果提出義務あり', en: 'Mandatory deliverables' },
-      { ja: '毎週のレポート提出', en: 'Weekly report submission' },
-      { ja: 'HyaQShix資格受験', en: 'HyaQShix Silver certification upon graduation' }
+      'pricing.plans.sponsor.feature1',
+      'pricing.plans.sponsor.feature2',
+      'pricing.plans.sponsor.feature3',
+      'pricing.plans.sponsor.feature4',
+      'pricing.plans.sponsor.feature5',
+      'pricing.plans.sponsor.feature6'
     ]
   };
   
   // Guarantee conditions
   const guaranteeConditions = [
-    { ja: '受講開始から14日以内に申請すること', en: 'Apply within 14 days of starting the course' },
-    { ja: '所定の課題提出や進捗率など、評価対象条件を満たしていること', en: 'Meet the evaluation criteria including assignment submissions and progress rates' },
-    { ja: '受講生本人からの申請であること', en: 'Application must be submitted by the student themselves' }
+    'pricing.guarantee.conditions.condition1',
+    'pricing.guarantee.conditions.condition2',
+    'pricing.guarantee.conditions.condition3'
   ];
   
   // Notes
   const guaranteeNotes = [
-    { ja: '本制度の利用は、受講生一人につき一度限りとします', en: 'This program can be used only once per student' },
-    { ja: '返金後、同一プログラムへの再受講はできません', en: 'After refund, re-enrollment in the same program is not permitted' },
-    { ja: '不正行為や虚偽の申請が判明した場合、返金の対象外とします', en: 'If fraud or false applications are discovered, refunds will not be provided' }
+    'pricing.guarantee.notes.note1',
+    'pricing.guarantee.notes.note2',
+    'pricing.guarantee.notes.note3'
   ];
   
   // Payment methods
   const paymentMethods = [
     {
       icon: '💳',
-      titleJa: 'クレジットカード',
-      titleEn: 'Credit Card',
-      descJa: 'VISA, MasterCard, JCB, American Express, Diners Clubがご利用いただけます。',
-      descEn: 'VISA, MasterCard, JCB, American Express, and Diners Club are accepted.'
+      title: 'pricing.payment.method1.title',
+      desc: 'pricing.payment.method1.desc'
     },
     {
       icon: '🏦',
-      titleJa: '銀行振込',
-      titleEn: 'Bank Transfer',
-      descJa: 'お申し込み後、振込先情報をご案内いたします。振込手数料はお客様負担となります。',
-      descEn: 'After application, we will provide bank transfer information. Transfer fees are the responsibility of the customer.'
+      title: 'pricing.payment.method2.title',
+      desc: 'pricing.payment.method2.desc'
     },
     {
       icon: '💸',
-      titleJa: '分割払い',
-      titleEn: 'Installment Payments',
-      descJa: '提携のファイナンス会社による分割払いプランもご用意しています。審査が必要となります。',
-      descEn: 'Installment payment plans are available through affiliated finance companies. Approval is required.'
+      title: 'pricing.payment.method3.title',
+      desc: 'pricing.payment.method3.desc'
     }
   ];
   
@@ -188,7 +176,7 @@ export default function PricingPage() {
                 className="text-xl md:text-2xl font-light text-yellow-50 mb-6"
                 variants={fadeInUp}
               >
-                {language === 'en' ? 'The perfect plan to accelerate your career in the AI era' : '未来への投資、あなたのキャリアを加速させる最適なプラン'}
+                {t('pricing.subtitle')}
               </motion.p>
             </motion.div>
           </Parallax>
@@ -218,9 +206,7 @@ export default function PricingPage() {
               className="text-center text-gray-300 max-w-2xl mx-auto mb-16"
               variants={fadeInUp}
             >
-              {language === 'en' 
-                ? 'HyaQShix offers multiple course plans tailored to your learning needs and budget. All plans provide the same curriculum and high-quality learning experience.' 
-                : 'HyaQShix百式では、学習ニーズと予算に合わせた複数の受講プランをご用意しています。すべてのプランで同じカリキュラムと高品質の学習体験を提供します。'}
+              {t('pricing.plans.desc')}
             </motion.p>
             
             <div className="grid md:grid-cols-3 gap-10">
@@ -239,22 +225,22 @@ export default function PricingPage() {
                 <h3 className="text-xl font-bold mb-4">
                   <span className="block">{t('pricing.plans.basic.title')}</span>
                   <span className="block text-sm mt-1 text-gray-400">
-                    {language === 'en' ? 'Basic Plan' : 'ベーシックプラン'}
+                    {t('pricing.plans.basic.label')}
                   </span>
                 </h3>
                 <div className="mb-6">
-                  <span className="text-3xl font-bold text-yellow-400">298,000</span>
-                  <span className="text-lg text-yellow-400">{language === 'en' ? '¥' : '円'}</span>
-                  <p className="text-gray-400">{language === 'en' ? '(Tax included)' : '（税込）'}</p>
+                  <span className="text-3xl font-bold text-yellow-400">{t('pricing.plans.basic.price')}</span>
+                  <span className="text-lg text-yellow-400">{t('pricing.plans.basic.currency')}</span>
+                  <p className="text-gray-400">{t('pricing.plans.basic.tax')}</p>
                 </div>
                 <ul className="mb-8 space-y-4">
-                  {planFeatures.basic.map((feature, idx) => (
+                  {planFeatures.basic.map((featureKey, idx) => (
                     <li key={idx} className="flex items-start">
                       <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                       <div>
-                        <span className="block text-gray-200">{language === 'en' ? feature.en : feature.ja}</span>
+                        <span className="block text-gray-200">{t(featureKey)}</span>
                       </div>
                     </li>
                   ))}
@@ -276,22 +262,22 @@ export default function PricingPage() {
                 <h3 className="text-xl font-bold mb-4">
                   <span className="block">{t('pricing.plans.monthly.title')}</span>
                   <span className="block text-sm mt-1 text-gray-400">
-                    {language === 'en' ? 'Monthly Plan' : '月額プラン'}
+                    {t('pricing.plans.monthly.label')}
                   </span>
                 </h3>
                 <div className="mb-6">
-                  <span className="text-3xl font-bold text-yellow-400">110,000</span>
-                  <span className="text-lg text-yellow-400">{language === 'en' ? '¥' : '円'}</span>
-                  <p className="text-gray-400">{language === 'en' ? '(Tax included) / month' : '（税込）/ 月'}</p>
+                  <span className="text-3xl font-bold text-yellow-400">{t('pricing.plans.monthly.price')}</span>
+                  <span className="text-lg text-yellow-400">{t('pricing.plans.monthly.currency')}</span>
+                  <p className="text-gray-400">{t('pricing.plans.monthly.tax')}</p>
                 </div>
                 <ul className="mb-8 space-y-4">
-                  {planFeatures.monthly.map((feature, idx) => (
+                  {planFeatures.monthly.map((featureKey, idx) => (
                     <li key={idx} className="flex items-start">
                       <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                       <div>
-                        <span className="block text-gray-200">{language === 'en' ? feature.en : feature.ja}</span>
+                        <span className="block text-gray-200">{t(featureKey)}</span>
                       </div>
                     </li>
                   ))}
@@ -313,21 +299,21 @@ export default function PricingPage() {
                 <h3 className="text-xl font-bold mb-4">
                   <span className="block">{t('pricing.plans.sponsor.title')}</span>
                   <span className="block text-sm mt-1 text-gray-400">
-                    {language === 'en' ? 'Sponsored Plan' : 'スポンサー枠プラン'}
+                    {t('pricing.plans.sponsor.label')}
                   </span>
                 </h3>
                 <div className="mb-6">
-                  <span className="text-3xl font-bold text-yellow-400">{language === 'en' ? 'Contact us' : 'お問い合わせ'}</span>
-                  <p className="text-gray-400">{language === 'en' ? '(For pricing details)' : '（料金詳細）'}</p>
+                  <span className="text-3xl font-bold text-yellow-400">{t('pricing.plans.sponsor.price')}</span>
+                  <p className="text-gray-400">{t('pricing.plans.sponsor.tax')}</p>
                 </div>
                 <ul className="mb-8 space-y-4">
-                  {planFeatures.sponsor.map((feature, idx) => (
+                  {planFeatures.sponsor.map((featureKey, idx) => (
                     <li key={idx} className="flex items-start">
                       <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                       <div>
-                        <span className="block text-gray-200">{language === 'en' ? feature.en : feature.ja}</span>
+                        <span className="block text-gray-200">{t(featureKey)}</span>
                       </div>
                     </li>
                   ))}
@@ -361,7 +347,7 @@ export default function PricingPage() {
               className="text-center text-2xl font-bold text-white mb-14"
               variants={fadeInUp}
             >
-              {language === 'en' ? 'Satisfaction Guarantee' : '満足保証制度'}
+              {t('pricing.satisfaction.title')}
             </motion.h3>
             
             <div className="flex flex-col md:flex-row items-center gap-8">
@@ -381,7 +367,7 @@ export default function PricingPage() {
                 >
                   <Image 
                     src="/images/satisfaction-guarantee.png" 
-                    alt={language === 'en' ? "HyaQShix Satisfaction Guarantee" : "HyaQShix百式の満足保証"} 
+                    alt={t('pricing.satisfaction.alt')} 
                     width={300} 
                     height={300} 
                     className="mx-auto drop-shadow-xl" 
@@ -396,27 +382,25 @@ export default function PricingPage() {
                 variants={fadeInUp}
               >
                 <h3 className="text-2xl font-bold mb-4 text-yellow-400">
-                  {language === 'en' ? '14-Day Full Refund Guarantee' : '14日間の全額返金保証'}
+                  {t('pricing.satisfaction.guarantee')}
                 </h3>
                 <p className="mb-6 text-gray-300 leading-relaxed">
-                  {language === 'en' 
-                    ? 'HyaQShix is a program we confidently offer to our students. If you do not achieve the expected learning outcomes, we will provide a full refund.' 
-                    : 'HyaQShix百式は、受講生の皆様に自信を持ってご提供するプログラムです。もし期待した学習効果が得られなかった場合は、全額返金いたします。'}
+                  {t('pricing.satisfaction.desc')}
                 </p>
                 
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-lg font-bold mb-3 flex items-center">
                       <span className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-2 text-black">1</span>
-                      {language === 'en' ? 'Eligibility Conditions' : '適用条件'}
+                      {t('pricing.satisfaction.eligibility')}
                     </h4>
                     <ul className="mb-4 space-y-2 pl-10">
-                      {guaranteeConditions.map((condition, idx) => (
+                      {guaranteeConditions.map((conditionKey, idx) => (
                         <li key={idx} className="flex items-start">
                           <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                           </svg>
-                          <span className="block text-gray-300">{language === 'en' ? condition.en : condition.ja}</span>
+                          <span className="block text-gray-300">{t(conditionKey)}</span>
                         </li>
                       ))}
                     </ul>
@@ -425,39 +409,35 @@ export default function PricingPage() {
                   <div>
                     <h4 className="text-lg font-bold mb-3 flex items-center">
                       <span className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-2 text-black">2</span>
-                      {language === 'en' ? 'Application Process' : '申請手続き'}
+                      {t('pricing.satisfaction.application')}
                     </h4>
                     <p className="mb-4 text-gray-300 pl-10">
-                      {language === 'en' 
-                        ? 'Applications must be submitted within 14 days of starting the course using the designated form. After application, a video conference interview will be conducted with the administrative office to confirm the content and provide feedback.' 
-                        : '申請は、受講開始から14日以内に、所定のフォームで行ってください。申請後、事務局とのTV会議面談を実施し、申請内容の確認とフィードバックを行います。'}
+                      {t('pricing.satisfaction.application.desc')}
                     </p>
                   </div>
                   
                   <div>
                     <h4 className="text-lg font-bold mb-3 flex items-center">
                       <span className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-2 text-black">3</span>
-                      {language === 'en' ? 'Refund Details' : '返金内容'}
+                      {t('pricing.satisfaction.refund')}
                     </h4>
                     <p className="mb-4 text-gray-300 pl-10">
-                      {language === 'en' 
-                        ? 'The full course fee will be refunded. Refunds will be processed within 2 months of application approval.' 
-                        : '受講料の全額を返金いたします。返金は、申請受理後、原則として2ヶ月以内に行います。'}
+                      {t('pricing.satisfaction.refund.desc')}
                     </p>
                   </div>
                 </div>
                 
                 <div className="mt-6 bg-white/5 p-4 rounded-lg border border-yellow-500/20">
                   <h4 className="text-lg font-bold mb-3 text-yellow-400">
-                    {language === 'en' ? 'Important Notes' : '注意事項'}
+                    {t('pricing.satisfaction.notes')}
                   </h4>
                   <ul className="space-y-2">
-                    {guaranteeNotes.map((note, idx) => (
+                    {guaranteeNotes.map((noteKey, idx) => (
                       <li key={idx} className="flex items-start">
                         <svg className="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                         </svg>
-                        <span className="block text-gray-300">{language === 'en' ? note.en : note.ja}</span>
+                        <span className="block text-gray-300">{t(noteKey)}</span>
                       </li>
                     ))}
                   </ul>
@@ -515,10 +495,10 @@ export default function PricingPage() {
                   </motion.div>
                   <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent mb-6"></div>
                   <h3 className="text-xl font-bold mb-4 text-yellow-400">
-                    {language === 'en' ? method.titleEn : method.titleJa}
+                    {t(method.title)}
                   </h3>
                   <p className="text-gray-300">
-                    {language === 'en' ? method.descEn : method.descJa}
+                    {t(method.desc)}
                   </p>
                 </motion.div>
               ))}
@@ -528,9 +508,7 @@ export default function PricingPage() {
               className="text-center mt-8 text-gray-400 backdrop-blur-md bg-white/5 border border-gray-800 rounded-lg p-4 max-w-2xl mx-auto"
               variants={fadeInUp}
             >
-              {language === 'en' 
-                ? '* Corporate applications are also accepted. If you require invoice payment, please contact us through the inquiry form.' 
-                : '※法人でのお申し込みも受け付けております。請求書払いをご希望の場合は、お問い合わせフォームよりご連絡ください。'}
+              {t('pricing.payment.note')}
             </motion.p>
           </motion.div>
         </section>
@@ -573,7 +551,7 @@ export default function PricingPage() {
                     }}
                   >
                     <h3 className="text-xl font-bold group-hover:text-yellow-400 transition-colors duration-300">
-                      <span className="block">{language === 'en' ? item.questionEn : item.questionJa}</span>
+                      <span className="block">{t(item.question)}</span>
                     </h3>
                     <motion.div 
                       className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 ml-4"
@@ -606,7 +584,7 @@ export default function PricingPage() {
                     }}
                   >
                     <div className="p-6 pt-0 text-gray-300 border-t border-gray-800">
-                      <span className="block leading-relaxed">{language === 'en' ? item.answerEn : item.answerJa}</span>
+                      <span className="block leading-relaxed">{t(item.answer)}</span>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -634,7 +612,7 @@ export default function PricingPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {language === 'en' ? ctaContent.titleEn : ctaContent.titleJa}
+              {t('pricing.cta.title')}
             </motion.h2>
             <motion.p 
               className="text-xl mb-10 opacity-90 max-w-3xl mx-auto"
@@ -643,7 +621,7 @@ export default function PricingPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              {language === 'en' ? ctaContent.subtitleEn : ctaContent.subtitleJa}
+              {t('pricing.cta.subtitle')}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -655,7 +633,7 @@ export default function PricingPage() {
                 href="/contact" 
                 className="inline-flex items-center gap-2 px-8 py-4 bg-black hover:bg-gray-800 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
-                <span>{language === 'en' ? ctaContent.buttonEn : ctaContent.buttonJa}</span>
+                <span>{t('pricing.cta.button')}</span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
