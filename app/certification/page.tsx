@@ -111,7 +111,7 @@ export default function CertificationPage() {
   // Evaluation process data
   const evaluationProcesses = [
     {
-      icon: '⏱️',
+      icon: 'fa-hourglass-half',
       title: { 
         ja: '制限時間内のアプリ構築', 
         en: 'Application Building within Time Limit' 
@@ -122,7 +122,7 @@ export default function CertificationPage() {
       }
     },
     {
-      icon: '🤖',
+      icon: 'fa-robot',
       title: { 
         ja: 'AIによる自動評価', 
         en: 'Automated AI Evaluation' 
@@ -133,7 +133,7 @@ export default function CertificationPage() {
       }
     },
     {
-      icon: '👤',
+      icon: 'fa-user-check',
       title: { 
         ja: '人間によるレビュー', 
         en: 'Human Review' 
@@ -406,31 +406,22 @@ export default function CertificationPage() {
               {evaluationProcesses.map((process, index) => (
                 <motion.div 
                   key={index} 
-                  className="backdrop-blur-md bg-white/5 rounded-xl p-8 border-l-4 border-yellow-500 hover:shadow-xl transition-all duration-300"
+                  className="bg-white/5 rounded-xl p-8 border border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 text-left"
                   variants={fadeInUp}
                   whileHover={{
                     y: -10,
                     transition: { duration: 0.3 }
                   }}
                 >
-                  <motion.div 
-                    className="text-4xl mb-6"
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 2, 0, -2, 0]
-                    }}
-                    transition={{ 
-                      duration: 4, 
-                      repeat: Infinity,
-                      repeatType: "reverse" 
-                    }}
-                  >
-                    {process.icon}
-                  </motion.div>
-                  <h3 className="text-xl font-bold mb-4 text-yellow-400">
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-yellow-400 text-black w-14 h-14 flex items-center justify-center rounded-full text-3xl">
+                      <i className={`fas ${process.icon}`}></i>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-yellow-400 text-left">
                     {language === 'en' ? process.title.en : process.title.ja}
                   </h3>
-                  <p className="text-gray-200 leading-relaxed">
+                  <p className="text-gray-200 text-left leading-relaxed">
                     {language === 'en' ? process.description.en : process.description.ja}
                   </p>
                 </motion.div>

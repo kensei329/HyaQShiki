@@ -23,7 +23,7 @@ export default function Footer() {
       contactForm: "お問い合わせフォーム",
       faq: "よくある質問",
       community: "コミュニティ",
-      copyright: "全著作権所有。",
+      copyright: "©2025",
       privacy: "プライバシーポリシー",
       terms: "利用規約"
     },
@@ -57,7 +57,7 @@ export default function Footer() {
         
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} HyaQShix百式. {t.copyright}</p>
+            <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} HyaQShix百式 </p>
             <div className="flex gap-4">
               <Link href="/privacy" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors">
                 {t.privacy}

@@ -198,121 +198,6 @@ export default function CurriculumPage() {
         </motion.div>
       </section>
 
-      {/* Conversational Development Approach */}
-      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold mb-4 text-white">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-                {t('promo.conversational.title')}
-              </span> Development
-            </h2>
-            <div className="w-24 h-1 bg-yellow-400 mx-auto mb-4"></div>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              {t('promo.conversational.subtitle')}
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-10 mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 shadow-xl transition-all duration-300"
-            >
-              <div className="flex gap-5 mb-6">
-                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0">
-                  <i className="fas fa-comments text-gray-900 text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold text-white self-center">{t('promo.cards.convo')}</h3>
-              </div>
-              <p className="text-gray-300 mb-5 leading-relaxed">
-                {t('promo.line1')}
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                {t('promo.line6')}
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 shadow-xl transition-all duration-300"
-            >
-              <div className="flex gap-5 mb-6">
-                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0">
-                  <i className="fas fa-keyboard text-gray-900 text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold text-white self-center">{t('promo.cards.natural')}</h3>
-              </div>
-              <p className="text-gray-300 mb-5 leading-relaxed">
-                {t('promo.line2')}
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                {t('promo.line5')}
-              </p>
-            </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-10"
-          >
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 shadow-xl transition-all duration-300">
-              <div className="flex gap-5 mb-6">
-                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0">
-                  <i className="fas fa-code text-gray-900 text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold text-white self-center">{t('promo.cards.zero')}</h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                {t('promo.line3')}
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 shadow-xl transition-all duration-300">
-              <div className="flex gap-5 mb-6">
-                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0">
-                  <i className="fas fa-microphone text-gray-900 text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold text-white self-center">{t('promo.cards.speak')}</h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                {t('promo.line4')}
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30 shadow-yellow-500/5 shadow-lg max-w-2xl mx-auto">
-              <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20 mx-auto">
-                <i className="fas fa-lightbulb text-gray-900 text-xl"></i>
-              </div>
-              <p className="text-yellow-100 text-lg leading-relaxed font-medium">
-                {t('promo.line7')}
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Learning Flow Timeline */}
       <section ref={sectionRef} className="py-16 bg-black text-white relative overflow-hidden">
@@ -572,52 +457,67 @@ export default function CurriculumPage() {
             variants={fadeInUp}
           ></motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Approach Card 1 */}
             <motion.div 
-              className="bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-black/80 border-l-4 border-yellow-500 rounded-xl p-6 flex items-start gap-4 shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={fadeInUp}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl mb-4">🏃</div>
-              <h3 className="text-xl font-bold mb-3">{t('curriculum.approach.output.title')}</h3>
-              <p className="text-gray-300">{t('curriculum.approach.output.desc')}</p>
+              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mr-4 mt-1">
+                <i className="fas fa-rocket text-2xl text-white"></i>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold mb-2 text-yellow-400 text-left">{t('curriculum.approach.output.title')}</h3>
+                <p className="text-gray-300 text-left">{t('curriculum.approach.output.desc')}</p>
+              </div>
             </motion.div>
 
             {/* Approach Card 2 */}
             <motion.div 
-              className="bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-black/80 border-l-4 border-yellow-500 rounded-xl p-6 flex items-start gap-4 shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={fadeInUp}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl mb-4">🔄</div>
-              <h3 className="text-xl font-bold mb-3">{t('curriculum.approach.iteration.title')}</h3>
-              <p className="text-gray-300">{t('curriculum.approach.iteration.desc')}</p>
+              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mr-4 mt-1">
+                <i className="fas fa-sync-alt text-2xl text-white"></i>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold mb-2 text-yellow-400 text-left">{t('curriculum.approach.iteration.title')}</h3>
+                <p className="text-gray-300 text-left">{t('curriculum.approach.iteration.desc')}</p>
+              </div>
             </motion.div>
 
             {/* Approach Card 3 */}
             <motion.div 
-              className="bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-black/80 border-l-4 border-yellow-500 rounded-xl p-6 flex items-start gap-4 shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={fadeInUp}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl mb-4">🧠</div>
-              <h3 className="text-xl font-bold mb-3">{t('curriculum.approach.mentoring.title')}</h3>
-              <p className="text-gray-300">{t('curriculum.approach.mentoring.desc')}</p>
+              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mr-4 mt-1">
+                <i className="fas fa-brain text-2xl text-white"></i>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold mb-2 text-yellow-400 text-left">{t('curriculum.approach.mentoring.title')}</h3>
+                <p className="text-gray-300 text-left">{t('curriculum.approach.mentoring.desc')}</p>
+              </div>
             </motion.div>
 
             {/* Approach Card 4 */}
             <motion.div 
-              className="bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-black/80 border-l-4 border-yellow-500 rounded-xl p-6 flex items-start gap-4 shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={fadeInUp}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl mb-4">👥</div>
-              <h3 className="text-xl font-bold mb-3">{t('curriculum.approach.community.title')}</h3>
-              <p className="text-gray-300">{t('curriculum.approach.community.desc')}</p>
+              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mr-4 mt-1">
+                <i className="fas fa-users text-2xl text-white"></i>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold mb-2 text-yellow-400 text-left">{t('curriculum.approach.community.title')}</h3>
+                <p className="text-gray-300 text-left">{t('curriculum.approach.community.desc')}</p>
+              </div>
             </motion.div>
-
-            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -627,7 +527,7 @@ export default function CurriculumPage() {
         <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         
         <motion.div 
-          className="max-w-5xl mx-auto px-4 relative z-10"
+          className="max-w-6xl mx-auto px-4 relative z-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -637,78 +537,88 @@ export default function CurriculumPage() {
             className="text-3xl font-bold text-center mb-4"
             variants={fadeInUp}
           >
-            {t('curriculum.tools.title')}
+            {t('curriculum.stack.title')}
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
             variants={fadeInUp}
           ></motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* AI Tools */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* 要件定義・設計支援ツール */}
             <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 shadow-md"
+              className="bg-black/90 rounded-xl shadow-lg p-0 flex flex-col border border-yellow-500"
               variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <h3 className="text-xl font-bold mb-4 text-center">{t('curriculum.tools.ai.title')}</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.ai.tool1')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.ai.tool2')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.ai.tool3')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.ai.tool4')}</li>
-                <li>{t('curriculum.tools.ai.tool5')}</li>
-              </ul>
+              <div className="bg-yellow-400 rounded-t-xl px-6 py-3">
+                <span className="text-lg font-bold text-black">{t('curriculum.stack.requirements.title')}</span>
+              </div>
+              <div className="p-6">
+                <div className="text-yellow-300 font-bold mb-2">{t('curriculum.stack.requirements.head')}</div>
+                <ul className="text-gray-200 text-sm space-y-1 mb-2">
+                  <li>▶ {t('curriculum.stack.requirements.list1')}</li>
+                  <li>▶ {t('curriculum.stack.requirements.list2')}</li>
+                </ul>
+              </div>
             </motion.div>
 
-            {/* Dev Tools */}
+            {/* 開発環境・コードエディタ */}
             <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 shadow-md"
+              className="bg-black/90 rounded-xl shadow-lg p-0 flex flex-col border border-yellow-500"
               variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <h3 className="text-xl font-bold mb-4 text-center">{t('curriculum.tools.dev.title')}</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.dev.tool1')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.dev.tool2')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.dev.tool3')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.dev.tool4')}</li>
-                <li>{t('curriculum.tools.dev.tool5')}</li>
-              </ul>
+              <div className="bg-yellow-400 rounded-t-xl px-6 py-3">
+                <span className="text-lg font-bold text-black">{t('curriculum.stack.env.title')}</span>
+              </div>
+              <div className="p-6">
+                <div className="text-yellow-300 font-bold mb-2">{t('curriculum.stack.env.head1')}</div>
+                <ul className="text-gray-200 text-sm space-y-1 mb-2">
+                  <li>▶ {t('curriculum.stack.env.env1')}</li>
+                  <li>▶ {t('curriculum.stack.env.env2')}</li>
+                </ul>
+                <div className="text-yellow-300 font-bold mb-2">{t('curriculum.stack.env.head2')}</div>
+                <ul className="text-gray-200 text-sm space-y-1 mb-2">
+                  <li>▶ {t('curriculum.stack.env.env3')}</li>
+                  <li>▶ {t('curriculum.stack.env.env4')}</li>
+                </ul>
+              </div>
             </motion.div>
 
-            {/* Marketing Tools */}
+            {/* フロントエンド開発 */}
             <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 shadow-md"
+              className="bg-black/90 rounded-xl shadow-lg p-0 flex flex-col border border-yellow-500"
               variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <h3 className="text-xl font-bold mb-4 text-center">{t('curriculum.tools.marketing.title')}</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.marketing.tool1')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.marketing.tool2')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.marketing.tool3')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.marketing.tool4')}</li>
-                <li>{t('curriculum.tools.marketing.tool5')}</li>
-              </ul>
+              <div className="bg-yellow-400 rounded-t-xl px-6 py-3">
+                <span className="text-lg font-bold text-black">{t('curriculum.stack.frontend.title')}</span>
+              </div>
+              <div className="p-6">
+                <div className="text-yellow-300 font-bold mb-2">{t('curriculum.stack.frontend.head')}</div>
+                <ul className="text-gray-200 text-sm space-y-1 mb-2">
+                  <li>▶ {t('curriculum.stack.frontend.list1')}</li>
+                  <li>▶ {t('curriculum.stack.frontend.list2')}</li>
+                  <li>▶ {t('curriculum.stack.frontend.list3')}</li>
+                </ul>
+              </div>
             </motion.div>
 
-            {/* Business Tools */}
+            {/* バックエンド・API開発 */}
             <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 shadow-md"
+              className="bg-black/90 rounded-xl shadow-lg p-0 flex flex-col border border-yellow-500"
               variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <h3 className="text-xl font-bold mb-4 text-center">{t('curriculum.tools.business.title')}</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.business.tool1')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.business.tool2')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.business.tool3')}</li>
-                <li className="pb-2 border-b border-gray-800">{t('curriculum.tools.business.tool4')}</li>
-                <li>{t('curriculum.tools.business.tool5')}</li>
-              </ul>
+              <div className="bg-yellow-400 rounded-t-xl px-6 py-3">
+                <span className="text-lg font-bold text-black">{t('curriculum.stack.backend.title')}</span>
+              </div>
+              <div className="p-6">
+                <div className="text-yellow-300 font-bold mb-2">{t('curriculum.stack.backend.head')}</div>
+                <ul className="text-gray-200 text-sm space-y-1 mb-2">
+                  <li>▶ {t('curriculum.stack.backend.list1')}</li>
+                  <li>▶ {t('curriculum.stack.backend.list2')}</li>
+                </ul>
+              </div>
             </motion.div>
-            </div>
+          </div>
         </motion.div>
       </section>
 

@@ -125,7 +125,7 @@ export default function HomePage() {
                   {slides[currentSlide].title}
                 </motion.h1>
                 <motion.p 
-                  className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10"
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
                   variants={fadeInUp}
                 >
                   {slides[currentSlide].subtitle}
@@ -183,13 +183,13 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               { 
-                icon: 'bolt-lightning', 
+                icon: 'fas fa-message', 
                 title: 'home.communication', 
                 desc: 'home.communication.desc',
                 color: 'from-blue-400 to-blue-600'
               },
               { 
-                icon: 'microchip', 
+                icon: 'fas fa-code', 
                 title: 'home.code', 
                 desc: 'home.code.desc',
                 color: 'from-purple-400 to-purple-600'
@@ -223,7 +223,7 @@ export default function HomePage() {
                 }}
               >
                 <motion.div 
-                  className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg transform rotate-3`}
+                  className={`w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg transform rotate-3`}
                   whileHover={{ rotate: 0, scale: 1.05 }}
                   animate={{ 
                     boxShadow: ['0px 0px 0px rgba(0,0,0,0.2)', '0px 0px 20px rgba(0,0,0,0.1)', '0px 0px 0px rgba(0,0,0,0.2)']
@@ -234,7 +234,7 @@ export default function HomePage() {
                 >
                   <i className={`fas fa-${feature.icon} text-3xl text-white`}></i>
                 </motion.div>
-                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors duration-300">{t(feature.title)}</h3>
+                <h3 className="text-xl font-bold mb-4 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300">{t(feature.title)}</h3>
                 <p className="text-gray-300 text-left whitespace-pre-line">{t(feature.desc)}</p>
                 <motion.div 
                   className="mt-6 w-10 h-1 bg-gray-800 mx-auto"

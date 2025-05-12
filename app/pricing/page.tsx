@@ -48,8 +48,8 @@ export default function PricingPage() {
   // FAQ items (dual language)
   const faqItems = [
     {
-      questionJa: '分割払いは可能ですか？',
-      answerJa: 'はい、クレジットカードでの分割払いが可能です。3回までは分割手数料は無料です。6回、12回払いから手数料が発生いたしますが、お選びいただけます。',
+      questionJa: 'パソコンは必要ですか？',
+      answerJa: 'はい、必要です。ご要望に応じてパソコン取得のサポートも可能です。',
       questionEn: 'Is installment payment available?',
       answerEn: 'Yes, installment payments are available via credit card. Installment fees are free for up to 3 payments. Fees apply for 6 and 12 payment plans, but both options are available.'
     },
@@ -70,28 +70,28 @@ export default function PricingPage() {
   // Plan features to display both languages
   const planFeatures = {
     basic: [
-      { ja: '3ヶ月間の完全受講権', en: '3 months of full course access' },
+      { ja: '一括払い割引き', en: '3 months of full course access' },
       { ja: 'AIによる24時間サポート', en: '24-hour AI support' },
-      { ja: '週1回のグループメンタリング', en: 'Weekly group mentoring' },
+      { ja: '隔週1回のグループメンタリング', en: 'Weekly group mentoring' },
       { ja: 'コミュニティへのアクセス', en: 'Community access' },
-      { ja: '卒業時、HyaQShix Silver資格取得', en: 'HyaQShix Silver certification upon graduation' },
-      { ja: '一括支払い割引あり', en: 'Lump-sum payment discount available' }
+      { ja: '3ヶ月受講契約', en: 'HyaQShix Silver certification upon graduation' },
+      { ja: 'HyaQShix資格受験', en: 'Lump-sum payment discount available' }
     ],
     monthly: [
-      { ja: '月単位の分割受講', en: 'Monthly tuition payment' },
+      { ja: '月々分割払い', en: 'Monthly tuition payment' },
       { ja: 'AIによる24時間サポート', en: '24-hour AI support' },
-      { ja: '週1回のグループメンタリング', en: 'Weekly group mentoring' },
+      { ja: '隔週1回のグループメンタリング', en: 'Weekly group mentoring' },
       { ja: 'コミュニティへのアクセス', en: 'Community access' },
-      { ja: '最低3ヶ月受講契約', en: 'Minimum 3-month contract' },
-      { ja: '卒業時、HyaQShix Silver資格取得', en: 'HyaQShix Silver certification upon graduation' }
+      { ja: '3ヶ月受講契約', en: 'Minimum 3-month contract' },
+      { ja: 'HyaQShix資格受験', en: 'HyaQShix Silver certification upon graduation' }
     ],
     sponsor: [
-      { ja: '授業料無料', en: 'Tuition-free' },
+      { ja: '授業料割引き', en: 'Tuition-free' },
       { ja: '企業案件実務参加条件あり', en: 'Required participation in corporate projects' },
       { ja: '審査制の選考あり', en: 'Selective screening process' },
       { ja: '成果提出義務あり', en: 'Mandatory deliverables' },
       { ja: '毎週のレポート提出', en: 'Weekly report submission' },
-      { ja: '卒業時、HyaQShix Silver資格取得', en: 'HyaQShix Silver certification upon graduation' }
+      { ja: 'HyaQShix資格受験', en: 'HyaQShix Silver certification upon graduation' }
     ]
   };
   
@@ -136,9 +136,9 @@ export default function PricingPage() {
   
   // CTA content
   const ctaContent = {
-    titleJa: 'あなたの未来に投資する準備はできましたか？',
+    titleJa: 'まずは無料体験に申し込んでみませんか？',
     titleEn: 'Are you ready to invest in your future?',
-    subtitleJa: '今すぐ申し込んで、100日後にはAIを自在に操り、ビジネスチャンスを創出できる人材に。',
+    subtitleJa: 'あなたの生産性を10倍・100倍にする未来への第一歩をここから始めましょう。',
     subtitleEn: 'Apply now and in 100 days you will be able to master AI and create business opportunities.',
     buttonJa: '無料体験に申し込む',
     buttonEn: 'Apply for a Free Trial'
@@ -235,9 +235,6 @@ export default function PricingPage() {
               >
                 <div className="absolute top-0 right-0 bg-yellow-500 text-black px-3 py-1 rounded-bl-lg font-medium">
                   <span className="mr-1">{t('pricing.plans.basic.badge')}</span>
-                  <span className="text-xs">
-                    {language === 'en' ? 'Popular' : '人気'}
-                  </span>
                 </div>
                 <h3 className="text-xl font-bold mb-4">
                   <span className="block">{t('pricing.plans.basic.title')}</span>
@@ -355,12 +352,7 @@ export default function PricingPage() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            <motion.h2 
-              className="text-4xl font-bold text-center mb-4"
-              variants={fadeInUp}
-            >
-              {t('pricing.guarantee.title')}
-            </motion.h2>
+
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
               variants={fadeInUp}
