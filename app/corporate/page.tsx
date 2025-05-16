@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Corporate() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const isJapanese = language === 'ja';
   const [currentStep, setCurrentStep] = useState(1);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([null, null, null, null, null, null]);
@@ -160,15 +160,13 @@ export default function Corporate() {
             className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200"
             variants={fadeInUp}
           >
-            {isJapanese ? '企業連携' : 'Corporate Partnership'}
+            {t('corporate.title')}
           </motion.h1>
           <motion.p 
             className="text-xl text-yellow-50"
             variants={fadeInUp}
           >
-            {isJapanese 
-              ? '次世代のAI人材と共に、新たな価値を創造する' 
-              : 'Creating new value with the next generation of AI talent'}
+            {t('corporate.subtitle')}
           </motion.p>
         </motion.div>
       </section>
@@ -188,7 +186,7 @@ export default function Corporate() {
             className="text-3xl font-bold text-center mb-4"
             variants={fadeInUp}
           >
-            {isJapanese ? 'スポンサー制度の概要' : 'Sponsor Program Overview'}
+            {t('corporate.sponsor.title')}
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-8"
@@ -200,14 +198,12 @@ export default function Corporate() {
             variants={fadeInUp}
           >
             <h3 className="text-2xl font-semibold mb-4 text-yellow-400 text-center">
-              {isJapanese ? 'HyaQShixスポンサー制度とは？' : 'What is the HyaQShix Sponsor Program?'}
+              {t('corporate.sponsor.subtitle')}
             </h3>
             <div className="grid md:grid-cols-1 gap-6">
               <div>
                 <p className="text-lg mb-6 text-gray-300 leading-relaxed font-medium text-center">
-                  {isJapanese 
-                    ? '生成AI時代の次世代開発人材を育成するHyaQShix百式では、企業からの実務プロジェクトを教育プログラムと融合することで、学習と実践を同時に実現します。' 
-                    : 'HyaQShix Hyakushiki, which develops next-generation talent for the generative AI era, combines practical projects from companies with educational programs to achieve simultaneous learning and practical experience.'}
+                  {t('corporate.sponsor.desc')}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
                   <motion.div 
@@ -216,9 +212,7 @@ export default function Corporate() {
                   >
                     <span className="text-yellow-400 font-bold text-xl inline-block mb-3">01</span>
                     <p className="text-gray-300">
-                      {isJapanese 
-                        ? 'スポンサー企業から提供された案件を学生が実行形式で担当し、成果に応じて「授業料免除」が適用されるモデルです。' 
-                        : 'Students work on projects provided by sponsor companies, and depending on their performance, they can receive tuition exemptions.'}
+                      {t('corporate.sponsor.item1')}
                     </p>
                   </motion.div>
                   <motion.div 
@@ -227,9 +221,7 @@ export default function Corporate() {
                   >
                     <span className="text-yellow-400 font-bold text-xl inline-block mb-3">02</span>
                     <p className="text-gray-300">
-                      {isJapanese 
-                        ? '若手人材の育成に貢献しながら、自社の課題解決にもつながる、Win-Winの関係構築を目指しています。' 
-                        : 'We aim to build a win-win relationship that contributes to the development of young talent while helping companies solve their challenges.'}
+                      {t('corporate.sponsor.item2')}
                     </p>
                   </motion.div>
                 </div>
@@ -252,7 +244,7 @@ export default function Corporate() {
             className="text-3xl font-bold text-center mb-4"
             variants={fadeInUp}
           >
-            {isJapanese ? 'スポンサー企業のメリット' : 'Sponsor Benefits'}
+            {t('corporate.benefits.title')}
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
@@ -267,12 +259,10 @@ export default function Corporate() {
             >
               <div className="text-4xl mb-4">💡</div>
               <h3 className="text-xl font-bold mb-3">
-                {isJapanese ? '実務に近いプロトタイプ制作' : 'Practical Prototype Development'}
+                {t('corporate.benefits.b1.title')}
               </h3>
               <p className="text-gray-300">
-                {isJapanese 
-                  ? '新規事業・業務改善・業務ツール等の試作を学生が担当します。1日1アプリ方式で、短期間に多様なアイデアを形にできます。' 
-                  : 'Students create prototypes for new businesses, process improvements, and business tools. With our one-app-per-day method, diverse ideas can be realized in a short period.'}
+                {t('corporate.benefits.b1.desc')}
               </p>
             </motion.div>
             <motion.div 
@@ -282,12 +272,10 @@ export default function Corporate() {
             >
               <div className="text-4xl mb-4">🤖</div>
               <h3 className="text-xl font-bold mb-3">
-                {isJapanese ? 'AIの実践的活用を体験' : 'Experience Practical AI Application'}
+                {t('corporate.benefits.b2.title')}
               </h3>
               <p className="text-gray-300">
-                {isJapanese 
-                  ? '最新の生成AIを活用した開発モデルに触れられます。自社でのAI活用の参考事例として活用できます。' 
-                  : 'Experience development models using the latest generative AI. Use these as reference cases for AI implementation in your company.'}
+                {t('corporate.benefits.b2.desc')}
               </p>
             </motion.div>
             <motion.div 
@@ -297,12 +285,10 @@ export default function Corporate() {
             >
               <div className="text-4xl mb-4">👥</div>
               <h3 className="text-xl font-bold mb-3">
-                {isJapanese ? '採用候補の早期発掘' : 'Early Talent Discovery'}
+                {t('corporate.benefits.b3.title')}
               </h3>
               <p className="text-gray-300">
-                {isJapanese 
-                  ? '卒業生を採用候補として検討可能です。実際の課題に取り組む姿勢や成果物から、スキルと適性を正確に判断できます。' 
-                  : 'Consider graduates as potential employees. Accurately assess their skills and aptitude through their approach to real challenges and the quality of their deliverables.'}
+                {t('corporate.benefits.b3.desc')}
               </p>
             </motion.div>
             <motion.div 
@@ -312,12 +298,10 @@ export default function Corporate() {
             >
               <div className="text-4xl mb-4">🏢</div>
               <h3 className="text-xl font-bold mb-3">
-                {isJapanese ? 'ブランディング貢献' : 'Branding Contribution'}
+                {t('corporate.benefits.b3.title')}
               </h3>
               <p className="text-gray-300">
-                {isJapanese 
-                  ? '若年層への認知向上、社会貢献型企業イメージの構築に貢献します。AI教育支援企業としてのブランディングが可能です。' 
-                  : 'Increase awareness among younger generations and build a socially responsible corporate image. Establish your brand as a company supporting AI education.'}
+                {t('corporate.benefits.b3.desc')}
               </p>
             </motion.div>
             </div>
@@ -339,7 +323,7 @@ export default function Corporate() {
             className="text-3xl font-bold text-center mb-4"
             variants={fadeInUp}
           >
-            {isJapanese ? '教育との統合：案件×学び' : 'Education Integration: Projects × Learning'}
+            {t('corporate.title')}
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
@@ -351,12 +335,10 @@ export default function Corporate() {
             variants={fadeInUp}
           >
             <h3 className="text-2xl font-semibold mb-6 text-yellow-400 text-center">
-              {isJapanese ? '案件と教育の統合' : 'Integration of Projects and Education'}
+              {t('corporate.subtitle')}
             </h3>
             <p className="text-lg mb-10 text-gray-300 text-center max-w-3xl mx-auto">
-              {isJapanese 
-                ? '企業案件はHyaQShixの100日カリキュラムに統合され、実践的な学びの素材となります。' 
-                : 'Corporate projects are integrated into HyaQShix\'s 100-day curriculum, becoming materials for practical learning.'}
+              {t('corporate.sponsor.desc')}
             </p>
             
             <motion.div 
@@ -364,23 +346,23 @@ export default function Corporate() {
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
             >
               <h4 className="text-yellow-400 mb-4 text-xl">
-                {isJapanese ? '案件テーマ例：' : 'Example Project Themes:'}
+                {t('corporate.sponsor.subtitle')}
               </h4>
               <div className="flex flex-wrap gap-4">
                 <span className="bg-yellow-400 bg-opacity-10 text-white px-4 py-2 rounded-full border border-yellow-400 border-opacity-30 hover:bg-opacity-20 transition-all transform hover:-translate-y-1">
-                  {isJapanese ? '小売業向け業務アプリ' : 'Retail Business Applications'}
+                  {t('corporate.sponsor.item1')}
                 </span>
                 <span className="bg-yellow-400 bg-opacity-10 text-white px-4 py-2 rounded-full border border-yellow-400 border-opacity-30 hover:bg-opacity-20 transition-all transform hover:-translate-y-1">
-                  {isJapanese ? '社内報自動生成ツール' : 'Internal Newsletter Auto-generation Tools'}
+                  {t('corporate.sponsor.item2')}
                 </span>
                 <span className="bg-yellow-400 bg-opacity-10 text-white px-4 py-2 rounded-full border border-yellow-400 border-opacity-30 hover:bg-opacity-20 transition-all transform hover:-translate-y-1">
-                  {isJapanese ? '顧客対応用チャットAI' : 'Customer Support Chat AI'}
+                  {t('corporate.sponsor.item3')}
                 </span>
                 <span className="bg-yellow-400 bg-opacity-10 text-white px-4 py-2 rounded-full border border-yellow-400 border-opacity-30 hover:bg-opacity-20 transition-all transform hover:-translate-y-1">
-                  {isJapanese ? 'データ可視化ダッシュボード' : 'Data Visualization Dashboards'}
+                  {t('corporate.benefits.b1.title')}
                 </span>
                 <span className="bg-yellow-400 bg-opacity-10 text-white px-4 py-2 rounded-full border border-yellow-400 border-opacity-30 hover:bg-opacity-20 transition-all transform hover:-translate-y-1">
-                  {isJapanese ? '営業支援ツール' : 'Sales Support Tools'}
+                  {t('corporate.benefits.b2.title')}
                 </span>
             </div>
             </motion.div>
@@ -390,12 +372,10 @@ export default function Corporate() {
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
             >
               <h4 className="text-yellow-400 mb-4 text-xl">
-                {isJapanese ? '案件は「課題ブリーフ」形式で提供' : 'Projects are Provided as "Challenge Briefs"'}
+                {t('corporate.benefits.title')}
               </h4>
               <p className="text-gray-300">
-                {isJapanese 
-                  ? '企業からの課題説明書をもとに、講師がメンターとして進行管理を行います。学生はAIを活用して課題解決に取り組み、実用的なプロトタイプを制作します。' 
-                  : 'Based on challenge descriptions from companies, instructors manage progress as mentors. Students use AI to tackle the challenges and create practical prototypes.'}
+                {t('corporate.benefits.b3.desc')}
               </p>
             </motion.div>
           </motion.div>
@@ -415,7 +395,7 @@ export default function Corporate() {
             className="text-3xl font-bold text-center mb-4"
             variants={fadeInUp}
           >
-            {isJapanese ? '特別認定パートナー制度' : 'Special Certified Partner Program'}
+            {t('corporate.title')}
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
@@ -427,12 +407,10 @@ export default function Corporate() {
             variants={fadeInUp}
           >
             <h3 className="text-2xl font-semibold mb-6 text-yellow-400 text-center">
-              {isJapanese ? '「HyaQShix Certified Partner」として企業を認定' : 'Companies Certified as "HyaQShix Certified Partners"'}
+              {t('corporate.subtitle')}
             </h3>
             <p className="text-lg mb-10 text-gray-300 text-center max-w-3xl mx-auto">
-              {isJapanese 
-                ? '継続的なパートナーシップを築くことで、さらに価値の高い連携が可能となります。認定パートナー企業には、以下の特典をご用意しています。' 
-                : 'By building ongoing partnerships, even more valuable collaborations become possible. We offer the following benefits to certified partner companies.'}
+              {t('corporate.sponsor.desc')}
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -441,12 +419,10 @@ export default function Corporate() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <h4 className="text-yellow-400 mb-3 text-xl">
-                  {isJapanese ? 'ロゴ使用許可' : 'Logo Usage Rights'}
+                  {t('corporate.benefits.b1.title')}
                 </h4>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? 'Web・採用媒体にて「HyaQShix認定企業」として掲載可能です。AI教育支援企業としてのブランディングに活用できます。' 
-                    : 'Companies can be listed as "HyaQShix Certified Companies" on websites and recruitment materials. Leverage this for branding as a company supporting AI education.'}
+                  {t('corporate.benefits.b1.desc')}
                 </p>
               </motion.div>
               <motion.div 
@@ -454,12 +430,10 @@ export default function Corporate() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <h4 className="text-yellow-400 mb-3 text-xl">
-                  {isJapanese ? '年間優先プロジェクト参加枠' : 'Annual Priority Project Slots'}
+                  {t('corporate.benefits.b2.title')}
                 </h4>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '希望するテーマを事前提出し、優先的に採択されます。計画的な案件実施が可能です。' 
-                    : 'Submit desired themes in advance for priority adoption. This enables planned project implementation.'}
+                  {t('corporate.benefits.b2.desc')}
                 </p>
               </motion.div>
               <motion.div 
@@ -467,12 +441,10 @@ export default function Corporate() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <h4 className="text-yellow-400 mb-3 text-xl">
-                  {isJapanese ? '成果物の商用化権利交渉' : 'Commercialization Rights Negotiation'}
+                  {t('corporate.benefits.b3.title')}
                 </h4>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '優秀作品の独占利用など、成果へのアクセスを明文化します。ビジネス展開の可能性を広げます。' 
-                    : 'Formalize access to results, such as exclusive use of outstanding work. Expand business development possibilities.'}
+                  {t('corporate.benefits.b3.desc')}
                 </p>
               </motion.div>
               <motion.div 
@@ -480,12 +452,10 @@ export default function Corporate() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <h4 className="text-yellow-400 mb-3 text-xl">
-                  {isJapanese ? '人材紹介サービス' : 'Talent Referral Service'}
+                  {t('corporate.benefits.b3.title')}
                 </h4>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '卒業生の中から、貴社に適した人材を優先的にご紹介します。採用活動の効率化が図れます。' 
-                    : 'We prioritize introducing graduates who are suitable for your company. This streamlines your recruitment process.'}
+                  {t('corporate.benefits.b3.desc')}
                 </p>
               </motion.div>
             </div>
@@ -508,7 +478,7 @@ export default function Corporate() {
             className="text-3xl font-bold text-center mb-4"
             variants={fadeInUp}
           >
-            {isJapanese ? '連携企業の声' : 'Partner Company Testimonials'}
+            {t('corporate.title')}
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
@@ -522,16 +492,14 @@ export default function Corporate() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <p className="text-gray-300 text-lg italic mb-6 leading-relaxed">
-                {isJapanese 
-                  ? '「業務改善アプリのプロトタイプを短期間で複数提案してもらい、実際の開発方針決定に大いに役立ちました。若い視点での発想が新鮮で、社内の活性化にもつながりました。」' 
-                  : '"Multiple prototypes for business improvement apps were proposed in a short period of time, which greatly helped with actual development direction decisions. The fresh ideas from young perspectives also helped revitalize our company."'}
+                {t('corporate.cta.desc')}
               </p>
               <div className="border-t border-yellow-400 border-opacity-20 pt-4">
                 <h4 className="text-yellow-400 font-bold">
-                  {isJapanese ? '山田 健太郎' : 'Kentaro Yamada'}
+                  田中 太郎
                 </h4>
                 <p className="text-gray-400">
-                  {isJapanese ? '株式会社テクノソリューション DX推進部長' : 'Director of DX Promotion, Techno Solutions Inc.'}
+                  {t('corporate.subtitle')}
                 </p>
               </div>
             </motion.div>
@@ -541,16 +509,14 @@ export default function Corporate() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <p className="text-gray-300 text-lg italic mb-6 leading-relaxed">
-                {isJapanese 
-                  ? '「生成AIを活用した業務効率化の検討を進めていましたが、社内にノウハウがなく苦戦していました。HyaQShixの学生が作成したプロトタイプは実用性が高く、実際に一部機能を本番導入することになりました。」' 
-                  : '"We were exploring business efficiency improvements using generative AI, but struggled due to lack of in-house expertise. The prototype created by HyaQShix students was highly practical, and we ended up implementing some functions in production."'}
+                {t('corporate.cta.desc')}
               </p>
               <div className="border-t border-yellow-400 border-opacity-20 pt-4">
                 <h4 className="text-yellow-400 font-bold">
-                  {isJapanese ? '佐藤 美咲' : 'Misaki Sato'}
+                  山田 健太郎
                 </h4>
                 <p className="text-gray-400">
-                  {isJapanese ? 'グローバルリテール株式会社 マーケティング部' : 'Marketing Department, Global Retail Co., Ltd.'}
+                  {t('corporate.subtitle')}
                 </p>
               </div>
             </motion.div>
@@ -574,7 +540,7 @@ export default function Corporate() {
             className="text-3xl font-bold text-center mb-4"
             variants={fadeInUp}
           >
-            {isJapanese ? 'お問い合わせ・提携フロー' : 'Contact & Partnership Flow'}
+            {t('corporate.title')}
           </motion.h2>
           <motion.div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-8"
@@ -596,7 +562,7 @@ export default function Corporate() {
           >
             <div className="max-w-5xl mx-auto px-4 py-4 relative">
               <h3 className="text-lg font-semibold mb-2">
-                {isJapanese ? 'お問い合わせ・提携フロー' : 'Contact & Partnership Flow'}
+                {t('corporate.subtitle')}
               </h3>
               
               {/* Horizontal line */}
@@ -616,21 +582,7 @@ export default function Corporate() {
                       {step}
                     </div>
                     <span className={`mt-2 text-xs font-medium text-center max-w-[80px] truncate ${step === currentStep ? 'text-yellow-400' : 'text-gray-400'}`}>
-                      {isJapanese ? [
-                        '企業申込み',
-                        'オンライン打ち合わせ',
-                        '案件登録',
-                        'メンタリング',
-                        '成果提出',
-                        'フィードバック'
-                      ][step-1] : [
-                        'Application',
-                        'Meeting',
-                        'Registration',
-                        'Mentoring',
-                        'Submission',
-                        'Feedback'
-                      ][step-1]}
+                      {t('corporate.benefits.b1.title')}
                     </span>
                   </motion.div>
                 ))}
@@ -666,21 +618,7 @@ export default function Corporate() {
                     {step}
                   </div>
                   <span className={`mt-2 text-sm font-medium text-center ${step === currentStep ? 'text-yellow-400' : 'text-gray-400'}`}>
-                    {isJapanese ? [
-                      '企業申込み',
-                      'オンライン打ち合わせ',
-                      '案件登録',
-                      'メンタリング',
-                      '成果提出',
-                      'フィードバック'
-                    ][step-1] : [
-                      'Application',
-                      'Meeting',
-                      'Registration',
-                      'Mentoring',
-                      'Submission',
-                      'Feedback'
-                    ][step-1]}
+                    {t('corporate.benefits.b1.title')}
                   </span>
                 </motion.div>
               ))}
@@ -702,12 +640,10 @@ export default function Corporate() {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold">1</div>
               <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {isJapanese ? '企業申込みフォーム' : 'Company Application Form'}
+                  {t('corporate.benefits.b1.title')}
                 </h3>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '業種・課題内容・目的を簡易記入いただきます。まずは気軽にお問い合わせください。' 
-                    : 'Fill in your industry, challenge details, and objectives. Feel free to contact us with any questions.'}
+                  {t('corporate.benefits.b1.desc')}
                 </p>
               </div>
             </motion.div>
@@ -720,12 +656,10 @@ export default function Corporate() {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold">2</div>
               <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {isJapanese ? 'オンライン打ち合わせ' : 'Online Meeting'}
+                  {t('corporate.benefits.b2.title')}
                 </h3>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '事務局よりご連絡し、具体的な案件内容や期待する成果について詳細をヒアリングします。' 
-                    : 'Our office will contact you to gather detailed information about the specific project content and expected outcomes.'}
+                  {t('corporate.benefits.b2.desc')}
                 </p>
               </div>
             </motion.div>
@@ -738,12 +672,10 @@ export default function Corporate() {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold">3</div>
               <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {isJapanese ? '案件登録' : 'Project Registration'}
+                  {t('corporate.benefits.b3.title')}
                 </h3>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '合意に基づき案件を登録し、カリキュラムに組み込みます。適切な学生とのマッチングを行います。' 
-                    : 'Based on the agreement, we register the project and incorporate it into the curriculum. We match appropriate students to the project.'}
+                  {t('corporate.benefits.b3.desc')}
                 </p>
               </div>
             </motion.div>
@@ -756,12 +688,10 @@ export default function Corporate() {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold">4</div>
               <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {isJapanese ? 'メンタリングと進捗報告' : 'Mentoring and Progress Reports'}
+                  {t('corporate.benefits.b1.title')}
                 </h3>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '案件進行中は定期的に進捗報告を行います。企業からのフィードバックも随時反映可能です。' 
-                    : 'We provide regular progress reports during project execution. Corporate feedback can be incorporated at any time.'}
+                  {t('corporate.benefits.b1.desc')}
                 </p>
               </div>
             </motion.div>
@@ -774,12 +704,10 @@ export default function Corporate() {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold">5</div>
               <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {isJapanese ? '成果提出' : 'Deliverable Submission'}
+                  {t('corporate.benefits.b2.title')}
                 </h3>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '完成したプロトタイプとドキュメントを提出します。最終プレゼンテーションも実施します。' 
-                    : 'We submit the completed prototype and documentation. A final presentation is also conducted.'}
+                  {t('corporate.benefits.b2.desc')}
                 </p>
               </div>
             </motion.div>
@@ -792,12 +720,10 @@ export default function Corporate() {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold">6</div>
               <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {isJapanese ? 'フィードバックと評価' : 'Feedback and Evaluation'}
+                  {t('corporate.benefits.b3.title')}
                 </h3>
                 <p className="text-gray-300">
-                  {isJapanese 
-                    ? '企業からのフィードバックは学生の評価に反映され、修了証明書にも記載されます。' 
-                    : 'Feedback from companies is reflected in student evaluations and included on completion certificates.'}
+                  {t('corporate.benefits.b3.desc')}
                 </p>
               </div>
             </motion.div>
@@ -820,29 +746,27 @@ export default function Corporate() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <h2 className="text-3xl font-bold mb-4">
-            {isJapanese ? '若手AI開発人材 × あなたの課題解決' : 'Young AI Development Talent × Your Challenge Solution'}
+            {t('corporate.cta.title')}
           </h2>
           <p className="text-xl mb-8 text-gray-300">
-            {isJapanese 
-              ? 'HyaQShix百式のスポンサー制度は、「実務体験」と「未来の仲間づくり」が同時に叶う次世代の教育投資です。' 
-              : 'The HyaQShix Hyakushiki sponsor program is a next-generation educational investment that simultaneously fulfills "practical experience" and "building future connections."'}
+            {t('corporate.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <motion.a 
-            href="/contact"
+              href="/contact"
               className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-3 rounded-lg font-bold transition-transform duration-300"
               whileHover={{ scale: 1.05 }}
             >
-              {isJapanese ? 'お問い合わせ' : 'Contact Us'}
+              {t('corporate.cta.contact')}
             </motion.a>
             <motion.a 
               href="/corporate#partner" 
               className="bg-transparent hover:bg-gray-800 text-white border-2 border-white px-8 py-3 rounded-lg font-bold transition-colors"
               whileHover={{ scale: 1.05 }}
             >
-              {isJapanese ? 'パートナー詳細' : 'Partner Details'}
+              {t('corporate.cta.partner')}
             </motion.a>
-        </div>
+          </div>
         </motion.div>
       </section>
 

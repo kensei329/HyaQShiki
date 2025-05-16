@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import { Parallax } from 'react-parallax';
 
 export default function CertificationPage() {
-  const { t, language } = useLanguage();
+  const { t, language, certificationLevels, evaluationProcesses, guaranteeConditions, certificateDetails, getCertificationFees } = useLanguage();
   
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -39,171 +39,8 @@ export default function CertificationPage() {
     }
   };
   
-  // Certification levels data
-  const certificationLevels = [
-    {
-      title: { ja: 'HyaQShix Silver', en: 'HyaQShix Silver' },
-      passRate: { ja: '合格率：50%', en: 'Pass Rate: 50%' },
-      description: { 
-        ja: 'AIを活用したアプリケーション開発の基礎スキルを証明するエントリーレベルの認定資格です。', 
-        en: 'An entry-level certification that validates basic skills in AI-powered application development.' 
-      },
-      criteria: [
-        { ja: '基本的なAIツールの活用力', en: 'Basic AI tool utilization skills' },
-        { ja: 'プロンプトエンジニアリングの基礎', en: 'Fundamentals of prompt engineering' },
-        { ja: 'シンプルなWebアプリケーションの開発能力', en: 'Ability to develop simple web applications' },
-        { ja: '基本的なUI/UXデザイン理解', en: 'Basic understanding of UI/UX design' }
-      ],
-      bgClass: 'bg-gradient-to-br from-gray-600 to-gray-700',
-      borderClass: 'border-gray-500'
-    },
-    {
-      title: { ja: 'HyaQShix Gold', en: 'HyaQShix Gold' },
-      passRate: { ja: '合格率：30%', en: 'Pass Rate: 30%' },
-      description: { 
-        ja: 'AIを活用した実用的なアプリケーション開発と基本的なマーケティング知識を兼ね備えた中級者向け認定資格です。', 
-        en: 'An intermediate certification for those with practical AI application development skills and basic marketing knowledge.' 
-      },
-      criteria: [
-        { ja: '高度なAIツールの活用と連携', en: 'Advanced AI tool utilization and integration' },
-        { ja: '複雑なアプリケーション開発能力', en: 'Ability to develop complex applications' },
-        { ja: '基本的なマーケティング戦略の策定', en: 'Development of basic marketing strategies' },
-        { ja: 'ユーザー体験の最適化', en: 'User experience optimization' }
-      ],
-      bgClass: 'bg-gradient-to-br from-yellow-500 to-yellow-600',
-      borderClass: 'border-yellow-400'
-    },
-    {
-      title: { ja: 'HyaQShix Platina', en: 'HyaQShix Platina' },
-      passRate: { ja: '合格率：15%', en: 'Pass Rate: 15%' },
-      description: { 
-        ja: 'AIを活用した高度なアプリケーション開発とビジネスモデル構築の能力を証明する上級者向け認定資格です。', 
-        en: 'An advanced certification that validates sophisticated AI application development skills and business model construction abilities.' 
-      },
-      criteria: [
-        { ja: '複数のAIツールの統合と最適化', en: 'Integration and optimization of multiple AI tools' },
-        { ja: '完成度の高いアプリケーション開発', en: 'Development of highly polished applications' },
-        { ja: '収益モデルの設計と実装', en: 'Revenue model design and implementation' },
-        { ja: 'データ分析とサービス改善', en: 'Data analysis and service improvement' }
-      ],
-      bgClass: 'bg-gradient-to-br from-gray-300 to-gray-400',
-      borderClass: 'border-gray-300',
-      textClass: 'text-gray-900'
-    },
-    {
-      title: { ja: 'HyaQShix Black', en: 'HyaQShix Black' },
-      passRate: { ja: '合格率：5%', en: 'Pass Rate: 5%' },
-      description: { 
-        ja: 'AIを活用した事業創造と拡大の能力を証明するエキスパートレベルの認定資格です。業界での最高峰として認知されています。', 
-        en: 'An expert-level certification that validates business creation and growth capabilities using AI, recognized as the industry pinnacle.' 
-      },
-      criteria: [
-        { ja: '革新的なAI活用方法の開発', en: 'Development of innovative AI utilization methods' },
-        { ja: 'スケーラブルなサービス設計', en: 'Scalable service design' },
-        { ja: '総合的な事業戦略の策定', en: 'Comprehensive business strategy development' },
-        { ja: '投資家向けピッチの作成と実行', en: 'Creation and execution of investor pitches' }
-      ],
-      bgClass: 'bg-gradient-to-br from-gray-900 to-black',
-      borderClass: 'border-gray-700'
-    }
-  ];
-
-  // Evaluation process data
-  const evaluationProcesses = [
-    {
-      icon: 'fa-hourglass-half',
-      title: { 
-        ja: '制限時間内のアプリ構築', 
-        en: 'Application Building within Time Limit' 
-      },
-      description: { 
-        ja: '各ランクに応じた難易度の課題に対し、制限時間内にアプリケーションを構築することが求められます。課題の難易度と制限時間はランクによって異なります。', 
-        en: 'You will be required to build an application within a time limit for challenges with difficulty levels corresponding to each rank. The difficulty and time limit vary by rank.' 
-      }
-    },
-    {
-      icon: 'fa-robot',
-      title: { 
-        ja: 'AIによる自動評価', 
-        en: 'Automated AI Evaluation' 
-      },
-      description: { 
-        ja: '提出されたコードに対して、コード品質、機能達成率、UI整合性などの観点から、AIによる自動評価が行われます。', 
-        en: 'Submitted code will be automatically evaluated by AI for code quality, functionality achievement rate, UI consistency, and other aspects.' 
-      }
-    },
-    {
-      icon: 'fa-user-check',
-      title: { 
-        ja: '人間によるレビュー', 
-        en: 'Human Review' 
-      },
-      description: { 
-        ja: '専門家によるレビューでは、独創性、ユーザー体験、構成力などの定性的な側面が評価されます。', 
-        en: 'Expert reviewers will evaluate qualitative aspects such as originality, user experience, and structural capability.' 
-      }
-    }
-  ];
-
-  // Guarantee conditions
-  const guaranteeConditions = [
-    { 
-      ja: '受講開始から14日以内に申請すること', 
-      en: 'Apply within 14 days of starting the course' 
-    },
-    { 
-      ja: '所定の課題提出や進捗率など、評価対象条件を満たしていること', 
-      en: 'Meet the evaluation criteria including assignment submissions and progress rates' 
-    },
-    { 
-      ja: '受講生本人からの申請であること', 
-      en: 'Application must be submitted by the student themselves' 
-    }
-  ];
-
-  // Certificate details
-  const certificateDetails = [
-    { ja: '保持者名', en: 'Holder Name' },
-    { ja: '認定ランク', en: 'Certification Rank' },
-    { ja: 'シリアルID', en: 'Serial ID' },
-    { ja: '発行日', en: 'Issue Date' },
-    { ja: '有効期限', en: 'Expiration Date' },
-    { ja: '照合用QRコード', en: 'Verification QR Code' }
-  ];
-  
-  // Certification fee table data
-  const certificationFees = [
-    {
-      rank: 'HyaQShix Silver',
-      fee: '49,800円',
-      passRate: '50%',
-      renewal: '3年ごと'
-    },
-    {
-      rank: 'HyaQShix Gold',
-      fee: '49,800円',
-      passRate: '30%',
-      renewal: '3年ごと'
-    },
-    {
-      rank: 'HyaQShix Platina',
-      fee: '49,800円',
-      passRate: '15%',
-      renewal: '3年ごと'
-    },
-    {
-      rank: 'HyaQShix Black',
-      fee: '49,800円',
-      passRate: '5%',
-      renewal: '3年ごと'
-    },
-    {
-      rank: language === 'en' ? 'Certification Renewal' : '資格更新料',
-      fee: '8,800円',
-      passRate: '-',
-      renewal: language === 'en' ? 'Common for all ranks' : 'すべてのランク共通'
-    }
-  ];
+  // Get certification fees with proper language handling
+  const certificationFees = getCertificationFees(language);
   
   return (
     <div className="font-['Poppins',sans-serif] bg-black text-white">
@@ -269,7 +106,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {t('About Certification')}
+              {t('certification.about')}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
@@ -330,7 +167,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {language === 'en' ? 'Certification Ranks' : '認定ランク'}
+              {t('certification.ranks')}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
@@ -359,7 +196,7 @@ export default function CertificationPage() {
                       {language === 'en' ? level.description.en : level.description.ja}
                     </p>
                     <h4 className="font-semibold text-left mb-2">
-                      {language === 'en' ? 'Evaluation Criteria:' : '評価基準：'}
+                      {t('certification.evaluation.criteria')}
                     </h4>
                     <ul className="text-left text-sm space-y-1">
                       {level.criteria.map((criterion, idx) => (
@@ -395,7 +232,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {language === 'en' ? 'Evaluation Method' : '評価方法'}
+              {t('certification.evaluation.method')}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
@@ -446,7 +283,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {language === 'en' ? 'About the Certificate' : '証明書について'}
+              {t('certification.certificate.about')}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
@@ -479,7 +316,7 @@ export default function CertificationPage() {
                 variants={fadeInUp}
               >
                 <h3 className="text-2xl font-bold mb-6 text-yellow-400">
-                  {language === 'en' ? 'Certificate Distribution Format' : '証明書の配布形式'}
+                  {t('certification.certificate.format')}
                 </h3>
                 <p className="mb-4 text-gray-200">
                   {language === 'en' 
@@ -500,7 +337,7 @@ export default function CertificationPage() {
                 </ul>
                 
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {language === 'en' ? 'Certification Cycle' : '認定サイクル'}
+                  {t('certification.certificate.cycle')}
                 </h3>
                 <p className="mb-4 text-gray-200">
                   {language === 'en' 
@@ -509,7 +346,7 @@ export default function CertificationPage() {
                 </p>
                 
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {language === 'en' ? 'Renewal Fee' : '更新費用'}
+                  {t('certification.certificate.renewal')}
                 </h3>
                 <ul className="mb-4 space-y-2">
                   <li className="flex items-start">
@@ -531,7 +368,7 @@ export default function CertificationPage() {
                 </ul>
                 
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
-                  {language === 'en' ? 'Renewal Deadline & Expiration Rules' : '更新期限・失効ルール'}
+                  {t('certification.certificate.expiration')}
                 </h3>
                 <p className="text-gray-200">
                   {language === 'en' 
@@ -558,7 +395,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {language === 'en' ? 'Certification Exam Fees' : '資格受験料'}
+              {t('certification.exam.fees')}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
@@ -633,9 +470,7 @@ export default function CertificationPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {language === 'en' 
-                ? 'Would you like to officially certify your AI skills and expand your career possibilities?' 
-                : 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？'}
+              {t('certification.cta.title')}
             </motion.h2>
             <motion.p 
               className="text-xl mb-10 opacity-90 max-w-3xl mx-auto"
@@ -644,9 +479,7 @@ export default function CertificationPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              {language === 'en' 
-                ? 'HyaQShix certification is a powerful tool to validate your skills in the generative AI era.' 
-                : 'HyaQShix認定資格は、生成AI時代のスキルを証明する強力なツールです。'}
+              {t('certification.cta.subtitle')}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -659,7 +492,7 @@ export default function CertificationPage() {
                 className="inline-flex items-center gap-2 px-8 py-4 bg-black hover:bg-gray-800 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 <span>
-                  {language === 'en' ? 'Apply for Certification Exam' : '資格受験に申し込む'}
+                  {t('certification.cta.apply')}
                 </span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

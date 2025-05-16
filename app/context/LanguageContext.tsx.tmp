@@ -4,39 +4,6 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 
 type Language = 'ja' | 'en';
 
-// Certification data types
-type BilingualText = {
-  ja: string;
-  en: string;
-};
-
-type CertificationLevel = {
-  title: BilingualText;
-  passRate: BilingualText;
-  description: BilingualText;
-  criteria: BilingualText[];
-  bgClass: string;
-  borderClass: string;
-  textClass?: string;
-};
-
-type EvaluationProcess = {
-  icon: string;
-  title: BilingualText;
-  description: BilingualText;
-};
-
-type GuaranteeCondition = BilingualText;
-
-type CertificateDetail = BilingualText;
-
-type CertificationFee = {
-  rank: string;
-  fee: string;
-  passRate: string;
-  renewal: string;
-};
-
 type TranslationKeys = 
   // Navigation
   | 'nav.home' | 'nav.curriculum' | 'nav.pricing' | 'nav.certification' 
@@ -147,14 +114,14 @@ type TranslationKeys =
   | 'certification.eval.item3'
   
   // Corporate Page
-  | 'corporate.title' | 'corporate.subtitle' | 'corporate.description' | 'corporate.benefits.title'
+  | 'corporate.title' | 'corporate.subtitle' | 'corporate.benefits.title'
   | 'corporate.benefits.b1.title' | 'corporate.benefits.b1.desc'
   | 'corporate.benefits.b2.title' | 'corporate.benefits.b2.desc'
   | 'corporate.benefits.b3.title' | 'corporate.benefits.b3.desc'
   | 'corporate.contact' | 'corporate.sponsor.title' | 'corporate.sponsor.subtitle'
   | 'corporate.sponsor.desc' | 'corporate.sponsor.item1' | 'corporate.sponsor.item2'
   | 'corporate.sponsor.item3' | 'corporate.cta.title' | 'corporate.cta.desc'
-  | 'corporate.cta.contact' | 'corporate.cta.partner'
+  | 'corporate.cta.contact' | 'corporate.cta.partner' | 'corporate.description'
   | 'sponsor.overview.title' | 'sponsor.overview.question' | 'sponsor.overview.description' 
   | 'sponsor.overview.benefit1' | 'sponsor.overview.benefit2'
   | 'sponsor.benefits.title' | 'sponsor.benefits.benefit1' | 'sponsor.benefits.benefit1.description'
@@ -217,19 +184,7 @@ type TranslationKeys =
   | 'curriculum.stack.env.env4' | 'curriculum.stack.frontend.title' | 'curriculum.stack.frontend.head'
   | 'curriculum.stack.frontend.list1' | 'curriculum.stack.frontend.list2' | 'curriculum.stack.frontend.list3'
   | 'curriculum.stack.backend.title' | 'curriculum.stack.backend.head' | 'curriculum.stack.backend.list1'
-  | 'curriculum.stack.backend.list2'
-  
-  // Add these keys for certification evaluation text
-  | 'certification.evaluation.criteria.title.ja'
-  | 'certification.evaluation.criteria.title.en'
-  
-  // Certification page section titles
-  | 'certification.about' | 'certification.ranks' | 'certification.evaluation.method'
-  | 'certification.certificate.about' | 'certification.certificate.format'
-  | 'certification.certificate.cycle' | 'certification.certificate.renewal'
-  | 'certification.certificate.expiration' | 'certification.exam.fees'
-  | 'certification.evaluation.criteria'
-  | 'certification.cta.title' | 'certification.cta.subtitle' | 'certification.cta.apply';
+  | 'curriculum.stack.backend.list2';
 
 type TranslationsType = {
   [key in TranslationKeys]: string;
@@ -239,11 +194,6 @@ type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: TranslationKeys | string) => string;
-  certificationLevels: CertificationLevel[];
-  evaluationProcesses: EvaluationProcess[];
-  guaranteeConditions: GuaranteeCondition[];
-  certificateDetails: CertificateDetail[];
-  getCertificationFees: (language: Language) => CertificationFee[];
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -524,7 +474,6 @@ const ja: TranslationsType = {
   // Corporate Page
   'corporate.title': '企業連携',
   'corporate.subtitle': '次世代のIT人材育成を共に',
-  'corporate.description': '次世代IT人材を共に育てる企業連携プログラム',
   'corporate.benefits.title': '企業連携のメリット',
   'corporate.benefits.b1.title': '人材育成',
   'corporate.benefits.b1.desc': '既存社員のスキルアップで生産性向上',
@@ -541,6 +490,7 @@ const ja: TranslationsType = {
   'corporate.sponsor.item3': '採用候補人材への早期接点',
   'corporate.cta.title': '次世代の教育×社会実装を、共に。',
   'corporate.cta.desc': 'HyaQShix百式は、教育機関を超えた「実務学習フィールド」です。AIによるアプリ開発を軸にした100日カリキュラムの中で、企業の実課題を扱うことで学びと価値創造が両立します。',
+  'corporate.description': '次世代IT人材を共に育てる企業連携プログラム',
   'corporate.cta.contact': 'お問い合わせ',
   'corporate.cta.partner': 'パートナー詳細',
   
@@ -577,7 +527,16 @@ const ja: TranslationsType = {
   'philosophy.cta.title': '私たちと一緒に未来を創りませんか？',
   'philosophy.cta.desc': 'HyaQShix百式で、AI時代のクリエイターとしての第一歩を踏み出しましょう。',
   'philosophy.cta.button': 'お問い合わせ',
+  'philosophy.mission.title': 'ミッション',
+  'philosophy.mission.desc': 'AIを「使いこなす武器」に変え、創造性を最大化する人材を育てる',
+  'philosophy.vision.title': 'ビジョン',
+  'philosophy.vision.desc': 'テクノロジーの民主化で、誰もがイノベーターになれる社会を実現',
+  'philosophy.values.title': '価値観',
+  'philosophy.values.v1': '実践主義：学びは行動から生まれる',
+  'philosophy.values.v2': '共創精神：互いに教え、学び合う',
+  'philosophy.values.v3': '未来志向：常に次の革新を追求する',
   
+  // Sponsor section
   'sponsor.overview.title': 'スポンサープログラム概要',
   'sponsor.overview.question': 'HyaQShixスポンサープログラムとは？',
   'sponsor.overview.description': '生成AI時代に100倍の生産力を発揮する次世代開発人材を育成するHyaQShix百式では、企業からの実務プロジェクトを教育プログラムと融合し、学習と実践を同時に実現します。',
@@ -640,49 +599,48 @@ const ja: TranslationsType = {
   'contact.partnership.flow.deliverable.desc': 'プロジェクト完了後、成果物の納品と報告会を実施します。学生からの発表と質疑応答を通じて、成果を確認します。',
   'contact.partnership.flow.feedback': 'フィードバック',
   'contact.partnership.flow.feedback.desc': 'プロジェクト終了後、企業と学生の双方からフィードバックを収集し、次回のプロジェクトに活かします。継続的な連携についても検討します。',
-  'philosophy.mission.title': 'ミッション',
-  'philosophy.mission.desc': 'AIを「使いこなす武器」に変え、創造性を最大化する人材を育てる',
-  'philosophy.vision.title': 'ビジョン',
-  'philosophy.vision.desc': 'テクノロジーの民主化で、誰もがイノベーターになれる社会を実現',
-  'philosophy.values.title': '価値観',
-  'philosophy.values.v1': '実践主義：学びは行動から生まれる',
-  'philosophy.values.v2': '共創精神：互いに教え、学び合う',
-  'philosophy.values.v3': '未来志向：常に次の革新を追求する',
   
   // Contact Page
   'contact.title': 'お問い合わせ',
-  'contact.subtitle': 'ご質問・お問い合わせ',
+  'contact.subtitle': 'ご質問・ご相談はこちらから',
   'contact.form.name': 'お名前',
   'contact.form.email': 'メールアドレス',
   'contact.form.subject': '件名',
   'contact.form.message': 'メッセージ',
-  'contact.form.submit': '送信',
+  'contact.form.submit': '送信する',
   'contact.info.title': '連絡先情報',
-  'contact.info.address': '東京都渋谷区...',
+  'contact.info.address': '東京都渋谷区・・・',
   'contact.info.email': 'info@hyaqshix.com',
   'contact.info.phone': '03-XXXX-XXXX',
   'contact.info.address.label': '住所',
-  'contact.info.email.label': 'メール',
-  'contact.info.phone.label': '電話',
+  'contact.info.email.label': 'メールアドレス',
+  'contact.info.phone.label': '電話番号',
   'contact.info.hours': '営業時間',
   'contact.info.hours.weekdays': '平日',
   'contact.info.hours.saturday': '土曜日',
   'contact.info.hours.sunday': '日曜日',
-  'contact.info.hours.closed': '休業',
+  'contact.info.hours.closed': '定休日',
   
-  // Curriculum Stack
-  'curriculum.stack.title': '開発ツールと技術スタック',
+  // Add missing sponsor overview translations to Japanese
+  'sponsor.overview.title': 'スポンサープログラム概要',
+  'sponsor.overview.question': 'HyaQShixスポンサープログラムとは？',
+  'sponsor.overview.description': '生成AI時代に100倍の生産力を発揮する次世代開発人材を育成するHyaQShix百式では、企業からの実務プロジェクトを教育プログラムと融合し、学習と実践を同時に実現します。',
+  'sponsor.overview.benefit1': '実務経験を積みながら学ぶ学生に、実際の企業課題に取り組んでもらうことができます',
+  'sponsor.overview.benefit2': '将来の採用候補となる優秀な人材との早期接点を得ることができます',
+  
+  // Curriculum stack
+  'curriculum.stack.title': '開発ツールとテックスタック',
   'curriculum.stack.requirements.title': '要件定義・設計支援ツール',
-  'curriculum.stack.requirements.head': 'ChatGPT (OpenAI)',
+  'curriculum.stack.requirements.head': 'ChatGPT（OpenAI）',
   'curriculum.stack.requirements.list1': '要件定義、仕様書作成、プロンプト設計、技術サポート',
-  'curriculum.stack.requirements.list2': 'インタラクティブな仕様ブレインストーミング、構造設計、要件整理支援',
+  'curriculum.stack.requirements.list2': '対話型の仕様ブレスト、構造設計、要求整理支援',
   'curriculum.stack.env.title': '開発環境・コードエディタ',
   'curriculum.stack.env.head1': 'Cursor（AI搭載開発エディタ）',
   'curriculum.stack.env.env1': 'AI支援のコード生成、デバッグ、最適化サポート',
-  'curriculum.stack.env.env2': 'ChatGPT APIと統合した高度な開発支援環境',
+  'curriculum.stack.env.env2': 'ChatGPT APIを統合した高度な開発補助環境',
   'curriculum.stack.env.head2': 'GitHub',
   'curriculum.stack.env.env3': 'バージョン管理、チーム開発（Gitフローの理解）、ポートフォリオ構築',
-  'curriculum.stack.env.env4': 'GitHub Copilotの活用（必要に応じて）',
+  'curriculum.stack.env.env4': 'GitHub Copilotの活用（適宜）',
   'curriculum.stack.frontend.title': 'フロントエンド開発',
   'curriculum.stack.frontend.head': '基本技術スタック',
   'curriculum.stack.frontend.list1': 'HTML / CSS / JavaScript（基本3技術）',
@@ -692,25 +650,6 @@ const ja: TranslationsType = {
   'curriculum.stack.backend.head': 'サーバーサイド技術',
   'curriculum.stack.backend.list1': 'Node.js（サーバーサイドJavaScript）',
   'curriculum.stack.backend.list2': 'Express.js（軽量バックエンドフレームワーク）',
-  
-  // Add these keys for certification evaluation text
-  'certification.evaluation.criteria.title.ja': '認定基準',
-  'certification.evaluation.criteria.title.en': 'Certification Criteria',
-  
-  // Certification page section titles
-  'certification.about': '認定資格について',
-  'certification.ranks': '認定ランク',
-  'certification.evaluation.method': '評価方法',
-  'certification.certificate.about': '証明書について',
-  'certification.certificate.format': '証明書の配布形式',
-  'certification.certificate.cycle': '認定サイクル',
-  'certification.certificate.renewal': '更新費用',
-  'certification.certificate.expiration': '更新期限・失効ルール',
-  'certification.exam.fees': '資格受験料',
-  'certification.evaluation.criteria': '評価基準：',
-  'certification.cta.title': 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？',
-  'certification.cta.subtitle': 'HyaQShix認定資格は、生成AI時代のスキルを証明する強力なツールです。',
-  'certification.cta.apply': '資格受験に申し込む',
 };
 
 // English translations
@@ -774,142 +713,8 @@ const en: TranslationsType = {
 
   // Footer
   'footer.copyright': '© 2024 HyaQShix百式. All rights reserved.',
-
-  // Pricing Page
-  'pricing.title': 'Pricing & Guarantee',
-  'pricing.subtitle': 'The perfect plan to accelerate your career in the AI era',
-  'pricing.plans.title': 'Course Fee Plans',
-  'pricing.plans.desc': 'HyaQShix offers multiple course plans tailored to your learning needs and budget. All plans provide the same curriculum and high-quality learning experience.',
-  'pricing.plans.basic.title': 'Basic Plan',
-  'pricing.plans.basic.badge': 'Popular',
-  'pricing.plans.basic.feature1': '3 months of full course access',
-  'pricing.plans.basic.feature2': '24-hour AI support',
-  'pricing.plans.basic.feature3': 'Weekly group mentoring',
-  'pricing.plans.basic.feature4': 'Community access',
-  'pricing.plans.basic.feature5': 'HyaQShix Silver certification upon graduation',
-  'pricing.plans.basic.feature6': 'Lump-sum payment discount available',
-  'pricing.plans.basic.cta': 'Apply Now',
-  'pricing.plans.basic.label': 'Basic Plan',
-  'pricing.plans.basic.price': '298,000',
-  'pricing.plans.basic.currency': '¥',
-  'pricing.plans.basic.tax': '(Tax included)',
-  'pricing.plans.monthly.title': 'Monthly Plan',
-  'pricing.plans.monthly.feature1': 'Monthly tuition payment',
-  'pricing.plans.monthly.feature2': '24-hour AI support',
-  'pricing.plans.monthly.feature3': 'Weekly group mentoring',
-  'pricing.plans.monthly.feature4': 'Community access',
-  'pricing.plans.monthly.feature5': 'Minimum 3-month contract',
-  'pricing.plans.monthly.feature6': 'HyaQShix Silver certification upon graduation',
-  'pricing.plans.monthly.cta': 'Apply Now',
-  'pricing.plans.monthly.label': 'Monthly Plan',
-  'pricing.plans.monthly.price': '110,000',
-  'pricing.plans.monthly.currency': '¥',
-  'pricing.plans.monthly.tax': '(Tax included) / month',
-  'pricing.plans.sponsor.title': 'Sponsored Plan',
-  'pricing.plans.sponsor.feature1': 'Tuition-free',
-  'pricing.plans.sponsor.feature2': 'Required participation in corporate projects',
-  'pricing.plans.sponsor.feature3': 'Selective screening process',
-  'pricing.plans.sponsor.feature4': 'Mandatory deliverables',
-  'pricing.plans.sponsor.feature5': 'Weekly report submission',
-  'pricing.plans.sponsor.feature6': 'HyaQShix Silver certification upon graduation',
-  'pricing.plans.sponsor.cta': 'Inquire',
-  'pricing.plans.sponsor.label': 'Sponsored Plan',
-  'pricing.plans.sponsor.price': 'Contact us',
-  'pricing.plans.sponsor.tax': '(For pricing details)',
-  'pricing.guarantee.title': 'Satisfaction Guarantee',
-  'pricing.guarantee.subtitle': '14-Day Full Refund Guarantee',
-  'pricing.guarantee.desc': 'Because we are confident in the quality of our program, HyaQShix offers a "Full Refund Guarantee". We will refund the full amount within 14 days of starting, no questions asked.',
-  'pricing.guarantee.conditions.title': 'Eligibility Criteria',
-  'pricing.guarantee.conditions.condition1': 'Apply within 14 days of starting the course',
-  'pricing.guarantee.conditions.condition2': 'Meet the evaluation criteria including assignment submissions and progress rates',
-  'pricing.guarantee.conditions.condition3': 'Application must be submitted by the student themselves',
-  'pricing.guarantee.procedure.title': 'Application Process',
-  'pricing.guarantee.procedure.desc': 'Contact your mentor or customer support to express your desire for a refund. We will provide you with a specialized form for submitting the necessary information.',
-  'pricing.guarantee.refund.title': 'Refund Process',
-  'pricing.guarantee.refund.desc': 'Refunds will be processed within 14 business days of accepting your application, using the same payment method. For installment plans, only the amount already paid will be refunded.',
-  'pricing.guarantee.notes.title': 'Notes',
-  'pricing.guarantee.notes.note1': 'This program can be used only once per student',
-  'pricing.guarantee.notes.note2': 'After refund, re-enrollment in the same program is not permitted',
-  'pricing.guarantee.notes.note3': 'If fraud or false applications are discovered, refunds will not be provided',
-  'pricing.payment.title': 'Payment Methods',
-  'pricing.payment.credit.title': 'Credit Card',
-  'pricing.payment.credit.desc': 'VISA, MasterCard, JCB, American Express, and Diners Club are accepted.',
-  'pricing.payment.bank.title': 'Bank Transfer',
-  'pricing.payment.bank.desc': 'After application, we will provide bank transfer information. Transfer fees are the responsibility of the customer.',
-  'pricing.payment.installment.title': 'Installment Payments',
-  'pricing.payment.installment.desc': 'Installment payment plans are available through affiliated finance companies. Approval is required.',
-  'pricing.payment.note': '※ If you are applying as a corporation, invoice payment is also available.',
-  'pricing.faq.title': 'Frequently Asked Questions',
-  'pricing.contact': 'For other questions, please contact us',
-  'pricing.satisfaction.title': 'Satisfaction Guarantee',
-  'pricing.satisfaction.alt': 'HyaQShix Satisfaction Guarantee',
-  'pricing.satisfaction.guarantee': '14-Day Full Refund Guarantee',
-  'pricing.satisfaction.desc': 'Because we are confident in the quality of our program, HyaQShix offers a "Full Refund Guarantee". We will refund the full amount within 14 days of starting, no questions asked.',
-  'pricing.satisfaction.eligibility': 'Eligibility Criteria',
-  'pricing.satisfaction.application': 'Application Process',
-  'pricing.satisfaction.application.desc': 'Contact your mentor or customer support to express your desire for a refund. We will provide you with a specialized form for submitting the necessary information.',
-  'pricing.satisfaction.refund': 'Refund Process',
-  'pricing.satisfaction.refund.desc': 'Refunds will be processed within 14 business days of accepting your application, using the same payment method. For installment plans, only the amount already paid will be refunded.',
-  'pricing.satisfaction.notes': 'Notes',
-  'pricing.cta.title': 'Are you ready to invest in your future?',
-  'pricing.cta.subtitle': 'Apply now and in 100 days you will be able to master AI and create business opportunities.',
-  'pricing.cta.button': 'Apply for a Free Trial',
-
-  // FAQs
-  'pricing.faq.q1': 'Is installment payment available?',
-  'pricing.faq.a1': 'Yes, installment payments are available via credit card. Installment fees are free for up to 3 payments. Fees apply for 6 and 12 payment plans, but both options are available.',
-  'pricing.faq.q2': 'Can I extend the course period?',
-  'pricing.faq.a2': 'Yes, you can extend the course period for an additional fee (¥49,800 per month). Extensions are available for up to 3 months.',
-  'pricing.faq.q3': 'Is there support after the course?',
-  'pricing.faq.a3': 'After graduation, you can join the alumni community. Additional mentor support and job/startup support programs are also available as options.',
-
-  // Payment methods
-  'pricing.payment.method1.title': 'Credit Card',
-  'pricing.payment.method1.desc': 'VISA, MasterCard, JCB, American Express, and Diners Club are accepted.',
-  'pricing.payment.method2.title': 'Bank Transfer',
-  'pricing.payment.method2.desc': 'After application, we will provide bank transfer information. Transfer fees are the responsibility of the customer.',
-  'pricing.payment.method3.title': 'Installment Payments',
-  'pricing.payment.method3.desc': 'Installment payment plans are available through affiliated finance companies. Approval is required.',
-
-  // Certification Page
-  'certification.title': 'Certification',
-  'certification.subtitle': '4-level certification system to prove your abilities',
-  'certification.desc': 'Our program offers a 4-level certification system that objectively verifies your learning achievements.',
-  'certification.silver.title': 'Silver Certification',
-  'certification.silver.desc': 'Certifies that you have basic development skills using AI',
-  'certification.gold.title': 'Gold Certification',
-  'certification.gold.desc': 'Certifies that you have reached a level where you can develop practical applications',
-  'certification.platina.title': 'Platinum Certification',
-  'certification.platina.desc': 'Certifies advanced-level skills in AI integration and applied design',
-  'certification.black.title': 'Black Certification',
-  'certification.black.desc': 'Certifies the highest level capable of creating innovation independently',
-  'certification.levels.title': 'Four Certification Levels',
-  'certification.eval.item1': 'Comprehensive evaluation including app completion, design skills, AI utilization, and implementation capability',
-  'certification.eval.item2': 'Qualified individuals receive PDF certificates and are listed in the certification directory (with shareable URL)',
-  'certification.eval.item3': 'Higher certifications have increased difficulty and are valuable for employment and VC evaluations',
-
-  // Corporate Page
-  'corporate.title': 'Corporate Partnership',
-  'corporate.subtitle': 'Developing next-generation IT talent together',
-  'corporate.description': 'Corporate partnership program for next-generation IT talent development',
-  'corporate.benefits.title': 'Benefits of Corporate Partnership',
-  'corporate.benefits.b1.title': 'Talent Development',
-  'corporate.benefits.b1.desc': 'Improve productivity by upgrading existing employee skills',
-  'corporate.benefits.b2.title': 'Recruitment Support',
-  'corporate.benefits.b2.desc': 'Introduction to excellent program graduates',
-  'corporate.benefits.b3.title': 'Technical Consultation',
-  'corporate.benefits.b3.desc': 'Access to technical consultation on AI development',
-  'corporate.contact': 'Contact us for corporate inquiries',
-  'corporate.sponsor.title': 'Sponsor Program Overview',
-  'corporate.sponsor.subtitle': 'What is the HyaQShix Sponsorship Program?',
-  'corporate.sponsor.desc': 'HyaQShix, which develops next-generation development talent with 100x productivity in the generative AI era, integrates practical projects from companies with our educational program, enabling learning and practice simultaneously.',
-  'corporate.sponsor.item1': 'Practical projects working on your company\'s challenges',
-  'corporate.sponsor.item2': 'Evaluation reports that visualize student abilities and growth',
-  'corporate.sponsor.item3': 'Early access to potential recruitment candidates',
-  'corporate.cta.title': 'Next-generation Education × Social Implementation, Together.',
-  'corporate.cta.desc': 'HyaQShix is a "practical learning field" beyond educational institutions. In our 100-day curriculum centered on app development with AI, handling real company challenges creates both learning and value.',
-  'corporate.cta.contact': 'Contact Us',
-  'corporate.cta.partner': 'Partner Details',
+  
+  // ... existing code ...
   
   // Philosophy Page
   'philosophy.title': 'Our Philosophy',
@@ -922,27 +727,38 @@ const en: TranslationsType = {
   'philosophy.values.v1': 'Pragmatism: Learning comes from action',
   'philosophy.values.v2': 'Co-creation: Teaching and learning from each other',
   'philosophy.values.v3': 'Future-oriented: Always pursuing the next innovation',
+  'philosophy.educational.title': 'Educational Philosophy',
+  'philosophy.educational.slogan': '10x Creativity with AI',
+  'philosophy.educational.desc': 'We provide education that uses AI to maximize human creativity. Technology has value only when it becomes "something you can master," and making that happen is our mission.',
+  'philosophy.practice.title': 'Practical Approach',
+  'philosophy.practice.desc': 'Gain real skills by actually working hands-on and building applications.',
+  'philosophy.intensive.title': 'Intensive Learning',
+  'philosophy.intensive.desc': 'Learn efficiently by concentrating your studies in a short period, developing skills you can immediately apply in practice.',
+  'philosophy.community.title': 'Community',
+  'philosophy.community.desc': 'We value an environment where like-minded peers learn from and inspire each other.',
+  'philosophy.values.practical.title': 'Focus on Practical Skills',
+  'philosophy.values.practical.desc': 'We prioritize practical skills over theoretical knowledge, focusing on abilities you can actually use.',
+  'philosophy.values.continuity.title': 'Continuous Growth',
+  'philosophy.values.continuity.desc': 'We provide the mindset and environment for continuous growth, not just temporary learning.',
+  'philosophy.values.innovation.title': 'Innovation',
+  'philosophy.values.innovation.desc': 'We constantly incorporate the latest technologies and trends, pursuing innovative teaching methods.',
+  'philosophy.founder.title': 'Founder\'s Message',
+  'philosophy.founder.slogan': 'Aiming for the Democratization of Technology',
+  'philosophy.founder.p1': 'HyaQShix began with the desire to bring the benefits of technology to more people. By leveraging AI, we want to create a world where anyone can bring their ideas to life without specialized knowledge.',
+  'philosophy.founder.p2': 'We aim to be more than just a programming school—a place that nurtures the next generation of creators. Our mission is to develop people who not only have technical skills but also problem-solving abilities and creativity, who can create new value together with AI.',
+  'philosophy.founder.role': 'Founder & CEO',
+  'philosophy.founder.name': 'Taro Tanaka',
+  'philosophy.vision.short.title': 'Short-term Vision',
+  'philosophy.vision.short.desc': 'Train 3,000 next-generation developers nationwide and increase the number of digital innovation leaders.',
+  'philosophy.vision.medium.title': 'Medium-term Vision',
+  'philosophy.vision.medium.desc': 'Expand our educational program throughout Asia and build a network of innovators that transcends national borders.',
+  'philosophy.vision.long.title': 'Long-term Vision',
+  'philosophy.vision.long.desc': 'Establish global standards for AI utilization skills and realize a society where anyone can bring their ideas to life.',
+  'philosophy.cta.title': 'Would you like to create the future with us?',
+  'philosophy.cta.desc': 'Take your first step as a creator in the AI era with HyaQShix.',
+  'philosophy.cta.button': 'Contact Us',
   
-  // Contact Page
-  'contact.title': 'Contact Us',
-  'contact.subtitle': 'Questions and inquiries',
-  'contact.form.name': 'Name',
-  'contact.form.email': 'Email',
-  'contact.form.subject': 'Subject',
-  'contact.form.message': 'Message',
-  'contact.form.submit': 'Submit',
-  'contact.info.title': 'Contact Information',
-  'contact.info.address': 'Shibuya, Tokyo...',
-  'contact.info.email': 'info@hyaqshix.com',
-  'contact.info.phone': '03-XXXX-XXXX',
-  'contact.info.address.label': 'Address',
-  'contact.info.email.label': 'Email',
-  'contact.info.phone.label': 'Phone',
-  'contact.info.hours': 'Business Hours',
-  'contact.info.hours.weekdays': 'Weekdays',
-  'contact.info.hours.saturday': 'Saturday',
-  'contact.info.hours.sunday': 'Sunday',
-  'contact.info.hours.closed': 'Closed',
+  // Curriculum stack
   'curriculum.stack.title': 'Development Tools and Tech Stack',
   'curriculum.stack.requirements.title': 'Requirements Definition and Design Support Tools',
   'curriculum.stack.requirements.head': 'ChatGPT (OpenAI)',
@@ -964,217 +780,7 @@ const en: TranslationsType = {
   'curriculum.stack.backend.head': 'Server-side Technology',
   'curriculum.stack.backend.list1': 'Node.js (server-side JavaScript)',
   'curriculum.stack.backend.list2': 'Express.js (lightweight backend framework)',
-  'curriculum.title': 'Curriculum',
-  'curriculum.subtitle': 'Master naturally through hands-on experience over 3 months',
-  'curriculum.explanation.title': 'How Will You Learn?',
-  'curriculum.explanation.p1': 'The HyaQShix "VIBE Coding" curriculum is designed for you to learn the essence of programming naturally through the experience of "developing apps through everyday conversation."',
-  'curriculum.explanation.p2': 'It\'s a practical program where you create an app or function every day while conversing with AI, instead of traditional programming.',
-  'curriculum.explanation.p3': 'Acquire the power to direct generative AI through knowledge and experience.',
-  'curriculum.timeline.title': 'Timeline (Example)',
-  'curriculum.timeline.days1.title': 'Day 1-10: Building Foundations',
-  'curriculum.timeline.days1.desc': 'HTML/CSS/JavaScript basics + Initial output experience with AI assistance',
-  'curriculum.timeline.days2.title': 'Day 11-40: Daily App Creation',
-  'curriculum.timeline.days2.desc': 'Develop and release one practical app daily using generative AI',
-  'curriculum.timeline.days3.title': 'Day 41-70: Deep Dives by Theme',
-  'curriculum.timeline.days3.desc': 'Industry specialization, advanced design, UI/UX, security, API integration, etc.',
-  'curriculum.timeline.days4.title': 'Day 71-100: Final Projects and Publication',
-  'curriculum.timeline.days4.desc': 'Create multiple culmination apps, publish, share, review, and get certified',
-  'curriculum.flow.title': 'Learning Flow',
-  'curriculum.flow.phase1.title': 'Foundation Building',
-  'curriculum.flow.phase1.period': 'Day 1-14',
-  'curriculum.flow.phase1.desc': 'Master basic AI tool operations and prompt engineering fundamentals. Set up development environments and understand basic application structures.',
-  'curriculum.flow.phase1.point1': 'Generative AI tool operation basics',
-  'curriculum.flow.phase1.point2': 'Prompt writing and optimization',
-  'curriculum.flow.phase1.point3': 'Development environment setup',
-  'curriculum.flow.phase1.point4': 'Building basic web applications',
-  'curriculum.flow.phase2.title': 'AI Application Development',
-  'curriculum.flow.phase2.period': 'Day 15-28',
-  'curriculum.flow.phase2.desc': 'Develop one practical application daily using AI. Gradually increase complexity to build practical skills.',
-  'curriculum.flow.phase2.point1': 'AI-powered UI/UX design',
-  'curriculum.flow.phase2.point2': 'Backend development optimization',
-  'curriculum.flow.phase2.point3': 'API utilization and data integration',
-  'curriculum.flow.phase2.point4': 'Building AI-integrated services',
-  'curriculum.flow.phase3.title': 'Marketing and Business Models',
-  'curriculum.flow.phase3.period': 'Day 29-42',
-  'curriculum.flow.phase3.desc': 'Learn how to bring developed apps to market, create marketing strategies, and build revenue models.',
-  'curriculum.flow.phase3.point1': 'Product positioning and differentiation',
-  'curriculum.flow.phase3.point2': 'User acquisition strategies',
-  'curriculum.flow.phase3.point3': 'Revenue model design',
-  'curriculum.flow.phase3.point4': 'Data analysis and service improvement',
-  'curriculum.flow.phase4.title': 'Scaling and Finances',
-  'curriculum.flow.phase4.period': 'Day 43-56',
-  'curriculum.flow.phase4.desc': 'Master business expansion methods, investment acquisition, and financial management basics to build sustainable businesses.',
-  'curriculum.flow.phase4.point1': 'Scalability design',
-  'curriculum.flow.phase4.point2': 'Creating investment pitches',
-  'curriculum.flow.phase4.point3': 'Financial planning and management',
-  'curriculum.flow.phase4.point4': 'Team building and organizational design',
-  'curriculum.flow.phase5.title': 'Graduation Project',
-  'curriculum.flow.phase5.period': 'Day 57-70',
-  'curriculum.flow.phase5.desc': 'Work on a final project that integrates everything you\'ve learned, creating a product that can be brought to market.',
-  'curriculum.flow.phase5.point1': 'Completing the business plan',
-  'curriculum.flow.phase5.point2': 'Product completion and testing',
-  'curriculum.flow.phase5.point3': 'Launch strategy development',
-  'curriculum.flow.phase5.point4': 'Pitching to investors',
-  'curriculum.approach.title': 'Learning Approach',
-  'curriculum.approach.output.title': 'Output-Focused',
-  'curriculum.approach.output.desc': 'Gain practical skills by efficiently learning from generative AI while developing applications daily.',
-  'curriculum.approach.iteration.title': 'Iteration and Improvement',
-  'curriculum.approach.iteration.desc': 'Solidify skills by repeatedly practicing the same patterns and continuously improving based on feedback.',
-  'curriculum.approach.community.title': 'Community Learning',
-  'curriculum.approach.community.desc': 'Develop multifaceted perspectives through mutual feedback and collaboration with fellow students.',
-  'curriculum.approach.mentoring.title': 'Coaching',
-  'curriculum.approach.mentoring.desc': 'Assigned mentors provide solid support for everything from learning plan creation to overcoming obstacles.',
-  'curriculum.tools.title': 'Tools and Technologies Used',
-  'curriculum.tools.ai.title': 'AI Tools',
-  'curriculum.tools.ai.tool1': 'ChatGPT (OpenAI)',
-  'curriculum.tools.ai.tool2': 'Claude (Anthropic)',
-  'curriculum.tools.ai.tool3': 'Midjourney',
-  'curriculum.tools.ai.tool4': 'DALL-E',
-  'curriculum.tools.ai.tool5': 'AutoGPT',
-  'curriculum.tools.dev.title': 'Development Tools',
-  'curriculum.tools.dev.tool1': 'GitHub Copilot',
-  'curriculum.tools.dev.tool2': 'Replit',
-  'curriculum.tools.dev.tool3': 'VS Code',
-  'curriculum.tools.dev.tool4': 'Cursor',
-  'curriculum.tools.dev.tool5': 'Firebase',
-  'curriculum.tools.marketing.title': 'Marketing Tools',
-  'curriculum.tools.marketing.tool1': 'Google Analytics',
-  'curriculum.tools.marketing.tool2': 'Meta Business Suite',
-  'curriculum.tools.marketing.tool3': 'Mailchimp',
-  'curriculum.tools.marketing.tool4': 'Hotjar',
-  'curriculum.tools.marketing.tool5': 'SEO Optimization Tools',
-  'curriculum.tools.business.title': 'Business Tools',
-  'curriculum.tools.business.tool1': 'Stripe',
-  'curriculum.tools.business.tool2': 'QuickBooks',
-  'curriculum.tools.business.tool3': 'Pitch',
-  'curriculum.tools.business.tool4': 'Notion',
-  'curriculum.tools.business.tool5': 'Airtable',
-  'curriculum.metrics.title': 'Success Metrics',
-  'curriculum.metrics.apps.title': 'Features',
-  'curriculum.metrics.apps.desc': 'Develop 100 app features and build a practical portfolio.',
-  'curriculum.metrics.monetize.title': 'Monetizable Projects',
-  'curriculum.metrics.monetize.desc': 'Aim for at least 10 of your developed apps to be of sufficient quality for monetization.',
-  'curriculum.metrics.main.title': 'Main Project',
-  'curriculum.metrics.main.desc': 'Complete one flagship project ready to be launched as an actual business.',
-  'curriculum.cta.title': 'Ready to Accelerate Your Career?',
-  'curriculum.cta.subtitle': 'Gain both the skills and achievements needed to thrive in the AI era with the HyaQShix program.',
-  'curriculum.cta.free_trial': 'Apply for Free Trial',
-  'curriculum.cta.pricing': 'View Pricing Plans',
-  
-  // Add missing properties related to sponsor
-  'sponsor.overview.title': 'Sponsor Program Overview',
-  'sponsor.overview.question': 'What is the HyaQShix Sponsorship Program?',
-  'sponsor.overview.description': 'HyaQShix develops next-generation talent with 100x productivity in the AI era by integrating real corporate projects with education, enabling learning and practice simultaneously.',
-  'sponsor.overview.benefit1': 'Work with students who are gaining practical experience on your actual business challenges',
-  'sponsor.overview.benefit2': 'Get early access to talented individuals who could become potential hires',
-  'sponsor.benefits.title': 'Benefits for Sponsor Companies',
-  'sponsor.benefits.benefit1': 'Innovation Creation',
-  'sponsor.benefits.benefit1.description': 'New solution perspectives through the latest AI technology and fresh thinking',
-  'sponsor.benefits.benefit2': 'Talent Development Support',
-  'sponsor.benefits.benefit2.description': 'Improve your employees\' AI literacy and inspire them through student interactions',
-  'sponsor.benefits.benefit3': 'Recruitment Pipeline',
-  'sponsor.benefits.benefit3.description': 'Early identification of excellent students and relationship building for recruitment',
-  'sponsor.benefits.benefit4': 'Branding',
-  'sponsor.benefits.benefit4.description': 'Enhanced brand value as a forward-thinking company committed to developing the next generation',
-  'education.integration.title': 'Integration of Business Challenges and Education',
-  'education.integration.integration': 'Practical Skills Through Real Challenges',
-  'education.integration.description': 'HyaQShix integrates real business challenges and projects into the curriculum to provide students with practical experience while creating valuable outcomes for companies.',
-  'education.integration.example': 'Examples of Collaboration Projects',
-  'education.integration.example1': 'Web Application Development',
-  'education.integration.example2': 'Data Analysis & Visualization',
-  'education.integration.example3': 'AI Integration',
-  'education.integration.example4': 'UI/UX Design Improvement',
-  'education.integration.example5': 'Business Efficiency Tools',
-  'education.integration.brief': 'Project Overview',
-  'education.integration.brief.description': 'Challenges provided by companies are adjusted according to student levels and curriculum progress, becoming projects with both educational and practical value.',
-  'special.certified.partner.title': 'Certified Partner System',
-  'special.certified.partner.certified': 'Become a HyaQShix Certified Partner',
-  'special.certified.partner.description': 'For companies establishing ongoing cooperative relationships, we offer special status and benefits as a HyaQShix Certified Partner.',
-  'special.certified.partner.logo': 'Use of Certification Logo',
-  'special.certified.partner.logo.description': 'Use the HyaQShix Certified Partner logo on your website and marketing materials.',
-  'special.certified.partner.project': 'Priority Project Participation',
-  'special.certified.partner.project.description': 'Priority provision of corporate challenges for student research projects and graduation works.',
-  'special.certified.partner.commercialization': 'Commercialization Support',
-  'special.certified.partner.commercialization.description': 'Priority support for commercialization and implementation of excellent solutions developed by students.',
-  'special.certified.partner.talent': 'Talent Introduction',
-  'special.certified.partner.talent.description': 'Priority introduction to graduates who match your company\'s needs.',
-  'partner.testimonials.title': 'Partner Company Testimonials',
-  'partner.testimonials.testimonial1': 'Through our partnership with HyaQShix, we gained solutions from fresh perspectives for dormant challenges within our company. The students\' flexible thinking and understanding of the latest technologies far exceeded our expectations.',
-  'partner.testimonials.name1': 'Ken Yamada',
-  'partner.testimonials.position1': 'CTO, TechnoFuture Inc.',
-  'partner.testimonials.testimonial2': 'We initially started this program as part of talent development, but it led to new business idea creation, providing great value. Our employees have also been inspired by the students\' serious commitment.',
-  'partner.testimonials.name2': 'Misaki Sato',
-  'partner.testimonials.position2': 'HR Director, Global Innovation Inc.',
-  'contact.partnership.flow.title': 'Partnership Process',
-  'contact.partnership.flow.step1': 'Company Registration',
-  'contact.partnership.flow.step2': 'Online Meeting',
-  'contact.partnership.flow.step3': 'Project Registration',
-  'contact.partnership.flow.step4': 'Mentoring',
-  'contact.partnership.flow.step5': 'Deliverable Submission',
-  'contact.partnership.flow.step6': 'Feedback',
-  'contact.partnership.flow.company.form': 'Company Registration',
-  'contact.partnership.flow.company.form.desc': 'Register your company information through our dedicated form. Please share your basic requirements and challenge overview at this stage.',
-  'contact.partnership.flow.online.meeting': 'Online Meeting',
-  'contact.partnership.flow.online.meeting.desc': 'Hold an initial meeting with a coordinator to discuss your company\'s needs, challenge details, and specific direction for collaboration.',
-  'contact.partnership.flow.project.registration': 'Project Registration',
-  'contact.partnership.flow.project.registration.desc': 'Determine specific project content and adjust it to be appropriate as a student challenge. Non-disclosure agreements can be signed as needed.',
-  'contact.partnership.flow.mentoring': 'Mentoring',
-  'contact.partnership.flow.mentoring.desc': 'During the project period, company representatives can provide advice and direction checks to students as needed.',
-  'contact.partnership.flow.deliverable': 'Deliverable Submission',
-  'contact.partnership.flow.deliverable.desc': 'After project completion, deliverables are submitted and a report meeting is held. Results are confirmed through student presentations and Q&A.',
-  'contact.partnership.flow.feedback': 'Feedback',
-  'contact.partnership.flow.feedback.desc': 'After project completion, feedback is collected from both companies and students to improve future projects. Ongoing collaboration is also considered.',
-  
-  // Philosophy missing values
-  'philosophy.educational.title': 'Educational Philosophy',
-  'philosophy.educational.slogan': '10x Creativity with AI',
-  'philosophy.educational.desc': 'We provide education that maximizes human creativity through AI utilization. Technology has value only when it can be mastered, and making that happen is our mission.',
-  'philosophy.practice.title': 'Practical Learning',
-  'philosophy.practice.desc': 'By actually working hands-on and creating applications, you gain real skills.',
-  'philosophy.intensive.title': 'Intensive Learning',
-  'philosophy.intensive.desc': 'Through concentrated learning in a short period, you efficiently acquire skills that can be immediately applied in practical work.',
-  'philosophy.community.title': 'Community',
-  'philosophy.community.desc': 'We value an environment where like-minded colleagues learn from and inspire each other.',
-  'philosophy.values.practical.title': 'Focus on Practical Skills',
-  'philosophy.values.practical.desc': 'We prioritize practical skills over knowledge, focusing on developing abilities that can be actually used.',
-  'philosophy.values.continuity.title': 'Continuous Growth',
-  'philosophy.values.continuity.desc': 'We provide the mindset and environment for continuous growth, not just temporary learning.',
-  'philosophy.values.innovation.title': 'Innovation',
-  'philosophy.values.innovation.desc': 'We constantly incorporate the latest technologies and trends, pursuing innovative educational methods.',
-  'philosophy.founder.title': 'Founder\'s Message',
-  'philosophy.founder.slogan': 'Aiming for the Democratization of Technology',
-  'philosophy.founder.p1': 'HyaQShix began with the desire to deliver the benefits of technology to more people. By utilizing the power of AI, we want to create a world where anyone can shape their ideas without specialized knowledge.',
-  'philosophy.founder.p2': 'We aim to be not just a programming school, but a place that nurtures the next generation of creators. Our mission is to develop talent that can create new value with AI, cultivating problem-solving abilities and creativity beyond just technical skills.',
-  'philosophy.founder.role': 'Founder & CEO',
-  'philosophy.founder.name': 'Taro Tanaka',
-  'philosophy.vision.short.title': 'Short-term Vision',
-  'philosophy.vision.short.desc': 'Train 3,000 next-generation developers nationwide to increase digital innovation leaders.',
-  'philosophy.vision.medium.title': 'Medium-term Vision',
-  'philosophy.vision.medium.desc': 'Expand educational programs throughout Asia to build a network of innovators across borders.',
-  'philosophy.vision.long.title': 'Long-term Vision',
-  'philosophy.vision.long.desc': 'AI活用スキルの世界標準を確立し、誰もが自分のアイデアを形にできる社会を実現します。',
-  'philosophy.cta.title': '私たちと一緒に未来を創りませんか？',
-  'philosophy.cta.desc': 'HyaQShix百式で、AI時代のクリエイターとしての第一歩を踏み出しましょう。',
-  'philosophy.cta.button': 'お問い合わせ',
-  
-  // Add these keys for certification evaluation text
-  'certification.evaluation.criteria.title.ja': '認定基準',
-  'certification.evaluation.criteria.title.en': 'Certification Criteria',
-  
-  // Certification page section titles
-  'certification.about': 'About Certification',
-  'certification.ranks': 'Certification Ranks',
-  'certification.evaluation.method': 'Evaluation Method',
-  'certification.certificate.about': 'About the Certificate',
-  'certification.certificate.format': 'Certificate Distribution Format',
-  'certification.certificate.cycle': 'Certification Cycle',
-  'certification.certificate.renewal': 'Renewal Fee',
-  'certification.certificate.expiration': 'Renewal Deadline & Expiration Rules',
-  'certification.exam.fees': 'Certification Exam Fees',
-  'certification.evaluation.criteria': 'Evaluation Criteria:',
-  'certification.cta.title': 'Would you like to officially certify your AI skills and expand your career possibilities?',
-  'certification.cta.subtitle': 'HyaQShix certification is a powerful tool to validate your skills in the generative AI era.',
-  'certification.cta.apply': 'Apply for Certification Exam',
+  // ... existing code ...
 };
 
 const translations: Record<Language, TranslationsType> = { ja, en };
@@ -1205,185 +811,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return key;
   };
 
-  // Certification levels data
-  const certificationLevels: CertificationLevel[] = [
-    {
-      title: { ja: 'HyaQShix Silver', en: 'HyaQShix Silver' },
-      passRate: { ja: '合格率：50%', en: 'Pass Rate: 50%' },
-      description: { 
-        ja: 'AIを活用したアプリケーション開発の基礎スキルを証明するエントリーレベルの認定資格です。', 
-        en: 'An entry-level certification that validates basic skills in AI-powered application development.' 
-      },
-      criteria: [
-        { ja: '基本的なAIツールの活用力', en: 'Basic AI tool utilization skills' },
-        { ja: 'プロンプトエンジニアリングの基礎', en: 'Fundamentals of prompt engineering' },
-        { ja: 'シンプルなWebアプリケーションの開発能力', en: 'Ability to develop simple web applications' },
-        { ja: '基本的なUI/UXデザイン理解', en: 'Basic understanding of UI/UX design' }
-      ],
-      bgClass: 'bg-gradient-to-br from-gray-600 to-gray-700',
-      borderClass: 'border-gray-500'
-    },
-    {
-      title: { ja: 'HyaQShix Gold', en: 'HyaQShix Gold' },
-      passRate: { ja: '合格率：30%', en: 'Pass Rate: 30%' },
-      description: { 
-        ja: 'AIを活用した実用的なアプリケーション開発と基本的なマーケティング知識を兼ね備えた中級者向け認定資格です。', 
-        en: 'An intermediate certification for those with practical AI application development skills and basic marketing knowledge.' 
-      },
-      criteria: [
-        { ja: '高度なAIツールの活用と連携', en: 'Advanced AI tool utilization and integration' },
-        { ja: '複雑なアプリケーション開発能力', en: 'Ability to develop complex applications' },
-        { ja: '基本的なマーケティング戦略の策定', en: 'Development of basic marketing strategies' },
-        { ja: 'ユーザー体験の最適化', en: 'User experience optimization' }
-      ],
-      bgClass: 'bg-gradient-to-br from-yellow-500 to-yellow-600',
-      borderClass: 'border-yellow-400'
-    },
-    {
-      title: { ja: 'HyaQShix Platina', en: 'HyaQShix Platina' },
-      passRate: { ja: '合格率：15%', en: 'Pass Rate: 15%' },
-      description: { 
-        ja: 'AIを活用した高度なアプリケーション開発とビジネスモデル構築の能力を証明する上級者向け認定資格です。', 
-        en: 'An advanced certification that validates sophisticated AI application development skills and business model construction abilities.' 
-      },
-      criteria: [
-        { ja: '複数のAIツールの統合と最適化', en: 'Integration and optimization of multiple AI tools' },
-        { ja: '完成度の高いアプリケーション開発', en: 'Development of highly polished applications' },
-        { ja: '収益モデルの設計と実装', en: 'Revenue model design and implementation' },
-        { ja: 'データ分析とサービス改善', en: 'Data analysis and service improvement' }
-      ],
-      bgClass: 'bg-gradient-to-br from-gray-300 to-gray-400',
-      borderClass: 'border-gray-300',
-      textClass: 'text-gray-900'
-    },
-    {
-      title: { ja: 'HyaQShix Black', en: 'HyaQShix Black' },
-      passRate: { ja: '合格率：5%', en: 'Pass Rate: 5%' },
-      description: { 
-        ja: 'AIを活用した事業創造と拡大の能力を証明するエキスパートレベルの認定資格です。業界での最高峰として認知されています。', 
-        en: 'An expert-level certification that validates business creation and growth capabilities using AI, recognized as the industry pinnacle.' 
-      },
-      criteria: [
-        { ja: '革新的なAI活用方法の開発', en: 'Development of innovative AI utilization methods' },
-        { ja: 'スケーラブルなサービス設計', en: 'Scalable service design' },
-        { ja: '総合的な事業戦略の策定', en: 'Comprehensive business strategy development' },
-        { ja: '投資家向けピッチの作成と実行', en: 'Creation and execution of investor pitches' }
-      ],
-      bgClass: 'bg-gradient-to-br from-gray-900 to-black',
-      borderClass: 'border-gray-700'
-    }
-  ];
-
-  // Evaluation process data
-  const evaluationProcesses: EvaluationProcess[] = [
-    {
-      icon: 'fa-hourglass-half',
-      title: { 
-        ja: '制限時間内のアプリ構築', 
-        en: 'Application Building within Time Limit' 
-      },
-      description: { 
-        ja: '各ランクに応じた難易度の課題に対し、制限時間内にアプリケーションを構築することが求められます。課題の難易度と制限時間はランクによって異なります。', 
-        en: 'You will be required to build an application within a time limit for challenges with difficulty levels corresponding to each rank. The difficulty and time limit vary by rank.' 
-      }
-    },
-    {
-      icon: 'fa-robot',
-      title: { 
-        ja: 'AIによる自動評価', 
-        en: 'Automated AI Evaluation' 
-      },
-      description: { 
-        ja: '提出されたコードに対して、コード品質、機能達成率、UI整合性などの観点から、AIによる自動評価が行われます。', 
-        en: 'Submitted code will be automatically evaluated by AI for code quality, functionality achievement rate, UI consistency, and other aspects.' 
-      }
-    },
-    {
-      icon: 'fa-user-check',
-      title: { 
-        ja: '人間によるレビュー', 
-        en: 'Human Review' 
-      },
-      description: { 
-        ja: '専門家によるレビューでは、独創性、ユーザー体験、構成力などの定性的な側面が評価されます。', 
-        en: 'Expert reviewers will evaluate qualitative aspects such as originality, user experience, and structural capability.' 
-      }
-    }
-  ];
-
-  // Guarantee conditions
-  const guaranteeConditions: GuaranteeCondition[] = [
-    { 
-      ja: '受講開始から14日以内に申請すること', 
-      en: 'Apply within 14 days of starting the course' 
-    },
-    { 
-      ja: '所定の課題提出や進捗率など、評価対象条件を満たしていること', 
-      en: 'Meet the evaluation criteria including assignment submissions and progress rates' 
-    },
-    { 
-      ja: '受講生本人からの申請であること', 
-      en: 'Application must be submitted by the student themselves' 
-    }
-  ];
-
-  // Certificate details
-  const certificateDetails: CertificateDetail[] = [
-    { ja: '保持者名', en: 'Holder Name' },
-    { ja: '認定ランク', en: 'Certification Rank' },
-    { ja: 'シリアルID', en: 'Serial ID' },
-    { ja: '発行日', en: 'Issue Date' },
-    { ja: '有効期限', en: 'Expiration Date' },
-    { ja: '照合用QRコード', en: 'Verification QR Code' }
-  ];
-
-  // Function to get certification fees with proper language handling
-  const getCertificationFees = (lang: Language): CertificationFee[] => {
-    return [
-      {
-        rank: 'HyaQShix Silver',
-        fee: '49,800円',
-        passRate: '50%',
-        renewal: '3年ごと'
-      },
-      {
-        rank: 'HyaQShix Gold',
-        fee: '49,800円',
-        passRate: '30%',
-        renewal: '3年ごと'
-      },
-      {
-        rank: 'HyaQShix Platina',
-        fee: '49,800円',
-        passRate: '15%',
-        renewal: '3年ごと'
-      },
-      {
-        rank: 'HyaQShix Black',
-        fee: '49,800円',
-        passRate: '5%',
-        renewal: '3年ごと'
-      },
-      {
-        rank: lang === 'en' ? 'Certification Renewal' : '資格更新料',
-        fee: '8,800円',
-        passRate: '-',
-        renewal: lang === 'en' ? 'Common for all ranks' : 'すべてのランク共通'
-      }
-    ];
-  };
-
   return (
-    <LanguageContext.Provider value={{ 
-      language, 
-      setLanguage, 
-      t,
-      certificationLevels,
-      evaluationProcesses,
-      guaranteeConditions,
-      certificateDetails,
-      getCertificationFees
-    }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -45,92 +45,6 @@ export default function PricingPage() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
   
-  // FAQ items (dual language)
-  const faqItems = [
-    {
-      question: 'pricing.faq.q1',
-      answer: 'pricing.faq.a1'
-    },
-    {
-      question: 'pricing.faq.q2',
-      answer: 'pricing.faq.a2'
-    },
-    {
-      question: 'pricing.faq.q3',
-      answer: 'pricing.faq.a3'
-    }
-  ];
-  
-  // Plan features
-  const planFeatures = {
-    basic: [
-      'pricing.plans.basic.feature1',
-      'pricing.plans.basic.feature2',
-      'pricing.plans.basic.feature3',
-      'pricing.plans.basic.feature4',
-      'pricing.plans.basic.feature5',
-      'pricing.plans.basic.feature6'
-    ],
-    monthly: [
-      'pricing.plans.monthly.feature1',
-      'pricing.plans.monthly.feature2',
-      'pricing.plans.monthly.feature3',
-      'pricing.plans.monthly.feature4',
-      'pricing.plans.monthly.feature5',
-      'pricing.plans.monthly.feature6'
-    ],
-    sponsor: [
-      'pricing.plans.sponsor.feature1',
-      'pricing.plans.sponsor.feature2',
-      'pricing.plans.sponsor.feature3',
-      'pricing.plans.sponsor.feature4',
-      'pricing.plans.sponsor.feature5',
-      'pricing.plans.sponsor.feature6'
-    ]
-  };
-  
-  // Guarantee conditions
-  const guaranteeConditions = [
-    'pricing.guarantee.conditions.condition1',
-    'pricing.guarantee.conditions.condition2',
-    'pricing.guarantee.conditions.condition3'
-  ];
-  
-  // Notes
-  const guaranteeNotes = [
-    'pricing.guarantee.notes.note1',
-    'pricing.guarantee.notes.note2',
-    'pricing.guarantee.notes.note3'
-  ];
-  
-  // Payment methods
-  const paymentMethods = [
-    {
-      icon: '💳',
-      title: 'pricing.payment.method1.title',
-      desc: 'pricing.payment.method1.desc'
-    },
-    {
-      icon: '🏦',
-      title: 'pricing.payment.method2.title',
-      desc: 'pricing.payment.method2.desc'
-    },
-    {
-      icon: '💸',
-      title: 'pricing.payment.method3.title',
-      desc: 'pricing.payment.method3.desc'
-    }
-  ];
-  
-  // CTA content
-  const ctaContent = {
-    titleJa: 'まずは無料体験に申し込んでみませんか？',
-    titleEn: 'Are you ready to invest in your future?',
-    subtitleJa: 'あなたの生産性を10倍・100倍にする未来への第一歩をここから始めましょう。',
-    subtitleEn: 'Apply now and in 100 days you will be able to master AI and create business opportunities.',
-    buttonJa: '無料体験に申し込む',
-    buttonEn: 'Apply for a Free Trial'
-  };
   
   return (
     <div className="font-['Poppins',sans-serif] bg-black text-white">
@@ -234,16 +148,54 @@ export default function PricingPage() {
                   <p className="text-gray-400">{t('pricing.plans.basic.tax')}</p>
                 </div>
                 <ul className="mb-8 space-y-4">
-                  {planFeatures.basic.map((featureKey, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <div>
-                        <span className="block text-gray-200">{t(featureKey)}</span>
-                      </div>
-                    </li>
-                  ))}
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.basic.feature1')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.basic.feature2')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.basic.feature3')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.basic.feature4')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.basic.feature5')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.basic.feature6')}</span>
+                    </div>
+                  </li>
                 </ul>
                 <Link href="/contact" className="block w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold py-3 px-4 rounded-lg text-center transition-all duration-300 hover:scale-105">
                   <span className="block">{t('pricing.plans.basic.cta')}</span>
@@ -271,16 +223,54 @@ export default function PricingPage() {
                   <p className="text-gray-400">{t('pricing.plans.monthly.tax')}</p>
                 </div>
                 <ul className="mb-8 space-y-4">
-                  {planFeatures.monthly.map((featureKey, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <div>
-                        <span className="block text-gray-200">{t(featureKey)}</span>
-                      </div>
-                    </li>
-                  ))}
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.monthly.feature1')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.monthly.feature2')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.monthly.feature3')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.monthly.feature4')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.monthly.feature5')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.monthly.feature6')}</span>
+                    </div>
+                  </li>
                 </ul>
                 <Link href="/contact" className="block w-full bg-transparent hover:bg-white/10 text-yellow-400 font-bold py-3 px-4 rounded-lg border border-yellow-400 text-center transition-all duration-300 hover:scale-105">
                   <span className="block">{t('pricing.plans.monthly.cta')}</span>
@@ -307,16 +297,54 @@ export default function PricingPage() {
                   <p className="text-gray-400">{t('pricing.plans.sponsor.tax')}</p>
                 </div>
                 <ul className="mb-8 space-y-4">
-                  {planFeatures.sponsor.map((featureKey, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <div>
-                        <span className="block text-gray-200">{t(featureKey)}</span>
-                      </div>
-                    </li>
-                  ))}
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.sponsor.feature1')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.sponsor.feature2')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.sponsor.feature3')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.sponsor.feature4')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.sponsor.feature5')}</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                      <span className="block text-gray-200">{t('pricing.plans.sponsor.feature6')}</span>
+                    </div>
+                  </li>
                 </ul>
                 <Link href="/contact" className="block w-full bg-transparent hover:bg-white/10 text-yellow-400 font-bold py-3 px-4 rounded-lg border border-yellow-400 text-center transition-all duration-300 hover:scale-105">
                   <span className="block">{t('pricing.plans.sponsor.cta')}</span>
@@ -395,14 +423,24 @@ export default function PricingPage() {
                       {t('pricing.satisfaction.eligibility')}
                     </h4>
                     <ul className="mb-4 space-y-2 pl-10">
-                      {guaranteeConditions.map((conditionKey, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          <span className="block text-gray-300">{t(conditionKey)}</span>
-                        </li>
-                      ))}
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span className="block text-gray-300">{t('pricing.guarantee.conditions.condition1')}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span className="block text-gray-300">{t('pricing.guarantee.conditions.condition2')}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span className="block text-gray-300">{t('pricing.guarantee.conditions.condition3')}</span>
+                      </li>
                     </ul>
                   </div>
                   
@@ -432,14 +470,24 @@ export default function PricingPage() {
                     {t('pricing.satisfaction.notes')}
                   </h4>
                   <ul className="space-y-2">
-                    {guaranteeNotes.map((noteKey, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <svg className="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                        </svg>
-                        <span className="block text-gray-300">{t(noteKey)}</span>
-                      </li>
-                    ))}
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                      </svg>
+                      <span className="block text-gray-300">{t('pricing.guarantee.notes.note1')}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                      </svg>
+                      <span className="block text-gray-300">{t('pricing.guarantee.notes.note2')}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                      </svg>
+                      <span className="block text-gray-300">{t('pricing.guarantee.notes.note3')}</span>
+                    </li>
                   </ul>
                 </div>
               </motion.div>
@@ -469,39 +517,98 @@ export default function PricingPage() {
             ></motion.div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {paymentMethods.map((method, idx) => (
+              <motion.div 
+                className="backdrop-blur-md bg-white/5 border border-gray-800 rounded-xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300"
+                variants={fadeInUp}
+                whileHover={{
+                  y: -8,
+                  transition: { duration: 0.3 }
+                }}
+              >
                 <motion.div 
-                  key={idx} 
-                  className="backdrop-blur-md bg-white/5 border border-gray-800 rounded-xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300"
-                  variants={fadeInUp}
-                  whileHover={{
-                    y: -8,
-                    transition: { duration: 0.3 }
+                  className="text-5xl mb-6 text-yellow-400"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 2, 0, -2, 0]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity,
+                    repeatType: "reverse" 
                   }}
                 >
-                  <motion.div 
-                    className="text-5xl mb-6 text-yellow-400"
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 2, 0, -2, 0]
-                    }}
-                    transition={{ 
-                      duration: 4, 
-                      repeat: Infinity,
-                      repeatType: "reverse" 
-                    }}
-                  >
-                    {method.icon}
-                  </motion.div>
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent mb-6"></div>
-                  <h3 className="text-xl font-bold mb-4 text-yellow-400">
-                    {t(method.title)}
-                  </h3>
-                  <p className="text-gray-300">
-                    {t(method.desc)}
-                  </p>
+                  💳
                 </motion.div>
-              ))}
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent mb-6"></div>
+                <h3 className="text-xl font-bold mb-4 text-yellow-400">
+                  {t('pricing.payment.method1.title')}
+                </h3>
+                <p className="text-gray-300">
+                  {t('pricing.payment.method1.desc')}
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="backdrop-blur-md bg-white/5 border border-gray-800 rounded-xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300"
+                variants={fadeInUp}
+                whileHover={{
+                  y: -8,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.div 
+                  className="text-5xl mb-6 text-yellow-400"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 2, 0, -2, 0]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity,
+                    repeatType: "reverse" 
+                  }}
+                >
+                  🏦
+                </motion.div>
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent mb-6"></div>
+                <h3 className="text-xl font-bold mb-4 text-yellow-400">
+                  {t('pricing.payment.method2.title')}
+                </h3>
+                <p className="text-gray-300">
+                  {t('pricing.payment.method2.desc')}
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="backdrop-blur-md bg-white/5 border border-gray-800 rounded-xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300"
+                variants={fadeInUp}
+                whileHover={{
+                  y: -8,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.div 
+                  className="text-5xl mb-6 text-yellow-400"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 2, 0, -2, 0]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity,
+                    repeatType: "reverse" 
+                  }}
+                >
+                  💸
+                </motion.div>
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent mb-6"></div>
+                <h3 className="text-xl font-bold mb-4 text-yellow-400">
+                  {t('pricing.payment.method3.title')}
+                </h3>
+                <p className="text-gray-300">
+                  {t('pricing.payment.method3.desc')}
+                </p>
+              </motion.div>
             </div>
             
             <motion.p 
@@ -537,58 +644,158 @@ export default function PricingPage() {
             ></motion.div>
             
             <div className="space-y-4">
-              {faqItems.map((item, index) => (
-                <motion.div 
-                  key={index} 
-                  className="backdrop-blur-md bg-white/5 border border-gray-800 rounded-xl overflow-hidden shadow-xl"
-                  variants={fadeInUp}
+              <motion.div 
+                key={0} 
+                className="backdrop-blur-md bg-white/5 border border-gray-800 rounded-xl overflow-hidden shadow-xl"
+                variants={fadeInUp}
+              >
+                <motion.button 
+                  className="w-full text-left p-6 flex justify-between items-center focus:outline-none group"
+                  onClick={() => toggleFaq(0)}
+                  whileHover={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)'
+                  }}
                 >
-                  <motion.button 
-                    className="w-full text-left p-6 flex justify-between items-center focus:outline-none group"
-                    onClick={() => toggleFaq(index)}
-                    whileHover={{
-                      backgroundColor: 'rgba(255, 255, 255, 0.05)'
-                    }}
-                  >
-                    <h3 className="text-xl font-bold group-hover:text-yellow-400 transition-colors duration-300">
-                      <span className="block">{t(item.question)}</span>
-                    </h3>
-                    <motion.div 
-                      className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 ml-4"
-                      animate={{ 
-                        rotate: openFaqIndex === index ? 180 : 0,
-                        backgroundColor: openFaqIndex === index ? 'rgba(234, 179, 8, 0.4)' : 'rgba(234, 179, 8, 0.2)'
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <svg 
-                        className="w-5 h-5 text-yellow-400" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24" 
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                      </svg>
-                    </motion.div>
-                  </motion.button>
+                  <h3 className="text-xl font-bold group-hover:text-yellow-400 transition-colors duration-300">
+                    <span className="block">{t('pricing.faq.q1')}</span>
+                  </h3>
                   <motion.div 
-                    className="overflow-hidden"
+                    className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 ml-4"
                     animate={{ 
-                      height: openFaqIndex === index ? 'auto' : 0,
-                      opacity: openFaqIndex === index ? 1 : 0
+                      rotate: openFaqIndex === 0 ? 180 : 0,
+                      backgroundColor: openFaqIndex === 0 ? 'rgba(234, 179, 8, 0.4)' : 'rgba(234, 179, 8, 0.2)'
                     }}
-                    transition={{ 
-                      duration: 0.3, 
-                      ease: "easeInOut" 
-                    }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <div className="p-6 pt-0 text-gray-300 border-t border-gray-800">
-                      <span className="block leading-relaxed">{t(item.answer)}</span>
-                    </div>
+                    <svg 
+                      className="w-5 h-5 text-yellow-400" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
                   </motion.div>
+                </motion.button>
+                <motion.div 
+                  className="overflow-hidden"
+                  animate={{ 
+                    height: openFaqIndex === 0 ? 'auto' : 0,
+                    opacity: openFaqIndex === 0 ? 1 : 0
+                  }}
+                  transition={{ 
+                    duration: 0.3, 
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <div className="p-6 pt-0 text-gray-300 border-t border-gray-800">
+                    <span className="block leading-relaxed">{t('pricing.faq.a1')}</span>
+                  </div>
                 </motion.div>
-              ))}
+              </motion.div>
+
+              <motion.div 
+                key={1} 
+                className="backdrop-blur-md bg-white/5 border border-gray-800 rounded-xl overflow-hidden shadow-xl"
+                variants={fadeInUp}
+              >
+                <motion.button 
+                  className="w-full text-left p-6 flex justify-between items-center focus:outline-none group"
+                  onClick={() => toggleFaq(1)}
+                  whileHover={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)'
+                  }}
+                >
+                  <h3 className="text-xl font-bold group-hover:text-yellow-400 transition-colors duration-300">
+                    <span className="block">{t('pricing.faq.q2')}</span>
+                  </h3>
+                  <motion.div 
+                    className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 ml-4"
+                    animate={{ 
+                      rotate: openFaqIndex === 1 ? 180 : 0,
+                      backgroundColor: openFaqIndex === 1 ? 'rgba(234, 179, 8, 0.4)' : 'rgba(234, 179, 8, 0.2)'
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <svg 
+                      className="w-5 h-5 text-yellow-400" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </motion.div>
+                </motion.button>
+                <motion.div 
+                  className="overflow-hidden"
+                  animate={{ 
+                    height: openFaqIndex === 1 ? 'auto' : 0,
+                    opacity: openFaqIndex === 1 ? 1 : 0
+                  }}
+                  transition={{ 
+                    duration: 0.3, 
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <div className="p-6 pt-0 text-gray-300 border-t border-gray-800">
+                    <span className="block leading-relaxed">{t('pricing.faq.a2')}</span>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <motion.div 
+                key={2} 
+                className="backdrop-blur-md bg-white/5 border border-gray-800 rounded-xl overflow-hidden shadow-xl"
+                variants={fadeInUp}
+              >
+                <motion.button 
+                  className="w-full text-left p-6 flex justify-between items-center focus:outline-none group"
+                  onClick={() => toggleFaq(2)}
+                  whileHover={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)'
+                  }}
+                >
+                  <h3 className="text-xl font-bold group-hover:text-yellow-400 transition-colors duration-300">
+                    <span className="block">{t('pricing.faq.q3')}</span>
+                  </h3>
+                  <motion.div 
+                    className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 ml-4"
+                    animate={{ 
+                      rotate: openFaqIndex === 2 ? 180 : 0,
+                      backgroundColor: openFaqIndex === 2 ? 'rgba(234, 179, 8, 0.4)' : 'rgba(234, 179, 8, 0.2)'
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <svg 
+                      className="w-5 h-5 text-yellow-400" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </motion.div>
+                </motion.button>
+                <motion.div 
+                  className="overflow-hidden"
+                  animate={{ 
+                    height: openFaqIndex === 2 ? 'auto' : 0,
+                    opacity: openFaqIndex === 2 ? 1 : 0
+                  }}
+                  transition={{ 
+                    duration: 0.3, 
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <div className="p-6 pt-0 text-gray-300 border-t border-gray-800">
+                    <span className="block leading-relaxed">{t('pricing.faq.a3')}</span>
+                  </div>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
         </section>
