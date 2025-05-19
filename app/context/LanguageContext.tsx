@@ -37,6 +37,17 @@ type CertificationFee = {
   renewal: string;
 };
 
+type CertificationFeeSection = {
+  title: BilingualText;
+  description: BilingualText;
+  tableHeaders: {
+    rank: BilingualText;
+    fee: BilingualText;
+    passRate: BilingualText;
+    renewal: BilingualText;
+  };
+};
+
 type TranslationKeys = 
   // Navigation
   | 'nav.home' | 'nav.curriculum' | 'nav.pricing' | 'nav.certification' 
@@ -235,6 +246,53 @@ type TranslationsType = {
   [key in TranslationKeys]: string;
 };
 
+// Add new types for certification page
+type CertificationHero = {
+  title: BilingualText;
+  subtitle: BilingualText;
+  backgroundImage: string;
+};
+
+type CertificationOverview = {
+  title: BilingualText;
+  description: BilingualText;
+  points: {
+    title: BilingualText;
+    description: BilingualText;
+  }[];
+};
+
+type CertificationEvaluation = {
+  title: BilingualText;
+  description: BilingualText;
+  processes: {
+    icon: string;
+    title: BilingualText;
+    description: BilingualText;
+  }[];
+};
+
+type CertificationCertificate = {
+  title: BilingualText;
+  description: BilingualText;
+  details: BilingualText[];
+  validityPeriod: BilingualText;
+  renewalInfo: BilingualText[];
+  expirationInfo: BilingualText;
+  sampleImage: {
+    src: string;
+    alt: BilingualText;
+    width: number;
+    height: number;
+  };
+};
+
+type CertificationCTA = {
+  title: BilingualText;
+  subtitle: BilingualText;
+  buttonText: BilingualText;
+};
+
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -244,6 +302,12 @@ type LanguageContextType = {
   guaranteeConditions: GuaranteeCondition[];
   certificateDetails: CertificateDetail[];
   getCertificationFees: (language: Language) => CertificationFee[];
+  certificationHero: CertificationHero;
+  certificationOverview: CertificationOverview;
+  certificationEvaluation: CertificationEvaluation;
+  certificationCertificate: CertificationCertificate;
+  certificationCTA: CertificationCTA;
+  certificationFeeSection: CertificationFeeSection;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -1373,6 +1437,119 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     ];
   };
 
+  // Add new properties
+  const certificationHero: CertificationHero = {
+    title: { ja: '資格認定のヒーロー', en: 'Certification Hero' },
+    subtitle: { ja: 'AI時代のスキルを証明する', en: 'Prove Your Skills in the AI Era' },
+    backgroundImage: '/path/to/certification-hero-image.jpg'
+  };
+
+  const certificationOverview: CertificationOverview = {
+    title: { ja: '資格認定の概要', en: 'Certification Overview' },
+    description: { ja: '当プログラムでは、AI時代のスキルを証明するための4段階の資格制度を設けています。', en: 'Our program offers a 4-level certification system to prove your skills in the AI era.' },
+    points: [
+      { 
+        title: { ja: 'アプリケーション開発の基礎スキル', en: 'Basic Skills in App Development' },
+        description: { ja: '基礎的なアプリケーション開発スキルの習得を証明します。', en: 'Proves acquisition of basic application development skills.' }
+      },
+      { 
+        title: { ja: '実用的なアプリケーション開発', en: 'Practical App Development Skills' },
+        description: { ja: '実用的なアプリケーション開発能力を証明します。', en: 'Demonstrates practical application development capabilities.' }
+      },
+      { 
+        title: { ja: '高度なアプリケーション開発', en: 'Advanced App Development Skills' },
+        description: { ja: '高度なアプリケーション開発スキルを証明します。', en: 'Validates advanced application development skills.' }
+      },
+      { 
+        title: { ja: '事業創造と拡大の能力', en: 'Business Creation and Growth Capabilities' },
+        description: { ja: 'ビジネス創造と拡大に関する能力を証明します。', en: 'Certifies capabilities in business creation and growth.' }
+      }
+    ]
+  };
+
+  const certificationEvaluation: CertificationEvaluation = {
+    title: { ja: '資格評価の方法', en: 'Certification Evaluation Method' },
+    description: { ja: '当プログラムでは、各ランクに応じた難易度の課題に対し、制限時間内にアプリケーションを構築することが求められます。', en: 'In our program, you will be required to build an application within a time limit for challenges with difficulty levels corresponding to each rank.' },
+    processes: [
+      {
+        icon: 'fa-hourglass-half',
+        title: { ja: '制限時間内のアプリ構築', en: 'Application Building within Time Limit' },
+        description: { ja: '各ランクに応じた難易度の課題に対し、制限時間内にアプリケーションを構築することが求められます。課題の難易度と制限時間はランクによって異なります。', en: 'You will be required to build an application within a time limit for challenges with difficulty levels corresponding to each rank. The difficulty and time limit vary by rank.' }
+      },
+      {
+        icon: 'fa-robot',
+        title: { ja: 'AIによる自動評価', en: 'Automated AI Evaluation' },
+        description: { ja: '提出されたコードに対して、コード品質、機能達成率、UI整合性などの観点から、AIによる自動評価が行われます。', en: 'Submitted code will be automatically evaluated by AI for code quality, functionality achievement rate, UI consistency, and other aspects.' }
+      },
+      {
+        icon: 'fa-user-check',
+        title: { ja: '人間によるレビュー', en: 'Human Review' },
+        description: { ja: '専門家によるレビューでは、独創性、ユーザー体験、構成力などの定性的な側面が評価されます。', en: 'Expert reviewers will evaluate qualitative aspects such as originality, user experience, and structural capability.' }
+      }
+    ]
+  };
+
+  const certificationCertificate: CertificationCertificate = {
+    title: { ja: '資格認定証明書', en: 'Certification Certificate' },
+    description: { ja: '合格者はPDF証明書発行 + 認定者リストに掲載（URL共有可）', en: 'Qualified individuals receive PDF certificates and are listed in the certification directory (with shareable URL)' },
+    details: [
+      { ja: '保持者名', en: 'Holder Name' },
+      { ja: '認定ランク', en: 'Certification Rank' },
+      { ja: 'シリアルID', en: 'Serial ID' },
+      { ja: '発行日', en: 'Issue Date' },
+      { ja: '有効期限', en: 'Expiration Date' },
+      { ja: '照合用QRコード', en: 'Verification QR Code' }
+    ],
+    validityPeriod: { ja: '3年間有効', en: 'Valid for 3 years' },
+    renewalInfo: [
+      { ja: '更新費用', en: 'Renewal Fee' },
+      { ja: '更新手続き', en: 'Renewal Process' },
+      { ja: '更新期限', en: 'Renewal Deadline' }
+    ],
+    expirationInfo: { ja: '更新期限内に更新手続きを完了しない場合、1年間の猶予期間があります。猶予期間中に更新できなかった場合、資格は失効し、再取得には再受講または特別試験の合格が必要となります。', en: 'If you do not complete the renewal procedure within the renewal deadline, there is a 1-year grace period. If you cannot renew during the grace period, your certification will expire, and re-acquisition will require re-taking the course or passing a special exam.' },
+    sampleImage: {
+      src: '/images/certificate-sample.png',
+      alt: { ja: 'HyaQShix認定証明書サンプル', en: 'HyaQShix Certificate Sample' },
+      width: 600,
+      height: 400
+    }
+  };
+
+  const certificationCTA: CertificationCTA = {
+    title: { ja: 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？', en: 'Would you like to officially certify your AI skills and expand your career possibilities?' },
+    subtitle: { ja: 'HyaQShix認定資格は、生成AI時代のスキルを証明する強力なツールです。', en: 'HyaQShix certification is a powerful tool to validate your skills in the generative AI era.' },
+    buttonText: { ja: '資格受験に申し込む', en: 'Apply for Certification Exam' }
+  };
+
+  const certificationFeeSection: CertificationFeeSection = {
+    title: {
+      ja: '受験料',
+      en: 'Examination Fees'
+    },
+    description: {
+      ja: 'HyaQShix認定資格の受験をお考えの方は、以下の受験料をご確認ください。カリキュラム受講生は、Silver資格が受講料に含まれています。',
+      en: 'Please check the following exam fees if you are considering taking the HyaQShix certification exam. For course participants, the Silver certification is included in the tuition fee.'
+    },
+    tableHeaders: {
+      rank: {
+        ja: '資格ランク',
+        en: 'Certification Rank'
+      },
+      fee: {
+        ja: '受験料（税込）',
+        en: 'Exam Fee (Tax Included)'
+      },
+      passRate: {
+        ja: '合格率',
+        en: 'Pass Rate'
+      },
+      renewal: {
+        ja: '更新周期',
+        en: 'Renewal Cycle'
+      }
+    }
+  };
+
   return (
     <LanguageContext.Provider value={{ 
       language, 
@@ -1382,7 +1559,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       evaluationProcesses,
       guaranteeConditions,
       certificateDetails,
-      getCertificationFees
+      getCertificationFees,
+      certificationHero,
+      certificationOverview,
+      certificationEvaluation,
+      certificationCertificate,
+      certificationCTA,
+      certificationFeeSection
     }}>
       {children}
     </LanguageContext.Provider>

@@ -10,11 +10,24 @@ import { motion } from 'framer-motion';
 import { Parallax } from 'react-parallax';
 
 export default function CertificationPage() {
-  const { t, language, certificationLevels, evaluationProcesses, guaranteeConditions, certificateDetails, getCertificationFees } = useLanguage();
+  const { 
+    t, 
+    language, 
+    certificationLevels, 
+    evaluationProcesses, 
+    guaranteeConditions, 
+    certificateDetails, 
+    getCertificationFees,
+    certificationHero,
+    certificationOverview,
+    certificationEvaluation,
+    certificationCertificate,
+    certificationCTA,
+    certificationFeeSection
+  } = useLanguage();
   
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
-    
     return () => {
       document.documentElement.style.scrollBehavior = '';
     };
@@ -80,13 +93,13 @@ export default function CertificationPage() {
                 className="text-4xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200"
                 variants={fadeInUp}
               >
-                {t('certification.title')}
+                {certificationHero.title[language]}
               </motion.h1>
               <motion.p 
                 className="text-xl md:text-2xl font-light text-yellow-50 mb-6"
                 variants={fadeInUp}
               >
-                {language === 'en' ? 'HyaQShix Certification System' : 'HyaQShix 認定資格制度'}
+                {certificationHero.subtitle[language]}
               </motion.p>
             </motion.div>
           </Parallax>
@@ -106,7 +119,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {t('certification.about')}
+              {certificationOverview.title[language]}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
@@ -118,34 +131,17 @@ export default function CertificationPage() {
               variants={fadeInUp}
             >
               <p className="text-xl text-center mb-12 leading-relaxed">
-                {language === 'en' 
-                  ? "The HyaQShix certification is an industry-recognized credential system that validates skills in generative AI application development and business creation."
-                  : "HyaQShix認定資格は、生成AI時代のアプリケーション開発と事業創造スキルを証明する業界認知の資格制度です。"}
-                <span className="text-yellow-400 font-semibold"> 
-                  {language === 'en' 
-                    ? "Master the skills needed for the AI-driven future."
-                    : "生成AI時代のアプリケーション開発と事業創造スキル"}
-                </span>
+                {certificationOverview.description[language]}
               </p>
               
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-white/5 rounded-xl p-6 border-l-4 border-yellow-500">
-                  <div className="bg-yellow-500 text-black font-semibold w-8 h-8 rounded-full flex items-center justify-center mb-4">01</div>
-                  <p className="text-gray-200 leading-relaxed">
-                    {language === 'en' 
-                      ? "The certification is divided into 4 ranks, comprehensively evaluating skills such as application development speed, quality, and business value creation."
-                      : "4段階のランクに分かれ、アプリケーション開発の速度、品質、ビジネス価値創出の能力など、総合的なスキルを評価します。"}
-                  </p>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6 border-l-4 border-yellow-500">
-                  <div className="bg-yellow-500 text-black font-semibold w-8 h-8 rounded-full flex items-center justify-center mb-4">02</div>
-                  <p className="text-gray-200 leading-relaxed">
-                    {language === 'en' 
-                      ? "By obtaining this certification, you can objectively prove your AI development skills and expand your career possibilities."
-                      : "この資格を取得することで、AI開発のスキルを客観的に証明でき、キャリアの可能性を広げることができます。"}
-                  </p>
-                </div>
+                {certificationOverview.points.slice(0, 2).map((point, index) => (
+                  <div key={index} className="bg-white/5 rounded-xl p-6 border-l-4 border-yellow-500">
+                    <div className="bg-yellow-500 text-black font-semibold w-8 h-8 rounded-full flex items-center justify-center mb-4">{index + 1}</div>
+                    <h3 className="text-lg font-semibold mb-2">{point.title[language]}</h3>
+                    <p className="text-gray-200 leading-relaxed">{point.description[language]}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </motion.div>
@@ -187,13 +183,13 @@ export default function CertificationPage() {
                 >
                   <div className="p-6 text-center">
                     <h3 className="text-2xl font-bold mb-2">
-                      {language === 'en' ? level.title.en : level.title.ja}
+                      {level.title[language]}
                     </h3>
                     <p className="text-sm font-semibold mb-4">
-                      {language === 'en' ? level.passRate.en : level.passRate.ja}
+                      {level.passRate[language]}
                     </p>
                     <p className="mb-4 text-sm">
-                      {language === 'en' ? level.description.en : level.description.ja}
+                      {level.description[language]}
                     </p>
                     <h4 className="font-semibold text-left mb-2">
                       {t('certification.evaluation.criteria')}
@@ -205,7 +201,7 @@ export default function CertificationPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                           </svg>
                           <span>
-                            {language === 'en' ? criterion.en : criterion.ja}
+                            {criterion[language]}
                           </span>
                         </li>
                       ))}
@@ -232,7 +228,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {t('certification.evaluation.method')}
+              {certificationEvaluation.title[language]}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
@@ -240,7 +236,7 @@ export default function CertificationPage() {
             ></motion.div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {evaluationProcesses.map((process, index) => (
+              {certificationEvaluation.processes.map((process, index) => (
                 <motion.div 
                   key={index} 
                   className="bg-white/5 rounded-xl p-8 border border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 text-left"
@@ -256,10 +252,10 @@ export default function CertificationPage() {
                     </div>
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-yellow-400 text-left">
-                    {language === 'en' ? process.title.en : process.title.ja}
+                    {process.title[language]}
                   </h3>
                   <p className="text-gray-200 text-left leading-relaxed">
-                    {language === 'en' ? process.description.en : process.description.ja}
+                    {process.description[language]}
                   </p>
                 </motion.div>
               ))}
@@ -283,7 +279,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {t('certification.certificate.about')}
+              {certificationCertificate.title[language]}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
@@ -301,10 +297,10 @@ export default function CertificationPage() {
                   className="relative overflow-hidden rounded-xl shadow-xl border border-yellow-500/20"
                 >
                   <Image 
-                    src="/images/certificate-sample.png"
-                    alt={language === 'en' ? "HyaQShix Certificate Sample" : "HyaQShix認定証明書サンプル"}
-                    width={600}
-                    height={400}
+                    src={certificationCertificate.sampleImage.src}
+                    alt={certificationCertificate.sampleImage.alt[language]}
+                    width={certificationCertificate.sampleImage.width}
+                    height={certificationCertificate.sampleImage.height}
                     className="w-full h-auto"
                   />
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
@@ -319,18 +315,16 @@ export default function CertificationPage() {
                   {t('certification.certificate.format')}
                 </h3>
                 <p className="mb-4 text-gray-200">
-                  {language === 'en' 
-                    ? 'Upon passing the certification exam, you will receive a PDF format electronic certificate that includes the following information:' 
-                    : '認定試験に合格すると、以下の内容を含むPDF形式の電子証明書が発行されます：'}
+                  {certificationCertificate.description[language]}
                 </p>
                 <ul className="mb-8 space-y-2">
-                  {certificateDetails.map((detail, idx) => (
+                  {certificationCertificate.details.map((detail, idx) => (
                     <li key={idx} className="flex items-start">
                       <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                       <span className="text-gray-200">
-                        {language === 'en' ? detail.en : detail.ja}
+                        {detail[language]}
                       </span>
                     </li>
                   ))}
@@ -340,40 +334,30 @@ export default function CertificationPage() {
                   {t('certification.certificate.cycle')}
                 </h3>
                 <p className="mb-4 text-gray-200">
-                  {language === 'en' 
-                    ? 'Certifications are valid for 3 years from the date of issue. After that, you can maintain your certification by applying for renewal.' 
-                    : '認定資格は発行から3年間有効です。以降は更新申請により資格を維持することができます。'}
+                  {certificationCertificate.validityPeriod[language]}
                 </p>
                 
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
                   {t('certification.certificate.renewal')}
                 </h3>
                 <ul className="mb-4 space-y-2">
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-200">
-                      {language === 'en' ? 'Certification Renewal: ¥8,000 (tax included)' : '認定更新：8,000円（税込）'}
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-200">
-                      {language === 'en' ? 'Re-certification after expiration: ¥15,000 (tax included)' : '失効からの再認定：15,000円（税込）'}
-                    </span>
-                  </li>
+                  {certificationCertificate.renewalInfo.map((info, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span className="text-gray-200">
+                        {info[language]}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
                 
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
                   {t('certification.certificate.expiration')}
                 </h3>
                 <p className="text-gray-200">
-                  {language === 'en' 
-                    ? 'If you do not complete the renewal procedure within the renewal deadline, there is a 1-year grace period. If you cannot renew during the grace period, your certification will expire, and re-acquisition will require re-taking the course or passing a special exam.' 
-                    : '更新期限内に更新手続きを完了しない場合、1年間の猶予期間があります。猶予期間中に更新できなかった場合、資格は失効し、再取得には再受講または特別試験の合格が必要となります。'}
+                  {certificationCertificate.expirationInfo[language]}
                 </p>
               </motion.div>
             </div>
@@ -395,7 +379,7 @@ export default function CertificationPage() {
               className="text-4xl font-bold text-center mb-4"
               variants={fadeInUp}
             >
-              {t('certification.exam.fees')}
+              {certificationFeeSection.title[language]}
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
@@ -405,9 +389,7 @@ export default function CertificationPage() {
               className="text-center mb-14 max-w-3xl mx-auto text-gray-300"
               variants={fadeInUp}
             >
-              {language === 'en' 
-                ? 'Please check the following exam fees if you are considering taking the HyaQShix certification exam. For course participants, the Silver certification is included in the tuition fee.' 
-                : 'HyaQShix認定資格の受験をお考えの方は、以下の受験料をご確認ください。カリキュラム受講生は、Silver資格が受講料に含まれています。'}
+              {certificationFeeSection.description[language]}
             </motion.p>
             
             <motion.div 
@@ -419,16 +401,16 @@ export default function CertificationPage() {
                   <thead>
                     <tr className="bg-gradient-to-r from-gray-900 to-gray-800">
                       <th className="py-4 px-6 text-left text-yellow-400 font-bold">
-                        {language === 'en' ? 'Certification Rank' : '資格ランク'}
+                        {certificationFeeSection.tableHeaders.rank[language]}
                       </th>
                       <th className="py-4 px-6 text-left text-yellow-400 font-bold">
-                        {language === 'en' ? 'Exam Fee (Tax Included)' : '受験料（税込）'}
+                        {certificationFeeSection.tableHeaders.fee[language]}
                       </th>
                       <th className="py-4 px-6 text-left text-yellow-400 font-bold">
-                        {language === 'en' ? 'Pass Rate' : '合格率'}
+                        {certificationFeeSection.tableHeaders.passRate[language]}
                       </th>
                       <th className="py-4 px-6 text-left text-yellow-400 font-bold">
-                        {language === 'en' ? 'Renewal Cycle' : '更新周期'}
+                        {certificationFeeSection.tableHeaders.renewal[language]}
                       </th>
                     </tr>
                   </thead>
@@ -470,7 +452,7 @@ export default function CertificationPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {t('certification.cta.title')}
+              {certificationCTA.title[language]}
             </motion.h2>
             <motion.p 
               className="text-xl mb-10 opacity-90 max-w-3xl mx-auto"
@@ -479,7 +461,7 @@ export default function CertificationPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              {t('certification.cta.subtitle')}
+              {certificationCTA.subtitle[language]}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -492,7 +474,7 @@ export default function CertificationPage() {
                 className="inline-flex items-center gap-2 px-8 py-4 bg-black hover:bg-gray-800 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 <span>
-                  {t('certification.cta.apply')}
+                  {certificationCTA.buttonText[language]}
                 </span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
