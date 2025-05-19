@@ -410,7 +410,9 @@ export default function HomePage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-yellow-700 text-yellow-100 text-xs font-semibold mb-6">100% SATISFACTION</span>
+          <span className="inline-block px-4 py-1 rounded-full bg-yellow-700 text-yellow-100 text-xs font-semibold mb-6">
+            {t('home.satisfaction.badge')}
+          </span>
           <h2 className="text-4xl font-bold mb-6 text-white">{t('home.guarantee')}</h2>
           <p className="text-xl mb-10 text-gray-300 leading-relaxed">{t('home.guarantee.desc')}</p>
           

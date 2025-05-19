@@ -53,6 +53,12 @@ type TranslationKeys =
   | 'nav.home' | 'nav.curriculum' | 'nav.pricing' | 'nav.certification' 
   | 'nav.corporate' | 'nav.philosophy' | 'nav.contact' | 'nav.language'
   
+  // Footer
+  | 'footer.slogan' | 'footer.navigation' | 'footer.home' | 'footer.curriculum'
+  | 'footer.pricing' | 'footer.certification' | 'footer.corporate' | 'footer.philosophy'
+  | 'footer.contact' | 'footer.contactForm' | 'footer.faq' | 'footer.community'
+  | 'footer.copyright' | 'footer.privacy' | 'footer.terms'
+  
   // HomePage
   | 'home.title' | 'home.subtitle' | 'home.reasons' | 'home.communication' 
   | 'home.communication.desc' | 'home.code' | 'home.code.desc' | 'home.certification' 
@@ -70,9 +76,6 @@ type TranslationKeys =
   | 'promo.conversational.title' | 'promo.conversational.subtitle'
   | 'promo.contact.subtitle'
   | 'promo.cards.convo' | 'promo.cards.natural' | 'promo.cards.zero' | 'promo.cards.speak'
-  
-  // Footer
-  | 'footer.copyright'
   
   // Curriculum Page
   | 'curriculum.title' | 'curriculum.subtitle' | 'curriculum.explanation.title'
@@ -147,6 +150,7 @@ type TranslationKeys =
   | 'pricing.payment.method1.title' | 'pricing.payment.method1.desc'
   | 'pricing.payment.method2.title' | 'pricing.payment.method2.desc'
   | 'pricing.payment.method3.title' | 'pricing.payment.method3.desc'
+  | 'home.satisfaction.badge'  // Add this new key
   
   // Certification Page
   | 'certification.title' | 'certification.subtitle' | 'certification.desc'
@@ -372,7 +376,21 @@ const ja: TranslationsType = {
   'promo.cards.speak': '話すだけで機能追加',
   
   // Footer
-  'footer.copyright': '© 2024 HyaQShix百式. All rights reserved.',
+  'footer.slogan': '100日、100の型、100倍の生産力。',
+  'footer.navigation': 'ナビゲーション',
+  'footer.home': 'トップ',
+  'footer.curriculum': 'カリキュラム',
+  'footer.pricing': '価格',
+  'footer.certification': '資格',
+  'footer.corporate': '企業連携',
+  'footer.philosophy': '理念',
+  'footer.contact': 'お問い合わせ',
+  'footer.contactForm': 'お問い合わせフォーム',
+  'footer.faq': 'よくある質問',
+  'footer.community': 'コミュニティ',
+  'footer.copyright': '©2025',
+  'footer.privacy': 'プライバシーポリシー',
+  'footer.terms': '利用規約',
   
   // Curriculum Page
   'curriculum.title': 'カリキュラム',
@@ -775,6 +793,7 @@ const ja: TranslationsType = {
   'certification.cta.title': 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？',
   'certification.cta.subtitle': 'HyaQShix認定資格は、生成AI時代のスキルを証明する強力なツールです。',
   'certification.cta.apply': '資格受験に申し込む',
+  'home.satisfaction.badge': '満足保証制度',
 };
 
 // English translations
@@ -837,7 +856,21 @@ const en: TranslationsType = {
   'promo.cards.speak': 'Speak Your Features',
 
   // Footer
-  'footer.copyright': '© 2024 HyaQShix百式. All rights reserved.',
+  'footer.slogan': '100 days, 100 forms, 100x productivity.',
+  'footer.navigation': 'Navigation',
+  'footer.home': 'Home',
+  'footer.curriculum': 'Curriculum',
+  'footer.pricing': 'Pricing',
+  'footer.certification': 'Certification',
+  'footer.corporate': 'Corporate',
+  'footer.philosophy': 'Philosophy',
+  'footer.contact': 'Contact',
+  'footer.contactForm': 'Contact Form',
+  'footer.faq': 'FAQ',
+  'footer.community': 'Community',
+  'footer.copyright': 'All rights reserved.',
+  'footer.privacy': 'Privacy Policy',
+  'footer.terms': 'Terms of Service',
 
   // Pricing Page
   'pricing.title': 'Pricing & Guarantee',
@@ -1239,6 +1272,7 @@ const en: TranslationsType = {
   'certification.cta.title': 'Would you like to officially certify your AI skills and expand your career possibilities?',
   'certification.cta.subtitle': 'HyaQShix certification is a powerful tool to validate your skills in the generative AI era.',
   'certification.cta.apply': 'Apply for Certification Exam',
+  'home.satisfaction.badge': '100% SATISFACTION',
 };
 
 const translations: Record<Language, TranslationsType> = { ja, en };
