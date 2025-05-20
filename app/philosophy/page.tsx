@@ -246,10 +246,10 @@ export default function PhilosophyPage() {
               </p>
               <div className="text-right mt-10">
                 <p className="text-gray-300">
-                  CEO
+                  {t('philosophy.founder.role')}
                 </p>
                 <p className="text-yellow-400 font-bold text-xl mt-1">
-                  田中 太郎
+                  {t('philosophy.founder.name')}
                 </p>
               </div>
             </div>
