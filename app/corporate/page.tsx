@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Corporate() {
-  const { t, language } = useLanguage();
+  const { t, language, corporateTestimonials } = useLanguage();
   const isJapanese = language === 'ja';
   const [currentStep, setCurrentStep] = useState(1);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([null, null, null, null, null, null]);
@@ -486,40 +486,26 @@ export default function Corporate() {
           ></motion.div>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-8"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            >
-              <p className="text-gray-300 text-lg italic mb-6 leading-relaxed">
-                {t('corporate.cta.desc')}
-              </p>
-              <div className="border-t border-yellow-400 border-opacity-20 pt-4">
-                <h4 className="text-yellow-400 font-bold">
-                  田中 太郎
-                </h4>
-                <p className="text-gray-400">
-                  {t('corporate.subtitle')}
+            {corporateTestimonials.testimonials.map((testimonial, index) => (
+              <motion.div 
+                key={index}
+                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-8"
+                variants={fadeInUp}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              >
+                <p className="text-gray-300 text-lg italic mb-6 leading-relaxed">
+                  {language === 'ja' ? testimonial.content.ja : testimonial.content.en}
                 </p>
-              </div>
-            </motion.div>
-            <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-8"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            >
-              <p className="text-gray-300 text-lg italic mb-6 leading-relaxed">
-                {t('corporate.cta.desc')}
-              </p>
-              <div className="border-t border-yellow-400 border-opacity-20 pt-4">
-                <h4 className="text-yellow-400 font-bold">
-                  山田 健太郎
-                </h4>
-                <p className="text-gray-400">
-                  {t('corporate.subtitle')}
-                </p>
-              </div>
-            </motion.div>
+                <div className="border-t border-yellow-400 border-opacity-20 pt-4">
+                  <h4 className="text-yellow-400 font-bold">
+                    {language === 'ja' ? testimonial.name.ja : testimonial.name.en}
+                  </h4>
+                  <p className="text-gray-400">
+                    {language === 'ja' ? testimonial.position.ja : testimonial.position.en}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </section>

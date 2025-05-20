@@ -244,7 +244,15 @@ type TranslationKeys =
   | 'certification.certificate.cycle' | 'certification.certificate.renewal'
   | 'certification.certificate.expiration' | 'certification.exam.fees'
   | 'certification.evaluation.criteria'
-  | 'certification.cta.title' | 'certification.cta.subtitle' | 'certification.cta.apply';
+  | 'certification.cta.title' | 'certification.cta.subtitle' | 'certification.cta.apply'
+  
+  // Corporate Testimonials
+  | 'corporate.testimonials.person1.name'
+  | 'corporate.testimonials.person1.position'
+  | 'corporate.testimonials.person1.content'
+  | 'corporate.testimonials.person2.name'
+  | 'corporate.testimonials.person2.position'
+  | 'corporate.testimonials.person2.content';
 
 type TranslationsType = {
   [key in TranslationKeys]: string;
@@ -297,10 +305,33 @@ type CertificationCTA = {
   buttonText: BilingualText;
 };
 
+type CorporateTestimonial = {
+  name: BilingualText;
+  position: BilingualText;
+  content: BilingualText;
+};
+
+type CorporateTestimonials = {
+  testimonials: CorporateTestimonial[];
+};
+
+type SiteMetadata = {
+  title: BilingualText;
+  description: BilingualText;
+  openGraph: {
+    title: BilingualText;
+    description: BilingualText;
+    images: string[];
+    url: string;
+    type: string;
+  };
+};
+
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: TranslationKeys | string) => string;
+  metadata: SiteMetadata;
   certificationLevels: CertificationLevel[];
   evaluationProcesses: EvaluationProcess[];
   guaranteeConditions: GuaranteeCondition[];
@@ -312,6 +343,7 @@ type LanguageContextType = {
   certificationCertificate: CertificationCertificate;
   certificationCTA: CertificationCTA;
   certificationFeeSection: CertificationFeeSection;
+  corporateTestimonials: CorporateTestimonials;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -319,13 +351,13 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 // Japanese translations
 const ja: TranslationsType = {
   // Navigation
-  'nav.home': 'トップ',
+  'nav.home': 'ホーム',
   'nav.curriculum': 'カリキュラム',
-  'nav.pricing': '価格',
-  'nav.certification': '資格',
-  'nav.corporate': '企業連携',
+  'nav.pricing': '料金',
+  'nav.certification': '認定',
+  'nav.corporate': '法人',
   'nav.philosophy': '理念',
-  'nav.contact': 'お問合せ',
+  'nav.contact': 'お問い合わせ',
   'nav.language': '言語',
 
   // HomePage
@@ -794,6 +826,14 @@ const ja: TranslationsType = {
   'certification.cta.subtitle': 'HyaQShix認定資格は、生成AI時代のスキルを証明する強力なツールです。',
   'certification.cta.apply': '資格受験に申し込む',
   'home.satisfaction.badge': '満足保証制度',
+  
+  // Corporate Testimonials
+  'corporate.testimonials.person1.name': '田中 太郎',
+  'corporate.testimonials.person1.position': '株式会社テクノロジー 代表取締役',
+  'corporate.testimonials.person1.content': 'HyaQShixの理念に共感し、次世代のIT人材育成に貢献しています。',
+  'corporate.testimonials.person2.name': '山田 健太郎',
+  'corporate.testimonials.person2.position': 'イノベーション株式会社 CTO',
+  'corporate.testimonials.person2.content': 'HyaQShixのプログラムは、実際の業務に即した教育を提供してくれます。'
 };
 
 // English translations
@@ -803,7 +843,7 @@ const en: TranslationsType = {
   'nav.curriculum': 'Curriculum',
   'nav.pricing': 'Pricing',
   'nav.certification': 'Certification',
-  'nav.corporate': 'Partnerships',
+  'nav.corporate': 'Corporate',
   'nav.philosophy': 'Philosophy',
   'nav.contact': 'Contact',
   'nav.language': 'Language',
@@ -1273,6 +1313,12 @@ const en: TranslationsType = {
   'certification.cta.subtitle': 'HyaQShix certification is a powerful tool to validate your skills in the generative AI era.',
   'certification.cta.apply': 'Apply for Certification Exam',
   'home.satisfaction.badge': '100% SATISFACTION',
+  'corporate.testimonials.person1.name': 'Taro Tanaka',
+  'corporate.testimonials.person1.position': 'CEO, Technology Corporation',
+  'corporate.testimonials.person1.content': 'We resonate with HyaQShix\'s philosophy and contribute to nurturing the next generation of IT talent.',
+  'corporate.testimonials.person2.name': 'Kentaro Yamada',
+  'corporate.testimonials.person2.position': 'CTO, Innovation Inc.',
+  'corporate.testimonials.person2.content': 'HyaQShix\'s program provides education that aligns with actual business practices.'
 };
 
 const translations: Record<Language, TranslationsType> = { ja, en };
@@ -1301,6 +1347,30 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       return translations[language][key as TranslationKeys];
     }
     return key;
+  };
+
+  const metadata: SiteMetadata = {
+    title: {
+      ja: "HyaQShix百式 - 生成AIと100日100アプリで未来を創る教育プログラム",
+      en: "HyaQShix - 100 Days of AI App Development Education Program"
+    },
+    description: {
+      ja: "100日、100の型、100倍の生産力。HyaQShix百式は、AIで効率的にアプリ開発する手法を学び、毎日ひとつアプリを創る教育プログラムです。",
+      en: "100 days, 100 patterns, 100x productivity. Learn efficient AI-powered app development and create one app daily."
+    },
+    openGraph: {
+      title: {
+        ja: "HyaQShix百式 - 生成AIと100日100アプリで未来を創る教育プログラム",
+        en: "HyaQShix - 100 Days of AI App Development Education Program"
+      },
+      description: {
+        ja: "100日、100の型、100倍の生産力。そして無限の未来へ。AIを使いこなす武器に変えるための学び。",
+        en: "100 days, 100 patterns, 100x productivity. Journey to infinite possibilities. Master AI as your development superpower."
+      },
+      images: ['/images/HyaQShix.jpg'],
+      url: 'https://hyaqshix.com',
+      type: 'website'
+    }
   };
 
   // Certification levels data
@@ -1584,11 +1654,45 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const corporateTestimonials: CorporateTestimonials = {
+    testimonials: [
+      {
+        name: {
+          ja: '田中 太郎',
+          en: 'Taro Tanaka'
+        },
+        position: {
+          ja: '株式会社テクノロジー 代表取締役',
+          en: 'CEO, Technology Corporation'
+        },
+        content: {
+          ja: t('corporate.testimonials.person1.content'),
+          en: t('corporate.testimonials.person1.content')
+        }
+      },
+      {
+        name: {
+          ja: '山田 健太郎',
+          en: 'Kentaro Yamada'
+        },
+        position: {
+          ja: 'イノベーション株式会社 CTO',
+          en: 'CTO, Innovation Inc.'
+        },
+        content: {
+          ja: t('corporate.testimonials.person2.content'),
+          en: t('corporate.testimonials.person2.content')
+        }
+      }
+    ]
+  };
+
   return (
     <LanguageContext.Provider value={{ 
       language, 
       setLanguage, 
       t,
+      metadata,
       certificationLevels,
       evaluationProcesses,
       guaranteeConditions,
@@ -1599,7 +1703,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       certificationEvaluation,
       certificationCertificate,
       certificationCTA,
-      certificationFeeSection
+      certificationFeeSection,
+      corporateTestimonials
     }}>
       {children}
     </LanguageContext.Provider>
