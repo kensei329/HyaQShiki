@@ -81,7 +81,6 @@ type TranslationKeys =
   // Curriculum Page
   | 'curriculum.title' | 'curriculum.subtitle' | 'curriculum.explanation.title'
     | 'curriculum.explanation.p1' | 'curriculum.explanation.p2' | 'curriculum.explanation.p3'
-
   | 'curriculum.flow.title'
   | 'curriculum.flow.phase1.title' | 'curriculum.flow.phase1.period' | 'curriculum.flow.phase1.desc'
   | 'curriculum.flow.phase1.point1' | 'curriculum.flow.phase1.point2' | 'curriculum.flow.phase1.point3' | 'curriculum.flow.phase1.point4'
@@ -834,7 +833,7 @@ const ja: TranslationsType = {
   // Corporate Testimonials
   'corporate.testimonials.person1.name': '田中 太郎',
   'corporate.testimonials.person1.position': '株式会社テクノロジー 代表取締役',
-  'corporate.testimonials.person1.content': 'HyaQShikiの理念に共感し、次世代のIT人材育成に貢献しています。',
+  'corporate.testimonials.person1.content': 'HyaQShikiの理念に共感し、次世代のIT人材育成に貢献できることを誇りに思います。',
   'corporate.testimonials.person2.name': '山田 健太郎',
   'corporate.testimonials.person2.position': 'イノベーション株式会社 CTO',
   'corporate.testimonials.person2.content': 'HyaQShikiのプログラムは、実際の業務に即した教育を提供してくれます。',
@@ -1602,7 +1601,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       {
         name: { ja: '山田健太郎', en: 'Kentaro Yamada' },
         position: { ja: 'CTO, イノベーション株式会社', en: 'CTO, Innovation Inc.' },
-        content: { ja: 'HyaQShikiのプログラムは、実際のビジネス実践と密接に連携した教育を提供しています。', en: 'HyaQShiki\'s program provides education closely linked to real-world business practices.' }
+        content: { ja: 'HyaQShikiのプログラムは、実際の業務に即した教育を提供してくれます。', en: 'HyaQShiki\'s program provides education closely linked to real-world business practices.' }
       }
     ]
   };
