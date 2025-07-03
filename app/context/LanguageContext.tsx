@@ -80,11 +80,8 @@ type TranslationKeys =
   
   // Curriculum Page
   | 'curriculum.title' | 'curriculum.subtitle' | 'curriculum.explanation.title'
-  | 'curriculum.explanation.p1' | 'curriculum.explanation.p2' | 'curriculum.explanation.p3'
-  | 'curriculum.timeline.title' | 'curriculum.timeline.days1.title' | 'curriculum.timeline.days1.desc'
-  | 'curriculum.timeline.days2.title' | 'curriculum.timeline.days2.desc'
-  | 'curriculum.timeline.days3.title' | 'curriculum.timeline.days3.desc'
-  | 'curriculum.timeline.days4.title' | 'curriculum.timeline.days4.desc'
+    | 'curriculum.explanation.p1' | 'curriculum.explanation.p2' | 'curriculum.explanation.p3'
+
   | 'curriculum.flow.title'
   | 'curriculum.flow.phase1.title' | 'curriculum.flow.phase1.period' | 'curriculum.flow.phase1.desc'
   | 'curriculum.flow.phase1.point1' | 'curriculum.flow.phase1.point2' | 'curriculum.flow.phase1.point3' | 'curriculum.flow.phase1.point4'
@@ -167,6 +164,7 @@ type TranslationKeys =
   | 'corporate.benefits.b1.title' | 'corporate.benefits.b1.desc'
   | 'corporate.benefits.b2.title' | 'corporate.benefits.b2.desc'
   | 'corporate.benefits.b3.title' | 'corporate.benefits.b3.desc'
+  | 'corporate.benefits.b4.title' | 'corporate.benefits.b4.desc'
   | 'corporate.contact' | 'corporate.sponsor.title' | 'corporate.sponsor.subtitle'
   | 'corporate.sponsor.desc' | 'corporate.sponsor.item1' | 'corporate.sponsor.item2'
   | 'corporate.sponsor.item3' | 'corporate.cta.title' | 'corporate.cta.desc'
@@ -650,6 +648,8 @@ const ja: TranslationsType = {
   'corporate.benefits.b2.desc': '優秀な受講修了者を紹介',
   'corporate.benefits.b3.title': '技術相談',
   'corporate.benefits.b3.desc': 'AI開発に関する技術相談窓口の利用',
+  'corporate.benefits.b4.title': 'イノベーション創出',
+  'corporate.benefits.b4.desc': '学生との連携による新たなソリューション創出',
   'corporate.contact': '法人向けのお問い合わせはこちら',
   'corporate.sponsor.title': 'スポンサー制度の概要',
   'corporate.sponsor.subtitle': 'HyaQShikiスポンサー制度とは？',
@@ -1012,6 +1012,160 @@ const en: TranslationsType = {
   'curriculum.cta.free_trial': 'Apply for Free Trial',
   'curriculum.cta.pricing': 'See Pricing Plans',
 
+  // Certification Page
+  'certification.title': 'Certification',
+  'certification.subtitle': 'Four-Level Certification System to Prove Your Skills',
+  'certification.desc': 'Our program offers a four-level certification system to objectively prove your learning achievements.',
+  'certification.silver.title': 'Silver Certification',
+  'certification.silver.desc': 'Proves basic development skills using AI',
+  'certification.gold.title': 'Gold Certification',
+  'certification.gold.desc': 'Proves practical app development capabilities',
+  'certification.platina.title': 'Platinum Certification',
+  'certification.platina.desc': 'Proves advanced AI integration and application design skills',
+  'certification.black.title': 'Black Certification',
+  'certification.black.desc': 'Proves the highest level of independent innovation capability',
+  'certification.levels.title': 'Four Certification Levels',
+  'certification.eval.item1': 'Comprehensive evaluation based on app completion, design skills, AI utilization, and implementation ability',
+  'certification.eval.item2': 'PDF certificate issued to passers + listed on certified list (URL sharing available)',
+  'certification.eval.item3': 'Higher certifications are more difficult and effective for hiring and VC evaluation',
+  'certification.about': 'About Certification',
+  'certification.ranks': 'Certification Levels',
+  'certification.evaluation.method': 'Evaluation Method',
+  'certification.certificate.about': 'About the Certificate',
+  'certification.certificate.format': 'Certificate Format',
+  'certification.certificate.cycle': 'Certification Cycle',
+  'certification.certificate.renewal': 'Renewal Fee',
+  'certification.certificate.expiration': 'Renewal & Expiry Rules',
+  'certification.exam.fees': 'Exam Fee',
+  'certification.evaluation.criteria': 'Evaluation Criteria:',
+  'certification.cta.title': 'Officially prove your AI skills and expand your career opportunities.',
+  'certification.cta.subtitle': 'HyaQShiki Certification is a powerful tool to prove your skills in the era of generative AI.',
+  'certification.cta.apply': 'Apply for Certification Exam',
+  'certification.evaluation.criteria.title.ja': 'Certification Criteria',
+  'certification.evaluation.criteria.title.en': 'Certification Criteria',
+
+  // Corporate Page
+  'corporate.title': 'Corporate Partnership',
+  'corporate.subtitle': 'Together for Next-Generation IT Talent Development',
+  'corporate.description': 'Corporate partnership program to develop next-generation IT talent together',
+  'corporate.benefits.title': 'Benefits of Corporate Partnership',
+  'corporate.benefits.b1.title': 'Talent Development',
+  'corporate.benefits.b1.desc': 'Improve productivity through skill development of existing employees',
+  'corporate.benefits.b2.title': 'Recruitment Support',
+  'corporate.benefits.b2.desc': 'Introduce excellent program graduates',
+  'corporate.benefits.b3.title': 'Technical Consultation',
+  'corporate.benefits.b3.desc': 'Use technical consultation services for AI development',
+  'corporate.benefits.b4.title': 'Innovation Creation',
+  'corporate.benefits.b4.desc': 'Create new solutions through collaboration with students',
+  'corporate.contact': 'Corporate inquiries here',
+  'corporate.sponsor.title': 'Sponsor Program Overview',
+  'corporate.sponsor.subtitle': 'What is the HyaQShiki Sponsor Program?',
+  'corporate.sponsor.desc': 'At HyaQShiki, which develops next-generation development talent with 100x productivity in the generative AI era, we integrate practical projects from companies with our educational program to achieve learning and practice simultaneously.',
+  'corporate.sponsor.item1': 'Practical projects tackling your company\'s challenges',
+  'corporate.sponsor.item2': 'Evaluation reports that visualize student capabilities and growth',
+  'corporate.sponsor.item3': 'Early contact with potential recruitment candidates',
+  'corporate.cta.title': 'Next-generation education × social implementation, together.',
+  'corporate.cta.desc': 'HyaQShiki is a "practical learning field" beyond educational institutions. By handling real corporate challenges within our 100-day curriculum centered on AI-powered app development, we achieve both learning and value creation.',
+  'corporate.cta.contact': 'Contact Us',
+  'corporate.cta.partner': 'Partner Details',
+
+  // Philosophy Page
+  'philosophy.title': 'Our Philosophy',
+  'philosophy.subtitle': 'Creating the Future with Technology',
+  'philosophy.mission.title': 'Mission',
+  'philosophy.mission.desc': 'Transform AI into a powerful tool and nurture talent that maximizes creativity.',
+  'philosophy.vision.title': 'Vision',
+  'philosophy.vision.desc': 'Realize a society where anyone can become an innovator through the democratization of technology.',
+  'philosophy.values.title': 'Values',
+  'philosophy.values.v1': 'Practice First: Learning comes from action.',
+  'philosophy.values.v2': 'Co-Creation: Teach and learn together.',
+  'philosophy.values.v3': 'Future-Oriented: Always pursue the next innovation.',
+  'philosophy.educational.title': 'Educational Philosophy',
+  'philosophy.educational.slogan': '10x Creativity with AI',
+  'philosophy.educational.desc': 'We provide education to maximize human creativity by utilizing AI. Technology has value only when it becomes "something you can master," and it is our mission to achieve this.',
+  'philosophy.practice.title': 'Practical Approach',
+  'philosophy.practice.desc': 'Learn by actually moving your hands and creating applications to acquire real skills.',
+  'philosophy.intensive.title': 'Intensive Learning',
+  'philosophy.intensive.desc': 'Learn intensively in a short period to efficiently acquire skills and develop practical abilities that can be immediately applied in the workplace.',
+  'philosophy.community.title': 'Community',
+  'philosophy.community.desc': 'We value an environment where we learn from and inspire each other through interaction with like-minded peers.',
+  'philosophy.values.practical.title': 'Practical Skills Focus',
+  'philosophy.values.practical.desc': 'We prioritize practical skills over knowledge and focus on acquiring skills that can actually be used.',
+  'philosophy.values.continuity.title': 'Continuous Growth',
+  'philosophy.values.continuity.desc': 'We provide mindset and environment for continuous growth rather than temporary learning.',
+  'philosophy.values.innovation.title': 'Innovation',
+  'philosophy.values.innovation.desc': 'We always incorporate the latest technology and trends, pursuing innovative educational methods.',
+  'philosophy.founder.title': 'Founder\'s Message',
+  'philosophy.founder.slogan': 'Towards Technology Democratization',
+  'philosophy.founder.p1': 'HyaQShiki began with the desire to deliver the benefits of technology to more people. We want to create a world where anyone can shape their ideas, even without specialized knowledge, by utilizing the power of AI.',
+  'philosophy.founder.p2': 'We want to be a place that nurtures next-generation creators, not just a programming school. Our mission is to develop not only technical skills but also problem-solving abilities and creativity, and to send out talent that can create new value with AI.',
+  'philosophy.founder.role': 'Founder & CEO',
+  'philosophy.founder.name': 'Kenzo Shiraishi',
+  'philosophy.vision.short.title': 'Short-term Vision',
+  'philosophy.vision.short.desc': 'Develop 3,000 next-generation developers nationwide and increase digital innovation leaders.',
+  'philosophy.vision.medium.title': 'Medium-term Vision',
+  'philosophy.vision.medium.desc': 'Expand educational programs across Asia and build a network of innovators beyond borders.',
+  'philosophy.vision.long.title': 'Long-term Vision',
+  'philosophy.vision.long.desc': 'Establish world standards for AI utilization skills and realize a society where anyone can shape their ideas.',
+  'philosophy.cta.title': 'Would you like to create the future with us?',
+  'philosophy.cta.desc': 'Take the first step as a creator in the AI era with HyaQShiki.',
+  'philosophy.cta.button': 'Contact Us',
+
+  // Contact Page
+  'contact.title': 'Contact',
+  'contact.subtitle': 'Feel free to contact us for any inquiries.',
+  'contact.form.name': 'Name',
+  'contact.form.email': 'Email',
+  'contact.form.subject': 'Subject',
+  'contact.form.message': 'Message',
+  'contact.form.submit': 'Send',
+  'contact.info.title': 'Contact Information',
+  'contact.info.address': 'Fukuoka, Japan',
+  'contact.info.email': 'info@HyaQShiki.com',
+  'contact.info.phone': '+81-3-XXXX-XXXX',
+  'contact.info.address.label': 'Address',
+  'contact.info.email.label': 'Email',
+  'contact.info.phone.label': 'Phone',
+  'contact.info.hours': 'Business Hours',
+  'contact.info.hours.weekdays': 'Weekdays',
+  'contact.info.hours.saturday': 'Saturday',
+  'contact.info.hours.sunday': 'Sunday',
+  'contact.info.hours.closed': 'Closed',
+
+  // Curriculum Stack
+  'curriculum.stack.title': 'Tech Stack',
+  'curriculum.stack.requirements.title': 'Requirements',
+  'curriculum.stack.requirements.head': 'Required Items',
+  'curriculum.stack.requirements.list1': 'PC or Mac',
+  'curriculum.stack.requirements.list2': 'Internet Connection',
+  'curriculum.stack.env.title': 'Development Environment',
+  'curriculum.stack.env.head1': 'Frontend',
+  'curriculum.stack.env.env1': 'Next.js',
+  'curriculum.stack.env.env2': 'React',
+  'curriculum.stack.env.head2': 'Backend',
+  'curriculum.stack.env.env3': 'Node.js',
+  'curriculum.stack.env.env4': 'Firebase',
+  'curriculum.stack.frontend.title': 'Frontend',
+  'curriculum.stack.frontend.head': 'Frontend Tools',
+  'curriculum.stack.frontend.list1': 'Next.js',
+  'curriculum.stack.frontend.list2': 'React',
+  'curriculum.stack.frontend.list3': 'Tailwind CSS',
+  'curriculum.stack.backend.title': 'Backend',
+  'curriculum.stack.backend.head': 'Backend Tools',
+  'curriculum.stack.backend.list1': 'Node.js',
+  'curriculum.stack.backend.list2': 'Firebase',
+
+  // Corporate Testimonials
+  'corporate.testimonials.person1.name': 'Taro Tanaka',
+  'corporate.testimonials.person1.position': 'CEO, Technology Inc.',
+  'corporate.testimonials.person1.content': 'I resonate deeply with HyaQShiki\'s philosophy and am proud to contribute to nurturing next-generation IT talent.',
+  'corporate.testimonials.person2.name': 'Kentaro Yamada',
+  'corporate.testimonials.person2.position': 'CTO, Innovation Inc.',
+  'corporate.testimonials.person2.content': 'HyaQShiki\'s program provides education closely linked to real-world business practices.',
+
+  // Satisfaction Guarantee Badge
+  'home.satisfaction.badge': 'Service Quality Guarantee',
+
   // Pricing Page
   'pricing.title': 'Pricing & Guarantee',
   'pricing.subtitle': 'The best plan to accelerate your career and invest in your future.',
@@ -1189,87 +1343,7 @@ const en: TranslationsType = {
   'philosophy.values.v1': 'Practice First: Learning comes from action.',
   'philosophy.values.v2': 'Co-Creation: Teach and learn together.',
   'philosophy.values.v3': 'Future-Oriented: Always pursue the next innovation.',
-   // Certification Evaluation & Certificate Details
-   'certification.evaluation.criteria.title.ja': 'Certification Criteria',
-   'certification.evaluation.criteria.title.en': 'Certification Criteria',
-   'certification.about': 'About Certification',
-   'certification.ranks': 'Certification Levels',
-   'certification.evaluation.method': 'Evaluation Method',
-   'certification.certificate.about': 'About the Certificate',
-   'certification.certificate.format': 'Certificate Format',
-   'certification.certificate.cycle': 'Certification Cycle',
-   'certification.certificate.renewal': 'Renewal Fee',
-   'certification.certificate.expiration': 'Renewal & Expiry Rules',
-   'certification.exam.fees': 'Exam Fee',
-   'certification.evaluation.criteria': 'Evaluation Criteria:',
-   'certification.cta.title': 'Officially prove your AI skills and expand your career opportunities.',
-   'certification.cta.subtitle': 'HyaQShiki Certification is a powerful tool to prove your skills in the era of generative AI.',
-   'certification.cta.apply': 'Apply for Certification Exam',
- 
-   // Satisfaction Guarantee Badge
-   'home.satisfaction.badge': 'Service Quality Guarantee',
- 
-   // Corporate Testimonials (repeat for completeness)
-   'corporate.testimonials.person1.name': 'Taro Tanaka',
-   'corporate.testimonials.person1.position': 'CEO, Technology Inc.',
-   'corporate.testimonials.person1.content': 'I resonate deeply with HyaQShiki\'s philosophy and am proud to contribute to nurturing next-generation IT talent.',
-   'corporate.testimonials.person2.name': 'Kentaro Yamada',
-   'corporate.testimonials.person2.position': 'CTO, Innovation Inc.',
-   'corporate.testimonials.person2.content': 'HyaQShiki\'s program provides education closely linked to real-world business practices.',
- 
-   // Curriculum Timeline Example (again for completeness)
-   'curriculum.timeline.title': 'Timeline (Example)',
-   'curriculum.timeline.days1.title': 'Day 1–10: Foundations',
-   'curriculum.timeline.days1.desc': 'Basics of HTML/CSS/JavaScript + Initial AI-assisted output experience',
-   'curriculum.timeline.days2.title': 'Day 11–40: Daily App Creation',
-   'curriculum.timeline.days2.desc': 'Develop and release one practical app per day using generative AI',
-   'curriculum.timeline.days3.title': 'Day 41–70: Thematic Deep Dive',
-   'curriculum.timeline.days3.desc': 'Industry specialization, advanced design, UI/UX, security, API integration, and more',
-   'curriculum.timeline.days4.title': 'Day 71–100: Final Production & Release',
-   'curriculum.timeline.days4.desc': 'Develop multiple capstone apps, publish, share, review, and obtain certification',
- 
-  // Contact Page
-  'contact.title': 'Contact',
-  'contact.subtitle': 'Feel free to contact us for any inquiries.',
-  'contact.form.name': 'Name',
-  'contact.form.email': 'Email',
-  'contact.form.subject': 'Subject',
-  'contact.form.message': 'Message',
-  'contact.form.submit': 'Send',
-  'contact.info.title': 'Contact Information',
-  'contact.info.address': 'Address',
-  'contact.info.email': 'Email',
-  'contact.info.phone': 'Phone',
-  'contact.info.address.label': 'Address',
-  'contact.info.email.label': 'Email',
-  'contact.info.phone.label': 'Phone',
-  'contact.info.hours': 'Business Hours',
-  'contact.info.hours.weekdays': 'Weekdays',
-  'contact.info.hours.saturday': 'Saturday',
-  'contact.info.hours.sunday': 'Sunday',
-  'contact.info.hours.closed': 'Closed',
-  // Curriculum Stack
-  'curriculum.stack.title': 'Tech Stack',
-  'curriculum.stack.requirements.title': 'Requirements',
-  'curriculum.stack.requirements.head': 'Required Items',
-  'curriculum.stack.requirements.list1': 'PC or Mac',
-  'curriculum.stack.requirements.list2': 'Internet Connection',
-  'curriculum.stack.env.title': 'Development Environment',
-  'curriculum.stack.env.head1': 'Frontend',
-  'curriculum.stack.env.env1': 'Next.js',
-  'curriculum.stack.env.env2': 'React',
-  'curriculum.stack.env.head2': 'Backend',
-  'curriculum.stack.env.env3': 'Node.js',
-  'curriculum.stack.env.env4': 'Firebase',
-  'curriculum.stack.frontend.title': 'Frontend',
-  'curriculum.stack.frontend.head': 'Frontend Tools',
-  'curriculum.stack.frontend.list1': 'Next.js',
-  'curriculum.stack.frontend.list2': 'React',
-  'curriculum.stack.frontend.list3': 'Tailwind CSS',
-  'curriculum.stack.backend.title': 'Backend',
-  'curriculum.stack.backend.head': 'Backend Tools',
-  'curriculum.stack.backend.list1': 'Node.js',
-  'curriculum.stack.backend.list2': 'Firebase',
+
  };
 
 const translations: Record<Language, TranslationsType> = { ja, en };
@@ -1325,8 +1399,233 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  // Certification data
+  const certificationLevels: CertificationLevel[] = [
+    {
+      title: { ja: 'Silver', en: 'Silver' },
+      passRate: { ja: '72%', en: '72%' },
+      description: { ja: '基礎的なAI活用スキルを証明', en: 'Proves basic AI utilization skills' },
+      criteria: [
+        { ja: '基本的なAIツールの使用', en: 'Basic AI tool usage' },
+        { ja: '簡単なアプリケーション開発', en: 'Simple application development' }
+      ],
+      bgClass: 'bg-gradient-to-br from-gray-400 to-gray-600',
+      borderClass: 'border-gray-400'
+    },
+    {
+      title: { ja: 'Gold', en: 'Gold' },
+      passRate: { ja: '48%', en: '48%' },
+      description: { ja: '実践的なAI開発スキルを証明', en: 'Proves practical AI development skills' },
+      criteria: [
+        { ja: '複雑なAI統合', en: 'Complex AI integration' },
+        { ja: 'プロダクションレベルの開発', en: 'Production-level development' }
+      ],
+      bgClass: 'bg-gradient-to-br from-yellow-500 to-amber-600',
+      borderClass: 'border-yellow-500'
+    },
+    {
+      title: { ja: 'Platina', en: 'Platina' },
+      passRate: { ja: '26%', en: '26%' },
+      description: { ja: '高度なAI技術者としてのスキルを証明', en: 'Proves advanced AI engineer skills' },
+      criteria: [
+        { ja: 'AI技術の革新', en: 'AI technology innovation' },
+        { ja: 'リーダーシップ', en: 'Leadership' }
+      ],
+      bgClass: 'bg-gradient-to-br from-gray-100 to-gray-300',
+      borderClass: 'border-gray-300',
+      textClass: 'text-gray-900'
+    },
+    {
+      title: { ja: 'Black', en: 'Black' },
+      passRate: { ja: '9%', en: '9%' },
+      description: { ja: 'AI技術の最高峰を証明', en: 'Proves the pinnacle of AI technology' },
+      criteria: [
+        { ja: 'AI技術の開拓', en: 'AI technology pioneering' },
+        { ja: '業界への影響', en: 'Industry impact' }
+      ],
+      bgClass: 'bg-gradient-to-br from-gray-900 to-black',
+      borderClass: 'border-yellow-500'
+    }
+  ];
+
+  const evaluationProcesses: EvaluationProcess[] = [
+    {
+      icon: 'fa-file-alt',
+      title: { ja: '書類審査', en: 'Document Review' },
+      description: { ja: '提出された書類とポートフォリオの審査', en: 'Review of submitted documents and portfolio' }
+    },
+    {
+      icon: 'fa-code',
+      title: { ja: '技術試験', en: 'Technical Exam' },
+      description: { ja: 'AI活用技術とコーディングスキルの実技試験', en: 'Practical exam of AI utilization and coding skills' }
+    },
+    {
+      icon: 'fa-users',
+      title: { ja: '面接', en: 'Interview' },
+      description: { ja: '技術力とコミュニケーション能力の確認', en: 'Verification of technical skills and communication ability' }
+    }
+  ];
+
+  const guaranteeConditions: GuaranteeCondition[] = [
+    { ja: '100日間の学習完了', en: 'Completion of 100 days of learning' },
+    { ja: '50以上のアプリケーション開発', en: 'Development of 50+ applications' },
+    { ja: '技術試験の受験', en: 'Taking the technical exam' }
+  ];
+
+  const certificateDetails: CertificateDetail[] = [
+    { ja: 'デジタル証明書', en: 'Digital certificate' },
+    { ja: 'ブロックチェーン認証', en: 'Blockchain verification' },
+    { ja: '国際的に認められた資格', en: 'Internationally recognized qualification' }
+  ];
+
+  const getCertificationFees = (language: Language): CertificationFee[] => {
+    return [
+      {
+        rank: language === 'ja' ? 'Silver' : 'Silver',
+        fee: language === 'ja' ? '19,800円' : '¥19,800',
+        passRate: language === 'ja' ? '72%' : '72%',
+        renewal: language === 'ja' ? '3年ごと' : 'Every 3 years'
+      },
+      {
+        rank: language === 'ja' ? 'Gold' : 'Gold',
+        fee: language === 'ja' ? '29,800円' : '¥29,800',
+        passRate: language === 'ja' ? '48%' : '48%',
+        renewal: language === 'ja' ? '3年ごと' : 'Every 3 years'
+      },
+      {
+        rank: language === 'ja' ? 'Platina' : 'Platina',
+        fee: language === 'ja' ? '39,800円' : '¥39,800',
+        passRate: language === 'ja' ? '26%' : '26%',
+        renewal: language === 'ja' ? '3年ごと' : 'Every 3 years'
+      },
+      {
+        rank: language === 'ja' ? 'Black' : 'Black',
+        fee: language === 'ja' ? '49,800円' : '¥49,800',
+        passRate: language === 'ja' ? '9%' : '9%',
+        renewal: language === 'ja' ? '3年ごと' : 'Every 3 years'
+      }
+    ];
+  };
+
+  const certificationHero: CertificationHero = {
+    title: { ja: 'HyaQShiki認定', en: 'HyaQShiki Certification' },
+    subtitle: { ja: 'AI技術者としてのスキルを公式に証明', en: 'Officially prove your skills as an AI engineer' },
+    backgroundImage: '/images/slide3.jpg'
+  };
+
+  const certificationOverview: CertificationOverview = {
+    title: { ja: '認定について', en: 'About Certification' },
+    description: { 
+      ja: 'HyaQShiki認定は、生成AI時代における実践的なスキルを証明する国際的に認められた資格です。100日間の学習と実践を通じて身につけた技術力を、公式に評価・認定します。', 
+      en: 'HyaQShiki certification is an internationally recognized qualification that proves practical skills in the generative AI era. It officially evaluates and certifies the technical skills acquired through 100 days of learning and practice.' 
+    },
+    points: [
+      {
+        title: { ja: '実践的なスキル評価', en: 'Practical Skill Assessment' },
+        description: { ja: '理論だけでなく、実際のアプリケーション開発能力を評価します。', en: 'Evaluates not only theory but also actual application development capabilities.' }
+      },
+      {
+        title: { ja: '国際的な認知', en: 'International Recognition' },
+        description: { ja: 'グローバルに通用する技術者としてのスキルを証明します。', en: 'Proves skills as a globally recognized engineer.' }
+      }
+    ]
+  };
+
+  const certificationEvaluation: CertificationEvaluation = {
+    title: { ja: '評価プロセス', en: 'Evaluation Process' },
+    description: { ja: '3段階の包括的な評価により、技術力と実践力を公正に判定します。', en: 'Fair assessment of technical skills and practical abilities through a comprehensive 3-stage evaluation.' },
+    processes: [
+      {
+        icon: 'fa-file-alt',
+        title: { ja: '書類審査', en: 'Document Review' },
+        description: { ja: '提出された書類とポートフォリオの審査', en: 'Review of submitted documents and portfolio' }
+      },
+      {
+        icon: 'fa-code',
+        title: { ja: '技術試験', en: 'Technical Exam' },
+        description: { ja: 'AI活用技術とコーディングスキルの実技試験', en: 'Practical exam of AI utilization and coding skills' }
+      },
+      {
+        icon: 'fa-users',
+        title: { ja: '面接', en: 'Interview' },
+        description: { ja: '技術力とコミュニケーション能力の確認', en: 'Verification of technical skills and communication ability' }
+      }
+    ]
+  };
+
+  const certificationCertificate: CertificationCertificate = {
+    title: { ja: '認定証について', en: 'About the Certificate' },
+    description: { ja: 'デジタル技術を活用した最新の認定証システム', en: 'Latest certificate system utilizing digital technology' },
+    details: [
+      { ja: 'デジタル証明書', en: 'Digital certificate' },
+      { ja: 'ブロックチェーン認証', en: 'Blockchain verification' },
+      { ja: '国際的に認められた資格', en: 'Internationally recognized qualification' }
+    ],
+    validityPeriod: { ja: '3年間有効', en: 'Valid for 3 years' },
+    renewalInfo: [
+      { ja: '継続教育要件', en: 'Continuing education requirements' },
+      { ja: '技術更新の確認', en: 'Technology update verification' }
+    ],
+    expirationInfo: { ja: '3年後に更新が必要', en: 'Renewal required after 3 years' },
+    sampleImage: {
+      src: '/images/certificate-sample.png',
+      alt: { ja: '認定証サンプル', en: 'Certificate Sample' },
+      width: 400,
+      height: 300
+    }
+  };
+
+  const certificationCTA: CertificationCTA = {
+    title: { ja: '公式にAI技術者としてのスキルを証明し、キャリアの可能性を広げましょう。', en: 'Officially prove your AI skills and expand your career opportunities.' },
+    subtitle: { ja: 'HyaQShiki認定は、生成AI時代におけるスキルを証明する強力なツールです。', en: 'HyaQShiki Certification is a powerful tool to prove your skills in the era of generative AI.' },
+    buttonText: { ja: '認定試験に申し込む', en: 'Apply for Certification Exam' }
+  };
+
+  const certificationFeeSection: CertificationFeeSection = {
+    title: { ja: '受験料金', en: 'Exam Fees' },
+    description: { ja: '各認定レベルに応じた受験料金', en: 'Exam fees for each certification level' },
+    tableHeaders: {
+      rank: { ja: 'ランク', en: 'Rank' },
+      fee: { ja: '受験料', en: 'Exam Fee' },
+      passRate: { ja: '合格率', en: 'Pass Rate' },
+      renewal: { ja: '更新周期', en: 'Renewal Cycle' }
+    }
+  };
+
+  const corporateTestimonials: CorporateTestimonials = {
+    testimonials: [
+      {
+        name: { ja: '田中太郎', en: 'Taro Tanaka' },
+        position: { ja: 'CEO, テクノロジー株式会社', en: 'CEO, Technology Inc.' },
+        content: { ja: 'HyaQShikiの理念に深く共感し、次世代のIT人材育成に貢献できることを誇りに思います。', en: 'I resonate deeply with HyaQShiki\'s philosophy and am proud to contribute to nurturing next-generation IT talent.' }
+      },
+      {
+        name: { ja: '山田健太郎', en: 'Kentaro Yamada' },
+        position: { ja: 'CTO, イノベーション株式会社', en: 'CTO, Innovation Inc.' },
+        content: { ja: 'HyaQShikiのプログラムは、実際のビジネス実践と密接に連携した教育を提供しています。', en: 'HyaQShiki\'s program provides education closely linked to real-world business practices.' }
+      }
+    ]
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, metadata }}>
+    <LanguageContext.Provider value={{ 
+      language, 
+      setLanguage, 
+      t, 
+      metadata,
+      certificationLevels,
+      evaluationProcesses,
+      guaranteeConditions,
+      certificateDetails,
+      getCertificationFees,
+      certificationHero,
+      certificationOverview,
+      certificationEvaluation,
+      certificationCertificate,
+      certificationCTA,
+      certificationFeeSection,
+      corporateTestimonials
+    }}>
       {children}
     </LanguageContext.Provider>
   );
