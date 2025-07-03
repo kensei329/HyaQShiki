@@ -81,6 +81,10 @@ type TranslationKeys =
   // Curriculum Page
   | 'curriculum.title' | 'curriculum.subtitle' | 'curriculum.explanation.title'
     | 'curriculum.explanation.p1' | 'curriculum.explanation.p2' | 'curriculum.explanation.p3'
+  | 'curriculum.timeline.title' | 'curriculum.timeline.days1.title' | 'curriculum.timeline.days1.desc'
+  | 'curriculum.timeline.days2.title' | 'curriculum.timeline.days2.desc'
+  | 'curriculum.timeline.days3.title' | 'curriculum.timeline.days3.desc'
+  | 'curriculum.timeline.days4.title' | 'curriculum.timeline.days4.desc'
   | 'curriculum.flow.title'
   | 'curriculum.flow.phase1.title' | 'curriculum.flow.phase1.period' | 'curriculum.flow.phase1.desc'
   | 'curriculum.flow.phase1.point1' | 'curriculum.flow.phase1.point2' | 'curriculum.flow.phase1.point3' | 'curriculum.flow.phase1.point4'
@@ -432,6 +436,15 @@ const ja: TranslationsType = {
   'curriculum.explanation.p1': '"日常会話でアプリを開発する体験"を通じて、自然とプログラミングの本質を学べる設計になっています。',
   'curriculum.explanation.p2': 'プログラミングの代わりにAIと対話しながら、Webアプリや機能を形にしていく実践的な内容です。',
   'curriculum.explanation.p3': '※本カリキュラムの内容は受講生の進捗状況に応じて柔軟に変更される場合があります。',
+  'curriculum.timeline.title': 'タイムライン（例）',
+  'curriculum.timeline.days1.title': 'Day1-10：基礎固め',
+  'curriculum.timeline.days1.desc': 'HTML/CSS/JavaScriptの基礎 + AIアシストによる初期アウトプット体験',
+  'curriculum.timeline.days2.title': 'Day11-40：毎日アプリ制作',
+  'curriculum.timeline.days2.desc': '毎日1つの実用的アプリを生成AIで開発・リリース',
+  'curriculum.timeline.days3.title': 'Day41-70：テーマ別深堀',
+  'curriculum.timeline.days3.desc': '業界特化・応用設計・UI/UX・セキュリティ・API連携など',
+  'curriculum.timeline.days4.title': 'Day71-100：最終制作と公開',
+  'curriculum.timeline.days4.desc': '集大成アプリを複数制作し、公開・共有・審査・資格認定へ',
   'curriculum.flow.title': '学習の流れ',
   'curriculum.flow.phase1.title': '基礎固め',
   'curriculum.flow.phase1.period': 'Day1',
@@ -827,19 +840,8 @@ const ja: TranslationsType = {
   'corporate.testimonials.person1.content': 'HyaQShikiの理念に共感し、次世代のIT人材育成に貢献できることを誇りに思います。',
   'corporate.testimonials.person2.name': '山田 健太郎',
   'corporate.testimonials.person2.position': 'イノベーション株式会社 CTO',
-  'corporate.testimonials.person2.content': 'HyaQShikiのプログラムは、実際の業務に即した教育を提供してくれます。',
-  // --- カリキュラム タイムライン ---
-  'curriculum.timeline.title': 'タイムライン（例）',
-  'curriculum.timeline.days1.title': 'Day1-10：基礎固め',
-  'curriculum.timeline.days1.desc': 'HTML/CSS/JavaScriptの基礎 + AIアシストによる初期アウトプット体験',
-  'curriculum.timeline.days2.title': 'Day11-40：毎日アプリ制作',
-  'curriculum.timeline.days2.desc': '毎日1つの実用的アプリを生成AIで開発・リリース',
-  'curriculum.timeline.days3.title': 'Day41-70：テーマ別深堀',
-  'curriculum.timeline.days3.desc': '業界特化・応用設計・UI/UX・セキュリティ・API連携など',
-  'curriculum.timeline.days4.title': 'Day71-100：最終制作と公開',
-  'curriculum.timeline.days4.desc': '集大成アプリを複数制作し、公開・共有・審査・資格認定へ'
+  'corporate.testimonials.person2.content': 'HyaQShikiのプログラムは、実際の業務に即した教育を提供してくれます。'
 };
-
 
 const en: TranslationsType = {
   // Navigation
@@ -914,6 +916,15 @@ const en: TranslationsType = {
   'curriculum.explanation.p1': 'Through the experience of "developing apps in everyday conversation," you will naturally grasp the essence of programming.',
   'curriculum.explanation.p2': 'Rather than conventional programming, you will shape web apps and features by interacting with AI in a hands-on, practical way.',
   'curriculum.explanation.p3': '*Curriculum contents may be flexibly adjusted based on participant progress.',
+  'curriculum.timeline.title': 'Timeline (Example)',
+  'curriculum.timeline.days1.title': 'Day 1-10: Foundations',
+  'curriculum.timeline.days1.desc': 'Basics of HTML/CSS/JavaScript + Initial AI-assisted output experience',
+  'curriculum.timeline.days2.title': 'Day 11-40: Daily App Creation',
+  'curriculum.timeline.days2.desc': 'Develop and release one practical app per day using generative AI',
+  'curriculum.timeline.days3.title': 'Day 41-70: Thematic Deep Dive',
+  'curriculum.timeline.days3.desc': 'Industry specialization, advanced design, UI/UX, security, API integration, and more',
+  'curriculum.timeline.days4.title': 'Day 71-100: Final Production & Release',
+  'curriculum.timeline.days4.desc': 'Develop multiple capstone apps, publish, share, review, and obtain certification',
   'curriculum.flow.title': 'Learning Flow',
   'curriculum.flow.phase1.title': 'Foundations',
   'curriculum.flow.phase1.period': 'Day 1',
