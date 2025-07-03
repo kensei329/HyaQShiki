@@ -850,4 +850,493 @@ const ja: TranslationsType = {
   'curriculum.timeline.days4.desc': '集大成アプリを複数制作し、公開・共有・審査・資格認定へ'
 };
 
-// English translations
+
+const en: TranslationsType = {
+  // Navigation
+  'nav.home': 'Home',
+  'nav.curriculum': 'Curriculum',
+  'nav.pricing': 'Pricing',
+  'nav.certification': 'Certification',
+  'nav.corporate': 'Corporate',
+  'nav.philosophy': 'Philosophy',
+  'nav.contact': 'Contact',
+  'nav.language': 'Language',
+
+  // HomePage
+  'home.title': 'Develop Apps\nThrough Everyday Conversation',
+  'home.subtitle': 'There is no need to learn complex programming languages.\nAnyone can develop web apps easily, just like having a normal conversation.\nFrom planning and requirement definition to design, everything is built through dialogue.',
+  'home.slideshow.title2': 'Learn by Reverse-Engineering\nCompleted Apps',
+  'home.slideshow.subtitle2': 'You can intuitively learn how apps work by looking at completed programs.\nGradually deepen your understanding while increasing the level of difficulty, allowing you to acquire programming skills naturally.',
+  'home.slideshow.title3': 'Visualize Your Skills\nwith Our Certification System',
+  'home.slideshow.subtitle3': 'Our four-level certification system (Silver, Gold, Platinum, Black) enables you to objectively prove your skills and proficiency.\nThis reliable evaluation can be used for job hunting and winning new projects.',
+  'home.reasons': 'Features of HyaQShiki',
+  'home.communication': 'App Development Through Daily Conversation',
+  'home.communication.desc': 'There is no need to learn complex programming languages.\nAnyone can develop web apps easily, just like having a normal conversation.\nFrom planning and requirement definition to design, everything is built through dialogue.',
+  'home.code': 'Learn by Reverse-Engineering Completed Apps',
+  'home.code.desc': 'You can intuitively learn how apps work by looking at completed programs.\nGradually deepen your understanding while increasing the level of difficulty, allowing you to acquire programming skills naturally.',
+  'home.certification': 'Visualize Your Skills with Our Certification System',
+  'home.certification.desc': 'Our four-level certification system (Silver, Gold, Platinum, Black) enables you to objectively prove your skills and proficiency.\nThis reliable evaluation can be used for job hunting and winning new projects.',
+  'home.certifications': 'Certification System',
+  'home.certifications.subtitle': 'Four Levels of Certification to Objectively Demonstrate Your Skills',
+  'passRate': 'Pass Rate',
+  'learnMore': 'Learn More',
+  'home.silver': 'Certification of Basic Development Skills.',
+  'home.gold': 'Certification for Consistent Daily Practice.',
+  'home.platina': 'Certification for Advanced Planning and Design.',
+  'home.black': 'Highest Level—Able to Create Value Independently.',
+  'home.guarantee': 'Satisfaction Guarantee',
+  'home.guarantee.desc': 'Full refund within 14 days of starting',
+  'home.methodology.viewCurriculum': 'See Curriculum Details',
+  'home.outline': 'Curriculum Overview',
+  'home.outline.desc': 'A Comprehensive Learning Program',
+  'home.methodology.title': 'Proprietary Methodology',
+  'home.methodology.subtitle': 'Effective Learning Methods',
+  'home.methodology.card1': 'Hands-on Learning',
+  'home.methodology.card2': 'Repetitive Practice',
+  'home.methodology.card3': 'Feedback',
+
+  // Promotional Text
+  'promo.title1': 'Conversation-Based',
+  'promo.title2': 'Super Fast Development',
+  'promo.title3': 'Planning-Oriented',
+  'promo.line1': 'Development progresses through natural language like "I want this" or "I prefer this look."',
+  'promo.line2': 'Reduce coding time to almost zero—your app takes shape in just a few minutes to a few hours.',
+  'promo.line3': 'You can intuitively design by communicating color, motion, and structure as "vibes" to AI.',
+  'promo.section.title': 'What is VIBE Coding—App Development by Conversation?',
+  'promo.section.subtitle': 'VIBE Coding is a new development style where you can build web apps through conversational interaction.',
+  'promo.conversational.title': 'Conversational',
+  'promo.conversational.subtitle': 'Our innovative approach puts conversation at the heart of app development.',
+  'promo.contact.subtitle': 'Questions about our conversation-based development approach? Contact us now!',
+  'promo.cards.convo': 'Conversation vs Code',
+  'promo.cards.natural': 'Natural Language Prompts',
+  'promo.cards.zero': 'No Programming Needed',
+  'promo.cards.speak': 'Add Features by Speaking',
+
+  // Footer
+  'footer.copyright': '©2025',
+  'footer.privacy': 'Privacy Policy',
+  'footer.terms': 'Terms of Use',
+
+  // Curriculum Page
+  'curriculum.title': 'Curriculum',
+  'curriculum.subtitle': 'Acquire skills naturally over three months by learning hands-on',
+  'curriculum.explanation.title': 'How will you learn?',
+  'curriculum.explanation.p1': 'Through the experience of "developing apps in everyday conversation," you will naturally grasp the essence of programming.',
+  'curriculum.explanation.p2': 'Rather than conventional programming, you will shape web apps and features by interacting with AI in a hands-on, practical way.',
+  'curriculum.explanation.p3': '*Curriculum contents may be flexibly adjusted based on participant progress.',
+  'curriculum.flow.title': 'Learning Flow',
+  'curriculum.flow.phase1.title': 'Foundations',
+  'curriculum.flow.phase1.period': 'Day 1',
+  'curriculum.flow.phase1.desc': 'Acquire the basics of development and VIBE coding. Set up your development environment and understand the basic structure of applications.',
+  'curriculum.flow.phase1.point1': 'Set up the development environment',
+  'curriculum.flow.phase1.point2': 'Master the basics of using generative AI tools',
+  'curriculum.flow.phase1.point3': 'Learn how to write and optimize prompts',
+  'curriculum.flow.phase1.point4': 'Build a basic web application',
+  'curriculum.flow.phase2.title': 'Introductory Web Application Development',
+  'curriculum.flow.phase2.period': 'Day 2',
+  'curriculum.flow.phase2.desc': 'Develop practical web applications, gradually increasing complexity to build real-world skills.',
+  'curriculum.flow.phase2.point1': 'Learn the basics of frontend development',
+  'curriculum.flow.phase2.point2': 'Learn how to create requirements definitions and specifications',
+  'curriculum.flow.phase2.point3': 'Gain experience through trial and error',
+  'curriculum.flow.phase2.point4': 'Learn by having AI explain source code in reverse',
+  'curriculum.flow.phase3.title': 'Basic Web Application Development',
+  'curriculum.flow.phase3.period': 'Day 3',
+  'curriculum.flow.phase3.desc': 'Enhance your UI/UX skills in web app development using Next.js.',
+  'curriculum.flow.phase3.point1': 'Learn the benefits of using Next.js',
+  'curriculum.flow.phase3.point2': 'Practice development using localhost',
+  'curriculum.flow.phase3.point3': 'Understand npm commands',
+  'curriculum.flow.phase3.point4': 'Improve your UI/UX design expression',
+  'curriculum.flow.phase4.title': 'Introductory Backend Development',
+  'curriculum.flow.phase4.period': 'Day 4',
+  'curriculum.flow.phase4.desc': 'Experience the benefits of centralized data control/management by using databases in backend development.',
+  'curriculum.flow.phase4.point1': 'Implement a simple backend',
+  'curriculum.flow.phase4.point2': 'Use a simple database',
+  'curriculum.flow.phase4.point3': 'Experience data sharing between users',
+  'curriculum.flow.phase4.point4': 'Implement data integration using APIs',
+  'curriculum.flow.phase5.title': 'Graduation Project',
+  'curriculum.flow.phase5.period': 'Day 5 & 6',
+  'curriculum.flow.phase5.desc': 'Work on a final project that integrates everything you have learned, producing a product ready for the real world or market.',
+  'curriculum.flow.phase5.point1': 'Complete a business plan',
+  'curriculum.flow.phase5.point2': 'Finish and test your product',
+  'curriculum.flow.phase5.point3': 'Coordinate requirements with stakeholders',
+  'curriculum.flow.phase5.point4': 'Give a graduation presentation',
+  'curriculum.approach.title': 'Learning Approach',
+  'curriculum.approach.output.title': 'Output-Focused',
+  'curriculum.approach.output.desc': 'By learning efficiently from generative AI and actually developing applications daily, you will acquire real-world practical skills.',
+  'curriculum.approach.iteration.title': 'Iteration & Improvement',
+  'curriculum.approach.iteration.desc': 'Skills are solidified by repeating the same patterns and continually improving through feedback.',
+  'curriculum.approach.community.title': 'Community Learning',
+  'curriculum.approach.community.desc': 'Broaden your perspective through mutual feedback and collaboration among learners.',
+  'curriculum.approach.mentoring.title': 'Coaching',
+  'curriculum.approach.mentoring.desc': 'Your dedicated mentor will thoroughly support you—from creating your learning plan to overcoming obstacles.',
+
+  // Tools and Technologies
+  'curriculum.tools.title': 'Tools and Technologies Used',
+  'curriculum.tools.ai.title': 'AI Tools',
+  'curriculum.tools.ai.tool1': 'ChatGPT (OpenAI)',
+  'curriculum.tools.ai.tool2': 'Claude (Anthropic)',
+  'curriculum.tools.ai.tool3': 'Midjourney',
+  'curriculum.tools.ai.tool4': 'DALL-E',
+  'curriculum.tools.ai.tool5': 'AutoGPT',
+  'curriculum.tools.dev.title': 'Development Tools',
+  'curriculum.tools.dev.tool1': 'GitHub Copilot',
+  'curriculum.tools.dev.tool2': 'Replit',
+  'curriculum.tools.dev.tool3': 'VS Code',
+  'curriculum.tools.dev.tool4': 'Cursor',
+  'curriculum.tools.dev.tool5': 'Firebase',
+  'curriculum.tools.marketing.title': 'Marketing Tools',
+  'curriculum.tools.marketing.tool1': 'Google Analytics',
+  'curriculum.tools.marketing.tool2': 'Meta Business Suite',
+  'curriculum.tools.marketing.tool3': 'Mailchimp',
+  'curriculum.tools.marketing.tool4': 'Hotjar',
+  'curriculum.tools.marketing.tool5': 'SEO Optimization Tools',
+  'curriculum.tools.business.title': 'Business Tools',
+  'curriculum.tools.business.tool1': 'Stripe',
+  'curriculum.tools.business.tool2': 'QuickBooks',
+  'curriculum.tools.business.tool3': 'Pitch',
+  'curriculum.tools.business.tool4': 'Notion',
+  'curriculum.tools.business.tool5': 'Airtable',
+
+  // Success Metrics
+  'curriculum.metrics.title': 'Success Metrics',
+  'curriculum.metrics.apps.title': 'Features',
+  'curriculum.metrics.apps.desc': 'Develop 100 features and build a practical portfolio.',
+  'curriculum.metrics.monetize.title': 'Monetizable Projects',
+  'curriculum.metrics.monetize.desc': 'We support you in achieving a level of quality where developed apps can be monetized.',
+  'curriculum.metrics.main.title': 'Main Project',
+  'curriculum.metrics.main.desc': 'Ultimately, complete one flagship project and prepare it for real-world business deployment.',
+
+  // Curriculum Call to Action
+  'curriculum.cta.title': 'Accelerate your career with us!',
+  'curriculum.cta.subtitle': 'Gain both the skills and achievements to thrive in the AI era with the HyaQShiki Program.',
+  'curriculum.cta.free_trial': 'Apply for Free Trial',
+  'curriculum.cta.pricing': 'See Pricing Plans',
+
+  // Pricing Page
+  'pricing.title': 'Pricing & Guarantee',
+  'pricing.subtitle': 'The best plan to accelerate your career and invest in your future.',
+  'pricing.plans.title': 'Course Fee Plans',
+  'pricing.plans.desc': 'HyaQShiki offers a variety of plans tailored to your learning needs and budget. All plans include the same curriculum and high-quality learning experience.',
+  'pricing.plans.basic.title': 'Basic Plan',
+  'pricing.plans.basic.badge': 'Popular',
+  'pricing.plans.basic.feature1': 'Discount for lump-sum payment',
+  'pricing.plans.basic.feature2': '24/7 AI Support',
+  'pricing.plans.basic.feature3': 'Group mentoring once every two weeks',
+  'pricing.plans.basic.feature4': 'Access to Community',
+  'pricing.plans.basic.feature5': '3-month contract',
+  'pricing.plans.basic.feature6': 'HyaQShiki Certification Exam',
+  'pricing.plans.basic.cta': 'Apply Now',
+  'pricing.plans.basic.label': 'Basic Plan',
+  'pricing.plans.basic.price': '298,000',
+  'pricing.plans.basic.currency': 'JPY',
+  'pricing.plans.basic.tax': '(tax included) / lump-sum payment',
+  'pricing.plans.monthly.title': 'Monthly Plan',
+  'pricing.plans.monthly.feature1': 'Monthly installment',
+  'pricing.plans.monthly.feature2': '24/7 AI Support',
+  'pricing.plans.monthly.feature3': 'Group mentoring once every two weeks',
+  'pricing.plans.monthly.feature4': 'Access to Community',
+  'pricing.plans.monthly.feature5': '3-month contract',
+  'pricing.plans.monthly.feature6': 'HyaQShiki Certification Exam',
+  'pricing.plans.monthly.cta': 'Apply Now',
+  'pricing.plans.monthly.label': 'Monthly Plan',
+  'pricing.plans.monthly.price': '110,000',
+  'pricing.plans.monthly.currency': 'JPY',
+  'pricing.plans.monthly.tax': '(tax included) / month',
+  'pricing.plans.sponsor.title': 'Sponsor Plan',
+  'pricing.plans.sponsor.feature1': 'Tuition Free',
+  'pricing.plans.sponsor.feature2': 'Must participate in company projects',
+  'pricing.plans.sponsor.feature3': 'Screening and selection required',
+  'pricing.plans.sponsor.feature4': 'Project deliverables required',
+  'pricing.plans.sponsor.feature5': 'Weekly reports',
+  'pricing.plans.sponsor.feature6': 'HyaQShiki Certification Exam',
+  'pricing.plans.sponsor.cta': 'Contact Us',
+  'pricing.plans.sponsor.label': 'Sponsor Plan',
+  'pricing.plans.sponsor.price': 'Contact us',
+  'pricing.plans.sponsor.tax': '(Plan details)',
+  'pricing.guarantee.title': 'Satisfaction Guarantee',
+  'pricing.guarantee.subtitle': 'Full refund within 14 days',
+  'pricing.guarantee.desc': 'We are confident in our course quality, so HyaQShiki offers a full refund guarantee. If you are not satisfied within 14 days after starting, you will receive a full refund for any reason.',
+  'pricing.guarantee.conditions.title': 'Eligibility Conditions',
+  'pricing.guarantee.conditions.condition1': 'Apply within 14 days from the start of the course',
+  'pricing.guarantee.conditions.condition2': 'Meet requirements such as submitting assignments and progress rate',
+  'pricing.guarantee.conditions.condition3': 'Application must be made by the student',
+  'pricing.guarantee.procedure.title': 'How to Apply',
+  'pricing.guarantee.procedure.desc': 'Notify your mentor or customer support of your refund request. We will provide a dedicated form and guide you through the necessary information.',
+  'pricing.guarantee.refund.title': 'Refund Process',
+  'pricing.guarantee.refund.desc': 'Refunds will be processed by the same payment method within 14 business days after acceptance. For installments, only amounts paid will be refunded.',
+  'pricing.guarantee.notes.title': 'Notes',
+  'pricing.guarantee.notes.note1': 'The guarantee can be used only once per person.',
+  'pricing.guarantee.notes.note2': 'After a refund, re-enrollment in the same program is not possible.',
+  'pricing.guarantee.notes.note3': 'If fraud or false application is found, you will not be eligible for a refund.',
+
+  'pricing.payment.title': 'Payment Methods',
+  'pricing.payment.credit.title': 'Credit Card',
+  'pricing.payment.credit.desc': 'VISA, MasterCard, JCB, American Express, Diners Club accepted.',
+  'pricing.payment.bank.title': 'Bank Transfer',
+  'pricing.payment.bank.desc': 'Bank transfer details will be provided after application. Transfer fees are the applicant\'s responsibility.',
+  'pricing.payment.installment.title': 'Installments',
+  'pricing.payment.installment.desc': 'Installment plans by partner finance companies are available. Subject to approval.',
+  'pricing.payment.note': '*Corporate applications are also accepted. If you wish to pay by invoice, please contact us via the inquiry form.',
+  'pricing.faq.title': 'Frequently Asked Questions',
+  'pricing.contact': 'For other questions, please contact us.',
+  'pricing.satisfaction.title': 'Satisfaction Guarantee',
+  'pricing.satisfaction.alt': 'HyaQShiki Satisfaction Guarantee',
+  'pricing.satisfaction.guarantee': '14-Day Full Refund Guarantee',
+  'pricing.satisfaction.desc': 'We are confident in our course quality, so HyaQShiki offers a full refund guarantee. If you are not satisfied within 14 days after starting, you will receive a full refund for any reason.',
+  'pricing.satisfaction.eligibility': 'Eligibility',
+  'pricing.satisfaction.application': 'How to Apply',
+  'pricing.satisfaction.application.desc': 'Notify your mentor or customer support of your refund request. We will provide a dedicated form and guide you through the necessary information.',
+  'pricing.satisfaction.refund': 'Refund Process',
+  'pricing.satisfaction.refund.desc': 'Refunds will be processed by the same payment method within 14 business days after acceptance. For installments, only amounts paid will be refunded.',
+  'pricing.satisfaction.notes': 'Notes',
+  'pricing.cta.title': 'Why not try our free trial first?',
+  'pricing.cta.subtitle': 'Start learning that will boost your productivity 100x, beginning today.',
+  'pricing.cta.button': 'Apply for Free Trial',
+
+  // FAQs
+  'pricing.faq.q1': 'Do I need a computer?',
+  'pricing.faq.a1': 'Yes, you do. Support for acquiring a computer is available upon request.',
+  'pricing.faq.q2': 'Can I extend the learning period?',
+  'pricing.faq.a2': 'Yes, you can extend your enrollment for up to three months for an additional monthly fee (49,800 JPY per month).',
+  'pricing.faq.q3': 'Is there any support after completing the course?',
+  'pricing.faq.a3': 'Graduates can join the alumni community. Optional additional mentor support and career/entrepreneurship support programs are also available.',
+
+  // Payment methods (duplicate but included for completeness)
+  'pricing.payment.method1.title': 'Credit Card',
+  'pricing.payment.method1.desc': 'VISA, MasterCard, JCB, American Express, Diners Club accepted.',
+  'pricing.payment.method2.title': 'Bank Transfer',
+  'pricing.payment.method2.desc': 'Bank transfer details will be provided after application. Transfer fees are the applicant\'s responsibility.',
+  'pricing.payment.method3.title': 'Cryptocurrency',
+  'pricing.payment.method3.desc': 'Bitcoin, Ethereum, and USDT accepted.',
+  // Sponsor & Partner Program
+  'sponsor.overview.title': 'Sponsor Program Overview',
+  'sponsor.overview.question': 'What is the HyaQShiki Sponsor Program?',
+  'sponsor.overview.description': 'At HyaQShiki, we nurture next-generation developers capable of 100x productivity in the generative AI era, integrating real-world company projects into the education program to achieve simultaneous learning and hands-on experience.',
+  'sponsor.overview.benefit1': 'Students gain hands-on experience by working on real corporate challenges.',
+  'sponsor.overview.benefit2': 'Early engagement with outstanding talents who could become future hires.',
+  'sponsor.benefits.title': 'Benefits for Sponsor Companies',
+  'sponsor.benefits.benefit1': 'Driving Innovation',
+  'sponsor.benefits.benefit1.description': 'Develop new solutions from a fresh perspective through the latest AI technologies and the creative power of young talent.',
+  'sponsor.benefits.benefit2': 'Support for Talent Development',
+  'sponsor.benefits.benefit2.description': 'Enhance your employees\' AI literacy and gain stimulation from interaction with students.',
+  'sponsor.benefits.benefit3': 'Recruitment Pipeline',
+  'sponsor.benefits.benefit3.description': 'Discover outstanding students early and build relationships for recruitment.',
+  'sponsor.benefits.benefit4': 'Branding',
+  'sponsor.benefits.benefit4.description': 'Enhance your corporate brand as a leading company supporting next-generation talent development.',
+
+  // Education & Industry Integration
+  'education.integration.title': 'Integration of Corporate Challenges and Education',
+  'education.integration.integration': 'Practical Skills Through Real-World Challenges',
+  'education.integration.description': 'At HyaQShiki, we incorporate real corporate projects and challenges into the educational curriculum, providing students with practical experience while delivering valuable deliverables to companies.',
+  'education.integration.example': 'Examples of Projects',
+  'education.integration.example1': 'Web Application Development',
+  'education.integration.example2': 'Data Analysis & Visualization',
+  'education.integration.example3': 'AI Feature Integration',
+  'education.integration.example4': 'UI/UX Design Improvements',
+  'education.integration.example5': 'Business Efficiency Tools',
+  'education.integration.brief': 'Project Overview',
+  'education.integration.brief.description': 'Projects provided by companies are appropriately tailored to the students\' level and curriculum progress, and carried out as educational projects with practical and educational value.',
+
+  // Certified Partner Program
+  'special.certified.partner.title': 'Certified Partner Program',
+  'special.certified.partner.certified': 'Become a HyaQShiki Certified Partner',
+  'special.certified.partner.description': 'For companies building an ongoing partnership, we offer special status and benefits as a HyaQShiki Certified Partner.',
+  'special.certified.partner.logo': 'Use of Certified Partner Logo',
+  'special.certified.partner.logo.description': 'You may use the HyaQShiki Certified Partner logo on your website and marketing materials.',
+  'special.certified.partner.project': 'Priority Project Participation',
+  'special.certified.partner.project.description': 'Priority access to submit corporate challenges to student research and graduation projects.',
+  'special.certified.partner.commercialization': 'Commercialization Support',
+  'special.certified.partner.commercialization.description': 'Receive priority support for commercialization and implementation of outstanding student-developed solutions.',
+  'special.certified.partner.talent': 'Talent Introduction',
+  'special.certified.partner.talent.description': 'Get priority introduction to graduates matched to your corporate needs.',
+
+  // Partner Testimonials
+  'partner.testimonials.title': 'Voices from Partner Companies',
+  'partner.testimonials.testimonial1': 'Through collaboration with HyaQShiki, we were able to find new solutions to challenges that had remained unsolved within our company. The students\' flexible thinking and their understanding of cutting-edge technology far exceeded our expectations.',
+  'partner.testimonials.name1': 'Kentaro Yamada',
+  'partner.testimonials.position1': 'CTO, TechnoFuture Inc.',
+  'partner.testimonials.testimonial2': 'We started the program as part of talent development, but it also led to the creation of new business ideas and brought us great value. The dedication of the students has inspired our employees as well.',
+  'partner.testimonials.name2': 'Misaki Sato',
+  'partner.testimonials.position2': 'Head of HR, Global Innovation Inc.',
+
+  // Partnership Flow
+  'contact.partnership.flow.title': 'Partnership Process',
+  'contact.partnership.flow.step1': 'Company Information Registration',
+  'contact.partnership.flow.step2': 'Online Meeting',
+  'contact.partnership.flow.step3': 'Project Registration',
+  'contact.partnership.flow.step4': 'Mentoring',
+  'contact.partnership.flow.step5': 'Deliverables Submission',
+  'contact.partnership.flow.step6': 'Feedback',
+  'contact.partnership.flow.company.form': 'Company Information Registration',
+  'contact.partnership.flow.company.form.desc': 'Register your company information through the dedicated form. You can also specify your basic partnership requests or challenge outlines at this stage.',
+  'contact.partnership.flow.online.meeting': 'Online Meeting',
+  'contact.partnership.flow.online.meeting.desc': 'We will hold an initial meeting with the person in charge to discuss your needs, challenges, and specific direction for the partnership.',
+  'contact.partnership.flow.project.registration': 'Project Registration',
+  'contact.partnership.flow.project.registration.desc': 'Finalize the project content and tailor it as appropriate for the students. We may sign a non-disclosure agreement as necessary.',
+  'contact.partnership.flow.mentoring': 'Mentoring',
+  'contact.partnership.flow.mentoring.desc': 'During the project, corporate representatives may advise and guide students as needed.',
+  'contact.partnership.flow.deliverable': 'Deliverables Submission',
+  'contact.partnership.flow.deliverable.desc': 'After project completion, deliverables will be submitted and a final report meeting will be held. Students will present their work and answer questions.',
+  'contact.partnership.flow.feedback': 'Feedback',
+  'contact.partnership.flow.feedback.desc': 'After project completion, feedback will be collected from both company and students and used for future improvements. We will also consider ongoing partnerships.',
+
+  // Mission, Vision, Values
+  'philosophy.mission.title': 'Mission',
+  'philosophy.mission.desc': 'Transform AI into a powerful tool and nurture talent that maximizes creativity.',
+  'philosophy.vision.title': 'Vision',
+  'philosophy.vision.desc': 'Realize a society where anyone can become an innovator through the democratization of technology.',
+  'philosophy.values.title': 'Values',
+  'philosophy.values.v1': 'Practice First: Learning comes from action.',
+  'philosophy.values.v2': 'Co-Creation: Teach and learn together.',
+  'philosophy.values.v3': 'Future-Oriented: Always pursue the next innovation.',
+   // Certification Evaluation & Certificate Details
+   'certification.evaluation.criteria.title.ja': 'Certification Criteria',
+   'certification.evaluation.criteria.title.en': 'Certification Criteria',
+   'certification.about': 'About Certification',
+   'certification.ranks': 'Certification Levels',
+   'certification.evaluation.method': 'Evaluation Method',
+   'certification.certificate.about': 'About the Certificate',
+   'certification.certificate.format': 'Certificate Format',
+   'certification.certificate.cycle': 'Certification Cycle',
+   'certification.certificate.renewal': 'Renewal Fee',
+   'certification.certificate.expiration': 'Renewal & Expiry Rules',
+   'certification.exam.fees': 'Exam Fee',
+   'certification.evaluation.criteria': 'Evaluation Criteria:',
+   'certification.cta.title': 'Officially prove your AI skills and expand your career opportunities.',
+   'certification.cta.subtitle': 'HyaQShiki Certification is a powerful tool to prove your skills in the era of generative AI.',
+   'certification.cta.apply': 'Apply for Certification Exam',
+ 
+   // Satisfaction Guarantee Badge
+   'home.satisfaction.badge': 'Service Quality Guarantee',
+ 
+   // Corporate Testimonials (repeat for completeness)
+   'corporate.testimonials.person1.name': 'Taro Tanaka',
+   'corporate.testimonials.person1.position': 'CEO, Technology Inc.',
+   'corporate.testimonials.person1.content': 'I resonate deeply with HyaQShiki\'s philosophy and am proud to contribute to nurturing next-generation IT talent.',
+   'corporate.testimonials.person2.name': 'Kentaro Yamada',
+   'corporate.testimonials.person2.position': 'CTO, Innovation Inc.',
+   'corporate.testimonials.person2.content': 'HyaQShiki\'s program provides education closely linked to real-world business practices.',
+ 
+   // Curriculum Timeline Example (again for completeness)
+   'curriculum.timeline.title': 'Timeline (Example)',
+   'curriculum.timeline.days1.title': 'Day 1–10: Foundations',
+   'curriculum.timeline.days1.desc': 'Basics of HTML/CSS/JavaScript + Initial AI-assisted output experience',
+   'curriculum.timeline.days2.title': 'Day 11–40: Daily App Creation',
+   'curriculum.timeline.days2.desc': 'Develop and release one practical app per day using generative AI',
+   'curriculum.timeline.days3.title': 'Day 41–70: Thematic Deep Dive',
+   'curriculum.timeline.days3.desc': 'Industry specialization, advanced design, UI/UX, security, API integration, and more',
+   'curriculum.timeline.days4.title': 'Day 71–100: Final Production & Release',
+   'curriculum.timeline.days4.desc': 'Develop multiple capstone apps, publish, share, review, and obtain certification',
+ 
+  // Contact Page
+  'contact.title': 'Contact',
+  'contact.subtitle': 'Feel free to contact us for any inquiries.',
+  'contact.form.name': 'Name',
+  'contact.form.email': 'Email',
+  'contact.form.subject': 'Subject',
+  'contact.form.message': 'Message',
+  'contact.form.submit': 'Send',
+  'contact.info.title': 'Contact Information',
+  'contact.info.address': 'Address',
+  'contact.info.email': 'Email',
+  'contact.info.phone': 'Phone',
+  'contact.info.address.label': 'Address',
+  'contact.info.email.label': 'Email',
+  'contact.info.phone.label': 'Phone',
+  'contact.info.hours': 'Business Hours',
+  'contact.info.hours.weekdays': 'Weekdays',
+  'contact.info.hours.saturday': 'Saturday',
+  'contact.info.hours.sunday': 'Sunday',
+  'contact.info.hours.closed': 'Closed',
+  // Curriculum Stack
+  'curriculum.stack.title': 'Tech Stack',
+  'curriculum.stack.requirements.title': 'Requirements',
+  'curriculum.stack.requirements.head': 'Required Items',
+  'curriculum.stack.requirements.list1': 'PC or Mac',
+  'curriculum.stack.requirements.list2': 'Internet Connection',
+  'curriculum.stack.env.title': 'Development Environment',
+  'curriculum.stack.env.head1': 'Frontend',
+  'curriculum.stack.env.env1': 'Next.js',
+  'curriculum.stack.env.env2': 'React',
+  'curriculum.stack.env.head2': 'Backend',
+  'curriculum.stack.env.env3': 'Node.js',
+  'curriculum.stack.env.env4': 'Firebase',
+  'curriculum.stack.frontend.title': 'Frontend',
+  'curriculum.stack.frontend.head': 'Frontend Tools',
+  'curriculum.stack.frontend.list1': 'Next.js',
+  'curriculum.stack.frontend.list2': 'React',
+  'curriculum.stack.frontend.list3': 'Tailwind CSS',
+  'curriculum.stack.backend.title': 'Backend',
+  'curriculum.stack.backend.head': 'Backend Tools',
+  'curriculum.stack.backend.list1': 'Node.js',
+  'curriculum.stack.backend.list2': 'Firebase',
+ };
+
+const translations: Record<Language, TranslationsType> = { ja, en };
+
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguage] = useState<Language>('ja');
+
+  // Initialize language from localStorage if available
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language') as Language;
+    if (savedLanguage && (savedLanguage === 'ja' || savedLanguage === 'en')) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  // Save language preference to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('language', language);
+    // Update the html lang attribute
+    document.documentElement.lang = language;
+  }, [language]);
+
+  // Translation function
+  const t = (key: TranslationKeys | string): string => {
+    if (key in translations[language]) {
+      return translations[language][key as TranslationKeys];
+    }
+    return key;
+  };
+
+  // --- metadata定義を追加 ---
+  const metadata = {
+    title: {
+      ja: "HyaQShiki-百式- - 生成AIと100日100アプリで未来を創る教育プログラム",
+      en: "HyaQShiki - 100 Days of AI App Development Education Program"
+    },
+    description: {
+      ja: "100日、100の型、100倍の生産力。HyaQShiki-百式-は、AIで効率的にアプリ開発する手法を学び、毎日ひとつアプリを創る教育プログラムです。",
+      en: "100 days, 100 patterns, 100x productivity. Learn efficient AI-powered app development and create one app daily."
+    },
+    openGraph: {
+      title: {
+        ja: "HyaQShiki-百式- - 生成AIと100日100アプリで未来を創る教育プログラム",
+        en: "HyaQShiki - 100 Days of AI App Development Education Program"
+      },
+      description: {
+        ja: "100日、100の型、100倍の生産力。そして無限の未来へ。AIを使いこなす武器に変えるための学び。",
+        en: "100 days, 100 patterns, 100x productivity. Journey to infinite possibilities. Master AI as your development superpower."
+      },
+      images: ['/images/HyaQShiki.jpg'],
+      url: 'https://HyaQShiki.com',
+      type: 'website'
+    }
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t, metadata }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+// Custom hook for using the language context
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+}; 
