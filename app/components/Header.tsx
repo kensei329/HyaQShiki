@@ -97,15 +97,15 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 ${scrolled ? 'bg-black shadow-lg' : 'bg-black bg-opacity-70'} backdrop-blur transition-all duration-300 text-white`}>
+    <header className={`fixed bottom-0 left-0 w-full z-[9999] lg:top-0 lg:bottom-auto ${scrolled ? 'bg-black shadow-lg' : 'bg-black bg-opacity-70'} backdrop-blur transition-all duration-300 text-white`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-5 py-3 sm:py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-2 flex-shrink-0 max-w-[40px] h-[40px]">
           <Link href="/">
-            <div className="flex items-center gap-2">
-              <Image src="/images/HyaQShix.png" alt="HyaQShix百式" width={40} height={40} />
-              <span className="text-lg font-bold"><span className="text-yellow-400">HyaQShix</span>百式</span>
+            <div className="flex items-center gap-2 max-w-[40px] h-[40px]">
+              <Image src="/images/HyaQShiki.png" alt="HyaQShiki-百式-" width={40} height={40} className="max-w-[40px] h-auto object-contain" />
+              <span className="text-lg font-bold"><span className="text-yellow-400">HyaQShiki</span>百式</span>
             </div>
           </Link>
         </div>
@@ -140,7 +140,7 @@ export default function Header() {
             </button>
             
             {mobileLangOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-black border border-gray-700 rounded shadow-lg z-50">
+              <div className="absolute right-0 bottom-full mb-2 w-40 bg-black border border-gray-700 rounded shadow-lg z-50">
                 <button 
                   className={`flex items-center w-full px-4 py-2 text-left hover:bg-gray-800 ${language === 'ja' ? 'text-yellow-400' : 'text-white'}`}
                   onClick={() => handleLanguageChange('ja')}
@@ -248,7 +248,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div 
             ref={mobileMenuRef}
-            className="absolute top-full left-0 w-full bg-black border-t border-gray-800 shadow-lg z-40 lg:hidden"
+            className="absolute bottom-full left-0 w-full bg-black border-t border-gray-800 shadow-lg z-40 lg:hidden"
           >
             <nav className="flex flex-col py-3">
               {navItems.map((item) => (

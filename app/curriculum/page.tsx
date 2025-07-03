@@ -160,7 +160,7 @@ export default function CurriculumPage() {
             {t('curriculum.title')}
           </motion.h1>
           <motion.p 
-            className="text-xl text-yellow-50"
+            className="text-xl text-yellow-50 whitespace-pre-line"
             variants={fadeInUp}
           >
             {t('curriculum.subtitle')}

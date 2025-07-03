@@ -147,71 +147,78 @@ export default function CertificationPage() {
           </motion.div>
         </section>
 
-        {/* Certification Levels */}
-        <section className="py-24 relative overflow-hidden bg-black">
-          <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-30 blur-3xl"></div>
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full opacity-30 blur-3xl"></div>
-          
-          <motion.div 
-            className="max-w-6xl mx-auto px-6 relative z-10"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
+        {/* Certifications */}
+      <section className="py-24 text-white relative bg-black">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern-bg.png')] opacity-5 bg-repeat"></div>
+        <motion.div 
+          className="max-w-6xl mx-auto px-6 relative z-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-4"
+            variants={fadeInUp}
           >
-            <motion.h2 
-              className="text-4xl font-bold text-center mb-4"
-              variants={fadeInUp}
-            >
-              {t('certification.ranks')}
-            </motion.h2>
-            <motion.div 
-              className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
-              variants={fadeInUp}
-            ></motion.div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {certificationLevels.map((level, index) => (
+            {t('home.certifications')}
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
+            variants={fadeInUp}
+          ></motion.div>
+          <motion.p
+            className="text-center text-gray-300 max-w-2xl mx-auto mb-16"
+            variants={fadeInUp}
+          >
+            {t('home.certifications.subtitle')}
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: 'Silver', desc: 'home.silver', passRate: '72%', bg: 'bg-gradient-to-br from-gray-400 to-gray-600', textColor: 'text-white', icon: 'medal' },
+              { title: 'Gold', desc: 'home.gold', passRate: '48%', bg: 'bg-gradient-to-br from-yellow-500 to-amber-600', textColor: 'text-white', icon: 'trophy' },
+              { title: 'Platina', desc: 'home.platina', passRate: '26%', bg: 'bg-gradient-to-br from-gray-100 to-gray-300', textColor: 'text-gray-900', icon: 'gem' },
+              { title: 'Black', desc: 'home.black', passRate: '9%', bg: 'bg-gradient-to-br from-gray-900 to-black', textColor: 'text-white', icon: 'crown' }
+            ].map((cert, index) => (
+              <motion.div 
+                key={index}
+                className="group perspective"
+                variants={fadeInUp}
+                whileHover={{
+                  z: 50,
+                  transition: { duration: 0.3 }
+                }}
+              >
                 <motion.div 
-                  key={index} 
-                  className={`rounded-xl border ${level.borderClass} overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ${level.bgClass} ${level.textClass || 'text-white'}`}
-                  variants={fadeInUp}
-                  whileHover={{
-                    y: -10,
-                    transition: { duration: 0.3 }
+                  className={`rounded-xl overflow-hidden shadow-lg ${cert.title === 'Black' ? 'shadow-yellow-500/20' : ''} h-full transform-gpu transition-all duration-500 group-hover:shadow-2xl border border-gray-800`}
+                  whileHover={{ 
+                    scale: 1.05,
+                    rotateY: 5,
+                    transition: { duration: 0.4 }
                   }}
                 >
-                  <div className="p-6 text-center">
-                    <h3 className="text-2xl font-bold mb-2">
-                      {level.title[language]}
-                    </h3>
-                    <p className="text-sm font-semibold mb-4">
-                      {level.passRate[language]}
-                    </p>
-                    <p className="mb-4 text-sm">
-                      {level.description[language]}
-                    </p>
-                    <h4 className="font-semibold text-left mb-2">
-                      {t('certification.evaluation.criteria')}
-                    </h4>
-                    <ul className="text-left text-sm space-y-1">
-                      {level.criteria.map((criterion, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <svg className="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          <span>
-                            {criterion[language]}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className={`${cert.bg} h-24 relative flex items-center justify-center`}>
+                    <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('/images/certificate-pattern.png')]"></div>
+                    <i className={`fas fa-${cert.icon} text-4xl ${cert.title === 'Platina' ? 'text-gray-900' : 'text-white'}`}></i>
+                    <div className="absolute -bottom-5 right-5 w-20 h-20 rounded-full bg-black/80 backdrop-blur-sm border border-gray-700 shadow-lg flex flex-col items-center justify-center">
+                      <span className={`text-sm font-semibold ${cert.title === 'Platina' ? 'text-gray-200' : 'text-white'}`}>{t('passRate')}</span>
+                      <span className={`text-lg font-bold ${cert.title === 'Gold' ? 'text-yellow-500' : cert.title === 'Platina' ? 'text-gray-200' : 'text-white'}`}>{cert.passRate}</span>
+                    </div>
+                  </div>
+                  <div className="p-8 bg-black flex-grow flex flex-col justify-between">
+                    <div>
+                      <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-xs font-semibold mb-6 backdrop-blur-sm">CERTIFICATION</span>
+                      <h3 className={`text-2xl font-bold mb-4 ${cert.title === 'Gold' ? 'text-yellow-500' : cert.title === 'Platina' ? 'text-gray-200' : cert.textColor}`}>{cert.title}</h3>
+                      <p className="text-gray-300 opacity-90 mb-6">{t(cert.desc)}</p>
+                    </div>
                   </div>
                 </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
 
         {/* Evaluation Process */}
         <section className="py-24 relative overflow-hidden bg-black">
@@ -407,25 +414,43 @@ export default function CertificationPage() {
                         {certificationFeeSection.tableHeaders.fee[language]}
                       </th>
                       <th className="py-4 px-6 text-left text-yellow-400 font-bold">
-                        {certificationFeeSection.tableHeaders.passRate[language]}
-                      </th>
-                      <th className="py-4 px-6 text-left text-yellow-400 font-bold">
                         {certificationFeeSection.tableHeaders.renewal[language]}
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {certificationFees.map((fee, index) => (
-                      <tr 
-                        key={index} 
-                        className={`border-b border-gray-800 hover:bg-white/5 transition-colors duration-200 ${index % 2 === 0 ? 'bg-white/[0.02]' : ''}`}
-                      >
-                        <td className="py-4 px-6">{fee.rank}</td>
-                        <td className="py-4 px-6">{fee.fee}</td>
-                        <td className="py-4 px-6">{fee.passRate}</td>
-                        <td className="py-4 px-6">{fee.renewal}</td>
-                      </tr>
-                    ))}
+                    {/* 49,800円のセル結合ロジック */}
+                    {(() => {
+                      // 49,800円のfeeを持つ行をまとめてrowSpan
+                      const feeRows = certificationFees.filter(fee => fee.fee === '49,800円');
+                      const otherRows = certificationFees.filter(fee => fee.fee !== '49,800円');
+                      return [
+                        feeRows.length > 0 && (
+                          <tr key="fee-49800">
+                            <td className="py-4 px-6">{feeRows[0].rank}</td>
+                            <td className="py-4 px-6" rowSpan={feeRows.length}>{feeRows[0].fee}</td>
+                            <td className="py-4 px-6" rowSpan={feeRows.length}>{feeRows[0].renewal}</td>
+                          </tr>
+                        ),
+                        ...feeRows.slice(1).map((fee, idx) => (
+                          <tr key={`fee-49800-${idx+1}`}>
+                            <td className="py-4 px-6">{fee.rank}</td>
+                            {/* feeセル・renewalセルはrowSpanで結合済みなので空 */}
+                            <td className="hidden"></td>
+                            <td className="hidden"></td>
+                          </tr>
+                        )),
+                        ...otherRows.map((fee, idx) => (
+                          <tr key={`fee-other-${idx}`}
+                            className={`border-b border-gray-800 hover:bg-white/5 transition-colors duration-200 ${idx % 2 === 0 ? 'bg-white/[0.02]' : ''}`}
+                          >
+                            <td className="py-4 px-6">{fee.rank}</td>
+                            <td className="py-4 px-6">{fee.fee}</td>
+                            <td className="py-4 px-6">{fee.renewal}</td>
+                          </tr>
+                        ))
+                      ];
+                    })()}
                   </tbody>
                 </table>
               </div>

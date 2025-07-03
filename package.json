@@ -1,5 +1,5 @@
 {
-  "name": "hyaqshix-web",
+  "name": "HyaQShiki-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "framer-motion": "^12.10.0",
     "gsap": "^3.13.0",
     "locomotive-scroll": "^4.1.4",

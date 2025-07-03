@@ -119,11 +119,12 @@ export default function HomePage() {
                 variants={staggerContainer}
               >
                 <motion.h1 
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
+                  className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
                   variants={fadeInUp}
-                >
-                  {slides[currentSlide].title}
-                </motion.h1>
+                  dangerouslySetInnerHTML={{
+                    __html: slides[currentSlide].title.replace(/\n/g, '<br />')
+                  }}
+                />
                 <motion.p 
                   className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
                   variants={fadeInUp}
@@ -258,38 +259,39 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+            <div className="text-center w-full">
+              <span
+                className="text-yellow-400 font-bold text-2xl sm:text-3xl md:text-4xl leading-tight max-w-full w-full inline-block mb-4 break-words whitespace-normal px-4"
+                style={{ wordBreak: 'break-word', lineHeight: '1.2' }}
+              >
                 {t('promo.section.title')}
               </span>
-            </h2>
+            </div>
             <div className="w-24 h-1 bg-yellow-400 mx-auto mb-4"></div>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              {t('promo.section.subtitle')}
-            </p>
+            <div className="flex justify-center w-full">
+              <span className="text-lg text-gray-300 max-w-lg w-full text-left inline-block">
+                {t('promo.section.subtitle')}
+              </span>
+            </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 my-16">
             {[
-              { quote: 'promo.line1', icon: 'comments' },
-              { quote: 'promo.line2', icon: 'keyboard' },
-              { quote: 'promo.line3', icon: 'lightbulb' }
+              { label: t('promo.title1'), icon: 'comments' },
+              { label: t('promo.title2'), icon: 'keyboard' },
+              { label: t('promo.title3'), icon: 'lightbulb' }
             ].map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-yellow-500/50 shadow-xl transition-all duration-300 hover:shadow-yellow-500/10 group"
+                className="flex flex-col items-center justify-center text-center px-8 py-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700 shadow-xl min-w-[260px]"
               >
-                <div className="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20 group-hover:scale-110 transition-transform duration-300">
-                  <i className={`fas fa-${item.icon} text-gray-900 text-xl`}></i>
+                <div className="bg-yellow-400 w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <i className={`fas fa-${item.icon} text-4xl text-gray-900`}></i>
                 </div>
-                <p className="text-gray-100 leading-relaxed group-hover:text-white transition-colors duration-300 whitespace-pre-line">
-                  {t(item.quote)}
-                </p>
-              </motion.div>
+                <div className="text-yellow-400 text-2xl md:text-3xl font-extrabold mb-2 tracking-wide whitespace-pre-line">
+                  {item.label}
+                </div>
+              </div>
             ))}
           </div>
 

@@ -54,9 +54,9 @@ type TranslationKeys =
   | 'nav.corporate' | 'nav.philosophy' | 'nav.contact' | 'nav.language'
   
   // Footer
-  | 'footer.slogan' | 'footer.navigation' | 'footer.home' | 'footer.curriculum'
-  | 'footer.pricing' | 'footer.certification' | 'footer.corporate' | 'footer.philosophy'
-  | 'footer.contact' | 'footer.contactForm' | 'footer.faq' | 'footer.community'
+  //| 'footer.slogan' | 'footer.navigation' | 'footer.home' | 'footer.curriculum'
+  //| 'footer.pricing' | 'footer.certification' | 'footer.corporate' | 'footer.philosophy'
+  //| 'footer.contact' | 'footer.contactForm' | 'footer.faq' | 'footer.community'
   | 'footer.copyright' | 'footer.privacy' | 'footer.terms'
   
   // HomePage
@@ -71,6 +71,7 @@ type TranslationKeys =
   | 'home.slideshow.title2' | 'home.slideshow.subtitle2' | 'home.slideshow.title3' | 'home.slideshow.subtitle3'
   
   // Promotional Text
+  | 'promo.title1' | 'promo.title2' | 'promo.title3'
   | 'promo.line1' | 'promo.line2' | 'promo.line3'
   | 'promo.section.title' | 'promo.section.subtitle'
   | 'promo.conversational.title' | 'promo.conversational.subtitle'
@@ -354,24 +355,24 @@ const ja: TranslationsType = {
   'nav.home': 'ホーム',
   'nav.curriculum': 'カリキュラム',
   'nav.pricing': '料金',
-  'nav.certification': '認定',
+  'nav.certification': '資格認定',
   'nav.corporate': '法人',
   'nav.philosophy': '理念',
   'nav.contact': 'お問い合わせ',
   'nav.language': '言語',
 
   // HomePage
-  'home.title': '日常会話のみでアプリ開発',
+  'home.title': '日常会話のみで\nアプリ開発',
   'home.subtitle': '難しいプログラミング言語を覚える必要はありません。\n普通の会話のような感覚で、誰でも簡単にWebアプリを開発できます。\n企画から要件定義・設計を含め、すべて会話形式で構築を行います。',
-  'home.slideshow.title2': ' アプリ完成品から逆算で学ぶ ',
-  'home.slideshow.subtitle2': 'AIが日常会話を元に作ったソースコードを見ながら、仕組みを自然に学習できます。\n徐々に難易度を上げながら理解を深めていくので、無理なくプログラミングを身につけられます。',
-  'home.slideshow.title3': ' 資格認定制度でスキル可視化 ',
+  'home.slideshow.title2': ' アプリ完成品から\n逆算で学ぶ ',
+  'home.slideshow.subtitle2': '完成したアプリのプログラムを見ながら、仕組みを直感的に学べます。\n徐々に難易度を上げながら理解を深めていくので、無理なくプログラミングを身につけられます。',
+  'home.slideshow.title3': ' 資格認定制度で\nスキル可視化 ',
   'home.slideshow.subtitle3': 'シルバー・ゴールド・プラチナ・ブラックの4段階の認定制度により、自分の習熟度や実力を客観的に証明できます。\n就職や案件獲得にも活用できる信頼性の高い評価制度です。',
-  'home.reasons': 'HyaQShixの特徴',
+  'home.reasons': 'HyaQShikiの特徴',
   'home.communication': '日常会話のみでアプリ開発',
   'home.communication.desc': '難しいプログラミング言語を覚える必要はありません。\n普通の会話のような感覚で、誰でも簡単にWebアプリを開発できます。\n企画から要件定義・設計を含め、すべて会話形式で構築を行います。',
   'home.code': 'アプリ完成品から逆算で学ぶ',
-  'home.code.desc': 'AIが日常会話を元に作ったソースコードを見ながら、仕組みを自然に学習できます。\n徐々に難易度を上げながら理解を深めていくので、無理なくプログラミングを身につけられます。',
+  'home.code.desc': '完成したアプリのプログラムを見ながら、仕組みを直感的に学べます。\n徐々に難易度を上げながら理解を深めていくので、無理なくプログラミングを身につけられます。',
   'home.certification': '資格認定制度でスキル可視化',
   'home.certification.desc': 'シルバー・ゴールド・プラチナ・ブラックの4段階の認定制度により、自分の習熟度や実力を客観的に証明できます。\n就職や案件獲得にも活用できる信頼性の高い評価制度です。',
   'home.certifications': '認定制度',
@@ -380,7 +381,7 @@ const ja: TranslationsType = {
   'learnMore': '詳細を見る',
   'home.silver': '基本的な開発力を有する証明。',
   'home.gold': '毎日の開発実践を積んだ実力者。',
-  'home.platina': '戦略設計とAI統合が可能な上級者。',
+  'home.platina': '企画設計の上流と開発が可能な上級者。',
   'home.black': '自立して価値創造できる最高レベル。',
   'home.guarantee': '満足保証制度',
   'home.guarantee.desc': '開始後14日間は全額返金保証',
@@ -394,9 +395,12 @@ const ja: TranslationsType = {
   'home.methodology.card3': 'フィードバック',
   
   // Promotional Text
-  'promo.line1': '🎙会話中心\n「こうしたい」「こんな見た目がいい」などの話し言葉で開発を進めます。',
-  'promo.line2': '⚡ 超高速開発\nコードを書く時間をほぼゼロにし、数分〜数時間でアプリが形になります。',
-  'promo.line3': '🎨感覚で伝える\n色・動き・構成などを「雰囲気（vibe）」でAIに伝えることで、直感的にデザインできます。',
+  'promo.title1': '会話中心',
+  'promo.title2': '超高速開発',
+  'promo.title3': '企画重視',
+  'promo.line1': '「こうしたい」「こんな見た目がいい」などの話し言葉で開発を進めます。',
+  'promo.line2': 'コードを書く時間をほぼゼロにし、数分〜数時間でアプリが形になります。',
+  'promo.line3': '色・動き・構成などを「雰囲気（vibe）」でAIに伝えることで、直感的にデザインできます。',
   'promo.section.title': '日常会話でアプリ開発するVIBEコーディングとは？',
   'promo.section.subtitle': 'VIBEコーディングは、会話形式のアプローチでWebアプリを作れる新しい開発スタイルです。',
   'promo.conversational.title': '会話形式の',
@@ -408,74 +412,74 @@ const ja: TranslationsType = {
   'promo.cards.speak': '話すだけで機能追加',
   
   // Footer
-  'footer.slogan': '100日、100の型、100倍の生産力。',
-  'footer.navigation': 'ナビゲーション',
-  'footer.home': 'トップ',
-  'footer.curriculum': 'カリキュラム',
-  'footer.pricing': '価格',
-  'footer.certification': '資格',
-  'footer.corporate': '企業連携',
-  'footer.philosophy': '理念',
-  'footer.contact': 'お問い合わせ',
-  'footer.contactForm': 'お問い合わせフォーム',
-  'footer.faq': 'よくある質問',
-  'footer.community': 'コミュニティ',
+  //'footer.slogan': '100日、100の型、100倍の生産力。',
+  //'footer.navigation': 'ナビゲーション',
+  //'footer.home': 'トップ',
+  //'footer.curriculum': 'カリキュラム',
+  //'footer.pricing': '価格',
+  //'footer.certification': '資格',
+  //'footer.corporate': '企業連携',
+  //'footer.philosophy': '理念',
+  //'footer.contact': 'お問い合わせ',
+  //'footer.contactForm': 'お問い合わせフォーム',
+  //'footer.faq': 'よくある質問',
+  //'footer.community': 'コミュニティ',
   'footer.copyright': '©2025',
   'footer.privacy': 'プライバシーポリシー',
   'footer.terms': '利用規約',
   
   // Curriculum Page
   'curriculum.title': 'カリキュラム',
-  'curriculum.subtitle': '手を動かしながら、自然に身につく3ヶ月',
+  'curriculum.subtitle': '手を動かしながら\n自然にスキルが身につく3ヶ月',
   'curriculum.explanation.title': 'どう学んでいくのか？',
-  'curriculum.explanation.p1': 'HyaQShixの「VIBEコーディング」カリキュラムは、"日常会話でアプリを開発する体験"を通じて、自然とプログラミングの本質を学べる設計になっています。',
-  'curriculum.explanation.p2': 'プログラミングの代わりにAIと対話しながら、毎日ひとつずつアプリや機能を形にしていく実践的な内容です。',
-  'curriculum.explanation.p3': '生成AIを動かす"指示力"を、知識と経験で手に入れましょう。',
-  'curriculum.timeline.title': 'タイムライン（例）',
-  'curriculum.timeline.days1.title': 'Day1〜Day10：基礎固め',
-  'curriculum.timeline.days1.desc': 'HTML/CSS/JavaScriptの基礎 + AIアシストによる初期アウトプット体験',
-  'curriculum.timeline.days2.title': 'Day11〜Day40：毎日アプリ制作',
-  'curriculum.timeline.days2.desc': '毎日1つの実用的アプリを生成AIで開発・リリース',
-  'curriculum.timeline.days3.title': 'Day41〜Day70：テーマ別深堀',
-  'curriculum.timeline.days3.desc': '業界特化・応用設計・UI/UX・セキュリティ・API連携など',
-  'curriculum.timeline.days4.title': 'Day71〜Day100：最終制作と公開',
-  'curriculum.timeline.days4.desc': '集大成アプリを複数制作し、公開・共有・審査・資格認定へ',
+  'curriculum.explanation.p1': '"日常会話でアプリを開発する体験"を通じて、自然とプログラミングの本質を学べる設計になっています。',
+  'curriculum.explanation.p2': 'プログラミングの代わりにAIと対話しながら、Webアプリや機能を形にしていく実践的な内容です。',
+  'curriculum.explanation.p3': '※本カリキュラムの内容は受講生の進捗状況に応じて柔軟に変更される場合があります。',
+  //'curriculum.timeline.title': 'タイムライン（例）',
+  //'curriculum.timeline.days1.title': 'Day1：基礎固め',
+  //'curriculum.timeline.days1.desc': 'HTML/CSS/JavaScriptの基礎 + AIアシストによる初期アウトプット体験',
+  //'curriculum.timeline.days2.title': 'Day2：毎日アプリ制作',
+  //'curriculum.timeline.days2.desc': '毎日1つの実用的アプリを生成AIで開発・リリース',
+  //'curriculum.timeline.days3.title': 'Day3：テーマ別深堀',
+  //'curriculum.timeline.days3.desc': '業界特化・応用設計・UI/UX・セキュリティ・API連携など',
+  //'curriculum.timeline.days4.title': 'Day4：最終制作と公開',
+  //'curriculum.timeline.days4.desc': '集大成アプリを複数制作し、公開・共有・審査・資格認定へ',
   'curriculum.flow.title': '学習の流れ',
   'curriculum.flow.phase1.title': '基礎固め',
-  'curriculum.flow.phase1.period': 'Day1～Day14',
-  'curriculum.flow.phase1.desc': 'AIツールの基本操作とプロンプトエンジニアリングの基礎を習得。開発環境のセットアップと基本的なアプリケーション構造の理解。',
-  'curriculum.flow.phase1.point1': '生成AIツールの操作基礎',
-  'curriculum.flow.phase1.point2': 'プロンプトの書き方と最適化',
-  'curriculum.flow.phase1.point3': '開発環境のセットアップ',
-  'curriculum.flow.phase1.point4': '基本的なWebアプリの構築',
-  'curriculum.flow.phase2.title': 'AIアプリケーション開発',
-  'curriculum.flow.phase2.period': 'Day15～Day28',
-  'curriculum.flow.phase2.desc': 'AIを活用した実用的なアプリケーションを毎日1つ開発。徐々に複雑度を上げていき、実践的なスキルを身につける。',
-  'curriculum.flow.phase2.point1': 'AIを使ったUI/UXデザイン',
-  'curriculum.flow.phase2.point2': 'バックエンド開発の効率化',
-  'curriculum.flow.phase2.point3': 'APIの活用とデータ連携',
-  'curriculum.flow.phase2.point4': 'AIと連携したサービス構築',
-  'curriculum.flow.phase3.title': 'マーケティングとビジネスモデル',
-  'curriculum.flow.phase3.period': 'Day29～Day42',
-  'curriculum.flow.phase3.desc': '開発したアプリの市場投入方法、マーケティング戦略、収益化モデルの構築を学ぶ。',
-  'curriculum.flow.phase3.point1': '製品のポジショニングと差別化',
-  'curriculum.flow.phase3.point2': 'ユーザー獲得戦略',
-  'curriculum.flow.phase3.point3': '収益モデルの設計',
-  'curriculum.flow.phase3.point4': 'データ分析とサービス改善',
-  'curriculum.flow.phase4.title': 'スケールとファイナンス',
-  'curriculum.flow.phase4.period': 'Day43～Day56',
-  'curriculum.flow.phase4.desc': '事業の拡大方法、投資獲得、財務管理の基礎を習得し、持続可能なビジネスの構築方法を学ぶ。',
-  'curriculum.flow.phase4.point1': 'スケーラビリティの設計',
-  'curriculum.flow.phase4.point2': '投資ピッチの作成方法',
-  'curriculum.flow.phase4.point3': '財務計画と管理',
-  'curriculum.flow.phase4.point4': 'チーム構築と組織設計',
+  'curriculum.flow.phase1.period': 'Day1',
+  'curriculum.flow.phase1.desc': '開発の基本作法とVIBEコーディングの基礎を習得。開発環境のセットアップと基本的なアプリケーション構造の理解。',
+  'curriculum.flow.phase1.point1': '開発環境のセットアップを行う',
+  'curriculum.flow.phase1.point2': '生成AIツールの操作基礎を身につける',
+  'curriculum.flow.phase1.point3': 'プロンプトの書き方と最適化を学ぶ',
+  'curriculum.flow.phase1.point4': '基本的なWebアプリの構築を行う',
+  'curriculum.flow.phase2.title': '入門Webアプリケーション開発',
+  'curriculum.flow.phase2.period': 'Day2',
+  'curriculum.flow.phase2.desc': '実用的なWebアプリケーション開発を行う。徐々に複雑度を上げていき、実践的なスキルを身につける。',
+  'curriculum.flow.phase2.point1': 'フロントエンド開発の基礎を身につける',
+  'curriculum.flow.phase2.point2': '要件定義および仕様書を作成のやり方を学ぶ',
+  'curriculum.flow.phase2.point3': 'トライアンドエラーを繰り返しながら開発経験を積む', 
+  'curriculum.flow.phase2.point4': 'ソースコードから逆算しAIに解説してもらいながら学ぶ',
+  'curriculum.flow.phase3.title': '基礎Webアプリケーション開発',
+  'curriculum.flow.phase3.period': 'Day3',
+  'curriculum.flow.phase3.desc': 'Next.jsを使いWebアプリケーション開発のUI/UX表現力を高める。',
+  'curriculum.flow.phase3.point1': 'Next.jsを使うことのメリットを学ぶ',
+  'curriculum.flow.phase3.point2': 'ローカルホストを活用した開発を実践する',
+  'curriculum.flow.phase3.point3': 'npmコマンドの概念理解を身につける',
+  'curriculum.flow.phase3.point4': 'UI/UXデザインの表現力を高める',
+  'curriculum.flow.phase4.title': '入門バックエンド開発',
+  'curriculum.flow.phase4.period': 'Day4',
+  'curriculum.flow.phase4.desc': 'DBを使ったバックエンド開発を活用することでデータを中央で制御・管理するメリットを体験する。',
+  'curriculum.flow.phase4.point1': '簡易なバックエンドを実装する',
+  'curriculum.flow.phase4.point2': '簡易なデータベースを活用する',
+  'curriculum.flow.phase4.point3': 'ユーザー間でのデータ共有を体験する',
+  'curriculum.flow.phase4.point4': 'APIを活用したデータ連携を実装する',
   'curriculum.flow.phase5.title': '卒業プロジェクト',
-  'curriculum.flow.phase5.period': 'Day57～Day70',
-  'curriculum.flow.phase5.desc': '学んだ全てを統合した最終プロジェクトに取り組み、実際に市場に投入可能なレベルの製品を作り上げる。',
-  'curriculum.flow.phase5.point1': 'ビジネスプランの完成',
-  'curriculum.flow.phase5.point2': '製品の完成とテスト',
-  'curriculum.flow.phase5.point3': 'ローンチ戦略の策定',
-  'curriculum.flow.phase5.point4': '投資家へのピッチ',
+  'curriculum.flow.phase5.period': 'Day5&Day6',
+  'curriculum.flow.phase5.desc': '学んだ全てを統合した最終プロジェクトに取り組み、実際に現場/市場に投入可能なレベルの製品を作り上げる。',
+  'curriculum.flow.phase5.point1': 'ビジネスプランの完成させる',
+  'curriculum.flow.phase5.point2': '製品の完成とテストを行う',
+  'curriculum.flow.phase5.point3': '関係者各位との要件調整を行う',
+  'curriculum.flow.phase5.point4': '卒業プレゼンテーションを行う',
   'curriculum.approach.title': '学習アプローチ',
   'curriculum.approach.output.title': 'アウトプット中心',
   'curriculum.approach.output.desc': '生成AIから効率的に学びながら、毎日アプリケーションを実際に開発することで、実践的なスキルを身につけていきます。',
@@ -512,13 +516,13 @@ const ja: TranslationsType = {
   'curriculum.tools.business.tool5': 'Airtable',
   'curriculum.metrics.title': '成功の指標',
   'curriculum.metrics.apps.title': '機能',
-  'curriculum.metrics.apps.desc': '100個のアプリ機能を開発し、実践的なポートフォリオを構築します。',
+  'curriculum.metrics.apps.desc': '100機能を開発し、実践的なポートフォリオを構築します。',
   'curriculum.metrics.monetize.title': 'マネタイズ可能プロジェクト',
-  'curriculum.metrics.monetize.desc': '開発したアプリのうち、最低10個は実際に収益化できるレベルのクオリティを目指します。',
+  'curriculum.metrics.monetize.desc': '開発したアプリを収益できるレベルのクオリティを目指すことをサポートします。',
   'curriculum.metrics.main.title': 'メインプロジェクト',
   'curriculum.metrics.main.desc': '最終的に1つの主力プロジェクトを完成させ、実際のビジネスとして展開できる準備を整えます。',
   'curriculum.cta.title': 'あなたのキャリアを加速させませんか？',
-  'curriculum.cta.subtitle': 'HyaQShix百式プログラムで、AI時代を生き抜くスキルと実績を同時に手に入れましょう。',
+  'curriculum.cta.subtitle': 'HyaQShiki-百式-プログラムで、AI時代を生き抜くスキルと実績を同時に手に入れましょう。',
   'curriculum.cta.free_trial': '無料体験に申し込む',
   'curriculum.cta.pricing': '料金プランを見る',
   
@@ -526,7 +530,7 @@ const ja: TranslationsType = {
   'pricing.title': '価格&保証',
   'pricing.subtitle': '未来への投資、あなたのキャリアを加速させる最適なプラン',
   'pricing.plans.title': '受講料金プラン',
-  'pricing.plans.desc': 'HyaQShix百式では、学習ニーズと予算に合わせた複数の受講プランをご用意しています。すべてのプランで同じカリキュラムと高品質の学習体験を提供します。',
+  'pricing.plans.desc': 'HyaQShiki-百式-では、学習ニーズと予算に合わせた複数の受講プランをご用意しています。すべてのプランで同じカリキュラムと高品質の学習体験を提供します。',
   'pricing.plans.basic.title': 'ベーシックプラン',
   'pricing.plans.basic.badge': '人気',
   'pricing.plans.basic.feature1': '一括払い割引き',
@@ -534,19 +538,19 @@ const ja: TranslationsType = {
   'pricing.plans.basic.feature3': '隔週1回のグループメンタリング',
   'pricing.plans.basic.feature4': 'コミュニティへのアクセス',
   'pricing.plans.basic.feature5': '3ヶ月受講契約',
-  'pricing.plans.basic.feature6': 'HyaQShix資格受験',
+  'pricing.plans.basic.feature6': 'HyaQShiki資格受験',
   'pricing.plans.basic.cta': '今すぐ申し込む',
   'pricing.plans.basic.label': 'ベーシックプラン',
   'pricing.plans.basic.price': '298,000',
   'pricing.plans.basic.currency': '円',
-  'pricing.plans.basic.tax': '（税込）',
+  'pricing.plans.basic.tax': '（税込）/　一括払い',
   'pricing.plans.monthly.title': '月額プラン',
   'pricing.plans.monthly.feature1': '月々分割払い',
   'pricing.plans.monthly.feature2': 'AIによる24時間サポート',
   'pricing.plans.monthly.feature3': '隔週1回のグループメンタリング',
   'pricing.plans.monthly.feature4': 'コミュニティへのアクセス',
   'pricing.plans.monthly.feature5': '3ヶ月受講契約',
-  'pricing.plans.monthly.feature6': 'HyaQShix資格受験',
+  'pricing.plans.monthly.feature6': 'HyaQShiki資格受験',
   'pricing.plans.monthly.cta': '今すぐ申し込む',
   'pricing.plans.monthly.label': '月額プラン',
   'pricing.plans.monthly.price': '110,000',
@@ -558,14 +562,14 @@ const ja: TranslationsType = {
   'pricing.plans.sponsor.feature3': '審査制の選考あり',
   'pricing.plans.sponsor.feature4': '成果提出義務あり',
   'pricing.plans.sponsor.feature5': '毎週のレポート提出',
-  'pricing.plans.sponsor.feature6': 'HyaQShix資格受験',
+  'pricing.plans.sponsor.feature6': 'HyaQShiki資格受験',
   'pricing.plans.sponsor.cta': '問合わせする',
   'pricing.plans.sponsor.label': 'スポンサー枠プラン',
   'pricing.plans.sponsor.price': 'お問い合わせ',
   'pricing.plans.sponsor.tax': '（料金詳細）',
   'pricing.guarantee.title': '満足保証制度',
   'pricing.guarantee.subtitle': '14日間の全額返金保証',
-  'pricing.guarantee.desc': '授業の品質に自信があるからこそ、HyaQShix百式は「全額返金保証」をご用意。開始から14日以内なら、理由を問わず全額返金いたします。',
+  'pricing.guarantee.desc': '授業の品質に自信があるからこそ、HyaQShiki-百式-は「全額返金保証」をご用意。開始から14日以内なら、理由を問わず全額返金いたします。',
   'pricing.guarantee.conditions.title': '適用条件',
   'pricing.guarantee.conditions.condition1': '受講開始から14日以内に申請すること',
   'pricing.guarantee.conditions.condition2': '所定の課題提出や進捗率など、評価対象条件を満たしていること',
@@ -579,27 +583,27 @@ const ja: TranslationsType = {
   'pricing.guarantee.notes.note2': '返金後、同一プログラムへの再受講はできません',
   'pricing.guarantee.notes.note3': '不正行為や虚偽の申請が判明した場合、返金の対象外とします',
   'pricing.payment.title': 'お支払い方法',
-  'pricing.payment.credit.title': 'クレジットカード',
-  'pricing.payment.credit.desc': 'VISA, MasterCard, JCB, American Express, Diners Clubがご利用いただけます。',
-  'pricing.payment.bank.title': '銀行振込',
-  'pricing.payment.bank.desc': 'お申し込み後、振込先情報をご案内いたします。振込手数料はお客様負担となります。',
-  'pricing.payment.installment.title': '分割払い',
-  'pricing.payment.installment.desc': '提携のファイナンス会社による分割払いプランもご用意しています。審査が必要となります。',
+  //'pricing.payment.credit.title': 'クレジットカード',
+  //'pricing.payment.credit.desc': 'VISA, MasterCard, JCB, American Express, Diners Clubがご利用いただけます。',
+  //'pricing.payment.bank.title': '銀行振込',
+  //'pricing.payment.bank.desc': 'お申し込み後、振込先情報をご案内いたします。振込手数料はお客様負担となります。',
+  //'pricing.payment.installment.title': '仮想通貨払い',
+  //'pricing.payment.installment.desc': 'Bitcoin、Ethereum、USDTでの支払いも可能です。',
   'pricing.payment.note': '※法人でのお申し込みも受け付けております。請求書払いをご希望の場合は、お問い合わせフォームよりご連絡ください。',
   'pricing.faq.title': 'よくある質問',
   'pricing.contact': 'その他の質問はお問い合わせください',
   'pricing.satisfaction.title': '満足保証制度',
-  'pricing.satisfaction.alt': 'HyaQShix百式の満足保証',
+  'pricing.satisfaction.alt': 'HyaQShiki-百式-の満足保証',
   'pricing.satisfaction.guarantee': '14日間の全額返金保証',
-  'pricing.satisfaction.desc': '授業の品質に自信があるからこそ、HyaQShix百式は「全額返金保証」をご用意。開始から14日以内なら、理由を問わず全額返金いたします。',
+  'pricing.satisfaction.desc': '授業の品質に自信があるからこそ、HyaQShiki-百式-は「全額返金保証」をご用意。開始から14日以内なら、理由を問わず全額返金いたします。',
   'pricing.satisfaction.eligibility': '適用条件',
   'pricing.satisfaction.application': '申請手順',
   'pricing.satisfaction.application.desc': '担当メンターまたはカスタマーサポートに返金希望の旨をお伝えください。専用フォームをご案内し、必要な情報をご提出いただきます。',
   'pricing.satisfaction.refund': '返金処理',
   'pricing.satisfaction.refund.desc': '申請受理から14営業日以内に、お支払い時と同じ方法で返金処理を行います。分割払いの場合は、お支払い済みの金額のみが返金対象となります。',
   'pricing.satisfaction.notes': '注意事項',
-  'pricing.cta.title': 'まずは無料体験に申し込んでみませんか？',
-  'pricing.cta.subtitle': 'あなたの生産性を10倍・100倍にする未来への第一歩をここから始めましょう。',
+  'pricing.cta.title': 'まずは無料体験に申込んでみませんか？',
+  'pricing.cta.subtitle': '生産性を100倍に引き上げる学びを、今ここから始めましょう。',
   'pricing.cta.button': '無料体験に申し込む',
   
   // FAQs
@@ -615,8 +619,8 @@ const ja: TranslationsType = {
   'pricing.payment.method1.desc': 'VISA, MasterCard, JCB, American Express, Diners Clubがご利用いただけます。',
   'pricing.payment.method2.title': '銀行振込',
   'pricing.payment.method2.desc': 'お申し込み後、振込先情報をご案内いたします。振込手数料はお客様負担となります。',
-  'pricing.payment.method3.title': '分割払い',
-  'pricing.payment.method3.desc': '提携のファイナンス会社による分割払いプランもご用意しています。審査が必要となります。',
+  'pricing.payment.method3.title': '仮想通貨払い',
+  'pricing.payment.method3.desc': 'Bitcoin、Ethereum、USDTがご利用いただけます。',
   
   // Certification Page
   'certification.title': '資格認定',
@@ -646,15 +650,17 @@ const ja: TranslationsType = {
   'corporate.benefits.b2.desc': '優秀な受講修了者を紹介',
   'corporate.benefits.b3.title': '技術相談',
   'corporate.benefits.b3.desc': 'AI開発に関する技術相談窓口の利用',
+  'corporate.benefits.b4.title': '最新ドレン共有',
+  'corporate.benefits.b4.desc': '活用例や最新技術を獲得',
   'corporate.contact': '法人向けのお問い合わせはこちら',
   'corporate.sponsor.title': 'スポンサー制度の概要',
-  'corporate.sponsor.subtitle': 'HyaQShixスポンサー制度とは？',
-  'corporate.sponsor.desc': '生成AI時代に100倍の生産力を発揮する次世代開発人材を育成するHyaQShix百式では、企業からの実務プロジェクトを教育プログラムと融合し、学習と実践を同時に実現します。',
+  'corporate.sponsor.subtitle': 'HyaQShikiスポンサー制度とは？',
+  'corporate.sponsor.desc': '生成AI時代に100倍の生産力を発揮する次世代開発人材を育成するHyaQShiki-百式-では、企業からの実務プロジェクトを教育プログラムと融合し、学習と実践を同時に実現します。',
   'corporate.sponsor.item1': '貴社課題に取り組む実務型プロジェクト',
-  'corporate.sponsor.item2': '学生の実力・成長を可視化できる評価レポート',
+  'corporate.sponsor.item2': '受講生の実力・成長を可視化できる評価レポート',
   'corporate.sponsor.item3': '採用候補人材への早期接点',
   'corporate.cta.title': '次世代の教育×社会実装を、共に。',
-  'corporate.cta.desc': 'HyaQShix百式は、教育機関を超えた「実務学習フィールド」です。AIによるアプリ開発を軸にした100日カリキュラムの中で、企業の実課題を扱うことで学びと価値創造が両立します。',
+  'corporate.cta.desc': 'HyaQShiki-百式-は、教育機関を超えた「実務学習フィールド」です。AIによるアプリ開発を軸にした100日カリキュラムの中で、企業の実課題を扱うことで学びと価値創造が両立します。',
   'corporate.cta.contact': 'お問い合わせ',
   'corporate.cta.partner': 'パートナー詳細',
   
@@ -678,10 +684,10 @@ const ja: TranslationsType = {
   'philosophy.values.innovation.desc': '常に最新のテクノロジーとトレンドを取り入れ、革新的な教育方法を追求します。',
   'philosophy.founder.title': '創設者メッセージ',
   'philosophy.founder.slogan': 'テクノロジーの民主化を目指して',
-  'philosophy.founder.p1': 'HyaQShix百式は、テクノロジーの恩恵をより多くの人々に届けるという思いから始まりました。AIの力を活用することで、専門的な知識がなくても、誰もが自分のアイデアを形にできる世界を作りたいと考えています。',
+  'philosophy.founder.p1': 'HyaQShiki-百式-は、テクノロジーの恩恵をより多くの人々に届けるという思いから始まりました。AIの力を活用することで、専門的な知識がなくても、誰もが自分のアイデアを形にできる世界を作りたいと考えています。',
   'philosophy.founder.p2': '私たちは、単なるプログラミングスクールではなく、次世代のクリエイターを育てる場所でありたいと思います。技術だけでなく、問題解決能力や創造力を育み、AIと共に新しい価値を生み出せる人材を世に送り出すことが、私たちの使命です。',
   'philosophy.founder.role': '創設者・CEO',
-  'philosophy.founder.name': '田中 太郎',
+  'philosophy.founder.name': '白石 憲正',
   'philosophy.vision.short.title': '短期ビジョン',
   'philosophy.vision.short.desc': '全国3000人の次世代開発者を育成し、デジタルイノベーションの担い手を増やします。',
   'philosophy.vision.medium.title': '中期ビジョン',
@@ -689,12 +695,12 @@ const ja: TranslationsType = {
   'philosophy.vision.long.title': '長期ビジョン',
   'philosophy.vision.long.desc': 'AI活用スキルの世界標準を確立し、誰もが自分のアイデアを形にできる社会を実現します。',
   'philosophy.cta.title': '私たちと一緒に未来を創りませんか？',
-  'philosophy.cta.desc': 'HyaQShix百式で、AI時代のクリエイターとしての第一歩を踏み出しましょう。',
+  'philosophy.cta.desc': 'HyaQShiki-百式-で、AI時代のクリエイターとしての第一歩を踏み出しましょう。',
   'philosophy.cta.button': 'お問い合わせ',
   
   'sponsor.overview.title': 'スポンサープログラム概要',
-  'sponsor.overview.question': 'HyaQShixスポンサープログラムとは？',
-  'sponsor.overview.description': '生成AI時代に100倍の生産力を発揮する次世代開発人材を育成するHyaQShix百式では、企業からの実務プロジェクトを教育プログラムと融合し、学習と実践を同時に実現します。',
+  'sponsor.overview.question': 'HyaQShikiスポンサープログラムとは？',
+  'sponsor.overview.description': '生成AI時代に100倍の生産力を発揮する次世代開発人材を育成するHyaQShiki-百式-では、企業からの実務プロジェクトを教育プログラムと融合し、学習と実践を同時に実現します。',
   'sponsor.overview.benefit1': '実務経験を積みながら学ぶ学生に、実際の企業課題に取り組んでもらうことができます',
   'sponsor.overview.benefit2': '将来の採用候補となる優秀な人材との早期接点を得ることができます',
   'sponsor.benefits.title': 'スポンサー企業のメリット',
@@ -708,7 +714,7 @@ const ja: TranslationsType = {
   'sponsor.benefits.benefit4.description': '次世代育成に取り組む先進企業としてのブランド価値向上',
   'education.integration.title': '企業課題と教育の融合',
   'education.integration.integration': 'リアルな課題で実践的なスキルを',
-  'education.integration.description': 'HyaQShix百式では、企業の実際の課題やプロジェクトを教育カリキュラムに取り入れることで、学生に実践的な経験を提供するとともに、企業にとっても価値のある成果物の創出を目指します。',
+  'education.integration.description': 'HyaQShiki-百式-では、企業の実際の課題やプロジェクトを教育カリキュラムに取り入れることで、学生に実践的な経験を提供するとともに、企業にとっても価値のある成果物の創出を目指します。',
   'education.integration.example': '連携可能な課題例',
   'education.integration.example1': 'Webアプリケーション開発',
   'education.integration.example2': 'データ分析・可視化',
@@ -718,10 +724,10 @@ const ja: TranslationsType = {
   'education.integration.brief': 'プロジェクト概要',
   'education.integration.brief.description': '企業から提供された課題は、学生のレベルやカリキュラムの進行状況に合わせて適切な形に調整され、教育的価値と実務的価値の両方を兼ね備えたプロジェクトとして実施されます。',
   'special.certified.partner.title': '認定パートナー制度',
-  'special.certified.partner.certified': 'HyaQShix認定パートナーになる',
-  'special.certified.partner.description': '継続的な協力関係を結ぶ企業には、HyaQShix認定パートナーとしての特別なステータスと特典をご用意しています。',
+  'special.certified.partner.certified': 'HyaQShiki認定パートナーになる',
+  'special.certified.partner.description': '継続的な協力関係を結ぶ企業には、HyaQShiki認定パートナーとしての特別なステータスと特典をご用意しています。',
   'special.certified.partner.logo': '認定ロゴの使用',
-  'special.certified.partner.logo.description': '自社のウェブサイトやマーケティング資料で、HyaQShix認定パートナーとしてのロゴを使用できます。',
+  'special.certified.partner.logo.description': '自社のウェブサイトやマーケティング資料で、HyaQShiki認定パートナーとしてのロゴを使用できます。',
   'special.certified.partner.project': '優先プロジェクト参加',
   'special.certified.partner.project.description': '学生の研究プロジェクトや卒業制作に、優先的に企業課題を提供できます。',
   'special.certified.partner.commercialization': '商用化支援',
@@ -729,7 +735,7 @@ const ja: TranslationsType = {
   'special.certified.partner.talent': '人材紹介',
   'special.certified.partner.talent.description': '卒業生の中から、企業のニーズに合った人材を優先的に紹介します。',
   'partner.testimonials.title': 'パートナー企業の声',
-  'partner.testimonials.testimonial1': 'HyaQShix百式との連携を通じて、私たちは社内で眠っていた課題に新しい視点からのソリューションを得ることができました。学生たちの柔軟な発想と最新技術への理解は、私たちの期待を大きく上回るものでした。',
+  'partner.testimonials.testimonial1': 'HyaQShiki-百式-との連携を通じて、私たちは社内で眠っていた課題に新しい視点からのソリューションを得ることができました。学生たちの柔軟な発想と最新技術への理解は、私たちの期待を大きく上回るものでした。',
   'partner.testimonials.name1': '山田 健太郎',
   'partner.testimonials.position1': '株式会社テクノフューチャー CTO',
   'partner.testimonials.testimonial2': '当初は人材育成の一環として始めたプログラムでしたが、結果的に新規事業のアイデア創出にもつながり、大きな価値を得ることができました。真剣に取り組む学生の姿勢に、社員も刺激を受けています。',
@@ -772,8 +778,8 @@ const ja: TranslationsType = {
   'contact.form.message': 'メッセージ',
   'contact.form.submit': '送信',
   'contact.info.title': '連絡先情報',
-  'contact.info.address': '東京都渋谷区...',
-  'contact.info.email': 'info@hyaqshix.com',
+  'contact.info.address': '福岡県福岡市',
+  'contact.info.email': 'info@HyaQShiki.com',
   'contact.info.phone': '03-XXXX-XXXX',
   'contact.info.address.label': '住所',
   'contact.info.email.label': 'メール',
@@ -785,7 +791,7 @@ const ja: TranslationsType = {
   'contact.info.hours.closed': '休業',
   
   // Curriculum Stack
-  'curriculum.stack.title': '開発ツールと技術スタック',
+  'curriculum.stack.title': '使用する技術ツール例',
   'curriculum.stack.requirements.title': '要件定義・設計支援ツール',
   'curriculum.stack.requirements.head': 'ChatGPT (OpenAI)',
   'curriculum.stack.requirements.list1': '要件定義、仕様書作成、プロンプト設計、技術サポート',
@@ -800,12 +806,12 @@ const ja: TranslationsType = {
   'curriculum.stack.frontend.title': 'フロントエンド開発',
   'curriculum.stack.frontend.head': '基本技術スタック',
   'curriculum.stack.frontend.list1': 'HTML / CSS / JavaScript（基本3技術）',
-  'curriculum.stack.frontend.list2': 'Next.js（Reactベースのフレームワーク）※上級コース予定',
-  'curriculum.stack.frontend.list3': 'Tailwind CSS（効率的なスタイリング）※上級コース予定',
+  'curriculum.stack.frontend.list2': 'Next.js（Reactベースのフレームワーク）',
+  'curriculum.stack.frontend.list3': 'Tailwind CSS（効率的なスタイリング）',
   'curriculum.stack.backend.title': 'バックエンド・API開発',
   'curriculum.stack.backend.head': 'サーバーサイド技術',
   'curriculum.stack.backend.list1': 'Node.js（サーバーサイドJavaScript）',
-  'curriculum.stack.backend.list2': 'Express.js（軽量バックエンドフレームワーク）',
+  'curriculum.stack.backend.list2': 'Googleスプレッドシート',
   
   // Add these keys for certification evaluation text
   'certification.evaluation.criteria.title.ja': '認定基準',
@@ -823,17 +829,17 @@ const ja: TranslationsType = {
   'certification.exam.fees': '資格受験料',
   'certification.evaluation.criteria': '評価基準：',
   'certification.cta.title': 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？',
-  'certification.cta.subtitle': 'HyaQShix認定資格は、生成AI時代のスキルを証明する強力なツールです。',
+  'certification.cta.subtitle': 'HyaQShiki認定資格は、生成AI時代のスキルを証明する強力なツールです。',
   'certification.cta.apply': '資格受験に申し込む',
-  'home.satisfaction.badge': '満足保証制度',
+  'home.satisfaction.badge': 'サービス品質保証',
   
   // Corporate Testimonials
   'corporate.testimonials.person1.name': '田中 太郎',
   'corporate.testimonials.person1.position': '株式会社テクノロジー 代表取締役',
-  'corporate.testimonials.person1.content': 'HyaQShixの理念に共感し、次世代のIT人材育成に貢献しています。',
+  'corporate.testimonials.person1.content': 'HyaQShikiの理念に共感し、次世代のIT人材育成に貢献しています。',
   'corporate.testimonials.person2.name': '山田 健太郎',
   'corporate.testimonials.person2.position': 'イノベーション株式会社 CTO',
-  'corporate.testimonials.person2.content': 'HyaQShixのプログラムは、実際の業務に即した教育を提供してくれます。'
+  'corporate.testimonials.person2.content': 'HyaQShikiのプログラムは、実際の業務に即した教育を提供してくれます。'
 };
 
 // English translations
@@ -851,7 +857,7 @@ const en: TranslationsType = {
   // HomePage
   'home.title': 'Lightning-Fast App Development with VIBE Coding',
   'home.subtitle': 'Master 100 coding patterns and boost your productivity 100x.',
-  'home.reasons': 'Why Choose HyaQShix',
+  'home.reasons': 'Why Choose HyaQShiki',
   'home.communication': 'Build Apps Using Only Everyday Conversations',
   'home.communication.desc': 'No need to learn complex programming languages.\nAnyone can develop web apps with ease, using natural conversation.\nFrom planning and requirements to design, everything is built through dialogue.',
   'home.code': 'Learn by Reverse-Engineering Completed Apps',
@@ -870,7 +876,7 @@ const en: TranslationsType = {
   'home.guarantee.desc': '100% money-back guarantee within the first 14 days.',
   'home.methodology.viewCurriculum': 'View Full Curriculum',
   'home.slideshow.title2': 'DAILY KATA PRACTICE',
-  'home.slideshow.subtitle2': 'Perfect your communication skills through our structured program with 100 specialized exercises - Practice makes perfect with the HyaQShix百式 method!',
+  'home.slideshow.subtitle2': 'Perfect your communication skills through our structured program with 100 specialized exercises - Practice makes perfect with the HyaQShiki-百式- method!',
   'home.slideshow.title3': 'BECOME CERTIFIED',
   'home.slideshow.subtitle3': 'Join the elite 9% who achieve BLACK certification status - Our graduates are recognized by leading companies worldwide for their exceptional communication skills',
   'home.outline': 'Curriculum Overview',
@@ -916,14 +922,14 @@ const en: TranslationsType = {
   'pricing.title': 'Pricing & Guarantee',
   'pricing.subtitle': 'The perfect plan to accelerate your career in the AI era',
   'pricing.plans.title': 'Course Fee Plans',
-  'pricing.plans.desc': 'HyaQShix offers multiple course plans tailored to your learning needs and budget. All plans provide the same curriculum and high-quality learning experience.',
+  'pricing.plans.desc': 'HyaQShiki offers multiple course plans tailored to your learning needs and budget. All plans provide the same curriculum and high-quality learning experience.',
   'pricing.plans.basic.title': 'Basic Plan',
   'pricing.plans.basic.badge': 'Popular',
   'pricing.plans.basic.feature1': '3 months of full course access',
   'pricing.plans.basic.feature2': '24-hour AI support',
   'pricing.plans.basic.feature3': 'Weekly group mentoring',
   'pricing.plans.basic.feature4': 'Community access',
-  'pricing.plans.basic.feature5': 'HyaQShix Silver certification upon graduation',
+  'pricing.plans.basic.feature5': 'HyaQShiki Silver certification upon graduation',
   'pricing.plans.basic.feature6': 'Lump-sum payment discount available',
   'pricing.plans.basic.cta': 'Apply Now',
   'pricing.plans.basic.label': 'Basic Plan',
@@ -936,7 +942,7 @@ const en: TranslationsType = {
   'pricing.plans.monthly.feature3': 'Weekly group mentoring',
   'pricing.plans.monthly.feature4': 'Community access',
   'pricing.plans.monthly.feature5': 'Minimum 3-month contract',
-  'pricing.plans.monthly.feature6': 'HyaQShix Silver certification upon graduation',
+  'pricing.plans.monthly.feature6': 'HyaQShiki Silver certification upon graduation',
   'pricing.plans.monthly.cta': 'Apply Now',
   'pricing.plans.monthly.label': 'Monthly Plan',
   'pricing.plans.monthly.price': '110,000',
@@ -948,14 +954,14 @@ const en: TranslationsType = {
   'pricing.plans.sponsor.feature3': 'Selective screening process',
   'pricing.plans.sponsor.feature4': 'Mandatory deliverables',
   'pricing.plans.sponsor.feature5': 'Weekly report submission',
-  'pricing.plans.sponsor.feature6': 'HyaQShix Silver certification upon graduation',
+  'pricing.plans.sponsor.feature6': 'HyaQShiki Silver certification upon graduation',
   'pricing.plans.sponsor.cta': 'Inquire',
   'pricing.plans.sponsor.label': 'Sponsored Plan',
   'pricing.plans.sponsor.price': 'Contact us',
   'pricing.plans.sponsor.tax': '(For pricing details)',
   'pricing.guarantee.title': 'Satisfaction Guarantee',
   'pricing.guarantee.subtitle': '14-Day Full Refund Guarantee',
-  'pricing.guarantee.desc': 'Because we are confident in the quality of our program, HyaQShix offers a "Full Refund Guarantee". We will refund the full amount within 14 days of starting, no questions asked.',
+  'pricing.guarantee.desc': 'Because we are confident in the quality of our program, HyaQShiki offers a "Full Refund Guarantee". We will refund the full amount within 14 days of starting, no questions asked.',
   'pricing.guarantee.conditions.title': 'Eligibility Criteria',
   'pricing.guarantee.conditions.condition1': 'Apply within 14 days of starting the course',
   'pricing.guarantee.conditions.condition2': 'Meet the evaluation criteria including assignment submissions and progress rates',
@@ -979,9 +985,9 @@ const en: TranslationsType = {
   'pricing.faq.title': 'Frequently Asked Questions',
   'pricing.contact': 'For other questions, please contact us',
   'pricing.satisfaction.title': 'Satisfaction Guarantee',
-  'pricing.satisfaction.alt': 'HyaQShix Satisfaction Guarantee',
+  'pricing.satisfaction.alt': 'HyaQShiki Satisfaction Guarantee',
   'pricing.satisfaction.guarantee': '14-Day Full Refund Guarantee',
-  'pricing.satisfaction.desc': 'Because we are confident in the quality of our program, HyaQShix offers a "Full Refund Guarantee". We will refund the full amount within 14 days of starting, no questions asked.',
+  'pricing.satisfaction.desc': 'Because we are confident in the quality of our program, HyaQShiki offers a "Full Refund Guarantee". We will refund the full amount within 14 days of starting, no questions asked.',
   'pricing.satisfaction.eligibility': 'Eligibility Criteria',
   'pricing.satisfaction.application': 'Application Process',
   'pricing.satisfaction.application.desc': 'Contact your mentor or customer support to express your desire for a refund. We will provide you with a specialized form for submitting the necessary information.',
@@ -1038,13 +1044,13 @@ const en: TranslationsType = {
   'corporate.benefits.b3.desc': 'Access to technical consultation on AI development',
   'corporate.contact': 'Contact us for corporate inquiries',
   'corporate.sponsor.title': 'Sponsor Program Overview',
-  'corporate.sponsor.subtitle': 'What is the HyaQShix Sponsorship Program?',
-  'corporate.sponsor.desc': 'HyaQShix, which develops next-generation development talent with 100x productivity in the generative AI era, integrates practical projects from companies with our educational program, enabling learning and practice simultaneously.',
+  'corporate.sponsor.subtitle': 'What is the HyaQShiki Sponsorship Program?',
+  'corporate.sponsor.desc': 'HyaQShiki, which develops next-generation development talent with 100x productivity in the generative AI era, integrates practical projects from companies with our educational program, enabling learning and practice simultaneously.',
   'corporate.sponsor.item1': 'Practical projects working on your company\'s challenges',
   'corporate.sponsor.item2': 'Evaluation reports that visualize student abilities and growth',
   'corporate.sponsor.item3': 'Early access to potential recruitment candidates',
   'corporate.cta.title': 'Next-generation Education × Social Implementation, Together.',
-  'corporate.cta.desc': 'HyaQShix is a "practical learning field" beyond educational institutions. In our 100-day curriculum centered on app development with AI, handling real company challenges creates both learning and value.',
+  'corporate.cta.desc': 'HyaQShiki is a "practical learning field" beyond educational institutions. In our 100-day curriculum centered on app development with AI, handling real company challenges creates both learning and value.',
   'corporate.cta.contact': 'Contact Us',
   'corporate.cta.partner': 'Partner Details',
   
@@ -1070,7 +1076,7 @@ const en: TranslationsType = {
   'contact.form.submit': 'Submit',
   'contact.info.title': 'Contact Information',
   'contact.info.address': 'Shibuya, Tokyo...',
-  'contact.info.email': 'info@hyaqshix.com',
+  'contact.info.email': 'info@HyaQShiki.com',
   'contact.info.phone': '03-XXXX-XXXX',
   'contact.info.address.label': 'Address',
   'contact.info.email.label': 'Email',
@@ -1104,7 +1110,7 @@ const en: TranslationsType = {
   'curriculum.title': 'Curriculum',
   'curriculum.subtitle': 'Master naturally through hands-on experience over 3 months',
   'curriculum.explanation.title': 'How Will You Learn?',
-  'curriculum.explanation.p1': 'The HyaQShix "VIBE Coding" curriculum is designed for you to learn the essence of programming naturally through the experience of "developing apps through everyday conversation."',
+  'curriculum.explanation.p1': 'The HyaQShiki "VIBE Coding" curriculum is designed for you to learn the essence of programming naturally through the experience of "developing apps through everyday conversation."',
   'curriculum.explanation.p2': 'It\'s a practical program where you create an app or function every day while conversing with AI, instead of traditional programming.',
   'curriculum.explanation.p3': 'Acquire the power to direct generative AI through knowledge and experience.',
   'curriculum.timeline.title': 'Timeline (Example)',
@@ -1194,14 +1200,14 @@ const en: TranslationsType = {
   'curriculum.metrics.main.title': 'Main Project',
   'curriculum.metrics.main.desc': 'Complete one flagship project ready to be launched as an actual business.',
   'curriculum.cta.title': 'Ready to Accelerate Your Career?',
-  'curriculum.cta.subtitle': 'Gain both the skills and achievements needed to thrive in the AI era with the HyaQShix program.',
+  'curriculum.cta.subtitle': 'Gain both the skills and achievements needed to thrive in the AI era with the HyaQShiki program.',
   'curriculum.cta.free_trial': 'Apply for Free Trial',
   'curriculum.cta.pricing': 'View Pricing Plans',
   
   // Add missing properties related to sponsor
   'sponsor.overview.title': 'Sponsor Program Overview',
-  'sponsor.overview.question': 'What is the HyaQShix Sponsorship Program?',
-  'sponsor.overview.description': 'HyaQShix develops next-generation talent with 100x productivity in the AI era by integrating real corporate projects with education, enabling learning and practice simultaneously.',
+  'sponsor.overview.question': 'What is the HyaQShiki Sponsorship Program?',
+  'sponsor.overview.description': 'HyaQShiki develops next-generation talent with 100x productivity in the AI era by integrating real corporate projects with education, enabling learning and practice simultaneously.',
   'sponsor.overview.benefit1': 'Work with students who are gaining practical experience on your actual business challenges',
   'sponsor.overview.benefit2': 'Get early access to talented individuals who could become potential hires',
   'sponsor.benefits.title': 'Benefits for Sponsor Companies',
@@ -1215,7 +1221,7 @@ const en: TranslationsType = {
   'sponsor.benefits.benefit4.description': 'Enhanced brand value as a forward-thinking company committed to developing the next generation',
   'education.integration.title': 'Integration of Business Challenges and Education',
   'education.integration.integration': 'Practical Skills Through Real Challenges',
-  'education.integration.description': 'HyaQShix integrates real business challenges and projects into the curriculum to provide students with practical experience while creating valuable outcomes for companies.',
+  'education.integration.description': 'HyaQShiki integrates real business challenges and projects into the curriculum to provide students with practical experience while creating valuable outcomes for companies.',
   'education.integration.example': 'Examples of Collaboration Projects',
   'education.integration.example1': 'Web Application Development',
   'education.integration.example2': 'Data Analysis & Visualization',
@@ -1225,10 +1231,10 @@ const en: TranslationsType = {
   'education.integration.brief': 'Project Overview',
   'education.integration.brief.description': 'Challenges provided by companies are adjusted according to student levels and curriculum progress, becoming projects with both educational and practical value.',
   'special.certified.partner.title': 'Certified Partner System',
-  'special.certified.partner.certified': 'Become a HyaQShix Certified Partner',
-  'special.certified.partner.description': 'For companies establishing ongoing cooperative relationships, we offer special status and benefits as a HyaQShix Certified Partner.',
+  'special.certified.partner.certified': 'Become a HyaQShiki Certified Partner',
+  'special.certified.partner.description': 'For companies establishing ongoing cooperative relationships, we offer special status and benefits as a HyaQShiki Certified Partner.',
   'special.certified.partner.logo': 'Use of Certification Logo',
-  'special.certified.partner.logo.description': 'Use the HyaQShix Certified Partner logo on your website and marketing materials.',
+  'special.certified.partner.logo.description': 'Use the HyaQShiki Certified Partner logo on your website and marketing materials.',
   'special.certified.partner.project': 'Priority Project Participation',
   'special.certified.partner.project.description': 'Priority provision of corporate challenges for student research projects and graduation works.',
   'special.certified.partner.commercialization': 'Commercialization Support',
@@ -1236,7 +1242,7 @@ const en: TranslationsType = {
   'special.certified.partner.talent': 'Talent Introduction',
   'special.certified.partner.talent.description': 'Priority introduction to graduates who match your company\'s needs.',
   'partner.testimonials.title': 'Partner Company Testimonials',
-  'partner.testimonials.testimonial1': 'Through our partnership with HyaQShix, we gained solutions from fresh perspectives for dormant challenges within our company. The students\' flexible thinking and understanding of the latest technologies far exceeded our expectations.',
+  'partner.testimonials.testimonial1': 'Through our partnership with HyaQShiki, we gained solutions from fresh perspectives for dormant challenges within our company. The students\' flexible thinking and understanding of the latest technologies far exceeded our expectations.',
   'partner.testimonials.name1': 'Ken Yamada',
   'partner.testimonials.position1': 'CTO, TechnoFuture Inc.',
   'partner.testimonials.testimonial2': 'We initially started this program as part of talent development, but it led to new business idea creation, providing great value. Our employees have also been inspired by the students\' serious commitment.',
@@ -1280,7 +1286,7 @@ const en: TranslationsType = {
   'philosophy.values.innovation.desc': 'We constantly incorporate the latest technologies and trends, pursuing innovative educational methods.',
   'philosophy.founder.title': 'Founder\'s Message',
   'philosophy.founder.slogan': 'Aiming for the Democratization of Technology',
-  'philosophy.founder.p1': 'HyaQShix began with the desire to deliver the benefits of technology to more people. By utilizing the power of AI, we want to create a world where anyone can shape their ideas without specialized knowledge.',
+  'philosophy.founder.p1': 'HyaQShiki began with the desire to deliver the benefits of technology to more people. By utilizing the power of AI, we want to create a world where anyone can shape their ideas without specialized knowledge.',
   'philosophy.founder.p2': 'We aim to be not just a programming school, but a place that nurtures the next generation of creators. Our mission is to develop talent that can create new value with AI, cultivating problem-solving abilities and creativity beyond just technical skills.',
   'philosophy.founder.role': 'Founder & CEO',
   'philosophy.founder.name': 'Taro Tanaka',
@@ -1291,7 +1297,7 @@ const en: TranslationsType = {
   'philosophy.vision.long.title': 'Long-term Vision',
   'philosophy.vision.long.desc': 'AI活用スキルの世界標準を確立し、誰もが自分のアイデアを形にできる社会を実現します。',
   'philosophy.cta.title': '私たちと一緒に未来を創りませんか？',
-  'philosophy.cta.desc': 'HyaQShix百式で、AI時代のクリエイターとしての第一歩を踏み出しましょう。',
+  'philosophy.cta.desc': 'HyaQShiki-百式-で、AI時代のクリエイターとしての第一歩を踏み出しましょう。',
   'philosophy.cta.button': 'お問い合わせ',
   
   // Add these keys for certification evaluation text
@@ -1310,15 +1316,15 @@ const en: TranslationsType = {
   'certification.exam.fees': 'Certification Exam Fees',
   'certification.evaluation.criteria': 'Evaluation Criteria:',
   'certification.cta.title': 'Would you like to officially certify your AI skills and expand your career possibilities?',
-  'certification.cta.subtitle': 'HyaQShix certification is a powerful tool to validate your skills in the generative AI era.',
+  'certification.cta.subtitle': 'HyaQShiki certification is a powerful tool to validate your skills in the generative AI era.',
   'certification.cta.apply': 'Apply for Certification Exam',
   'home.satisfaction.badge': '100% SATISFACTION',
   'corporate.testimonials.person1.name': 'Taro Tanaka',
   'corporate.testimonials.person1.position': 'CEO, Technology Corporation',
-  'corporate.testimonials.person1.content': 'We resonate with HyaQShix\'s philosophy and contribute to nurturing the next generation of IT talent.',
+  'corporate.testimonials.person1.content': 'We resonate with HyaQShiki\'s philosophy and contribute to nurturing the next generation of IT talent.',
   'corporate.testimonials.person2.name': 'Kentaro Yamada',
   'corporate.testimonials.person2.position': 'CTO, Innovation Inc.',
-  'corporate.testimonials.person2.content': 'HyaQShix\'s program provides education that aligns with actual business practices.'
+  'corporate.testimonials.person2.content': 'HyaQShiki\'s program provides education that aligns with actual business practices.'
 };
 
 const translations: Record<Language, TranslationsType> = { ja, en };
@@ -1351,24 +1357,24 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const metadata: SiteMetadata = {
     title: {
-      ja: "HyaQShix百式 - 生成AIと100日100アプリで未来を創る教育プログラム",
-      en: "HyaQShix - 100 Days of AI App Development Education Program"
+      ja: "HyaQShiki-百式- - 生成AIと100日100アプリで未来を創る教育プログラム",
+      en: "HyaQShiki - 100 Days of AI App Development Education Program"
     },
     description: {
-      ja: "100日、100の型、100倍の生産力。HyaQShix百式は、AIで効率的にアプリ開発する手法を学び、毎日ひとつアプリを創る教育プログラムです。",
+      ja: "100日、100の型、100倍の生産力。HyaQShiki-百式-は、AIで効率的にアプリ開発する手法を学び、毎日ひとつアプリを創る教育プログラムです。",
       en: "100 days, 100 patterns, 100x productivity. Learn efficient AI-powered app development and create one app daily."
     },
     openGraph: {
       title: {
-        ja: "HyaQShix百式 - 生成AIと100日100アプリで未来を創る教育プログラム",
-        en: "HyaQShix - 100 Days of AI App Development Education Program"
+        ja: "HyaQShiki-百式- - 生成AIと100日100アプリで未来を創る教育プログラム",
+        en: "HyaQShiki - 100 Days of AI App Development Education Program"
       },
       description: {
         ja: "100日、100の型、100倍の生産力。そして無限の未来へ。AIを使いこなす武器に変えるための学び。",
         en: "100 days, 100 patterns, 100x productivity. Journey to infinite possibilities. Master AI as your development superpower."
       },
-      images: ['/images/HyaQShix.jpg'],
-      url: 'https://hyaqshix.com',
+      images: ['/images/HyaQShiki.jpg'],
+      url: 'https://HyaQShiki.com',
       type: 'website'
     }
   };
@@ -1376,7 +1382,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // Certification levels data
   const certificationLevels: CertificationLevel[] = [
     {
-      title: { ja: 'HyaQShix Silver', en: 'HyaQShix Silver' },
+      title: { ja: 'HyaQShiki Silver', en: 'HyaQShiki Silver' },
       passRate: { ja: '合格率：50%', en: 'Pass Rate: 50%' },
       description: { 
         ja: 'AIを活用したアプリケーション開発の基礎スキルを証明するエントリーレベルの認定資格です。', 
@@ -1392,7 +1398,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       borderClass: 'border-gray-500'
     },
     {
-      title: { ja: 'HyaQShix Gold', en: 'HyaQShix Gold' },
+      title: { ja: 'HyaQShiki Gold', en: 'HyaQShiki Gold' },
       passRate: { ja: '合格率：30%', en: 'Pass Rate: 30%' },
       description: { 
         ja: 'AIを活用した実用的なアプリケーション開発と基本的なマーケティング知識を兼ね備えた中級者向け認定資格です。', 
@@ -1408,7 +1414,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       borderClass: 'border-yellow-400'
     },
     {
-      title: { ja: 'HyaQShix Platina', en: 'HyaQShix Platina' },
+      title: { ja: 'HyaQShiki Platina', en: 'HyaQShiki Platina' },
       passRate: { ja: '合格率：15%', en: 'Pass Rate: 15%' },
       description: { 
         ja: 'AIを活用した高度なアプリケーション開発とビジネスモデル構築の能力を証明する上級者向け認定資格です。', 
@@ -1425,7 +1431,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       textClass: 'text-gray-900'
     },
     {
-      title: { ja: 'HyaQShix Black', en: 'HyaQShix Black' },
+      title: { ja: 'HyaQShiki Black', en: 'HyaQShiki Black' },
       passRate: { ja: '合格率：5%', en: 'Pass Rate: 5%' },
       description: { 
         ja: 'AIを活用した事業創造と拡大の能力を証明するエキスパートレベルの認定資格です。業界での最高峰として認知されています。', 
@@ -1509,25 +1515,25 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const getCertificationFees = (lang: Language): CertificationFee[] => {
     return [
       {
-        rank: 'HyaQShix Silver',
+        rank: 'HyaQShiki Silver',
         fee: '49,800円',
         passRate: '50%',
         renewal: '3年ごと'
       },
       {
-        rank: 'HyaQShix Gold',
+        rank: 'HyaQShiki Gold',
         fee: '49,800円',
         passRate: '30%',
         renewal: '3年ごと'
       },
       {
-        rank: 'HyaQShix Platina',
+        rank: 'HyaQShiki Platina',
         fee: '49,800円',
         passRate: '15%',
         renewal: '3年ごと'
       },
       {
-        rank: 'HyaQShix Black',
+        rank: 'HyaQShiki Black',
         fee: '49,800円',
         passRate: '5%',
         renewal: '3年ごと'
@@ -1543,22 +1549,22 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   // Add new properties
   const certificationHero: CertificationHero = {
-    title: { ja: '資格認定のヒーロー', en: 'Certification Hero' },
+    title: { ja: '資格認定', en: 'Certification Hero' },
     subtitle: { ja: 'AI時代のスキルを証明する', en: 'Prove Your Skills in the AI Era' },
     backgroundImage: '/path/to/certification-hero-image.jpg'
   };
 
   const certificationOverview: CertificationOverview = {
-    title: { ja: '資格認定の概要', en: 'Certification Overview' },
-    description: { ja: '当プログラムでは、AI時代のスキルを証明するための4段階の資格制度を設けています。', en: 'Our program offers a 4-level certification system to prove your skills in the AI era.' },
+    title: { ja: '取得する効果は？', en: 'Certification Overview' },
+    description: { ja: 'あなたがAIを活用したアプリ開発者でハイパフォーマンスを発揮する人材であることを証明をします。', en: 'Our program offers a 4-level certification system to prove your skills in the AI era.' },
     points: [
       { 
-        title: { ja: 'アプリケーション開発の基礎スキル', en: 'Basic Skills in App Development' },
-        description: { ja: '基礎的なアプリケーション開発スキルの習得を証明します。', en: 'Proves acquisition of basic application development skills.' }
+        title: { ja: '給与アップ', en: 'Basic Skills in App Development' },
+        description: { ja: '認定資格保有者を雇用することで会社は10人以上のエンジニアを雇用することと同意義になり、あなたの給与アップに繋がります。', en: 'Proves acquisition of basic application development skills.' }
       },
       { 
-        title: { ja: '実用的なアプリケーション開発', en: 'Practical App Development Skills' },
-        description: { ja: '実用的なアプリケーション開発能力を証明します。', en: 'Demonstrates practical application development capabilities.' }
+        title: { ja: 'AI積極活用企業とのマッチング', en: 'Practical App Development Skills' },
+        description: { ja: 'HyaQShikiと業務提携している企業とあなたのマッチングを相互に支援します', en: 'Demonstrates practical application development capabilities.' }
       },
       { 
         title: { ja: '高度なアプリケーション開発', en: 'Advanced App Development Skills' },
@@ -1613,7 +1619,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     expirationInfo: { ja: '更新期限内に更新手続きを完了しない場合、1年間の猶予期間があります。猶予期間中に更新できなかった場合、資格は失効し、再取得には再受講または特別試験の合格が必要となります。', en: 'If you do not complete the renewal procedure within the renewal deadline, there is a 1-year grace period. If you cannot renew during the grace period, your certification will expire, and re-acquisition will require re-taking the course or passing a special exam.' },
     sampleImage: {
       src: '/images/certificate-sample.png',
-      alt: { ja: 'HyaQShix認定証明書サンプル', en: 'HyaQShix Certificate Sample' },
+      alt: { ja: 'HyaQShiki認定証明書サンプル', en: 'HyaQShiki Certificate Sample' },
       width: 600,
       height: 400
     }
@@ -1621,7 +1627,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const certificationCTA: CertificationCTA = {
     title: { ja: 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？', en: 'Would you like to officially certify your AI skills and expand your career possibilities?' },
-    subtitle: { ja: 'HyaQShix認定資格は、生成AI時代のスキルを証明する強力なツールです。', en: 'HyaQShix certification is a powerful tool to validate your skills in the generative AI era.' },
+    subtitle: { ja: 'HyaQShiki認定資格は、生成AI時代のスキルを証明する強力なツールです。', en: 'HyaQShiki certification is a powerful tool to validate your skills in the generative AI era.' },
     buttonText: { ja: '資格受験に申し込む', en: 'Apply for Certification Exam' }
   };
 
@@ -1631,8 +1637,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       en: 'Examination Fees'
     },
     description: {
-      ja: 'HyaQShix認定資格の受験をお考えの方は、以下の受験料をご確認ください。カリキュラム受講生は、Silver資格が受講料に含まれています。',
-      en: 'Please check the following exam fees if you are considering taking the HyaQShix certification exam. For course participants, the Silver certification is included in the tuition fee.'
+      ja: 'HyaQShiki認定資格の受験をお考えの方は、以下の受験料をご確認ください。カリキュラム受講生は、Silver資格が受講料に含まれています。',
+      en: 'Please check the following exam fees if you are considering taking the HyaQShiki certification exam. For course participants, the Silver certification is included in the tuition fee.'
     },
     tableHeaders: {
       rank: {

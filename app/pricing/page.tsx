@@ -117,7 +117,7 @@ export default function PricingPage() {
               variants={fadeInUp}
             ></motion.div>
             <motion.p
-              className="text-center text-gray-300 max-w-2xl mx-auto mb-16"
+              className="text-left text-gray-300 max-w-2xl mx-auto mb-16"
               variants={fadeInUp}
             >
               {t('pricing.plans.desc')}
@@ -367,16 +367,16 @@ export default function PricingPage() {
             variants={staggerContainer}
           >
 
-            <motion.div 
-              className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
-              variants={fadeInUp}
-            ></motion.div>
             <motion.h3
-              className="text-center text-2xl font-bold text-white mb-14"
+              className="text-center text-2xl font-bold text-white mb-6"
               variants={fadeInUp}
             >
               {t('pricing.satisfaction.title')}
             </motion.h3>
+            <motion.div 
+              className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
+              variants={fadeInUp}
+            ></motion.div>
             
             <div className="flex flex-col md:flex-row items-center gap-8">
               <motion.div 
@@ -537,13 +537,13 @@ export default function PricingPage() {
                     repeatType: "reverse" 
                   }}
                 >
-                  💳
+                  <i className="fas fa-credit-card"></i>
                 </motion.div>
                 <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent mb-6"></div>
                 <h3 className="text-xl font-bold mb-4 text-yellow-400">
                   {t('pricing.payment.method1.title')}
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-left text-gray-300">
                   {t('pricing.payment.method1.desc')}
                 </p>
               </motion.div>
@@ -568,13 +568,13 @@ export default function PricingPage() {
                     repeatType: "reverse" 
                   }}
                 >
-                  🏦
+                  <i className="fas fa-university"></i>
                 </motion.div>
                 <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent mb-6"></div>
                 <h3 className="text-xl font-bold mb-4 text-yellow-400">
                   {t('pricing.payment.method2.title')}
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-left text-gray-300">
                   {t('pricing.payment.method2.desc')}
                 </p>
               </motion.div>
@@ -599,13 +599,13 @@ export default function PricingPage() {
                     repeatType: "reverse" 
                   }}
                 >
-                  💸
+                  <i className="fab fa-bitcoin"></i>
                 </motion.div>
                 <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent mb-6"></div>
                 <h3 className="text-xl font-bold mb-4 text-yellow-400">
                   {t('pricing.payment.method3.title')}
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-left text-gray-300">
                   {t('pricing.payment.method3.desc')}
                 </p>
               </motion.div>

@@ -5,6 +5,8 @@ import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { RocketLaunchIcon, AcademicCapIcon } from '@heroicons/react/24/solid';
+import { HandThumbUpIcon } from '@heroicons/react/24/outline';
 
 export default function PhilosophyPage() {
   const { t } = useLanguage();
@@ -95,7 +97,7 @@ export default function PhilosophyPage() {
                 className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <div className="text-4xl mb-4">🚀</div>
+                <div className="text-4xl mb-4 flex justify-center"><RocketLaunchIcon className="w-10 h-10 text-yellow-400" /></div>
                 <h4 className="text-xl font-semibold mb-3 text-yellow-400">
                   {t('philosophy.values.v1')}
                 </h4>
@@ -108,7 +110,7 @@ export default function PhilosophyPage() {
                 className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <div className="text-4xl mb-4">🎯</div>
+                <div className="text-4xl mb-4 flex justify-center"><AcademicCapIcon className="w-10 h-10 text-yellow-400" /></div>
                 <h4 className="text-xl font-semibold mb-3 text-yellow-400">
                   {t('philosophy.values.v2')}
                 </h4>
@@ -121,7 +123,7 @@ export default function PhilosophyPage() {
                 className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <div className="text-4xl mb-4">🤝</div>
+                <div className="text-4xl mb-4 flex justify-center"><HandThumbUpIcon className="w-10 h-10 text-yellow-400" /></div>
                 <h4 className="text-xl font-semibold mb-3 text-yellow-400">
                   {t('philosophy.values.v3')}
                 </h4>
@@ -131,80 +133,6 @@ export default function PhilosophyPage() {
               </motion.div>
             </div>
           </motion.div>
-        </motion.div>
-      </section>
-
-      {/* Core Values */}
-      <section className="py-20 bg-black text-white">
-        <motion.div 
-          className="max-w-5xl mx-auto px-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
-            {t('philosophy.values.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
-            variants={fadeInUp}
-          ></motion.div>
-          
-          <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-8 shadow-xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <motion.div 
-                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 border-l-4 border-yellow-400"
-                variants={fadeInUp}
-                whileHover={{ y: -5, transition: { duration: 0.3 } }}
-              >
-                <div className="flex items-center mb-4">
-                  <span className="text-yellow-400 font-bold text-xl mr-3">01</span>
-                  <h3 className="text-yellow-400 text-xl font-bold">
-                    {t('philosophy.values.v1')}
-                  </h3>
-                </div>
-                <p className="text-gray-300">
-                  {t('philosophy.values.v1')}
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 border-l-4 border-yellow-400"
-                variants={fadeInUp}
-                whileHover={{ y: -5, transition: { duration: 0.3 } }}
-              >
-                <div className="flex items-center mb-4">
-                  <span className="text-yellow-400 font-bold text-xl mr-3">02</span>
-                  <h3 className="text-yellow-400 text-xl font-bold">
-                    {t('philosophy.values.v2')}
-                  </h3>
-                </div>
-                <p className="text-gray-300">
-                  {t('philosophy.values.v2')}
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 border-l-4 border-yellow-400"
-                variants={fadeInUp}
-                whileHover={{ y: -5, transition: { duration: 0.3 } }}
-              >
-                <div className="flex items-center mb-4">
-                  <span className="text-yellow-400 font-bold text-xl mr-3">03</span>
-                  <h3 className="text-yellow-400 text-xl font-bold">
-                    {t('philosophy.values.v3')}
-                  </h3>
-                </div>
-                <p className="text-gray-300">
-                  {t('philosophy.values.v3')}
-                </p>
-              </motion.div>
-            </div>
-          </div>
         </motion.div>
       </section>
 
@@ -254,69 +182,6 @@ export default function PhilosophyPage() {
               </div>
             </div>
           </motion.div>
-        </motion.div>
-      </section>
-
-      {/* Vision */}
-      <section className="py-20 bg-black text-white">
-        <motion.div 
-          className="max-w-5xl mx-auto px-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
-            {t('philosophy.vision.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
-            variants={fadeInUp}
-          ></motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
-              variants={fadeInUp}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
-            >
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
-                {t('philosophy.values.v1')}
-              </h3>
-              <p className="text-gray-300">
-                {t('philosophy.values.v1')}
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
-              variants={fadeInUp}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
-            >
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
-                {t('philosophy.values.v2')}
-              </h3>
-              <p className="text-gray-300">
-                {t('philosophy.values.v2')}
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
-              variants={fadeInUp}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
-            >
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
-                {t('philosophy.values.v3')}
-              </h3>
-              <p className="text-gray-300">
-                {t('philosophy.values.v3')}
-              </p>
-            </motion.div>
-          </div>
         </motion.div>
       </section>
 

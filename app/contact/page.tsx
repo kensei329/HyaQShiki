@@ -81,13 +81,78 @@ export default function ContactPage() {
               </div>
             </motion.div>
             
+            {/* Contact Information */}
+            <motion.section 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-900 to-gray-800 p-5 sm:p-8 rounded-xl shadow-xl text-white flex flex-col justify-between transition duration-300 hover:shadow-2xl order-2 md:order-1"
+            >
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center border-b border-gray-700 pb-4">{t('contact.info.title')}</h2>
+                <div className="space-y-6 sm:space-y-8 mt-6 sm:mt-8">
+                  <motion.div 
+                    className="flex items-start group"
+                    whileHover={{ x: 8 }}
+                  >
+                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
+                      <i className="fas fa-map-marker-alt text-gray-900"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.address.label')}</h3>
+                      <p className="text-gray-200">{t('contact.info.address')}</p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="flex items-start group"
+                    whileHover={{ x: 8 }}
+                  >
+                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
+                      <i className="fas fa-envelope text-gray-900"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.email.label')}</h3>
+                      <p className="text-gray-200">{t('contact.info.email')}</p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="flex items-start group"
+                    whileHover={{ x: 8 }}
+                  >
+                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
+                      <i className="fas fa-phone text-gray-900"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.phone.label')}</h3>
+                      <p className="text-gray-200">{t('contact.info.phone')}</p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+              
+              <div className="mt-8 sm:mt-12 pt-6 border-t border-gray-700">
+                <h3 className="text-base sm:text-lg font-semibold mb-4 text-center text-yellow-400">{t('contact.info.hours')}</h3>
+                <div className="grid grid-cols-2 gap-y-2 sm:gap-y-3 text-sm">
+                  <div className="text-gray-300">{t('contact.info.hours.weekdays')}:</div>
+                  <div className="text-right text-white font-medium">9:00 AM - 6:00 PM</div>
+                  <div className="text-gray-300">{t('contact.info.hours.saturday')}:</div>
+                  <div className="text-right text-white font-medium">10:00 AM - 4:00 PM</div>
+                  <div className="text-gray-300">{t('contact.info.hours.sunday')}:</div>
+                  <div className="text-right text-white font-medium">{t('contact.info.hours.closed')}</div>
+                </div>
+              </div>
+            </motion.section>
+
             {/* Form Section */}
             <motion.section 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl shadow-xl p-5 sm:p-8 transition duration-300 hover:shadow-2xl order-2 md:order-1"
+              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl shadow-xl p-5 sm:p-8 transition duration-300 hover:shadow-2xl order-1 md:order-2"
             >
               <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center border-b border-gray-700 pb-4 text-white">{t('contact.title')}</h2>
 
@@ -157,71 +222,6 @@ export default function ContactPage() {
                   </motion.button>
                 </div>
               </form>
-            </motion.section>
-
-            {/* Contact Information */}
-            <motion.section 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-900 to-gray-800 p-5 sm:p-8 rounded-xl shadow-xl text-white flex flex-col justify-between transition duration-300 hover:shadow-2xl order-1 md:order-2"
-            >
-              <div>
-                <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center border-b border-gray-700 pb-4">{t('contact.info.title')}</h2>
-                <div className="space-y-6 sm:space-y-8 mt-6 sm:mt-8">
-                  <motion.div 
-                    className="flex items-start group"
-                    whileHover={{ x: 8 }}
-                  >
-                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
-                      <i className="fas fa-map-marker-alt text-gray-900"></i>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.address.label')}</h3>
-                      <p className="text-gray-200">{t('contact.info.address')}</p>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div 
-                    className="flex items-start group"
-                    whileHover={{ x: 8 }}
-                  >
-                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
-                      <i className="fas fa-envelope text-gray-900"></i>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.email.label')}</h3>
-                      <p className="text-gray-200">{t('contact.info.email')}</p>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div 
-                    className="flex items-start group"
-                    whileHover={{ x: 8 }}
-                  >
-                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
-                      <i className="fas fa-phone text-gray-900"></i>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.phone.label')}</h3>
-                      <p className="text-gray-200">{t('contact.info.phone')}</p>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-              
-              <div className="mt-8 sm:mt-12 pt-6 border-t border-gray-700">
-                <h3 className="text-base sm:text-lg font-semibold mb-4 text-center text-yellow-400">{t('contact.info.hours')}</h3>
-                <div className="grid grid-cols-2 gap-y-2 sm:gap-y-3 text-sm">
-                  <div className="text-gray-300">{t('contact.info.hours.weekdays')}:</div>
-                  <div className="text-right text-white font-medium">9:00 AM - 6:00 PM</div>
-                  <div className="text-gray-300">{t('contact.info.hours.saturday')}:</div>
-                  <div className="text-right text-white font-medium">10:00 AM - 4:00 PM</div>
-                  <div className="text-gray-300">{t('contact.info.hours.sunday')}:</div>
-                  <div className="text-right text-white font-medium">{t('contact.info.hours.closed')}</div>
-                </div>
-              </div>
             </motion.section>
           </div>
         </div>
