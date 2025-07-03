@@ -760,7 +760,7 @@ const ja: TranslationsType = {
   'contact.partnership.flow.deliverable': '成果物納品',
   'contact.partnership.flow.deliverable.desc': 'プロジェクト完了後、成果物の納品と報告会を実施します。学生からの発表と質疑応答を通じて、成果を確認します。',
   'contact.partnership.flow.feedback': 'フィードバック',
-  'contact.partnership.flow.feedback.desc': 'プロジェクト終了後、企業と学生の双方からフィードバックを収集し、次回のプロジェクトに活かします。継続的な連携についても検討します。',
+  'contact.partnership.flow.feedback.desc': 'After project completion, feedback will be collected from both company and students and used for future improvements. We will also consider ongoing partnerships.',
   'philosophy.mission.title': 'ミッション',
   'philosophy.mission.desc': 'AIを「使いこなす武器」に変え、創造性を最大化する人材を育てる',
   'philosophy.vision.title': 'ビジョン',
@@ -1333,27 +1333,7 @@ const en: TranslationsType = {
   'contact.partnership.flow.deliverable': 'Deliverables Submission',
   'contact.partnership.flow.deliverable.desc': 'After project completion, deliverables will be submitted and a final report meeting will be held. Students will present their work and answer questions.',
   'contact.partnership.flow.feedback': 'Feedback',
-  'contact.partnership.flow.feedback.desc': 'After project completion, feedback will be collected from both company and students and used for future improvements. We will also consider ongoing partnerships.',
-
-  // Mission, Vision, Values
-  'philosophy.mission.title': 'Mission',
-  'philosophy.mission.desc': 'Transform AI into a powerful tool and nurture talent that maximizes creativity.',
-  'philosophy.vision.title': 'Vision',
-  'philosophy.vision.desc': 'Realize a society where anyone can become an innovator through the democratization of technology.',
-  'philosophy.values.title': 'Values',
-  'philosophy.values.v1': 'Practice First: Learning comes from action.',
-  'philosophy.values.v2': 'Co-Creation: Teach and learn together.',
-  'philosophy.values.v3': 'Future-Oriented: Always pursue the next innovation.',
-
-  'curriculum.timeline.title': 'Timeline (Example)',
-  'curriculum.timeline.days1.title': 'Day 1-10: Foundations',
-  'curriculum.timeline.days1.desc': 'Basics of HTML/CSS/JavaScript + Initial AI-assisted output experience',
-  'curriculum.timeline.days2.title': 'Day 11-40: Daily App Creation',
-  'curriculum.timeline.days2.desc': 'Develop and release one practical app per day using generative AI',
-  'curriculum.timeline.days3.title': 'Day 41-70: Thematic Deep Dive',
-  'curriculum.timeline.days3.desc': 'Industry specialization, advanced design, UI/UX, security, API integration, and more',
-  'curriculum.timeline.days4.title': 'Day 71-100: Final Production & Release',
-  'curriculum.timeline.days4.desc': 'Develop multiple capstone apps, publish, share, review, and obtain certification'
+  'contact.partnership.flow.feedback.desc': 'After project completion, feedback will be collected from both company and students and used for future improvements. We will also consider ongoing partnerships.'
 };
 
 const translations: Record<Language, TranslationsType> = { ja, en };
