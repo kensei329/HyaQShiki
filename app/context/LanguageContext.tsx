@@ -650,8 +650,6 @@ const ja: TranslationsType = {
   'corporate.benefits.b2.desc': '優秀な受講修了者を紹介',
   'corporate.benefits.b3.title': '技術相談',
   'corporate.benefits.b3.desc': 'AI開発に関する技術相談窓口の利用',
-  'corporate.benefits.b4.title': '最新ドレン共有',
-  'corporate.benefits.b4.desc': '活用例や最新技術を獲得',
   'corporate.contact': '法人向けのお問い合わせはこちら',
   'corporate.sponsor.title': 'スポンサー制度の概要',
   'corporate.sponsor.subtitle': 'HyaQShikiスポンサー制度とは？',
