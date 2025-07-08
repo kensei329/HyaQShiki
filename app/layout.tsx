@@ -47,6 +47,15 @@ const RootLayoutContent = ({ children }: { children: React.ReactNode }) => {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" />
 
         <link rel="canonical" href={`https://hyaqshiki.com${typeof window !== 'undefined' ? window.location.pathname : ''}`} />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMNWB5362P"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PMNWB5362P');
+          `
+        }} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning={true}>
         {children}
