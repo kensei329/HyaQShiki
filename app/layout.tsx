@@ -33,7 +33,11 @@ const RootLayoutContent = ({ children }: { children: React.ReactNode }) => {
         <meta name="twitter:title" content={metadata.openGraph.title[language]} />
         <meta name="twitter:description" content={metadata.openGraph.description[language]} />
         <meta name="twitter:image" content={metadata.openGraph.images[0]} />
-        <link rel="icon" type="image/png" href="/images/top-icon.png" />
+        <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+        <link rel="manifest" href="/images/site.webmanifest" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" />
       </head>
