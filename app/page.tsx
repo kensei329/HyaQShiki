@@ -7,6 +7,7 @@ import { useLanguage } from './context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Parallax } from 'react-parallax';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -150,9 +151,9 @@ export default function HomePage() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full transition-all duration-300 ${
+              className={`w-6 h-6 mx-2 rounded-full transition-all duration-300 ${
                 currentSlide === index 
-                  ? 'bg-yellow-400 w-4 sm:w-6' 
+                  ? 'bg-yellow-400 scale-110' 
                   : 'bg-gray-400 bg-opacity-50 hover:bg-opacity-75'
               }`}
               aria-label={`Go to slide ${index + 1}`}
@@ -367,7 +368,6 @@ export default function HomePage() {
                   }}
                 >
                   <div className={`${cert.bg} h-24 relative flex items-center justify-center`}>
-                    <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('/images/certificate-pattern.png')]"></div>
                     <i className={`fas fa-${cert.icon} text-4xl ${cert.title === 'Platina' ? 'text-gray-900' : 'text-white'}`}></i>
                     <div className="absolute -bottom-5 right-5 w-20 h-20 rounded-full bg-black/80 backdrop-blur-sm border border-gray-700 shadow-lg flex flex-col items-center justify-center">
                       <span className={`text-sm font-semibold ${cert.title === 'Platina' ? 'text-gray-200' : 'text-white'}`}>{t('passRate')}</span>
