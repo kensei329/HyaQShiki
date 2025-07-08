@@ -26,13 +26,13 @@ const RootLayoutContent = ({ children }: { children: React.ReactNode }) => {
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content={metadata.openGraph.title[language]} />
         <meta property="og:description" content={metadata.openGraph.description[language]} />
-        <meta property="og:image" content={metadata.openGraph.images[0]} />
+        <meta property="og:image" content="https://www.hyaqshiki.com/images/ogp.png" />
         <meta property="og:url" content={metadata.openGraph.url} />
         <meta property="og:type" content={metadata.openGraph.type} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.openGraph.title[language]} />
         <meta name="twitter:description" content={metadata.openGraph.description[language]} />
-        <meta name="twitter:image" content={metadata.openGraph.images[0]} />
+        <meta name="twitter:image" content="https://www.hyaqshiki.com/images/ogp.png" />
         <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
         <link rel="shortcut icon" href="/images/favicon.ico" />
