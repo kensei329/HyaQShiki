@@ -24,20 +24,25 @@ const RootLayoutContent = ({ children }: { children: React.ReactNode }) => {
         <title>{metadata.title[language]}</title>
         <meta name="description" content={metadata.description[language]} />
         <meta name="robots" content="index, follow" />
+
         <meta property="og:title" content={metadata.openGraph.title[language]} />
         <meta property="og:description" content={metadata.openGraph.description[language]} />
         <meta property="og:image" content="https://www.hyaqshiki.com/images/ogp.png" />
-        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:url" content="https://www.hyaqshiki.com/"/>
         <meta property="og:type" content={metadata.openGraph.type} />
-        <meta name="twitter:card" content="summary_large_image" />
+
         <meta name="twitter:title" content={metadata.openGraph.title[language]} />
         <meta name="twitter:description" content={metadata.openGraph.description[language]} />
         <meta name="twitter:image" content="https://www.hyaqshiki.com/images/ogp.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@HyaQShiki" />
+
         <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
         <link rel="manifest" href="/images/site.webmanifest" />
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" />
       </head>

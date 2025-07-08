@@ -1367,21 +1367,21 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // --- metadata定義を追加 ---
   const metadata = {
     title: {
-      ja: "HyaQShiki-百式- - 生成AIと100日100アプリで未来を創る教育プログラム",
-      en: "HyaQShiki - 100 Days of AI App Development Education Program"
+        ja: "HyaQShiki-百式-",
+        en: "HyaQShiki-百式-"
     },
     description: {
-      ja: "100日、100の型、100倍の生産力。HyaQShiki-百式-は、AIで効率的にアプリ開発する手法を学び、毎日ひとつアプリを創る教育プログラムです。",
-      en: "100 days, 100 patterns, 100x productivity. Learn efficient AI-powered app development and create one app daily."
+        ja: "日常会話だけでアプリ開発 | 3ヶ月集中アカデミースクール",
+        en: "Build Apps Through Everyday Conversation | 3-Month Intensive Academy Program"
     },
     openGraph: {
       title: {
-        ja: "HyaQShiki-百式- - 生成AIと100日100アプリで未来を創る教育プログラム",
-        en: "HyaQShiki - 100 Days of AI App Development Education Program"
+        ja: "HyaQShiki-百式-",
+        en: "HyaQShiki-百式-"
       },
       description: {
-        ja: "100日、100の型、100倍の生産力。そして無限の未来へ。AIを使いこなす武器に変えるための学び。",
-        en: "100 days, 100 patterns, 100x productivity. Journey to infinite possibilities. Master AI as your development superpower."
+        ja: "日常会話だけでアプリ開発 | 3ヶ月集中アカデミースクール",
+        en: "Build Apps Through Everyday Conversation | 3-Month Intensive Academy Program"
       },
       images: ['/images/ogp.png'],
       url: 'https://www.hyaqshiki.com',
