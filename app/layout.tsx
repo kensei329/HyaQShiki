@@ -27,13 +27,13 @@ const RootLayoutContent = ({ children }: { children: React.ReactNode }) => {
 
         <meta property="og:title" content={metadata.openGraph.title[language]} />
         <meta property="og:description" content={metadata.openGraph.description[language]} />
-        <meta property="og:image" content="https://www.hyaqshiki.com/images/ogp.png" />
-        <meta property="og:url" content="https://www.hyaqshiki.com/"/>
+        <meta property="og:image" content="https://hyaqshiki.com/images/ogp.png" />
+        <meta property="og:url" content="https://hyaqshiki.com/"/>
         <meta property="og:type" content={metadata.openGraph.type} />
 
         <meta name="twitter:title" content={metadata.openGraph.title[language]} />
         <meta name="twitter:description" content={metadata.openGraph.description[language]} />
-        <meta name="twitter:image" content="https://www.hyaqshiki.com/images/ogp.png" />
+        <meta name="twitter:image" content="https://hyaqshiki.com/images/ogp.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@HyaQShiki" />
 
@@ -45,6 +45,8 @@ const RootLayoutContent = ({ children }: { children: React.ReactNode }) => {
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" />
+
+        <link rel="canonical" href={`https://hyaqshiki.com${typeof window !== 'undefined' ? window.location.pathname : ''}`} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning={true}>
         {children}
