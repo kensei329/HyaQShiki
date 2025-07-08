@@ -4,9 +4,17 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import ContactForm from '../components/ContactForm';
+import { useState } from 'react';
 
 export default function ContactPage() {
   const { t } = useLanguage();
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const handleCopy = (text: string, key: string) => {
+    navigator.clipboard.writeText(text);
+    setCopied(key);
+    setTimeout(() => setCopied(null), 1500);
+  };
   
   return (
     <div className="font-['Poppins',sans-serif] bg-black text-white min-h-screen">
@@ -54,9 +62,15 @@ export default function ContactPage() {
                     <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
                       <i className="fas fa-envelope text-gray-900"></i>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.email.label')}</h3>
-                      <p className="text-gray-200">{t('contact.info.email')}</p>
+                    <div className="flex items-center gap-2">
+                      <div>
+                        <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.email.label')}</h3>
+                        <p className="text-gray-200 inline-block">{t('contact.info.email')}</p>
+                      </div>
+                      <button onClick={() => handleCopy(t('contact.info.email'), 'email')} className="ml-2 text-yellow-400 hover:text-yellow-300" title="コピー">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="2"/><rect x="3" y="3" width="13" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
+                      </button>
+                      {copied === 'email' && <span className="text-xs text-green-400 ml-1">コピーしました</span>}
                     </div>
                   </div>
                   
@@ -67,12 +81,18 @@ export default function ContactPage() {
                         <path d="M1200 24.6l-393.6 579.6L1197.6 1202H960.6L684.6 813.6 360 1202H0l414-610.8L6 24.6h237.6l252 357.6L732 24.6H1200zm-180 105.6h-144l-276 393.6-276-393.6H60l354 522-354 522h144l276-393.6 276 393.6h144l-354-522 354-522z"/>
                       </svg>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">X（旧Twitter）</h3>
-                      <a href="https://x.com/HyaQShiki" target="_blank" rel="noopener noreferrer" className="text-gray-200 underline hover:text-yellow-300 transition">
-                        @HyaQShiki
-                      </a>
-                      <div className="text-xs text-gray-400 mt-1">DMを受け付けています</div>
+                    <div className="flex items-center gap-2">
+                      <div>
+                        <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">X（旧Twitter）</h3>
+                        <a href="https://x.com/HyaQShiki" target="_blank" rel="noopener noreferrer" className="text-gray-200 underline hover:text-yellow-300 transition">
+                          @HyaQShiki
+                        </a>
+                        <div className="text-xs text-gray-400 mt-1">DMを受け付けています</div>
+                      </div>
+                      <button onClick={() => handleCopy('@HyaQShiki', 'x')} className="ml-2 text-yellow-400 hover:text-yellow-300" title="コピー">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="2"/><rect x="3" y="3" width="13" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
+                      </button>
+                      {copied === 'x' && <span className="text-xs text-green-400 ml-1">コピーしました</span>}
                     </div>
                   </div>
                 </div>
@@ -93,7 +113,7 @@ export default function ContactPage() {
             
             {/* Form Section */}
             <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl shadow-xl p-5 sm:p-8 transition duration-300 hover:shadow-2xl order-1 md:order-2">
-              <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center border-b border-gray-700 pb-4 text-white">{t('contact.title')}</h2>
+              <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center border-b border-gray-700 pb-4 text-white">{t('contact.form.submit')}</h2>
 
               <ContactForm />
             </div>
