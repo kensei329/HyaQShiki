@@ -13,8 +13,8 @@ export async function POST(req: NextRequest) {
     const data = Object.fromEntries(formData.entries());
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
-      from: 'contact@hyaqshiki.com',
-      to: 'youremail@example.com',
+      from: process.env.RESEND_FROM_EMAIL || '',
+      to: process.env.RESEND_TO_EMAIL || '',
       subject: `お問い合わせ from ${data.name}${data.subject ? ' - ' + data.subject : ''}`,
       html: `<p><strong>名前：</strong> ${data.name}</p>
              <p><strong>メール：</strong> ${data.email}</p>
