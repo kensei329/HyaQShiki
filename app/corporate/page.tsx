@@ -143,7 +143,7 @@ export default function Corporate() {
       <section className="py-20 bg-black text-white">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">
-            {t('corporate.benefits.title')}
+          {t('corporate.benefits.title')}
           </h2>
           <div className="w-24 h-1 bg-yellow-400 mx-auto mb-10"></div>
           
@@ -219,8 +219,8 @@ export default function Corporate() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
-        </div>
       </section>
 
       {/* CTA */}

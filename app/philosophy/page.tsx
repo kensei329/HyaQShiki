@@ -9,7 +9,7 @@ import { HandThumbUpIcon } from '@heroicons/react/24/outline';
 
 export default function PhilosophyPage() {
   const { t } = useLanguage();
-
+  
   return (
     <div className="font-['Poppins',sans-serif] bg-black text-white">
       <Header />

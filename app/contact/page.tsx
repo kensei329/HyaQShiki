@@ -3,6 +3,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
+import ContactForm from '../components/ContactForm';
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -94,72 +95,8 @@ export default function ContactPage() {
             <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl shadow-xl p-5 sm:p-8 transition duration-300 hover:shadow-2xl order-1 md:order-2">
               <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center border-b border-gray-700 pb-4 text-white">{t('contact.title')}</h2>
 
-              <form className="space-y-5 sm:space-y-6 mt-6 sm:mt-8">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
-                    {t('contact.form.name')} <span className="text-yellow-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-gray-800/50 text-white transition duration-200"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">
-                    {t('contact.form.email')} <span className="text-yellow-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-gray-800/50 text-white transition duration-200"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2 text-gray-300">
-                    {t('contact.form.subject')}
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-gray-800/50 text-white transition duration-200"
-                    placeholder="Your subject"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">
-                    {t('contact.form.message')} <span className="text-yellow-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-gray-800/50 text-white transition duration-200"
-                    placeholder="Please write your message here..."
-                  ></textarea>
-                </div>
-
-                <div className="text-center pt-2 sm:pt-4">
-                  <button
-                    type="submit"
-                    className="bg-yellow-500 text-gray-900 font-bold py-2.5 sm:py-3 px-8 sm:px-10 rounded-lg shadow-md transition duration-300 transform hover:translate-y-[-2px]"
-                  >
-                    {t('contact.form.submit')}
-                  </button>
-                </div>
-              </form>
-              </div>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </div>

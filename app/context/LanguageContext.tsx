@@ -771,13 +771,13 @@ const ja: TranslationsType = {
   'philosophy.values.v3': '未来志向：常に次の革新を追求する',
   
   // Contact Page
-  'contact.title': 'お問い合わせ',
-  'contact.subtitle': 'ご質問・お問い合わせ',
+  'contact.title': 'メディア関係の皆様',
+  'contact.subtitle': '取材依頼はこちらからお願いします。',
   'contact.form.name': 'お名前',
   'contact.form.email': 'メールアドレス',
   'contact.form.subject': '件名',
   'contact.form.message': 'メッセージ',
-  'contact.form.submit': '送信',
+  'contact.form.submit': 'お問い合せ',
   'contact.info.title': '連絡先情報',
   'contact.info.address': '福岡県福岡市',
   'contact.info.email': 'info@HyaQShiki.com',

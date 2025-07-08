@@ -365,11 +365,11 @@ export default function CertificationPage() {
                         ...otherRows.map((fee, idx) => (
                           <tr key={`fee-other-${idx}`}
                             className={`border-b border-gray-800 hover:bg-white/5 transition-colors duration-200 ${idx % 2 === 0 ? 'bg-white/[0.02]' : ''}`}
-                          >
-                            <td className="py-4 px-6">{fee.rank}</td>
-                            <td className="py-4 px-6">{fee.fee}</td>
-                            <td className="py-4 px-6">{fee.renewal}</td>
-                          </tr>
+                      >
+                        <td className="py-4 px-6">{fee.rank}</td>
+                        <td className="py-4 px-6">{fee.fee}</td>
+                        <td className="py-4 px-6">{fee.renewal}</td>
+                      </tr>
                         ))
                       ];
                     })()}

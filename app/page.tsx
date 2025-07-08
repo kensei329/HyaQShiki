@@ -59,39 +59,39 @@ export default function HomePage() {
       {/* Hero Section with Slideshow */}
       <div className="relative w-full">
         <div className="relative w-full">
-          <Parallax
-            blur={{ min: -15, max: 15 }}
-            bgImage={slides[currentSlide].image}
-            bgImageAlt={`Slide ${currentSlide + 1} Background`}
-            strength={400}
-            className="min-h-[80vh] md:min-h-screen flex items-center justify-center"
-            bgImageStyle={{
-              opacity: 0.5,
-              objectFit: 'cover',
-              objectPosition: 'center',
-              height: '100%',
-              width: '100%'
-            }}
-            renderLayer={percentage => (
-              <div 
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  backgroundColor: 'black',
-                  opacity: 0.6
-                }}
-              />
-            )}
-          >
-            <div 
-              className="relative z-20 text-center max-w-4xl px-4 sm:px-6 py-8 md:py-0"
+            <Parallax
+              blur={{ min: -15, max: 15 }}
+              bgImage={slides[currentSlide].image}
+              bgImageAlt={`Slide ${currentSlide + 1} Background`}
+              strength={400}
+              className="min-h-[80vh] md:min-h-screen flex items-center justify-center"
+              bgImageStyle={{
+                opacity: 0.5,
+                objectFit: 'cover',
+                objectPosition: 'center',
+                height: '100%',
+                width: '100%'
+              }}
+              renderLayer={percentage => (
+                <div 
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'black',
+                    opacity: 0.6
+                  }}
+                />
+              )}
             >
+            <div 
+                className="relative z-20 text-center max-w-4xl px-4 sm:px-6 py-8 md:py-0"
+              >
               <h1
                 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
-              >
+                >
                 {slides[currentSlide].title.split('\n').map((line, idx, arr) => (
                   <>
                     {line}
@@ -100,20 +100,20 @@ export default function HomePage() {
                 ))}
               </h1>
               <p 
-                className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
-              >
-                {slides[currentSlide].subtitle}
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
+                >
+                  {slides[currentSlide].subtitle}
               </p>
               <div>
-                <a 
-                  href="#features" 
-                  className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
-                >
-                  {t('learnMore')}
-                </a>
+                  <a 
+                    href="#features" 
+                    className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
+                  >
+                    {t('learnMore')}
+                  </a>
               </div>
             </div>
-          </Parallax>
+            </Parallax>
         </div>
         
         {/* Slideshow navigation dots */}
@@ -206,7 +206,7 @@ export default function HomePage() {
             <div className="w-24 h-1 bg-yellow-400 mx-auto mb-4"></div>
             <div className="flex justify-center w-full">
               <span className="text-lg text-gray-300 max-w-lg w-full text-left inline-block">
-                {t('promo.section.subtitle')}
+              {t('promo.section.subtitle')}
               </span>
             </div>
           </div>
@@ -325,24 +325,24 @@ export default function HomePage() {
           <p className="text-xl mb-10 text-gray-300 leading-relaxed">{t('home.guarantee.desc')}</p>
           
           <div className="relative inline-block max-w-xs w-full mx-auto">
-            <img 
-              src="/images/satisfaction-guarantee.png" 
-              alt="Guarantee" 
+              <img 
+                src="/images/satisfaction-guarantee.png" 
+                alt="Guarantee" 
               className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-xl"
-            />
+              />
             <div className="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xs">✓</span>
             </div>
           </div>
         </div>
         <div className="text-center mt-8">
-          <Link 
-            href="/pricing" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-          >
-            {t('curriculum.cta.pricing')}
-            <i className="fas fa-arrow-right"></i>
-          </Link>
+            <Link 
+              href="/pricing" 
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              {t('curriculum.cta.pricing')}
+              <i className="fas fa-arrow-right"></i>
+            </Link>
         </div>
       </section>
 
