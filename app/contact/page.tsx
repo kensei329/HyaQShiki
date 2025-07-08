@@ -3,17 +3,65 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
-import ContactForm from '../components/ContactForm';
 import { useState } from 'react';
 
 export default function ContactPage() {
   const { t } = useLanguage();
   const [copied, setCopied] = useState<string | null>(null);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [subject, setSubject] = useState('無料体験申込み');
+  const [otherSubject, setOtherSubject] = useState('');
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
 
   const handleCopy = (text: string, key: string) => {
     navigator.clipboard.writeText(text);
     setCopied(key);
     setTimeout(() => setCopied(null), 1500);
+  };
+
+  // メールバリデーション関数
+  const validateEmail = (value: string) => {
+    if (!value) {
+      setEmailError('メールアドレスは必須です');
+      return false;
+    }
+    if (!/^[\w\-.]+@[\w\-]+\.[A-Za-z]{2,}$/.test(value)) {
+      setEmailError('正しいメールアドレスを入力してください');
+      return false;
+    }
+    setEmailError('');
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setEmailError('');
+    // メールバリデーション
+    if (!validateEmail(email)) {
+      return;
+    }
+    setStatus('sending');
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    // ご要件が「その他」の場合はotherSubjectをentry.69377963にセット
+    if (subject === 'その他') {
+      formData.set('entry.69377963', otherSubject);
+    }
+    try {
+      await fetch('https://docs.google.com/forms/d/e/1FAIpQLScPAKe5JHMtyJ2w8YNxl6YirePrxZqtyU67U58542BbDih7Lg/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData,
+      });
+      setStatus('success');
+      form.reset();
+      setSubject('無料体験申込み');
+      setOtherSubject('');
+      setEmail('');
+    } catch {
+      setStatus('error');
+    }
   };
   
   return (
@@ -25,11 +73,8 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-black opacity-60" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200">
-            {t('contact.title')}
+            {t('contact.form.submit')}
           </h1>
-          <p className="text-lg sm:text-xl text-yellow-50">
-            {t('contact.subtitle')}
-          </p>
         </div>
       </section>
 
@@ -114,8 +159,42 @@ export default function ContactPage() {
             {/* Form Section */}
             <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl shadow-xl p-5 sm:p-8 transition duration-300 hover:shadow-2xl order-1 md:order-2">
               <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center border-b border-gray-700 pb-4 text-white">{t('contact.form.submit')}</h2>
-
-              <ContactForm />
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6 mt-6 sm:mt-8 max-w-xl mx-auto">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">お名前 <span className="text-yellow-500">*</span></label>
+                  <input type="text" id="name" name="entry.1018358604" required className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-800/50 text-white" placeholder="お名前" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">メールアドレス <span className="text-yellow-500">*</span></label>
+                  <input type="email" id="email" name="entry.1390151195" required className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-800/50 text-white" placeholder="your@email.com" value={email} onChange={e => setEmail(e.target.value)} onBlur={e => validateEmail(e.target.value)} />
+                  {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                </div>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium mb-2 text-gray-300">ご要件</label>
+                  <select id="subject" name="entry.69377963" className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-800/50 text-white" value={subject} onChange={e => setSubject(e.target.value)}>
+                    <option value="無料体験申込み">無料体験申込み</option>
+                    <option value="受講申込">受講申込</option>
+                    <option value="法人スポンサー枠問合せ">法人スポンサー枠問合せ</option>
+                    <option value="法人研修問合せ">法人研修問合せ</option>
+                    <option value="取材依頼">取材依頼</option>
+                    <option value="その他">その他</option>
+                  </select>
+                  {subject === 'その他' && (
+                    <input type="text" className="w-full mt-2 px-4 py-3 border border-gray-700 rounded-lg bg-gray-800/50 text-white" placeholder="ご要件を入力してください" value={otherSubject} onChange={e => setOtherSubject(e.target.value)} />
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">お問い合わせ内容 <span className="text-yellow-500">*</span></label>
+                  <textarea id="message" name="entry.602941244" rows={5} required className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-800/50 text-white" placeholder="お問い合わせ内容を入力してください..."></textarea>
+                </div>
+                <div className="text-center pt-2 sm:pt-4">
+                  <button type="submit" className="bg-yellow-500 text-gray-900 font-bold py-2.5 sm:py-3 px-8 sm:px-10 rounded-lg shadow-md transition duration-300" disabled={status === 'sending'}>
+                    {status === 'sending' ? '送信中...' : '送信'}
+                  </button>
+                  {status === 'success' && <p className="text-green-500 mt-2">送信完了しました。</p>}
+                  {status === 'error' && <p className="text-red-500 mt-2">送信に失敗しました。</p>}
+                </div>
+              </form>
             </div>
           </div>
         </div>

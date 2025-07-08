@@ -80,7 +80,7 @@ type TranslationKeys =
   
   // Curriculum Page
   | 'curriculum.title' | 'curriculum.subtitle' | 'curriculum.explanation.title'
-    | 'curriculum.explanation.p1' | 'curriculum.explanation.p2' | 'curriculum.explanation.p3'
+  | 'curriculum.explanation.p1' | 'curriculum.explanation.p2' | 'curriculum.explanation.p3'
   | 'curriculum.timeline.title' | 'curriculum.timeline.days1.title' | 'curriculum.timeline.days1.desc'
   | 'curriculum.timeline.days2.title' | 'curriculum.timeline.days2.desc'
   | 'curriculum.timeline.days3.title' | 'curriculum.timeline.days3.desc'
@@ -777,7 +777,7 @@ const ja: TranslationsType = {
   'contact.form.email': 'メールアドレス',
   'contact.form.subject': '件名',
   'contact.form.message': 'メッセージ',
-  'contact.form.submit': 'お問い合せ',
+  'contact.form.submit': 'お問い合わせ',
   'contact.info.title': '連絡先情報',
   'contact.info.address': '福岡県福岡市',
   'contact.info.email': 'info@hyaqshiki.com',
@@ -1069,7 +1069,7 @@ const en: TranslationsType = {
   'corporate.cta.desc': 'HyaQShiki is a "practical learning field" beyond educational institutions. By handling real corporate challenges within our 100-day curriculum centered on AI-powered app development, we achieve both learning and value creation.',
   'corporate.cta.contact': 'Contact Us',
   'corporate.cta.partner': 'Partner Details',
-
+  
   // Philosophy Page
   'philosophy.title': 'Our Philosophy',
   'philosophy.subtitle': 'Creating the Future with Technology',
@@ -1111,7 +1111,7 @@ const en: TranslationsType = {
   'philosophy.cta.title': 'Would you like to create the future with us?',
   'philosophy.cta.desc': 'Take the first step as a creator in the AI era with HyaQShiki.',
   'philosophy.cta.button': 'Contact Us',
-
+  
   // Contact Page
   'contact.title': 'Contact',
   'contact.subtitle': 'Feel free to contact us for any inquiries.',
@@ -1510,7 +1510,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       en: 'HyaQShiki certification is an internationally recognized qualification that proves practical skills in the generative AI era. It officially evaluates and certifies the technical skills acquired through 100 days of learning and practice.' 
     },
     points: [
-      {
+      { 
         title: { ja: '実践的なスキル評価', en: 'Practical Skill Assessment' },
         description: { ja: '理論だけでなく、実際のアプリケーション開発能力を評価します。', en: 'Evaluates not only theory but also actual application development capabilities.' }
       },
@@ -1601,7 +1601,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     <LanguageContext.Provider value={{ 
       language, 
       setLanguage, 
-      t, 
+      t,
       metadata,
       certificationLevels,
       evaluationProcesses,
