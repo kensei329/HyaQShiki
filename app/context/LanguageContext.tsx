@@ -1383,8 +1383,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         ja: "100日、100の型、100倍の生産力。そして無限の未来へ。AIを使いこなす武器に変えるための学び。",
         en: "100 days, 100 patterns, 100x productivity. Journey to infinite possibilities. Master AI as your development superpower."
       },
-      images: ['/images/HyaQShiki.jpg'],
-      url: 'https://HyaQShiki.com',
+      images: ['/images/ogp.png'],
+      url: 'https://www.hyaqshiki.com',
       type: 'website'
     }
   };
