@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 
 export default function CurriculumPage() {
   const { t } = useLanguage();
@@ -15,26 +14,6 @@ export default function CurriculumPage() {
   const sectionStartRef = useRef<HTMLDivElement | null>(null);
   const sectionEndRef = useRef<HTMLDivElement | null>(null);
   const [isInLearningFlowSection, setIsInLearningFlowSection] = useState(false);
-  
-  // Animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
   
   // Calculate the progress percentage
   const progressPercent = `${(currentPhase - 1) * 25}%`;
@@ -147,55 +126,29 @@ export default function CurriculumPage() {
       {/* Hero */}
       <section className="relative bg-cover bg-center py-32" style={{ backgroundImage: 'url(/images/slide3.jpg)' }}>
         <div className="absolute inset-0 bg-black opacity-60" />
-        <motion.div 
-          className="relative z-10 max-w-4xl mx-auto px-4 text-center"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200"
-            variants={fadeInUp}
-          >
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200">
             {t('curriculum.title')}
-          </motion.h1>
-          <motion.p 
-            className="text-xl text-yellow-50 whitespace-pre-line"
-            variants={fadeInUp}
-          >
+          </h1>
+          <p className="text-xl text-yellow-50 whitespace-pre-line">
             {t('curriculum.subtitle')}
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
       </section>
 
       {/* Curriculum Explanation */}
       <section className="py-20 bg-black text-white">
-        <motion.div 
-          className="max-w-4xl mx-auto px-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">
             {t('curriculum.explanation.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-8"
-            variants={fadeInUp}
-          ></motion.div>
-          <motion.div 
-            className="space-y-5 text-base text-gray-300 leading-relaxed"
-            variants={fadeInUp}
-          >
+          </h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="space-y-5 text-base text-gray-300 leading-relaxed">
             <p>{t('curriculum.explanation.p1')}</p>
             <p>{t('curriculum.explanation.p2')}</p>
             <p>{t('curriculum.explanation.p3')}</p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
 
@@ -204,24 +157,12 @@ export default function CurriculumPage() {
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         
-        <motion.div 
-          className="max-w-5xl mx-auto px-4 relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
+        <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div ref={sectionStartRef} className="absolute top-0 w-full" aria-hidden="true"></div>
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
+          <h2 className="text-3xl font-bold text-center mb-4">
             {t('curriculum.flow.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
-            variants={fadeInUp}
-          ></motion.div>
+          </h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-10"></div>
           
           {/* Original Progress Bar Container (for positioning) */}
           <div id="progress-container" className="relative mb-20 hidden md:block">
@@ -245,12 +186,9 @@ export default function CurriculumPage() {
               {/* Progress points */}
               <div className="flex justify-between relative z-10 px-4">
                 {[1, 2, 3, 4, 5].map((phase) => (
-                  <motion.div 
+                  <div 
                     key={phase} 
                     className="flex flex-col items-center cursor-pointer"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => handlePhaseClick(phase)}
                   >
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold transition-colors ${phase <= currentPhase ? 'bg-yellow-500' : 'bg-gray-600'}`}>
                       {phase}
@@ -258,7 +196,7 @@ export default function CurriculumPage() {
                     <span className={`mt-2 text-xs font-medium text-center max-w-[80px] truncate ${phase === currentPhase ? 'text-yellow-400' : 'text-gray-400'}`}>
                       {t(`curriculum.flow.phase${phase}.title`)}
                     </span>
-                  </motion.div>
+                  </div>
                 ))}
         </div>
               
@@ -278,12 +216,9 @@ export default function CurriculumPage() {
             {/* Progress points */}
             <div className="flex justify-between relative z-10">
               {[1, 2, 3, 4, 5].map((phase) => (
-                <motion.div 
+                <div 
                   key={phase} 
                   className="flex flex-col items-center cursor-pointer"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                  onClick={() => handlePhaseClick(phase)}
                 >
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition-colors ${phase <= currentPhase ? 'bg-yellow-500' : 'bg-gray-600'}`}>
                     {phase}
@@ -294,7 +229,7 @@ export default function CurriculumPage() {
                   <span className="text-xs text-gray-500">
                     {t(`curriculum.flow.phase${phase}.period`)}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
             
@@ -307,13 +242,9 @@ export default function CurriculumPage() {
           
           <div className="space-y-8">
             {/* Phase 1 */}
-            <motion.div 
+            <div 
               ref={el => { phaseRefs.current[0] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 1 ? 'border-l-4 border-yellow-500' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
             >
               <div className="absolute left-6 top-6 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-white md:hidden">1</div>
               <div className="ml-12 md:ml-0">
@@ -329,16 +260,12 @@ export default function CurriculumPage() {
                   <li>{t('curriculum.flow.phase1.point4')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             {/* Phase 2 */}
-            <motion.div 
+            <div 
               ref={el => { phaseRefs.current[1] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 2 ? 'border-l-4 border-yellow-500' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
             >
               <div className="absolute left-6 top-6 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-white md:hidden">2</div>
               <div className="ml-12 md:ml-0">
@@ -354,16 +281,12 @@ export default function CurriculumPage() {
                   <li>{t('curriculum.flow.phase2.point4')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             {/* Phase 3 */}
-            <motion.div 
+            <div 
               ref={el => { phaseRefs.current[2] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 3 ? 'border-l-4 border-yellow-500' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
             >
               <div className="absolute left-6 top-6 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-white md:hidden">3</div>
               <div className="ml-12 md:ml-0">
@@ -379,16 +302,12 @@ export default function CurriculumPage() {
                   <li>{t('curriculum.flow.phase3.point4')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             {/* Phase 4 */}
-            <motion.div 
+            <div 
               ref={el => { phaseRefs.current[3] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 4 ? 'border-l-4 border-yellow-500' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
             >
               <div className="absolute left-6 top-6 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-white md:hidden">4</div>
               <div className="ml-12 md:ml-0">
@@ -404,16 +323,12 @@ export default function CurriculumPage() {
                   <li>{t('curriculum.flow.phase4.point4')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             {/* Phase 5 */}
-            <motion.div 
+            <div 
               ref={el => { phaseRefs.current[4] = el; }}
               className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 relative overflow-hidden transition-all duration-300 ${currentPhase === 5 ? 'border-l-4 border-yellow-500' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
             >
               <div className="absolute left-6 top-6 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-white md:hidden">5</div>
               <div className="ml-12 md:ml-0">
@@ -429,40 +344,26 @@ export default function CurriculumPage() {
                   <li>{t('curriculum.flow.phase5.point4')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
           
           {/* Section end marker - invisible but used for intersection detection */}
           <div ref={sectionEndRef} className="h-1 w-full mt-24" aria-hidden="true"></div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Learning Approach */}
       <section className="py-20 bg-black text-white">
-        <motion.div 
-          className="max-w-5xl mx-auto px-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">
             {t('curriculum.approach.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
-            variants={fadeInUp}
-          ></motion.div>
+          </h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-10"></div>
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* Approach Card 1 */}
-            <motion.div 
+            <div 
               className="bg-black/80 border-l-4 border-yellow-500 rounded-xl p-6 flex items-start gap-4 shadow-lg hover:shadow-2xl transition-all duration-300"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mr-4 mt-1">
                 <i className="fas fa-rocket text-2xl text-white"></i>
@@ -471,13 +372,11 @@ export default function CurriculumPage() {
                 <h3 className="text-xl font-bold mb-2 text-yellow-400 text-left">{t('curriculum.approach.output.title')}</h3>
                 <p className="text-gray-300 text-left">{t('curriculum.approach.output.desc')}</p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Approach Card 2 */}
-            <motion.div 
+            <div 
               className="bg-black/80 border-l-4 border-yellow-500 rounded-xl p-6 flex items-start gap-4 shadow-lg hover:shadow-2xl transition-all duration-300"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mr-4 mt-1">
                 <i className="fas fa-sync-alt text-2xl text-white"></i>
@@ -486,13 +385,11 @@ export default function CurriculumPage() {
                 <h3 className="text-xl font-bold mb-2 text-yellow-400 text-left">{t('curriculum.approach.iteration.title')}</h3>
                 <p className="text-gray-300 text-left">{t('curriculum.approach.iteration.desc')}</p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Approach Card 3 */}
-            <motion.div 
+            <div 
               className="bg-black/80 border-l-4 border-yellow-500 rounded-xl p-6 flex items-start gap-4 shadow-lg hover:shadow-2xl transition-all duration-300"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mr-4 mt-1">
                 <i className="fas fa-brain text-2xl text-white"></i>
@@ -501,13 +398,11 @@ export default function CurriculumPage() {
                 <h3 className="text-xl font-bold mb-2 text-yellow-400 text-left">{t('curriculum.approach.mentoring.title')}</h3>
                 <p className="text-gray-300 text-left">{t('curriculum.approach.mentoring.desc')}</p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Approach Card 4 */}
-            <motion.div 
+            <div 
               className="bg-black/80 border-l-4 border-yellow-500 rounded-xl p-6 flex items-start gap-4 shadow-lg hover:shadow-2xl transition-all duration-300"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mr-4 mt-1">
                 <i className="fas fa-users text-2xl text-white"></i>
@@ -516,9 +411,9 @@ export default function CurriculumPage() {
                 <h3 className="text-xl font-bold mb-2 text-yellow-400 text-left">{t('curriculum.approach.community.title')}</h3>
                 <p className="text-gray-300 text-left">{t('curriculum.approach.community.desc')}</p>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Tools and Techniques */}
@@ -526,29 +421,16 @@ export default function CurriculumPage() {
         <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         
-        <motion.div 
-          className="max-w-6xl mx-auto px-4 relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold text-center mb-4">
             {t('curriculum.stack.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
-            variants={fadeInUp}
-          ></motion.div>
+          </h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-10"></div>
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* 要件定義・設計支援ツール */}
-            <motion.div 
+            <div 
               className="bg-black/90 rounded-xl shadow-lg p-0 flex flex-col border border-yellow-500"
-              variants={fadeInUp}
             >
               <div className="bg-yellow-400 rounded-t-xl px-6 py-3">
                 <span className="text-lg font-bold text-black">{t('curriculum.stack.requirements.title')}</span>
@@ -560,12 +442,11 @@ export default function CurriculumPage() {
                   <li>▶ {t('curriculum.stack.requirements.list2')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             {/* 開発環境・コードエディタ */}
-            <motion.div 
+            <div 
               className="bg-black/90 rounded-xl shadow-lg p-0 flex flex-col border border-yellow-500"
-              variants={fadeInUp}
             >
               <div className="bg-yellow-400 rounded-t-xl px-6 py-3">
                 <span className="text-lg font-bold text-black">{t('curriculum.stack.env.title')}</span>
@@ -582,12 +463,11 @@ export default function CurriculumPage() {
                   <li>▶ {t('curriculum.stack.env.env4')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             {/* フロントエンド開発 */}
-            <motion.div 
+            <div 
               className="bg-black/90 rounded-xl shadow-lg p-0 flex flex-col border border-yellow-500"
-              variants={fadeInUp}
             >
               <div className="bg-yellow-400 rounded-t-xl px-6 py-3">
                 <span className="text-lg font-bold text-black">{t('curriculum.stack.frontend.title')}</span>
@@ -600,12 +480,11 @@ export default function CurriculumPage() {
                   <li>▶ {t('curriculum.stack.frontend.list3')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             {/* バックエンド・API開発 */}
-            <motion.div 
+            <div 
               className="bg-black/90 rounded-xl shadow-lg p-0 flex flex-col border border-yellow-500"
-              variants={fadeInUp}
             >
               <div className="bg-yellow-400 rounded-t-xl px-6 py-3">
                 <span className="text-lg font-bold text-black">{t('curriculum.stack.backend.title')}</span>
@@ -617,66 +496,48 @@ export default function CurriculumPage() {
                   <li>▶ {t('curriculum.stack.backend.list2')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Success Metrics */}
       <section className="py-20 bg-black text-white">
-        <motion.div 
-          className="max-w-5xl mx-auto px-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">
             {t('curriculum.metrics.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
-            variants={fadeInUp}
-          ></motion.div>
+          </h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-10"></div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Metric 1 */}
-            <motion.div 
+            <div 
               className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center text-center shadow-md"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="text-5xl font-bold text-yellow-500 mb-4">100</div>
               <h3 className="text-xl font-bold mb-2">{t('curriculum.metrics.apps.title')}</h3>
               <p className="text-gray-300">{t('curriculum.metrics.apps.desc')}</p>
-            </motion.div>
+            </div>
 
             {/* Metric 2 */}
-            <motion.div 
+            <div 
               className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center text-center shadow-md"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="text-5xl font-bold text-yellow-500 mb-4">10+</div>
               <h3 className="text-xl font-bold mb-2">{t('curriculum.metrics.monetize.title')}</h3>
               <p className="text-gray-300">{t('curriculum.metrics.monetize.desc')}</p>
-            </motion.div>
+            </div>
 
             {/* Metric 3 */}
-            <motion.div 
+            <div 
               className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center text-center shadow-md"
-              variants={fadeInUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="text-5xl font-bold text-yellow-500 mb-4">1</div>
               <h3 className="text-xl font-bold mb-2">{t('curriculum.metrics.main.title')}</h3>
               <p className="text-gray-300">{t('curriculum.metrics.main.desc')}</p>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* CTA Section */}
@@ -684,32 +545,24 @@ export default function CurriculumPage() {
         <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         
-        <motion.div 
-          className="max-w-4xl mx-auto px-4 text-center relative z-10"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-4">{t('curriculum.cta.title')}</h2>
           <p className="text-xl mb-8 text-gray-300">{t('curriculum.cta.subtitle')}</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.a 
+            <a 
               href="/contact" 
               className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-3 rounded-lg font-bold transition-transform duration-300"
-              whileHover={{ scale: 1.05 }}
             >
               {t('curriculum.cta.free_trial')}
-            </motion.a>
-            <motion.a 
+            </a>
+            <a 
               href="/pricing" 
               className="bg-transparent hover:bg-gray-800 text-white border-2 border-white px-8 py-3 rounded-lg font-bold transition-colors"
-              whileHover={{ scale: 1.05 }}
             >
               {t('curriculum.cta.pricing')}
-            </motion.a>
+            </a>
         </div>
-        </motion.div>
+        </div>
       </section>
 
       <Footer />

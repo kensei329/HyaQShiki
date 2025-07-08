@@ -6,7 +6,6 @@ import { useLanguage } from '../context/LanguageContext';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Parallax } from 'react-parallax';
 
 export default function CertificationPage() {
@@ -32,25 +31,6 @@ export default function CertificationPage() {
       document.documentElement.style.scrollBehavior = '';
     };
   }, []);
-  
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
   
   // Get certification fees with proper language handling
   const certificationFees = getCertificationFees(language);
@@ -83,52 +63,40 @@ export default function CertificationPage() {
               />
             )}
           >
-            <motion.div 
+            <div 
               className="relative z-20 text-center max-w-4xl px-6"
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
             >
-              <motion.h1 
+              <h1 
                 className="text-4xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200"
-                variants={fadeInUp}
               >
                 {certificationHero.title[language]}
-              </motion.h1>
-              <motion.p 
+              </h1>
+              <p 
                 className="text-xl md:text-2xl font-light text-yellow-50 mb-6"
-                variants={fadeInUp}
               >
                 {certificationHero.subtitle[language]}
-              </motion.p>
-            </motion.div>
+              </p>
+            </div>
           </Parallax>
         </div>
 
         {/* Certification Overview */}
         <section className="py-24 relative overflow-hidden bg-black">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern-bg.png')] opacity-5 bg-repeat"></div>
-          <motion.div 
+          <div 
             className="max-w-6xl mx-auto px-6 relative z-10"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
           >
-            <motion.h2 
+            <h2 
               className="text-4xl font-bold text-center mb-4"
-              variants={fadeInUp}
             >
               {certificationOverview.title[language]}
-            </motion.h2>
-            <motion.div 
+            </h2>
+            <div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
-              variants={fadeInUp}
-            ></motion.div>
+            ></div>
             
-            <motion.div 
+            <div 
               className="backdrop-blur-md bg-white/5 rounded-xl p-8 md:p-12 mt-10"
-              variants={fadeInUp}
             >
               <p className="text-xl text-center mb-12 leading-relaxed">
                 {certificationOverview.description[language]}
@@ -143,36 +111,29 @@ export default function CertificationPage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
 
         {/* Certifications */}
       <section className="py-24 text-white relative bg-black">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern-bg.png')] opacity-5 bg-repeat"></div>
-        <motion.div 
+        <div 
           className="max-w-6xl mx-auto px-6 relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
         >
-          <motion.h2 
+          <h2 
             className="text-4xl font-bold text-center mb-4"
-            variants={fadeInUp}
           >
             {t('home.certifications')}
-          </motion.h2>
-          <motion.div 
+          </h2>
+          <div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
-            variants={fadeInUp}
-          ></motion.div>
-          <motion.p
+          ></div>
+          <p
             className="text-center text-gray-300 max-w-2xl mx-auto mb-16"
-            variants={fadeInUp}
           >
             {t('home.certifications.subtitle')}
-          </motion.p>
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -181,22 +142,12 @@ export default function CertificationPage() {
               { title: 'Platina', desc: 'home.platina', passRate: '26%', bg: 'bg-gradient-to-br from-gray-100 to-gray-300', textColor: 'text-gray-900', icon: 'gem' },
               { title: 'Black', desc: 'home.black', passRate: '9%', bg: 'bg-gradient-to-br from-gray-900 to-black', textColor: 'text-white', icon: 'crown' }
             ].map((cert, index) => (
-              <motion.div 
+              <div 
                 key={index}
                 className="group perspective"
-                variants={fadeInUp}
-                whileHover={{
-                  z: 50,
-                  transition: { duration: 0.3 }
-                }}
               >
-                <motion.div 
+                <div 
                   className={`rounded-xl overflow-hidden shadow-lg ${cert.title === 'Black' ? 'shadow-yellow-500/20' : ''} h-full transform-gpu transition-all duration-500 group-hover:shadow-2xl border border-gray-800`}
-                  whileHover={{ 
-                    scale: 1.05,
-                    rotateY: 5,
-                    transition: { duration: 0.4 }
-                  }}
                 >
                   <div className={`${cert.bg} h-24 relative flex items-center justify-center`}>
                     <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('/images/certificate-pattern.png')]"></div>
@@ -213,45 +164,34 @@ export default function CertificationPage() {
                       <p className="text-gray-300 opacity-90 mb-6">{t(cert.desc)}</p>
                     </div>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
         {/* Evaluation Process */}
         <section className="py-24 relative overflow-hidden bg-black">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern-bg.png')] opacity-5 bg-repeat"></div>
           
-          <motion.div 
+          <div 
             className="max-w-6xl mx-auto px-6 relative z-10"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
           >
-            <motion.h2 
+            <h2 
               className="text-4xl font-bold text-center mb-4"
-              variants={fadeInUp}
             >
               {certificationEvaluation.title[language]}
-            </motion.h2>
-            <motion.div 
+            </h2>
+            <div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
-              variants={fadeInUp}
-            ></motion.div>
+            ></div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {certificationEvaluation.processes.map((process, index) => (
-                <motion.div 
+                <div 
                   key={index} 
                   className="bg-white/5 rounded-xl p-8 border border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 text-left"
-                  variants={fadeInUp}
-                  whileHover={{
-                    y: -10,
-                    transition: { duration: 0.3 }
-                  }}
                 >
                   <div className="flex justify-center mb-4">
                     <div className="bg-yellow-400 text-black w-14 h-14 flex items-center justify-center rounded-full text-3xl">
@@ -264,10 +204,10 @@ export default function CertificationPage() {
                   <p className="text-gray-200 text-left leading-relaxed">
                     {process.description[language]}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* Certificate Details */}
@@ -275,32 +215,23 @@ export default function CertificationPage() {
           <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-30 blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-30 blur-3xl"></div>
           
-          <motion.div 
+          <div 
             className="max-w-6xl mx-auto px-6 relative z-10"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
           >
-            <motion.h2 
+            <h2 
               className="text-4xl font-bold text-center mb-4"
-              variants={fadeInUp}
             >
               {certificationCertificate.title[language]}
-            </motion.h2>
-            <motion.div 
+            </h2>
+            <div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
-              variants={fadeInUp}
-            ></motion.div>
+            ></div>
             
             <div className="flex flex-col md:flex-row items-center gap-12">
-              <motion.div 
+              <div 
                 className="md:w-1/2"
-                variants={fadeInUp}
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                <div
                   className="relative overflow-hidden rounded-xl shadow-xl border border-yellow-500/20"
                 >
                   <Image 
@@ -311,12 +242,11 @@ export default function CertificationPage() {
                     className="w-full h-auto"
                   />
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
               
-              <motion.div 
+              <div 
                 className="md:w-1/2 backdrop-blur-md bg-white/5 rounded-xl p-8 border border-gray-800"
-                variants={fadeInUp}
               >
                 <h3 className="text-2xl font-bold mb-6 text-yellow-400">
                   {t('certification.certificate.format')}
@@ -366,42 +296,34 @@ export default function CertificationPage() {
                 <p className="text-gray-200">
                   {certificationCertificate.expirationInfo[language]}
                 </p>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* Certification Fees */}
         <section className="py-24 relative overflow-hidden bg-black">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern-bg.png')] opacity-5 bg-repeat"></div>
           
-          <motion.div 
+          <div 
             className="max-w-6xl mx-auto px-6 relative z-10"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
           >
-            <motion.h2 
+            <h2 
               className="text-4xl font-bold text-center mb-4"
-              variants={fadeInUp}
             >
               {certificationFeeSection.title[language]}
-            </motion.h2>
-            <motion.div 
+            </h2>
+            <div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
-              variants={fadeInUp}
-            ></motion.div>
-            <motion.p 
+            ></div>
+            <p 
               className="text-center mb-14 max-w-3xl mx-auto text-gray-300"
-              variants={fadeInUp}
             >
               {certificationFeeSection.description[language]}
-            </motion.p>
+            </p>
             
-            <motion.div 
+            <div 
               className="overflow-hidden rounded-xl shadow-xl"
-              variants={fadeInUp}
             >
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -454,8 +376,8 @@ export default function CertificationPage() {
                   </tbody>
                 </table>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
 
         {/* CTA */}
@@ -463,36 +385,20 @@ export default function CertificationPage() {
           <div className="absolute -top-20 -right-20 w-80 h-80 bg-yellow-400 rounded-full opacity-30 blur-3xl"></div>
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-yellow-400 rounded-full opacity-30 blur-3xl"></div>
           
-          <motion.div 
+          <div 
             className="max-w-4xl mx-auto px-6 text-center relative z-10"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
           >
-            <motion.h2 
+            <h2 
               className="text-4xl font-bold mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
             >
               {certificationCTA.title[language]}
-            </motion.h2>
-            <motion.p 
+            </h2>
+            <p 
               className="text-xl mb-10 opacity-90 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
             >
               {certificationCTA.subtitle[language]}
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
+            </p>
+            <div
             >
               <Link 
                 href="/pricing" 
@@ -505,8 +411,8 @@ export default function CertificationPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
       </main>
 

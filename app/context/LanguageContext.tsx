@@ -1384,7 +1384,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         en: "Build Apps Through Everyday Conversation | 3-Month Intensive Academy Program"
       },
       images: ['/images/ogp.png'],
-      url: 'https://www.hyaqshiki.com',
+      url: 'https://hyaqshiki.com',
       type: 'website'
     }
   };

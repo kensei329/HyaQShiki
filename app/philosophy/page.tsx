@@ -3,7 +3,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { RocketLaunchIcon, AcademicCapIcon } from '@heroicons/react/24/solid';
 import { HandThumbUpIcon } from '@heroicons/react/24/outline';
@@ -11,26 +10,6 @@ import { HandThumbUpIcon } from '@heroicons/react/24/outline';
 export default function PhilosophyPage() {
   const { t } = useLanguage();
 
-  // Animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-  
   return (
     <div className="font-['Poppins',sans-serif] bg-black text-white">
       <Header />
@@ -38,53 +17,27 @@ export default function PhilosophyPage() {
       {/* Hero Section */}
       <section className="relative bg-cover bg-center py-32" style={{ backgroundImage: 'url(/images/slide5.jpg)' }}>
         <div className="absolute inset-0 bg-black opacity-60" />
-        <motion.div 
-          className="relative z-10 max-w-4xl mx-auto px-4 text-center"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200"
-            variants={fadeInUp}
-          >
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200">
             {t('philosophy.title')}
-          </motion.h1>
-          <motion.p 
-            className="text-xl text-yellow-50"
-            variants={fadeInUp}
-          >
+          </h1>
+          <p className="text-xl text-yellow-50">
             {t('philosophy.subtitle')}
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
       </section>
 
       {/* Philosophy Overview */}
       <section className="py-20 bg-black text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         
-        <motion.div 
-          className="max-w-4xl mx-auto px-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">
             {t('philosophy.mission.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-8"
-            variants={fadeInUp}
-          ></motion.div>
+          </h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
           
-          <motion.div 
-            className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-8 shadow-xl"
-            variants={fadeInUp}
-          >
+          <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-8 shadow-xl">
             <h3 className="text-2xl font-semibold mb-4 text-yellow-400 text-center">
               {t('philosophy.mission.desc')}
             </h3>
@@ -93,10 +46,7 @@ export default function PhilosophyPage() {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-              <motion.div 
-                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              >
+              <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all" style={{ transform: 'translateY(0)' }}>
                 <div className="text-4xl mb-4 flex justify-center"><RocketLaunchIcon className="w-10 h-10 text-yellow-400" /></div>
                 <h4 className="text-xl font-semibold mb-3 text-yellow-400">
                   {t('philosophy.values.v1')}
@@ -104,12 +54,9 @@ export default function PhilosophyPage() {
                 <p className="text-gray-300">
                   {t('philosophy.values.v1')}
                 </p>
-              </motion.div>
+              </div>
               
-              <motion.div 
-                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              >
+              <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all" style={{ transform: 'translateY(0)' }}>
                 <div className="text-4xl mb-4 flex justify-center"><AcademicCapIcon className="w-10 h-10 text-yellow-400" /></div>
                 <h4 className="text-xl font-semibold mb-3 text-yellow-400">
                   {t('philosophy.values.v2')}
@@ -117,12 +64,9 @@ export default function PhilosophyPage() {
                 <p className="text-gray-300">
                   {t('philosophy.values.v2')}
                 </p>
-              </motion.div>
+              </div>
               
-              <motion.div 
-                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all"
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              >
+              <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-yellow-400 transition-all" style={{ transform: 'translateY(0)' }}>
                 <div className="text-4xl mb-4 flex justify-center"><HandThumbUpIcon className="w-10 h-10 text-yellow-400" /></div>
                 <h4 className="text-xl font-semibold mb-3 text-yellow-400">
                   {t('philosophy.values.v3')}
@@ -130,38 +74,23 @@ export default function PhilosophyPage() {
                 <p className="text-gray-300">
                   {t('philosophy.values.v3')}
                 </p>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Founder Message */}
       <section className="py-20 bg-black text-white relative overflow-hidden">
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         
-        <motion.div 
-          className="max-w-5xl mx-auto px-4 relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-4"
-            variants={fadeInUp}
-          >
+        <div className="max-w-5xl mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold text-center mb-4">
             {t('philosophy.mission.title')}
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-yellow-400 mx-auto mb-10"
-            variants={fadeInUp}
-          ></motion.div>
+          </h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-10"></div>
           
-          <motion.div 
-            className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-8 shadow-xl"
-            variants={fadeInUp}
-          >
+          <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-8 shadow-xl">
             <h3 className="text-2xl font-semibold mb-6 text-yellow-400 text-center">
               {t('philosophy.mission.desc')}
             </h3>
@@ -181,21 +110,15 @@ export default function PhilosophyPage() {
                 </p>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* CTA */}
       <section className="py-16 bg-black text-white relative overflow-hidden">
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10 blur-3xl bg-yellow-500"></div>
         
-        <motion.div 
-          className="max-w-4xl mx-auto px-4 text-center relative z-10"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-4">
             {t('contact.title')}
           </h2>
@@ -203,16 +126,16 @@ export default function PhilosophyPage() {
             {t('contact.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.div whileHover={{ scale: 1.05 }}>
+            <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 transition-transform duration-300 hover:scale-105">
               <Link 
                 href="/contact"
-                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-3 rounded-lg font-bold inline-block transition-transform duration-300"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-3 rounded-lg font-bold inline-block"
               >
                 {t('contact.form.submit')}
               </Link>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <Footer />
