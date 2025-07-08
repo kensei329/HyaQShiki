@@ -47,25 +47,6 @@ export default function HomePage() {
     };
   }, [slides.length]);
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
   // Slideshow navigation
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -77,73 +58,63 @@ export default function HomePage() {
 
       {/* Hero Section with Slideshow */}
       <div className="relative w-full">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className="relative w-full"
+        <div className="relative w-full">
+          <Parallax
+            blur={{ min: -15, max: 15 }}
+            bgImage={slides[currentSlide].image}
+            bgImageAlt={`Slide ${currentSlide + 1} Background`}
+            strength={400}
+            className="min-h-[80vh] md:min-h-screen flex items-center justify-center"
+            bgImageStyle={{
+              opacity: 0.5,
+              objectFit: 'cover',
+              objectPosition: 'center',
+              height: '100%',
+              width: '100%'
+            }}
+            renderLayer={percentage => (
+              <div 
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: 'black',
+                  opacity: 0.6
+                }}
+              />
+            )}
           >
-            <Parallax
-              blur={{ min: -15, max: 15 }}
-              bgImage={slides[currentSlide].image}
-              bgImageAlt={`Slide ${currentSlide + 1} Background`}
-              strength={400}
-              className="min-h-[80vh] md:min-h-screen flex items-center justify-center"
-              bgImageStyle={{
-                opacity: 0.5,
-                objectFit: 'cover',
-                objectPosition: 'center',
-                height: '100%',
-                width: '100%'
-              }}
-              renderLayer={percentage => (
-                <div 
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: 'black',
-                    opacity: 0.6
-                  }}
-                />
-              )}
+            <div 
+              className="relative z-20 text-center max-w-4xl px-4 sm:px-6 py-8 md:py-0"
             >
-              <motion.div 
-                className="relative z-20 text-center max-w-4xl px-4 sm:px-6 py-8 md:py-0"
-                initial="hidden"
-                animate="visible"
-                variants={staggerContainer}
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
               >
-                <motion.h1 
-                  className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
-                  variants={fadeInUp}
-                  dangerouslySetInnerHTML={{
-                    __html: slides[currentSlide].title.replace(/\n/g, '<br />')
-                  }}
-                />
-                <motion.p 
-                  className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
-                  variants={fadeInUp}
+                {slides[currentSlide].title.split('\n').map((line, idx, arr) => (
+                  <>
+                    {line}
+                    {idx < arr.length - 1 && <br />}
+                  </>
+                ))}
+              </h1>
+              <p 
+                className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
+              >
+                {slides[currentSlide].subtitle}
+              </p>
+              <div>
+                <a 
+                  href="#features" 
+                  className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
                 >
-                  {slides[currentSlide].subtitle}
-                </motion.p>
-                <motion.div variants={fadeInUp}>
-                  <a 
-                    href="#features" 
-                    className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
-                  >
-                    {t('learnMore')}
-                  </a>
-                </motion.div>
-              </motion.div>
-            </Parallax>
-          </motion.div>
-        </AnimatePresence>
+                  {t('learnMore')}
+                </a>
+              </div>
+            </div>
+          </Parallax>
+        </div>
         
         {/* Slideshow navigation dots */}
         <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 z-30 flex justify-center space-x-2 sm:space-x-3">
@@ -164,23 +135,17 @@ export default function HomePage() {
 
       {/* Features */}
       <section id="features" className="py-24 relative overflow-hidden bg-black">
-        <motion.div 
+        <div 
           className="max-w-6xl mx-auto px-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
         >
-          <motion.h2 
+          <h2 
             className="text-4xl font-bold text-center mb-4 text-white"
-            variants={fadeInUp}
           >
             {t('home.reasons')}
-          </motion.h2>
-          <motion.div 
+          </h2>
+          <div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-16"
-            variants={fadeInUp}
-          ></motion.div>
+          ></div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
@@ -203,61 +168,31 @@ export default function HomePage() {
                 color: 'from-green-400 to-green-600'
               }
             ].map((feature, index) => (
-              <motion.div 
+              <div 
                 key={index}
                 className="bg-black rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group backdrop-blur-sm border border-gray-800"
-                variants={{
-                  hidden: { opacity: 0, y: 60, scale: 0.95 },
-                  visible: { 
-                    opacity: 1, 
-                    y: 0, 
-                    scale: 1,
-                    transition: { 
-                      duration: 0.6, 
-                      ease: 'easeOut',
-                      delay: index * 0.15
-                    }
-                  }
-                }}
-                whileHover={{
-                  y: -8,
-                  transition: { duration: 0.3 }
-                }}
               >
-                <motion.div 
+                <div 
                   className={`w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg transform rotate-3`}
-                  whileHover={{ rotate: 0, scale: 1.05 }}
-                  animate={{ 
-                    boxShadow: ['0px 0px 0px rgba(0,0,0,0.2)', '0px 0px 20px rgba(0,0,0,0.1)', '0px 0px 0px rgba(0,0,0,0.2)']
-                  }}
-                  transition={{ 
-                    boxShadow: { repeat: Infinity, duration: 2, ease: 'easeInOut' }
-                  }}
                 >
                   <i className={`fas fa-${feature.icon} text-3xl text-white`}></i>
-                </motion.div>
+                </div>
                 <h3 className="text-xl font-bold mb-4 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300">{t(feature.title)}</h3>
                 <p className="text-gray-300 text-left whitespace-pre-line">{t(feature.desc)}</p>
-                <motion.div 
+                <div 
                   className="mt-6 w-10 h-1 bg-gray-800 mx-auto"
-                  whileHover={{ width: 60, backgroundColor: '#FFD700' }}
-                  transition={{ duration: 0.3 }}
-                ></motion.div>
-              </motion.div>
+                ></div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Promotional Quotes Section */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
         <div className="absolute inset-0 bg-[url('/images/pattern-bg.png')] opacity-10 bg-repeat"></div>
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
+          <div
             className="text-center mb-16"
           >
             <div className="text-center w-full">
@@ -274,7 +209,7 @@ export default function HomePage() {
                 {t('promo.section.subtitle')}
               </span>
             </div>
-          </motion.div>
+          </div>
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 my-16">
             {[
@@ -298,50 +233,37 @@ export default function HomePage() {
 
 
         </div>
-        <motion.div 
-          className="text-center mb-16 mt-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mt-8">
           <Link 
             href="/curriculum" 
-            className="inline-flex items-center relative gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
           >
             {t('home.methodology.viewCurriculum')}
             <i className="fas fa-arrow-right"></i>
           </Link>
-        </motion.div>
+        </div>
       </section>
 
 
       {/* Certifications */}
       <section className="py-24 text-white relative bg-black">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern-bg.png')] opacity-5 bg-repeat"></div>
-        <motion.div 
+        <div 
           className="max-w-6xl mx-auto px-6 relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
         >
-          <motion.h2 
+          <h2 
             className="text-4xl font-bold text-center mb-4"
-            variants={fadeInUp}
           >
             {t('home.certifications')}
-          </motion.h2>
-          <motion.div 
+          </h2>
+          <div 
             className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
-            variants={fadeInUp}
-          ></motion.div>
-          <motion.p
+          ></div>
+          <p
             className="text-center text-gray-300 max-w-2xl mx-auto mb-16"
-            variants={fadeInUp}
           >
             {t('home.certifications.subtitle')}
-          </motion.p>
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -350,22 +272,12 @@ export default function HomePage() {
               { title: 'Platina', desc: 'home.platina', passRate: '26%', bg: 'bg-gradient-to-br from-gray-100 to-gray-300', textColor: 'text-gray-900', icon: 'gem' },
               { title: 'Black', desc: 'home.black', passRate: '9%', bg: 'bg-gradient-to-br from-gray-900 to-black', textColor: 'text-white', icon: 'crown' }
             ].map((cert, index) => (
-              <motion.div 
+              <div 
                 key={index}
                 className="group perspective"
-                variants={fadeInUp}
-                whileHover={{
-                  z: 50,
-                  transition: { duration: 0.3 }
-                }}
               >
-                <motion.div 
+                <div 
                   className={`rounded-xl overflow-hidden shadow-lg ${cert.title === 'Black' ? 'shadow-yellow-500/20' : ''} h-full transform-gpu transition-all duration-500 group-hover:shadow-2xl border border-gray-800`}
-                  whileHover={{ 
-                    scale: 1.05,
-                    rotateY: 5,
-                    transition: { duration: 0.4 }
-                  }}
                 >
                   <div className={`${cert.bg} h-24 relative flex items-center justify-center`}>
                     <i className={`fas fa-${cert.icon} text-4xl ${cert.title === 'Platina' ? 'text-gray-900' : 'text-white'}`}></i>
@@ -384,20 +296,18 @@ export default function HomePage() {
                       <a href="/certification" className="px-6 py-3 bg-white/10 rounded-lg text-white backdrop-blur-sm hover:bg-yellow-500 transition-colors ">
                         {t('learnMore')}
                       </a>
-                      <motion.div 
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.2, rotate: 5 }}
+                      <div 
                         className="w-10 h-10 rounded-full flex items-center justify-center"
                       >
                         <i className="fas fa-arrow-right text-yellow-400"></i>
-                      </motion.div>
+                      </div>
                     </div>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Guarantee */}
@@ -405,12 +315,8 @@ export default function HomePage() {
         <div className="absolute -top-40 -left-40 w-96 h-96  rounded-full opacity-30 blur-3xl"></div>
         <div className="absolute -bottom-40 -right-40 w-96 h-96  rounded-full opacity-30 blur-3xl"></div>
         
-        <motion.div 
+        <div 
           className="max-w-3xl mx-auto px-6 text-center relative z-10"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-100px" }}
         >
           <span className="inline-block px-4 py-1 rounded-full bg-yellow-700 text-yellow-100 text-xs font-semibold mb-6">
             {t('home.satisfaction.badge')}
@@ -418,39 +324,25 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold mb-6 text-white">{t('home.guarantee')}</h2>
           <p className="text-xl mb-10 text-gray-300 leading-relaxed">{t('home.guarantee.desc')}</p>
           
-          <div className="relative inline-block">
-            <motion.div
-              initial={{ scale: 1 }}
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity,
-                repeatType: "reverse" 
-              }}
-            >
-              <img 
-                src="/images/satisfaction-guarantee.png" 
-                alt="Guarantee" 
-                className="h-32 mx-auto drop-shadow-xl" 
-              />
-            </motion.div>
+          <div className="relative inline-block max-w-xs w-full mx-auto">
+            <img 
+              src="/images/satisfaction-guarantee.png" 
+              alt="Guarantee" 
+              className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto drop-shadow-xl"
+            />
             <div className="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xs">✓</span>
             </div>
           </div>
-        </motion.div>
+        </div>
         <div className="text-center mt-8">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
+          <Link 
+            href="/pricing" 
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
           >
-            <Link 
-              href="/pricing" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              {t('curriculum.cta.pricing')}
-              <i className="fas fa-arrow-right"></i>
-            </Link>
-          </motion.div>
+            {t('curriculum.cta.pricing')}
+            <i className="fas fa-arrow-right"></i>
+          </Link>
         </div>
       </section>
 
