@@ -1,7 +1,7 @@
 'use client';
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 import "./globals.css";
 
@@ -13,6 +13,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin", "latin-ext", "cyrillic", "vietnamese"],
+  display: "swap"
 });
 
 const RootLayoutContent = ({ children }: { children: React.ReactNode }) => {
@@ -56,8 +62,11 @@ const RootLayoutContent = ({ children }: { children: React.ReactNode }) => {
             gtag('config', 'G-PMNWB5362P');
           `
         }} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning={true}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${notoSansJP.variable} antialiased`} suppressHydrationWarning={true}>
         {children}
       </body>
     </html>
