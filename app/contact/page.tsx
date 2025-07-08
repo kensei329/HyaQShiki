@@ -51,16 +51,6 @@ export default function ContactPage() {
                 <div className="space-y-6 sm:space-y-8 mt-6 sm:mt-8">
                   <div className="flex items-start group">
                     <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
-                      <i className="fas fa-map-marker-alt text-gray-900"></i>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.address.label')}</h3>
-                      <p className="text-gray-200">{t('contact.info.address')}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start group">
-                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
                       <i className="fas fa-envelope text-gray-900"></i>
                     </div>
                     <div>
@@ -70,12 +60,18 @@ export default function ContactPage() {
                   </div>
                   
                   <div className="flex items-start group">
-                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
-                      <i className="fas fa-phone text-gray-900"></i>
+                    <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300 flex items-center justify-center">
+                      {/* X（旧Twitter）アイコン */}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="24" height="24" fill="currentColor" className="text-gray-900">
+                        <path d="M1200 24.6l-393.6 579.6L1197.6 1202H960.6L684.6 813.6 360 1202H0l414-610.8L6 24.6h237.6l252 357.6L732 24.6H1200zm-180 105.6h-144l-276 393.6-276-393.6H60l354 522-354 522h144l276-393.6 276 393.6h144l-354-522 354-522z"/>
+                      </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.phone.label')}</h3>
-                      <p className="text-gray-200">{t('contact.info.phone')}</p>
+                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">X（旧Twitter）</h3>
+                      <a href="https://x.com/HyaQShiki" target="_blank" rel="noopener noreferrer" className="text-gray-200 underline hover:text-yellow-300 transition">
+                        @HyaQShiki
+                      </a>
+                      <div className="text-xs text-gray-400 mt-1">DMを受け付けています</div>
                     </div>
                   </div>
                 </div>
@@ -93,7 +89,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-
+            
             {/* Form Section */}
             <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl shadow-xl p-5 sm:p-8 transition duration-300 hover:shadow-2xl order-1 md:order-2">
               <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center border-b border-gray-700 pb-4 text-white">{t('contact.title')}</h2>
@@ -163,7 +159,7 @@ export default function ContactPage() {
                   </button>
                 </div>
               </form>
-            </div>
+              </div>
           </div>
         </div>
       </div>
