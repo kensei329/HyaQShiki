@@ -103,42 +103,38 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center border-b border-gray-700 pb-4">{t('contact.info.title')}</h2>
                 <div className="space-y-6 sm:space-y-8 mt-6 sm:mt-8">
-                  <div className="flex items-start group">
+                  <div className="flex items-start group relative">
                     <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300">
                       <i className="fas fa-envelope text-gray-900"></i>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div>
-                        <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.email.label')}</h3>
-                        <p className="text-gray-200 inline-block">{t('contact.info.email')}</p>
-                      </div>
-                      <button onClick={() => handleCopy(t('contact.info.email'), 'email')} className="ml-2 text-yellow-400 hover:text-yellow-300" title="コピー">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="2"/><rect x="3" y="3" width="13" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
-                      </button>
-                      {copied === 'email' && <span className="text-xs text-green-400 ml-1">コピーしました</span>}
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">{t('contact.info.email.label')}</h3>
+                      <p className="text-gray-200">{t('contact.info.email')}</p>
                     </div>
+                    <button onClick={() => handleCopy(t('contact.info.email'), 'email')} className="absolute right-0 top-1/2 -translate-y-1/2 text-yellow-400 hover:text-yellow-300" title="コピー">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="2"/><rect x="3" y="3" width="13" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
+                    </button>
+                    {copied === 'email' && <span className="absolute right-8 top-1/2 -translate-y-1/2 text-xs text-green-400 ml-1">コピーしました</span>}
                   </div>
                   
-                  <div className="flex items-start group">
+                  <div className="flex items-start group relative">
                     <div className="bg-yellow-500 p-2.5 sm:p-3 rounded-full mr-4 shadow-md group-hover:bg-yellow-400 transition duration-300 flex items-center justify-center">
                       {/* X（旧Twitter）アイコン */}
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="24" height="24" fill="currentColor" className="text-gray-900">
                         <path d="M1200 24.6l-393.6 579.6L1197.6 1202H960.6L684.6 813.6 360 1202H0l414-610.8L6 24.6h237.6l252 357.6L732 24.6H1200zm-180 105.6h-144l-276 393.6-276-393.6H60l354 522-354 522h144l276-393.6 276 393.6h144l-354-522 354-522z"/>
                       </svg>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div>
-                        <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">X（旧Twitter）</h3>
-                        <a href="https://x.com/HyaQShiki" target="_blank" rel="noopener noreferrer" className="text-gray-200 underline hover:text-yellow-300 transition">
-                          @HyaQShiki
-                        </a>
-                        <div className="text-xs text-gray-400 mt-1">DMを受け付けています</div>
-                      </div>
-                      <button onClick={() => handleCopy('@HyaQShiki', 'x')} className="ml-2 text-yellow-400 hover:text-yellow-300" title="コピー">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="2"/><rect x="3" y="3" width="13" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
-                      </button>
-                      {copied === 'x' && <span className="text-xs text-green-400 ml-1">コピーしました</span>}
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-yellow-400 mb-1 text-sm uppercase tracking-wide">X（旧Twitter）</h3>
+                      <a href="https://x.com/HyaQShiki" target="_blank" rel="noopener noreferrer" className="text-gray-200 underline hover:text-yellow-300 transition">
+                        @HyaQShiki
+                      </a>
+                      <div className="text-xs text-gray-400 mt-1">DMを受け付けています</div>
                     </div>
+                    <button onClick={() => handleCopy('@HyaQShiki', 'x')} className="absolute right-0 top-1/2 -translate-y-1/2 text-yellow-400 hover:text-yellow-300" title="コピー">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="2"/><rect x="3" y="3" width="13" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
+                    </button>
+                    {copied === 'x' && <span className="absolute right-8 top-1/2 -translate-y-1/2 text-xs text-green-400 ml-1">コピーしました</span>}
                   </div>
                 </div>
               </div>
@@ -172,8 +168,9 @@ export default function ContactPage() {
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-2 text-gray-300">ご要件</label>
                   <select id="subject" name="entry.69377963" className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-800/50 text-white" value={subject} onChange={e => setSubject(e.target.value)}>
-                    <option value="無料体験申込み">無料体験申込み</option>
+                    <option value="無料体験申込">無料体験申込</option>
                     <option value="受講申込">受講申込</option>
+                    <option value="認定試験申込">認定試験申込</option>
                     <option value="法人スポンサー枠問合せ">法人スポンサー枠問合せ</option>
                     <option value="法人研修問合せ">法人研修問合せ</option>
                     <option value="取材依頼">取材依頼</option>
