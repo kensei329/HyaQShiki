@@ -54,9 +54,6 @@ type TranslationKeys =
   | 'nav.corporate' | 'nav.philosophy' | 'nav.contact' | 'nav.language'
   
   // Footer
-  //| 'footer.slogan' | 'footer.navigation' | 'footer.home' | 'footer.curriculum'
-  //| 'footer.pricing' | 'footer.certification' | 'footer.corporate' | 'footer.philosophy'
-  //| 'footer.contact' | 'footer.contactForm' | 'footer.faq' | 'footer.community'
   | 'footer.copyright' | 'footer.privacy' | 'footer.terms'
   
   // HomePage
@@ -413,18 +410,6 @@ const ja: TranslationsType = {
   'promo.cards.speak': '話すだけで機能追加',
   
   // Footer
-  //'footer.slogan': '100日、100の型、100倍の生産力。',
-  //'footer.navigation': 'ナビゲーション',
-  //'footer.home': 'トップ',
-  //'footer.curriculum': 'カリキュラム',
-  //'footer.pricing': '価格',
-  //'footer.certification': '資格',
-  //'footer.corporate': '企業連携',
-  //'footer.philosophy': '理念',
-  //'footer.contact': 'お問い合わせ',
-  //'footer.contactForm': 'お問い合わせフォーム',
-  //'footer.faq': 'よくある質問',
-  //'footer.community': 'コミュニティ',
   'footer.copyright': '©2025',
   'footer.privacy': 'プライバシーポリシー',
   'footer.terms': '利用規約',
