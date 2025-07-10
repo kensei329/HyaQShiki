@@ -259,14 +259,14 @@ type TranslationKeys =
   | 'corporate.testimonials.person2.name'
   | 'corporate.testimonials.person2.position'
   | 'corporate.testimonials.person2.content'
-  | 'testimonials.badge' | 'testimonials.badge.en'
-  | 'testimonials.more.title' | 'testimonials.more.title.en'
-  | 'testimonials.more.desc' | 'testimonials.more.desc.en'
+  | 'testimonials.badge'
+  | 'testimonials.more.title' 
+  | 'testimonials.more.desc' 
   | 'testimonials.comingsoon'
-  | 'testimonials.cta.title' | 'testimonials.cta.title.en'
-  | 'testimonials.cta.desc' | 'testimonials.cta.desc.en'
-  | 'testimonials.cta.free_trial' | 'testimonials.cta.free_trial.en'
-  | 'testimonials.cta.pricing' | 'testimonials.cta.pricing.en';
+  | 'testimonials.cta.title'
+  | 'testimonials.cta.desc'
+  | 'testimonials.cta.free_trial'
+  | 'testimonials.cta.pricing';
 
 type TranslationsType = {
   [key in TranslationKeys]: string;
@@ -854,20 +854,13 @@ const ja: TranslationsType = {
   'testimonials.student1.achievements.item3': '企画/要件定義のノウハウが身についた',
   'testimonials.student1.achievements.item4': 'Cursorを使いこなせるようになった',
   'testimonials.badge': '受講生',
-  'testimonials.badge.en': 'Student',
   'testimonials.more.title': 'さらなる受講生の声',
-  'testimonials.more.title.en': 'More Student Voices',
   'testimonials.more.desc': '続々と届く受講生の体験談を順次公開していきます。お楽しみに！',
-  'testimonials.more.desc.en': 'We will be publishing more student testimonials as they come in. Stay tuned!',
   'testimonials.comingsoon': 'Coming Soon...',
   'testimonials.cta.title': 'あなたも次の成功体験者になりませんか？',
-  'testimonials.cta.title.en': 'Will you be our next success story?',
   'testimonials.cta.desc': 'HyaQShiki-百式-で、AI時代のクリエイターとしての第一歩を踏み出しましょう。',
-  'testimonials.cta.desc.en': 'Take the first step as a creator in the AI era with HyaQShiki.',
   'testimonials.cta.free_trial': '無料体験に申し込む',
-  'testimonials.cta.free_trial.en': 'Apply for Free Trial',
-  'testimonials.cta.pricing': '料金プランを見る',
-  'testimonials.cta.pricing.en': 'View Pricing Plans'
+  'testimonials.cta.pricing': '料金プランを見る'
 };
 
 const en: TranslationsType = {
@@ -1195,7 +1188,7 @@ const en: TranslationsType = {
   // Testimonials Page
   'testimonials.title': 'Student Voices',
   'testimonials.subtitle': 'Hear the real voices of those who have actually taken the HyaQShiki course',
-  'testimonials.student1.name': 'Kei Oda',
+  'testimonials.student1.name': 'Tazusa Oda',
   'testimonials.student1.feedback': 'I knew that AI could assist with programming, but when I actually experienced it, I was surprised not only by how much easier coding became than I imagined, but also by how smoothly I could manage GitHub and publish with Vercel.\n\nI also felt the possibility that by combining multiple AI tools, I could not only get closer to what I intended, but sometimes produce even better results.\n\nFrom now on, I feel that AI will not only be limited to coding, but will expand into a future where AI serves as a partner that supports human creativity and decision-making, being utilized for planning, design, and even creating new value. I want to actively use AI as a presence that supports me in freely shaping ideas and encouraging new thoughts and challenges while incorporating the power of AI.',
   'testimonials.student1.achievements.title': 'What I gained from this course',
   'testimonials.student1.achievements.item1': 'Eliminated resistance to web app creation',
@@ -1203,20 +1196,13 @@ const en: TranslationsType = {
   'testimonials.student1.achievements.item3': 'Acquired planning/requirement definition know-how',
   'testimonials.student1.achievements.item4': 'Became proficient in using Cursor',
   'testimonials.badge': 'Student',
-  'testimonials.badge.en': 'Student',
   'testimonials.more.title': 'More Student Voices',
-  'testimonials.more.title.en': 'More Student Voices',
   'testimonials.more.desc': 'We will be publishing more student testimonials as they come in. Stay tuned!',
-  'testimonials.more.desc.en': 'We will be publishing more student testimonials as they come in. Stay tuned!',
   'testimonials.comingsoon': 'Coming Soon...',
   'testimonials.cta.title': 'Will you be our next success story?',
-  'testimonials.cta.title.en': 'Will you be our next success story?',
   'testimonials.cta.desc': 'Take the first step as a creator in the AI era with HyaQShiki.',
-  'testimonials.cta.desc.en': 'Take the first step as a creator in the AI era with HyaQShiki.',
   'testimonials.cta.free_trial': 'Apply for Free Trial',
-  'testimonials.cta.free_trial.en': 'Apply for Free Trial',
-  'testimonials.cta.pricing': 'View Pricing Plans',
-  'testimonials.cta.pricing.en': 'View Pricing Plans'
+  'testimonials.cta.pricing': 'View Pricing Plans'
 };
 
 const translations: Record<Language, TranslationsType> = { ja, en };
