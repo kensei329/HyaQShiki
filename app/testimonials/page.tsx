@@ -90,7 +90,7 @@ export default function TestimonialsPage() {
                       {t('testimonials.student1.name')}
                     </h3>
                     <div className="px-4 py-1 bg-yellow-400 text-black text-sm font-semibold rounded-full inline-block">
-                      {t(language === 'ja' ? 'testimonials.badge' : 'testimonials.badge.en')}
+                      {t('testimonials.badge')}
                     </div>
                   </div>
                 </div>
@@ -143,10 +143,10 @@ export default function TestimonialsPage() {
             className="max-w-4xl mx-auto px-6 text-center relative z-10"
           >
             <h2 className="text-3xl font-bold mb-6 text-white">
-              {t(language === 'ja' ? 'testimonials.more.title' : 'testimonials.more.title.en')}
+              {t('testimonials.more.title')}
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              {t(language === 'ja' ? 'testimonials.more.desc' : 'testimonials.more.desc.en')}
+              {t('testimonials.more.desc')}
             </p>
             <div className="bg-white/5 border border-gray-700 rounded-xl p-8 backdrop-blur-sm">
               <div className="text-yellow-400 text-6xl mb-4">
@@ -170,12 +170,12 @@ export default function TestimonialsPage() {
             <h2 
               className="text-4xl font-bold mb-4"
             >
-              {t(language === 'ja' ? 'testimonials.cta.title' : 'testimonials.cta.title.en')}
+              {t('testimonials.cta.title')}
             </h2>
             <p 
               className="text-xl mb-10 opacity-90 max-w-3xl mx-auto"
             >
-              {t(language === 'ja' ? 'testimonials.cta.desc' : 'testimonials.cta.desc.en')}
+              {t('testimonials.cta.desc')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
@@ -183,7 +183,7 @@ export default function TestimonialsPage() {
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] bg-black hover:bg-gray-800 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg touch-manipulation"
               >
                 <span>
-                  {t(language === 'ja' ? 'testimonials.cta.free_trial' : 'testimonials.cta.free_trial.en')}
+                  {t('testimonials.cta.free_trial')}
                 </span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -193,7 +193,7 @@ export default function TestimonialsPage() {
                 href="/pricing" 
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] bg-transparent hover:bg-black/10 text-black border-2 border-black font-bold rounded-full transition-all duration-300 hover:scale-105 touch-manipulation"
               >
-                {t(language === 'ja' ? 'testimonials.cta.pricing' : 'testimonials.cta.pricing.en')}
+                {t('testimonials.cta.pricing')}
               </a>
             </div>
           </div>
