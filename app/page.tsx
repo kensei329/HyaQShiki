@@ -118,20 +118,34 @@ export default function HomePage() {
                       ease: [0.25, 0.46, 0.45, 0.94] // ふわふわとしたイージング
                     }}
                   >
-                    {slides[currentSlide].title.split('\n').map((line, idx, arr) => (
+                    {slides[currentSlide].title.split('\n').map((line, lineIdx, arr) => (
                       <motion.span
-                        key={idx}
+                        key={lineIdx}
                         initial={{ opacity: 0, y: 30, scale: 0.9, rotateX: -15 }}
                         animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
                         transition={{ 
                           duration: 1.0, 
-                          delay: 0.6 + idx * 0.15,
+                          delay: 0.6 + lineIdx * 0.15,
                           ease: [0.34, 1.56, 0.64, 1] // バウンス効果付きのふわふわアニメーション
                         }}
                         style={{ display: 'inline-block' }}
                       >
-                        {line}
-                        {idx < arr.length - 1 && <br />}
+                        {line.split('').map((char, charIdx) => (
+                          <motion.span
+                            key={charIdx}
+                            initial={{ opacity: 0, y: 20, scale: 0.8, rotateY: -10 }}
+                            animate={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
+                            transition={{ 
+                              duration: 0.8, 
+                              delay: 0.8 + lineIdx * 0.15 + charIdx * 0.05,
+                              ease: [0.34, 1.56, 0.64, 1] // バウンス効果付きのふわふわアニメーション
+                            }}
+                            style={{ display: 'inline-block' }}
+                          >
+                            {char === ' ' ? '\u00A0' : char}
+                          </motion.span>
+                        ))}
+                        {lineIdx < arr.length - 1 && <br />}
                       </motion.span>
                     ))}
                   </motion.h1>
