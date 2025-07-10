@@ -13,4 +13,15 @@ const nextConfig: NextConfig = {
   // },
 };
 
+// next.config.js
+const nextConfig = {
+  reactStrictMode: true,
+  experimental: {
+    appDir: true,
+  },
+};
+
+module.exports = nextConfig;
+
+
 export default nextConfig;

@@ -88,6 +88,7 @@ export default function Header() {
     { path: '/curriculum', label: t('nav.curriculum'), icon: 'fas fa-book' },
     { path: '/pricing', label: t('nav.pricing'), icon: 'fas fa-yen-sign' },
     { path: '/certification', label: t('nav.certification'), icon: 'fas fa-certificate' },
+    { path: '/testimonials', label: t('nav.testimonials'), icon: 'fas fa-user-graduate' },
     { path: '/corporate', label: t('nav.corporate'), icon: 'fas fa-building' },
     { path: '/philosophy', label: t('nav.philosophy'), icon: 'fas fa-lightbulb' },
     { path: '/contact', label: t('nav.contact'), icon: 'fas fa-envelope', isButton: true },

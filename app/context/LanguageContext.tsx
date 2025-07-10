@@ -224,6 +224,13 @@ type TranslationKeys =
   | 'contact.info.email.label' | 'contact.info.phone.label' | 'contact.info.hours'
   | 'contact.info.hours.weekdays' | 'contact.info.hours.saturday' | 'contact.info.hours.sunday'
   | 'contact.info.hours.closed'
+  
+  // Testimonials Page
+  | 'testimonials.title' | 'testimonials.subtitle' | 'testimonials.student1.name'
+  | 'testimonials.student1.feedback' | 'testimonials.student1.achievements.title'
+  | 'testimonials.student1.achievements.item1' | 'testimonials.student1.achievements.item2'
+  | 'testimonials.student1.achievements.item3' | 'testimonials.student1.achievements.item4'
+  | 'nav.testimonials'
   | 'curriculum.stack.title' | 'curriculum.stack.requirements.title' | 'curriculum.stack.requirements.head'
   | 'curriculum.stack.requirements.list1' | 'curriculum.stack.requirements.list2'
   | 'curriculum.stack.env.title' | 'curriculum.stack.env.head1' | 'curriculum.stack.env.env1'
@@ -251,7 +258,15 @@ type TranslationKeys =
   | 'corporate.testimonials.person1.content'
   | 'corporate.testimonials.person2.name'
   | 'corporate.testimonials.person2.position'
-  | 'corporate.testimonials.person2.content';
+  | 'corporate.testimonials.person2.content'
+  | 'testimonials.badge' | 'testimonials.badge.en'
+  | 'testimonials.more.title' | 'testimonials.more.title.en'
+  | 'testimonials.more.desc' | 'testimonials.more.desc.en'
+  | 'testimonials.comingsoon'
+  | 'testimonials.cta.title' | 'testimonials.cta.title.en'
+  | 'testimonials.cta.desc' | 'testimonials.cta.desc.en'
+  | 'testimonials.cta.free_trial' | 'testimonials.cta.free_trial.en'
+  | 'testimonials.cta.pricing' | 'testimonials.cta.pricing.en';
 
 type TranslationsType = {
   [key in TranslationKeys]: string;
@@ -358,6 +373,7 @@ const ja: TranslationsType = {
   'nav.philosophy': '理念',
   'nav.contact': 'お問い合わせ',
   'nav.language': '言語',
+  'nav.testimonials': '受講生の声',
 
   // HomePage
   'home.title': '日常会話のみで\nアプリ開発',
@@ -825,7 +841,33 @@ const ja: TranslationsType = {
   'corporate.testimonials.person1.content': 'HyaQShikiの理念に共感し、次世代のIT人材育成に貢献できることを誇りに思います。',
   'corporate.testimonials.person2.name': '山田 健太郎',
   'corporate.testimonials.person2.position': 'イノベーション株式会社 CTO',
-  'corporate.testimonials.person2.content': 'HyaQShikiのプログラムは、実際の業務に即した教育を提供してくれます。'
+  'corporate.testimonials.person2.content': 'HyaQShikiのプログラムは、実際の業務に即した教育を提供してくれます。',
+  
+  // Testimonials Page
+  'testimonials.title': '受講生の声',
+  'testimonials.subtitle': '実際にHyaQShiki-百式-を受講された方々の生の声をお聞きください',
+  'testimonials.student1.name': '小田 携',
+  'testimonials.student1.feedback': 'AIがプログラミングを支援してくれることは知っていましたが、実際に体験してみると、想像以上に簡単にコーディングが進むだけでなく、GitHubでの管理やVercelを使った公開までスムーズに行えることに驚きました。\n\nまた、複数のAIツールを組み合わせることで、自分の意図したものに近づけるだけでなく、時にはそれ以上の成果を生み出せるという可能性も感じました。\n\nこれからは、コーディングにとどまらず、AIが人間の創造性や意思決定を支えるパートナーとして、企画、デザインを始め、新しい価値の創出にまで活用されていく未来が広がっていくと感じます。私自身も、AIの力を取り入れながら、より自由にアイデアを形にし、新しい発想や挑戦を後押ししてくれる存在として積極的に活用していきたいと思います。',
+  'testimonials.student1.achievements.title': 'この講座で得られたこと',
+  'testimonials.student1.achievements.item1': 'Webアプリ作成への抵抗がなくなった',
+  'testimonials.student1.achievements.item2': 'Webアプリ開発が楽しくなった',
+  'testimonials.student1.achievements.item3': '企画/要件定義のノウハウが身についた',
+  'testimonials.student1.achievements.item4': 'Cursorを使いこなせるようになった',
+  'testimonials.badge': '受講生',
+  'testimonials.badge.en': 'Student',
+  'testimonials.more.title': 'さらなる受講生の声',
+  'testimonials.more.title.en': 'More Student Voices',
+  'testimonials.more.desc': '続々と届く受講生の体験談を順次公開していきます。お楽しみに！',
+  'testimonials.more.desc.en': 'We will be publishing more student testimonials as they come in. Stay tuned!',
+  'testimonials.comingsoon': 'Coming Soon...',
+  'testimonials.cta.title': 'あなたも次の成功体験者になりませんか？',
+  'testimonials.cta.title.en': 'Will you be our next success story?',
+  'testimonials.cta.desc': 'HyaQShiki-百式-で、AI時代のクリエイターとしての第一歩を踏み出しましょう。',
+  'testimonials.cta.desc.en': 'Take the first step as a creator in the AI era with HyaQShiki.',
+  'testimonials.cta.free_trial': '無料体験に申し込む',
+  'testimonials.cta.free_trial.en': 'Apply for Free Trial',
+  'testimonials.cta.pricing': '料金プランを見る',
+  'testimonials.cta.pricing.en': 'View Pricing Plans'
 };
 
 const en: TranslationsType = {
@@ -838,6 +880,7 @@ const en: TranslationsType = {
   'nav.philosophy': 'Philosophy',
   'nav.contact': 'Contact',
   'nav.language': 'Language',
+  'nav.testimonials': 'Student Voices',
 
   // HomePage
   'home.title': 'Develop Apps\nThrough Everyday Conversation',
@@ -1149,176 +1192,31 @@ const en: TranslationsType = {
   'corporate.testimonials.person2.position': 'CTO, Innovation Inc.',
   'corporate.testimonials.person2.content': 'HyaQShiki\'s program provides education closely linked to real-world business practices.',
 
-  // Satisfaction Guarantee Badge
-  'home.satisfaction.badge': 'Service Quality Guarantee',
-
-  // Pricing Page
-  'pricing.title': 'Pricing & Guarantee',
-  'pricing.subtitle': 'The best plan to accelerate your career and invest in your future.',
-  'pricing.plans.title': 'Course Fee Plans',
-  'pricing.plans.desc': 'HyaQShiki offers a variety of plans tailored to your learning needs and budget. All plans include the same curriculum and high-quality learning experience.',
-  'pricing.plans.basic.title': 'Basic Plan',
-  'pricing.plans.basic.badge': 'Popular',
-  'pricing.plans.basic.feature1': 'Discount for lump-sum payment',
-  'pricing.plans.basic.feature2': '24/7 AI Support',
-  'pricing.plans.basic.feature3': 'Group mentoring once every two weeks',
-  'pricing.plans.basic.feature4': 'Access to Community',
-  'pricing.plans.basic.feature5': '3-month contract',
-  'pricing.plans.basic.feature6': 'HyaQShiki Certification Exam',
-  'pricing.plans.basic.cta': 'Apply Now',
-  'pricing.plans.basic.label': 'Basic Plan',
-  'pricing.plans.basic.price': '298,000',
-  'pricing.plans.basic.currency': 'JPY',
-  'pricing.plans.basic.tax': '(tax included) / lump-sum payment',
-  'pricing.plans.monthly.title': 'Monthly Plan',
-  'pricing.plans.monthly.feature1': 'Monthly installment',
-  'pricing.plans.monthly.feature2': '24/7 AI Support',
-  'pricing.plans.monthly.feature3': 'Group mentoring once every two weeks',
-  'pricing.plans.monthly.feature4': 'Access to Community',
-  'pricing.plans.monthly.feature5': '3-month contract',
-  'pricing.plans.monthly.feature6': 'HyaQShiki Certification Exam',
-  'pricing.plans.monthly.cta': 'Apply Now',
-  'pricing.plans.monthly.label': 'Monthly Plan',
-  'pricing.plans.monthly.price': '110,000',
-  'pricing.plans.monthly.currency': 'JPY',
-  'pricing.plans.monthly.tax': '(tax included) / month',
-  'pricing.plans.sponsor.title': 'Sponsor Plan',
-  'pricing.plans.sponsor.feature1': 'Tuition Free',
-  'pricing.plans.sponsor.feature2': 'Must participate in company projects',
-  'pricing.plans.sponsor.feature3': 'Screening and selection required',
-  'pricing.plans.sponsor.feature4': 'Project deliverables required',
-  'pricing.plans.sponsor.feature5': 'Weekly reports',
-  'pricing.plans.sponsor.feature6': 'HyaQShiki Certification Exam',
-  'pricing.plans.sponsor.cta': 'Contact Us',
-  'pricing.plans.sponsor.label': 'Sponsor Plan',
-  'pricing.plans.sponsor.price': 'Contact us',
-  'pricing.plans.sponsor.tax': '(Plan details)',
-  'pricing.guarantee.title': 'Satisfaction Guarantee',
-  'pricing.guarantee.subtitle': 'Full refund within 14 days',
-  'pricing.guarantee.desc': 'We are confident in our course quality, so HyaQShiki offers a full refund guarantee. If you are not satisfied within 14 days after starting, you will receive a full refund for any reason.',
-  'pricing.guarantee.conditions.title': 'Eligibility Conditions',
-  'pricing.guarantee.conditions.condition1': 'Apply within 14 days from the start of the course',
-  'pricing.guarantee.conditions.condition2': 'Meet requirements such as submitting assignments and progress rate',
-  'pricing.guarantee.conditions.condition3': 'Application must be made by the student',
-  'pricing.guarantee.procedure.title': 'How to Apply',
-  'pricing.guarantee.procedure.desc': 'Notify your mentor or customer support of your refund request. We will provide a dedicated form and guide you through the necessary information.',
-  'pricing.guarantee.refund.title': 'Refund Process',
-  'pricing.guarantee.refund.desc': 'Refunds will be processed by the same payment method within 14 business days after acceptance. For installments, only amounts paid will be refunded.',
-  'pricing.guarantee.notes.title': 'Notes',
-  'pricing.guarantee.notes.note1': 'The guarantee can be used only once per person.',
-  'pricing.guarantee.notes.note2': 'After a refund, re-enrollment in the same program is not possible.',
-  'pricing.guarantee.notes.note3': 'If fraud or false application is found, you will not be eligible for a refund.',
-
-  'pricing.payment.title': 'Payment Methods',
-  'pricing.payment.credit.title': 'Credit Card',
-  'pricing.payment.credit.desc': 'VISA, MasterCard, JCB, American Express, Diners Club accepted.',
-  'pricing.payment.bank.title': 'Bank Transfer',
-  'pricing.payment.bank.desc': 'Bank transfer details will be provided after application. Transfer fees are the applicant\'s responsibility.',
-  'pricing.payment.installment.title': 'Installments',
-  'pricing.payment.installment.desc': 'Installment plans by partner finance companies are available. Subject to approval.',
-  'pricing.payment.note': '*Corporate applications are also accepted. If you wish to pay by invoice, please contact us via the inquiry form.',
-  'pricing.faq.title': 'Frequently Asked Questions',
-  'pricing.contact': 'For other questions, please contact us.',
-  'pricing.satisfaction.title': 'Satisfaction Guarantee',
-  'pricing.satisfaction.alt': 'HyaQShiki Satisfaction Guarantee',
-  'pricing.satisfaction.guarantee': '14-Day Full Refund Guarantee',
-  'pricing.satisfaction.desc': 'We are confident in our course quality, so HyaQShiki offers a full refund guarantee. If you are not satisfied within 14 days after starting, you will receive a full refund for any reason.',
-  'pricing.satisfaction.eligibility': 'Eligibility',
-  'pricing.satisfaction.application': 'How to Apply',
-  'pricing.satisfaction.application.desc': 'Notify your mentor or customer support of your refund request. We will provide a dedicated form and guide you through the necessary information.',
-  'pricing.satisfaction.refund': 'Refund Process',
-  'pricing.satisfaction.refund.desc': 'Refunds will be processed by the same payment method within 14 business days after acceptance. For installments, only amounts paid will be refunded.',
-  'pricing.satisfaction.notes': 'Notes',
-  'pricing.cta.title': 'Why not try our free trial first?',
-  'pricing.cta.subtitle': 'Start learning that will boost your productivity 100x, beginning today.',
-  'pricing.cta.button': 'Apply for Free Trial',
-
-  // FAQs
-  'pricing.faq.q1': 'Do I need a computer?',
-  'pricing.faq.a1': 'Yes, you do. Support for acquiring a computer is available upon request.',
-  'pricing.faq.q2': 'Can I extend the learning period?',
-  'pricing.faq.a2': 'Yes, you can extend your enrollment for up to three months for an additional monthly fee (49,800 JPY per month).',
-  'pricing.faq.q3': 'Is there any support after completing the course?',
-  'pricing.faq.a3': 'Graduates can join the alumni community. Optional additional mentor support and career/entrepreneurship support programs are also available.',
-
-  // Payment methods (duplicate but included for completeness)
-  'pricing.payment.method1.title': 'Credit Card',
-  'pricing.payment.method1.desc': 'VISA, MasterCard, JCB, American Express, Diners Club accepted.',
-  'pricing.payment.method2.title': 'Bank Transfer',
-  'pricing.payment.method2.desc': 'Bank transfer details will be provided after application. Transfer fees are the applicant\'s responsibility.',
-  'pricing.payment.method3.title': 'Cryptocurrency',
-  'pricing.payment.method3.desc': 'Bitcoin, Ethereum, and USDT accepted.',
-  // Sponsor & Partner Program
-  'sponsor.overview.title': 'Sponsor Program Overview',
-  'sponsor.overview.question': 'What is the HyaQShiki Sponsor Program?',
-  'sponsor.overview.description': 'At HyaQShiki, we nurture next-generation developers capable of 100x productivity in the generative AI era, integrating real-world company projects into the education program to achieve simultaneous learning and hands-on experience.',
-  'sponsor.overview.benefit1': 'Students gain hands-on experience by working on real corporate challenges.',
-  'sponsor.overview.benefit2': 'Early engagement with outstanding talents who could become future hires.',
-  'sponsor.benefits.title': 'Benefits for Sponsor Companies',
-  'sponsor.benefits.benefit1': 'Driving Innovation',
-  'sponsor.benefits.benefit1.description': 'Develop new solutions from a fresh perspective through the latest AI technologies and the creative power of young talent.',
-  'sponsor.benefits.benefit2': 'Support for Talent Development',
-  'sponsor.benefits.benefit2.description': 'Enhance your employees\' AI literacy and gain stimulation from interaction with students.',
-  'sponsor.benefits.benefit3': 'Recruitment Pipeline',
-  'sponsor.benefits.benefit3.description': 'Discover outstanding students early and build relationships for recruitment.',
-  'sponsor.benefits.benefit4': 'Branding',
-  'sponsor.benefits.benefit4.description': 'Enhance your corporate brand as a leading company supporting next-generation talent development.',
-
-  // Education & Industry Integration
-  'education.integration.title': 'Integration of Corporate Challenges and Education',
-  'education.integration.integration': 'Practical Skills Through Real-World Challenges',
-  'education.integration.description': 'At HyaQShiki, we incorporate real corporate projects and challenges into the educational curriculum, providing students with practical experience while delivering valuable deliverables to companies.',
-  'education.integration.example': 'Examples of Projects',
-  'education.integration.example1': 'Web Application Development',
-  'education.integration.example2': 'Data Analysis & Visualization',
-  'education.integration.example3': 'AI Feature Integration',
-  'education.integration.example4': 'UI/UX Design Improvements',
-  'education.integration.example5': 'Business Efficiency Tools',
-  'education.integration.brief': 'Project Overview',
-  'education.integration.brief.description': 'Projects provided by companies are appropriately tailored to the students\' level and curriculum progress, and carried out as educational projects with practical and educational value.',
-
-  // Certified Partner Program
-  'special.certified.partner.title': 'Certified Partner Program',
-  'special.certified.partner.certified': 'Become a HyaQShiki Certified Partner',
-  'special.certified.partner.description': 'For companies building an ongoing partnership, we offer special status and benefits as a HyaQShiki Certified Partner.',
-  'special.certified.partner.logo': 'Use of Certified Partner Logo',
-  'special.certified.partner.logo.description': 'You may use the HyaQShiki Certified Partner logo on your website and marketing materials.',
-  'special.certified.partner.project': 'Priority Project Participation',
-  'special.certified.partner.project.description': 'Priority access to submit corporate challenges to student research and graduation projects.',
-  'special.certified.partner.commercialization': 'Commercialization Support',
-  'special.certified.partner.commercialization.description': 'Receive priority support for commercialization and implementation of outstanding student-developed solutions.',
-  'special.certified.partner.talent': 'Talent Introduction',
-  'special.certified.partner.talent.description': 'Get priority introduction to graduates matched to your corporate needs.',
-
-  // Partner Testimonials
-  'partner.testimonials.title': 'Voices from Partner Companies',
-  'partner.testimonials.testimonial1': 'Through collaboration with HyaQShiki, we were able to find new solutions to challenges that had remained unsolved within our company. The students\' flexible thinking and their understanding of cutting-edge technology far exceeded our expectations.',
-  'partner.testimonials.name1': 'Kentaro Yamada',
-  'partner.testimonials.position1': 'CTO, TechnoFuture Inc.',
-  'partner.testimonials.testimonial2': 'We started the program as part of talent development, but it also led to the creation of new business ideas and brought us great value. The dedication of the students has inspired our employees as well.',
-  'partner.testimonials.name2': 'Misaki Sato',
-  'partner.testimonials.position2': 'Head of HR, Global Innovation Inc.',
-
-  // Partnership Flow
-  'contact.partnership.flow.title': 'Partnership Process',
-  'contact.partnership.flow.step1': 'Company Information Registration',
-  'contact.partnership.flow.step2': 'Online Meeting',
-  'contact.partnership.flow.step3': 'Project Registration',
-  'contact.partnership.flow.step4': 'Mentoring',
-  'contact.partnership.flow.step5': 'Deliverables Submission',
-  'contact.partnership.flow.step6': 'Feedback',
-  'contact.partnership.flow.company.form': 'Company Information Registration',
-  'contact.partnership.flow.company.form.desc': 'Register your company information through the dedicated form. You can also specify your basic partnership requests or challenge outlines at this stage.',
-  'contact.partnership.flow.online.meeting': 'Online Meeting',
-  'contact.partnership.flow.online.meeting.desc': 'We will hold an initial meeting with the person in charge to discuss your needs, challenges, and specific direction for the partnership.',
-  'contact.partnership.flow.project.registration': 'Project Registration',
-  'contact.partnership.flow.project.registration.desc': 'Finalize the project content and tailor it as appropriate for the students. We may sign a non-disclosure agreement as necessary.',
-  'contact.partnership.flow.mentoring': 'Mentoring',
-  'contact.partnership.flow.mentoring.desc': 'During the project, corporate representatives may advise and guide students as needed.',
-  'contact.partnership.flow.deliverable': 'Deliverables Submission',
-  'contact.partnership.flow.deliverable.desc': 'After project completion, deliverables will be submitted and a final report meeting will be held. Students will present their work and answer questions.',
-  'contact.partnership.flow.feedback': 'Feedback',
-  'contact.partnership.flow.feedback.desc': 'After project completion, feedback will be collected from both company and students and used for future improvements. We will also consider ongoing partnerships.'
+  // Testimonials Page
+  'testimonials.title': 'Student Voices',
+  'testimonials.subtitle': 'Hear the real voices of those who have actually taken the HyaQShiki course',
+  'testimonials.student1.name': 'Kei Oda',
+  'testimonials.student1.feedback': 'I knew that AI could assist with programming, but when I actually experienced it, I was surprised not only by how much easier coding became than I imagined, but also by how smoothly I could manage GitHub and publish with Vercel.\n\nI also felt the possibility that by combining multiple AI tools, I could not only get closer to what I intended, but sometimes produce even better results.\n\nFrom now on, I feel that AI will not only be limited to coding, but will expand into a future where AI serves as a partner that supports human creativity and decision-making, being utilized for planning, design, and even creating new value. I want to actively use AI as a presence that supports me in freely shaping ideas and encouraging new thoughts and challenges while incorporating the power of AI.',
+  'testimonials.student1.achievements.title': 'What I gained from this course',
+  'testimonials.student1.achievements.item1': 'Eliminated resistance to web app creation',
+  'testimonials.student1.achievements.item2': 'Web app development became enjoyable',
+  'testimonials.student1.achievements.item3': 'Acquired planning/requirement definition know-how',
+  'testimonials.student1.achievements.item4': 'Became proficient in using Cursor',
+  'testimonials.badge': 'Student',
+  'testimonials.badge.en': 'Student',
+  'testimonials.more.title': 'More Student Voices',
+  'testimonials.more.title.en': 'More Student Voices',
+  'testimonials.more.desc': 'We will be publishing more student testimonials as they come in. Stay tuned!',
+  'testimonials.more.desc.en': 'We will be publishing more student testimonials as they come in. Stay tuned!',
+  'testimonials.comingsoon': 'Coming Soon...',
+  'testimonials.cta.title': 'Will you be our next success story?',
+  'testimonials.cta.title.en': 'Will you be our next success story?',
+  'testimonials.cta.desc': 'Take the first step as a creator in the AI era with HyaQShiki.',
+  'testimonials.cta.desc.en': 'Take the first step as a creator in the AI era with HyaQShiki.',
+  'testimonials.cta.free_trial': 'Apply for Free Trial',
+  'testimonials.cta.free_trial.en': 'Apply for Free Trial',
+  'testimonials.cta.pricing': 'View Pricing Plans',
+  'testimonials.cta.pricing.en': 'View Pricing Plans'
 };
 
 const translations: Record<Language, TranslationsType> = { ja, en };

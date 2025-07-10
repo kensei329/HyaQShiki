@@ -341,38 +341,15 @@ export default function CertificationPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* 49,800円のセル結合ロジック */}
-                    {(() => {
-                      // 49,800円のfeeを持つ行をまとめてrowSpan
-                      const feeRows = certificationFees.filter(fee => fee.fee === '49,800円');
-                      const otherRows = certificationFees.filter(fee => fee.fee !== '49,800円');
-                      return [
-                        feeRows.length > 0 && (
-                          <tr key="fee-49800">
-                            <td className="py-4 px-6">{feeRows[0].rank}</td>
-                            <td className="py-4 px-6" rowSpan={feeRows.length}>{feeRows[0].fee}</td>
-                            <td className="py-4 px-6" rowSpan={feeRows.length}>{feeRows[0].renewal}</td>
-                          </tr>
-                        ),
-                        ...feeRows.slice(1).map((fee, idx) => (
-                          <tr key={`fee-49800-${idx+1}`}>
-                            <td className="py-4 px-6">{fee.rank}</td>
-                            {/* feeセル・renewalセルはrowSpanで結合済みなので空 */}
-                            <td className="hidden"></td>
-                            <td className="hidden"></td>
-                          </tr>
-                        )),
-                        ...otherRows.map((fee, idx) => (
-                          <tr key={`fee-other-${idx}`}
-                            className={`border-b border-gray-800 hover:bg-white/5 transition-colors duration-200 ${idx % 2 === 0 ? 'bg-white/[0.02]' : ''}`}
+                    {certificationFees.map((fee, idx) => (
+                      <tr key={`fee-${idx}`}
+                        className={`border-b border-gray-800 hover:bg-white/5 transition-colors duration-200 ${idx % 2 === 0 ? 'bg-white/[0.02]' : ''}`}
                       >
-                        <td className="py-4 px-6">{fee.rank}</td>
-                        <td className="py-4 px-6">{fee.fee}</td>
+                        <td className="py-4 px-6 font-semibold">{fee.rank}</td>
+                        <td className="py-4 px-6 text-yellow-400 font-semibold">{fee.fee}</td>
                         <td className="py-4 px-6">{fee.renewal}</td>
                       </tr>
-                        ))
-                      ];
-                    })()}
+                    ))}
                   </tbody>
                 </table>
               </div>

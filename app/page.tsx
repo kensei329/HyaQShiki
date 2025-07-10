@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="text-center mt-8">
           <Link 
             href="/curriculum" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] min-w-[200px] bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg touch-manipulation"
           >
             {t('home.methodology.viewCurriculum')}
             <i className="fas fa-arrow-right"></i>
@@ -293,7 +293,7 @@ export default function HomePage() {
                       <p className="text-gray-300 opacity-90 mb-6">{t(cert.desc)}</p>
                     </div>
                     <div className="flex justify-between items-center">
-                      <a href="/certification" className="px-6 py-3 bg-white/10 rounded-lg text-white backdrop-blur-sm hover:bg-yellow-500 transition-colors ">
+                      <a href="/certification" className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[120px] bg-white/10 rounded-lg text-white backdrop-blur-sm hover:bg-yellow-500 transition-colors touch-manipulation">
                         {t('learnMore')}
                       </a>
                       <div 
@@ -338,7 +338,7 @@ export default function HomePage() {
         <div className="text-center mt-8">
             <Link 
               href="/pricing" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] min-w-[200px] bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg touch-manipulation"
             >
               {t('curriculum.cta.pricing')}
               <i className="fas fa-arrow-right"></i>
