@@ -158,8 +158,15 @@ type TranslationKeys =
   | 'certification.gold.title' | 'certification.gold.desc'
   | 'certification.platina.title' | 'certification.platina.desc'
   | 'certification.black.title' | 'certification.black.desc'
-  | 'certification.levels.title' | 'certification.eval.item1' | 'certification.eval.item2'
-  | 'certification.eval.item3'
+  | 'certification.levels.title'   | 'certification.eval.item1' | 'certification.eval.item1.desc' | 'certification.eval.item2' | 'certification.eval.item2.desc'
+  | 'certification.eval.item3' | 'certification.eval.item3.desc'
+  | 'certification.evaluation.method' | 'certification.certificate.about' | 'certification.certificate.format'
+  | 'certification.certificate.desc' | 'certification.certificate.detail1' | 'certification.certificate.detail2'
+  | 'certification.certificate.detail3' | 'certification.certificate.cycle' | 'certification.certificate.validity'
+  | 'certification.certificate.renewal' | 'certification.certificate.renewal1' | 'certification.certificate.renewal2'
+  | 'certification.certificate.expiration' | 'certification.certificate.expirationInfo' | 'certification.exam.fees'
+  | 'certification.cta.title' | 'certification.cta.subtitle' | 'certification.cta.apply'
+  | 'certification.evaluation.criteria.title'
   
   // Corporate Page
   | 'corporate.title' | 'corporate.subtitle' | 'corporate.description' | 'corporate.benefits.title'
@@ -1121,7 +1128,7 @@ const en: TranslationsType = {
   // Satisfaction Guarantee
   'pricing.guarantee.title': 'Satisfaction Guarantee',
   'pricing.guarantee.subtitle': '14-Day Full Refund Policy',
-  'pricing.guarantee.desc': 'We are confident in the quality of our program. That's why HyaQShiki offers a 14-day full refund — no questions asked.',
+  'pricing.guarantee.desc': 'We are confident in the quality of our program. That\'s why HyaQShiki offers a 14-day full refund — no questions asked.',
   'pricing.guarantee.conditions.title': 'Eligibility Conditions',
   'pricing.guarantee.conditions.condition1': 'Request must be submitted within 14 days of enrollment',
   'pricing.guarantee.conditions.condition2': 'Must meet assignment submission and progress criteria',
@@ -1162,7 +1169,7 @@ const en: TranslationsType = {
   'pricing.satisfaction.title': 'Satisfaction Guarantee',
   'pricing.satisfaction.alt': 'HyaQShiki Satisfaction Guarantee',
   'pricing.satisfaction.guarantee': '14-Day Full Refund Policy',
-  'pricing.satisfaction.desc': 'We are confident in the quality of our program. That's why HyaQShiki offers a 14-day full refund — no questions asked.',
+  'pricing.satisfaction.desc': 'We are confident in the quality of our program. That\'s why HyaQShiki offers a 14-day full refund — no questions asked.',
   'pricing.satisfaction.eligibility': 'Eligibility Conditions',
   'pricing.satisfaction.application': 'How to Apply',
   'pricing.satisfaction.application.desc': 'Please inform your mentor or customer support if you wish to request a refund. A dedicated form will be provided for submission.',
