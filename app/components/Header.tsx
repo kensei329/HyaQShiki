@@ -118,7 +118,7 @@ export default function Header() {
             <button 
               data-lang-trigger
               onClick={() => setMobileLangOpen(!mobileLangOpen)}
-              className="text-white p-2 focus:outline-none" 
+              className="text-white p-2 focus:outline-none transition-all duration-300 hover:scale-110 active:scale-95 transform-gpu touch-manipulation" 
               aria-label="Change language"
             >
               <svg 
@@ -161,7 +161,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button 
             data-mobile-trigger
-            className="text-white p-2 focus:outline-none"
+            className="text-white p-2 focus:outline-none transition-all duration-300 hover:scale-110 active:scale-95 transform-gpu touch-manipulation"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -191,7 +191,7 @@ export default function Header() {
                 <Link 
                   key={item.path}
                   href={item.path} 
-                  className={`ml-1 px-3 py-1.5 rounded font-bold flex items-center gap-1 transition-colors ${
+                  className={`ml-1 px-3 py-1.5 rounded font-bold flex items-center gap-1 transition-all duration-300 hover:scale-105 active:scale-95 transform-gpu touch-manipulation ${
                     isActive(item.path) 
                       ? 'bg-yellow-500 text-black hover:bg-yellow-400' 
                       : 'bg-yellow-400 text-black hover:bg-yellow-300'
@@ -203,7 +203,7 @@ export default function Header() {
                 <Link 
                   key={item.path}
                   href={item.path} 
-                  className={`px-2 flex items-center gap-1 whitespace-nowrap relative ${
+                  className={`px-2 flex items-center gap-1 whitespace-nowrap relative transition-all duration-300 hover:scale-105 active:scale-95 transform-gpu touch-manipulation ${
                     isActive(item.path) 
                       ? 'text-yellow-400 font-medium' 
                       : 'text-white hover:text-yellow-400'
@@ -222,7 +222,7 @@ export default function Header() {
           <div ref={langRef} className="relative ml-2">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="border border-white text-white px-3 py-1.5 rounded hover:bg-white hover:text-black transition text-xs"
+              className="border border-white text-white px-3 py-1.5 rounded hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 active:scale-95 transform-gpu touch-manipulation text-xs"
             >
               {t('nav.language')} {language.toUpperCase()} ▾
             </button>

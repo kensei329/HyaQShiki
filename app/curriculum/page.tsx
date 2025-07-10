@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 export default function CurriculumPage() {
   const { t } = useLanguage();
@@ -549,18 +550,18 @@ export default function CurriculumPage() {
           <h2 className="text-3xl font-bold mb-4">{t('curriculum.cta.title')}</h2>
           <p className="text-xl mb-8 text-gray-300">{t('curriculum.cta.subtitle')}</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
+            <Link 
               href="/contact" 
-              className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-3 rounded-lg font-bold transition-transform duration-300"
+              className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-3 rounded-lg font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 transform-gpu touch-manipulation"
             >
               {t('curriculum.cta.free_trial')}
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/pricing" 
-              className="bg-transparent hover:bg-gray-800 text-white border-2 border-white px-8 py-3 rounded-lg font-bold transition-colors"
+              className="bg-transparent hover:bg-gray-800 text-white border-2 border-white px-8 py-3 rounded-lg font-bold transition-all duration-300 hover:scale-105 active:scale-95 transform-gpu touch-manipulation"
             >
               {t('curriculum.cta.pricing')}
-            </a>
+            </Link>
         </div>
         </div>
       </section>

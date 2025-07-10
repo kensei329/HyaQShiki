@@ -6,6 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { useEffect } from 'react';
 import { Parallax } from 'react-parallax';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function TestimonialsPage() {
   const { t, language } = useLanguage();
@@ -178,9 +179,9 @@ export default function TestimonialsPage() {
               {t('testimonials.cta.desc')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a 
+              <Link 
                 href="/contact" 
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] bg-black hover:bg-gray-800 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg touch-manipulation"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] bg-black hover:bg-gray-800 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 transform-gpu touch-manipulation"
               >
                 <span>
                   {t('testimonials.cta.free_trial')}
@@ -188,13 +189,13 @@ export default function TestimonialsPage() {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
-              </a>
-              <a 
+              </Link>
+              <Link 
                 href="/pricing" 
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] bg-transparent hover:bg-black/10 text-black border-2 border-black font-bold rounded-full transition-all duration-300 hover:scale-105 touch-manipulation"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] bg-transparent hover:bg-black/10 text-black border-2 border-black font-bold rounded-full transition-all duration-300 hover:scale-105 active:scale-95 transform-gpu touch-manipulation"
               >
                 {t('testimonials.cta.pricing')}
-              </a>
+              </Link>
             </div>
           </div>
         </section>

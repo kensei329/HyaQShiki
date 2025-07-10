@@ -107,7 +107,7 @@ export default function HomePage() {
               <div>
                   <a 
                     href="#features" 
-                    className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
+                    className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 text-sm sm:text-base transform-gpu touch-manipulation"
                   >
                     {t('learnMore')}
                   </a>
@@ -122,7 +122,7 @@ export default function HomePage() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-6 h-6 mx-2 rounded-full transition-all duration-300 ${
+              className={`w-6 h-6 mx-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 transform-gpu touch-manipulation ${
                 currentSlide === index 
                   ? 'bg-yellow-400 scale-110' 
                   : 'bg-gray-400 bg-opacity-50 hover:bg-opacity-75'
@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="text-center mt-8">
           <Link 
             href="/curriculum" 
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] min-w-[200px] bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg touch-manipulation"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] min-w-[200px] bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 transform-gpu touch-manipulation"
           >
             {t('home.methodology.viewCurriculum')}
             <i className="fas fa-arrow-right"></i>
@@ -293,9 +293,9 @@ export default function HomePage() {
                       <p className="text-gray-300 opacity-90 mb-6">{t(cert.desc)}</p>
                     </div>
                     <div className="flex justify-between items-center">
-                      <a href="/certification" className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[120px] bg-white/10 rounded-lg text-white backdrop-blur-sm hover:bg-yellow-500 transition-colors touch-manipulation">
+                      <Link href="/certification" className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[120px] bg-white/10 rounded-lg text-white backdrop-blur-sm hover:bg-yellow-500 transition-all duration-300 hover:scale-105 active:scale-95 transform-gpu touch-manipulation">
                         {t('learnMore')}
-                      </a>
+                      </Link>
                       <div 
                         className="w-10 h-10 rounded-full flex items-center justify-center"
                       >
@@ -338,7 +338,7 @@ export default function HomePage() {
         <div className="text-center mt-8">
             <Link 
               href="/pricing" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] min-w-[200px] bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg touch-manipulation"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] min-w-[200px] bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 transform-gpu touch-manipulation"
             >
               {t('curriculum.cta.pricing')}
               <i className="fas fa-arrow-right"></i>

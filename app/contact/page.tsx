@@ -185,7 +185,7 @@ export default function ContactPage() {
                   <textarea id="message" name="entry.602941244" rows={5} required className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-800/50 text-white" placeholder="お問い合わせ内容を入力してください..."></textarea>
                 </div>
                 <div className="text-center pt-2 sm:pt-4">
-                  <button type="submit" className="bg-yellow-500 text-gray-900 font-bold py-2.5 sm:py-3 px-8 sm:px-10 rounded-lg shadow-md transition duration-300" disabled={status === 'sending'}>
+                  <button type="submit" className="bg-yellow-500 text-gray-900 font-bold py-2.5 sm:py-3 px-8 sm:px-10 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 transform-gpu touch-manipulation" disabled={status === 'sending'}>
                     {status === 'sending' ? '送信中...' : '送信'}
                   </button>
                   {status === 'success' && <p className="text-green-500 mt-2">送信完了しました。</p>}
