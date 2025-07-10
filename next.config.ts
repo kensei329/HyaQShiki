@@ -8,20 +8,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // GitHub PagesではNext.jsの画像最適化がデフォルトでは機能しないため
   },
+  reactStrictMode: true,
   // experimental: {
   //   appDir: true,
   // },
 };
-
-// next.config.js
-const nextConfig = {
-  reactStrictMode: true,
-  experimental: {
-    appDir: true,
-  },
-};
-
-module.exports = nextConfig;
-
 
 export default nextConfig;

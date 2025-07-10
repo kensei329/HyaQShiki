@@ -249,15 +249,11 @@ type TranslationKeys =
   | 'curriculum.stack.backend.title' | 'curriculum.stack.backend.head' | 'curriculum.stack.backend.list1'
   | 'curriculum.stack.backend.list2'
   
-  // Add these keys for certification evaluation text
-  | 'certification.evaluation.criteria.title'
-  
   // Certification page section titles
   | 'certification.about' | 'certification.ranks' | 'certification.evaluation.method'
   | 'certification.certificate.about' | 'certification.certificate.format'
   | 'certification.certificate.cycle' | 'certification.certificate.renewal'
   | 'certification.certificate.expiration' | 'certification.exam.fees'
-  | 'certification.evaluation.criteria'
   | 'certification.cta.title' | 'certification.cta.subtitle' | 'certification.cta.apply'
   
   // Corporate Testimonials
@@ -637,6 +633,7 @@ const ja: TranslationsType = {
   'certification.subtitle': '能力を証明する4段階の認定制度',
   'certification.desc': '当プログラムでは、学習の成果を客観的に証明できる4段階の資格制度を設けています。',
   'certification.about': '認定制度について',
+  'certification.ranks': '認定ランク',
   'certification.overview.point1.title': '実践的なスキル評価',
   'certification.overview.point1.desc': '理論だけでなく、実際のアプリケーション開発能力を評価します。',
   'certification.overview.point2.title': '国際的な認知',
@@ -675,18 +672,6 @@ const ja: TranslationsType = {
   'certification.cta.subtitle': 'HyaQShiki認定は、生成AI時代におけるスキルを証明する強力なツールです。',
   'certification.cta.apply': '認定試験に申し込む',
   'certification.evaluation.criteria.title': '認定基準',
-  'certification.about': '認定資格について',
-  'certification.ranks': '認定ランク',
-  'certification.certificate.about': '証明書について',
-  'certification.certificate.format': '証明書の配布形式',
-  'certification.certificate.cycle': '認定サイクル',
-  'certification.certificate.renewal': '更新費用',
-  'certification.certificate.expiration': '更新期限・失効ルール',
-  'certification.exam.fees': '資格受験料',
-  'certification.evaluation.criteria': '評価基準：',
-  'certification.cta.title': 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？',
-  'certification.cta.subtitle': 'HyaQShiki認定資格は、生成AI時代のスキルを証明する強力なツールです。',
-  'certification.cta.apply': '資格受験に申し込む',
   'home.satisfaction.badge': 'サービス品質保証',
   
   // Corporate Page
@@ -862,25 +847,6 @@ const ja: TranslationsType = {
   'curriculum.stack.backend.head': 'サーバーサイド技術',
   'curriculum.stack.backend.list1': 'Node.js（サーバーサイドJavaScript）',
   'curriculum.stack.backend.list2': 'Googleスプレッドシート',
-  
-  // Add these keys for certification evaluation text
-  'certification.evaluation.criteria.title': '認定基準',
-  
-  // Certification page section titles
-  'certification.about': '認定資格について',
-  'certification.ranks': '認定ランク',
-  'certification.evaluation.method': '評価方法',
-  'certification.certificate.about': '証明書について',
-  'certification.certificate.format': '証明書の配布形式',
-  'certification.certificate.cycle': '認定サイクル',
-  'certification.certificate.renewal': '更新費用',
-  'certification.certificate.expiration': '更新期限・失効ルール',
-  'certification.exam.fees': '資格受験料',
-  'certification.evaluation.criteria': '評価基準：',
-  'certification.cta.title': 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？',
-  'certification.cta.subtitle': 'HyaQShiki認定資格は、生成AI時代のスキルを証明する強力なツールです。',
-  'certification.cta.apply': '資格受験に申し込む',
-  'home.satisfaction.badge': 'サービス品質保証',
   
   // Corporate Testimonials
   'corporate.testimonials.person1.name': '田中 太郎',
@@ -1195,6 +1161,7 @@ const en: TranslationsType = {
   'certification.subtitle': 'Four-Level Certification System to Prove Your Skills',
   'certification.desc': 'Our program offers a four-level certification system to objectively prove your learning achievements.',
   'certification.about': 'About Certification',
+  'certification.ranks': 'Certification Ranks',
   'certification.overview.point1.title': 'Practical Skill Assessment',
   'certification.overview.point1.desc': 'Evaluates not only theory but also actual application development capabilities.',
   'certification.overview.point2.title': 'International Recognition',
@@ -1233,6 +1200,7 @@ const en: TranslationsType = {
   'certification.cta.subtitle': 'HyaQShiki Certification is a powerful tool to prove your skills in the era of generative AI.',
   'certification.cta.apply': 'Apply for Certification Exam',
   'certification.evaluation.criteria.title': 'Certification Criteria',
+  'home.satisfaction.badge': 'Satisfaction Guarantee',
 
   // Corporate Page
   'corporate.title': 'Corporate Partnership',
@@ -1301,6 +1269,74 @@ const en: TranslationsType = {
   'philosophy.cta.desc': 'Take the first step as a creator in the AI era with HyaQShiki.',
   'philosophy.cta.button': 'Contact Us',
   
+  'sponsor.overview.title': 'Sponsor Program Overview',
+  'sponsor.overview.question': 'What is the HyaQShiki Sponsor Program?',
+  'sponsor.overview.description': 'At HyaQShiki, we cultivate the next generation of developers with 100x productivity in the era of generative AI. We integrate real-world corporate projects into our curriculum to provide simultaneous learning and practical experience.',
+  'sponsor.overview.benefit1': 'Students gain hands-on experience by tackling real business challenges.',
+  'sponsor.overview.benefit2': 'Early access to top talent who may become future hires.',
+
+  'sponsor.benefits.title': 'Benefits for Sponsor Companies',
+  'sponsor.benefits.benefit1': 'Innovation Generation',
+  'sponsor.benefits.benefit1.description': 'Develop new solutions from fresh perspectives, powered by the latest AI technologies and youthful creativity.',
+  'sponsor.benefits.benefit2': 'Talent Development Support',
+  'sponsor.benefits.benefit2.description': 'Boost internal AI literacy and engage in meaningful exchanges with students.',
+  'sponsor.benefits.benefit3': 'Recruitment Pipeline',
+  'sponsor.benefits.benefit3.description': 'Identify promising students early and build strong connections for future hiring.',
+  'sponsor.benefits.benefit4': 'Branding',
+  'sponsor.benefits.benefit4.description': 'Enhance your reputation as a forward-thinking company committed to talent development.',
+
+  'education.integration.title': 'Integration of Corporate Projects and Education',
+  'education.integration.integration': 'Hands-on Skills with Real Challenges',
+  'education.integration.description': 'By incorporating actual business projects into the educational curriculum, HyaQShiki provides students with practical experience and delivers valuable outcomes to companies.',
+  'education.integration.example': 'Examples of Collaborative Projects',
+  'education.integration.example1': 'Web Application Development',
+  'education.integration.example2': 'Data Analysis and Visualization',
+  'education.integration.example3': 'AI Feature Integration',
+  'education.integration.example4': 'UI/UX Design Enhancement',
+  'education.integration.example5': 'Business Efficiency Tools',
+  'education.integration.brief': 'Project Overview',
+  'education.integration.brief.description': 'Company-provided projects are tailored to match student levels and curriculum progress, ensuring both educational and practical value.',
+
+  'special.certified.partner.title': 'Certified Partner Program',
+  'special.certified.partner.certified': 'Become a Certified HyaQShiki Partner',
+  'special.certified.partner.description': 'Companies engaged in ongoing collaboration can obtain special status and benefits as Certified Partners of HyaQShiki.',
+  'special.certified.partner.logo': 'Use of Certified Logo',
+  'special.certified.partner.logo.description': 'Display the HyaQShiki Certified Partner logo on your website and marketing materials.',
+  'special.certified.partner.project': 'Priority Project Participation',
+  'special.certified.partner.project.description': 'Get priority in providing company challenges for student research and capstone projects.',
+  'special.certified.partner.commercialization': 'Commercialization Support',
+  'special.certified.partner.commercialization.description': 'Receive preferential support in commercializing or implementing student-developed solutions.',
+  'special.certified.partner.talent': 'Talent Referral',
+  'special.certified.partner.talent.description': 'Gain early access to graduates who best fit your hiring needs.',
+
+  'partner.testimonials.title': 'Voices from Partner Companies',
+  'partner.testimonials.testimonial1': 'Through our collaboration with HyaQShiki, we uncovered new solutions to internal challenges. The students’ creative thinking and technological insight far exceeded our expectations.',
+  'partner.testimonials.name1': 'Kentaro Yamada',
+  'partner.testimonials.position1': 'CTO, TechnoFuture Inc.',
+  'partner.testimonials.testimonial2': 'What started as a talent development initiative turned into a source of new business ideas. The students’ dedication has inspired even our employees.',
+  'partner.testimonials.name2': 'Misaki Sato',
+  'partner.testimonials.position2': 'HR Director, Global Innovation Co., Ltd.',
+
+  'contact.partnership.flow.title': 'Partnership Process',
+  'contact.partnership.flow.step1': 'Company Information Registration',
+  'contact.partnership.flow.step2': 'Online Meeting',
+  'contact.partnership.flow.step3': 'Project Registration',
+  'contact.partnership.flow.step4': 'Mentoring',
+  'contact.partnership.flow.step5': 'Deliverables Submission',
+  'contact.partnership.flow.step6': 'Feedback',
+  'contact.partnership.flow.company.form': 'Company Information Registration',
+  'contact.partnership.flow.company.form.desc': 'Submit your company information through our form, including your goals and project outlines.',
+  'contact.partnership.flow.online.meeting': 'Online Meeting',
+  'contact.partnership.flow.online.meeting.desc': 'Discuss project specifics and collaboration direction in an initial online meeting.',
+  'contact.partnership.flow.project.registration': 'Project Registration',
+  'contact.partnership.flow.project.registration.desc': 'Finalize the project scope and adjust it to suit educational needs. NDAs may be signed as necessary.',
+  'contact.partnership.flow.mentoring': 'Mentoring',
+  'contact.partnership.flow.mentoring.desc': 'Company representatives may provide guidance or feedback to students throughout the project.',
+  'contact.partnership.flow.deliverable': 'Deliverables Submission',
+  'contact.partnership.flow.deliverable.desc': 'Upon project completion, students present deliverables and receive feedback in a review session.',
+  'contact.partnership.flow.feedback': 'Feedback',
+  'contact.partnership.flow.feedback.desc': 'After project completion, feedback from both companies and students will be collected and used to improve future programs and foster ongoing collaboration.',
+
   // Contact Page
   'contact.title': 'Contact',
   'contact.subtitle': 'Feel free to contact us for any inquiries.',
