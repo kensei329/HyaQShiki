@@ -69,12 +69,12 @@ export default function CertificationPage() {
               <h1 
                 className="text-4xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200"
               >
-                {certificationHero.title[language]}
+                {t('certification.title')}
               </h1>
               <p 
                 className="text-xl md:text-2xl font-light text-yellow-50 mb-6"
               >
-                {certificationHero.subtitle[language]}
+                {t('certification.subtitle')}
               </p>
             </div>
           </Parallax>
@@ -89,7 +89,7 @@ export default function CertificationPage() {
             <h2 
               className="text-4xl font-bold text-center mb-4"
             >
-              {certificationOverview.title[language]}
+              {t('certification.about')}
             </h2>
             <div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
@@ -99,15 +99,15 @@ export default function CertificationPage() {
               className="backdrop-blur-md bg-white/5 rounded-xl p-8 md:p-12 mt-10"
             >
               <p className="text-xl text-center mb-12 leading-relaxed">
-                {certificationOverview.description[language]}
+                {t('certification.desc')}
               </p>
               
               <div className="grid md:grid-cols-2 gap-8">
-                {certificationOverview.points.slice(0, 2).map((point, index) => (
-                  <div key={index} className="bg-white/5 rounded-xl p-6 border-l-4 border-yellow-500">
-                    <div className="bg-yellow-500 text-black font-semibold w-8 h-8 rounded-full flex items-center justify-center mb-4">{index + 1}</div>
-                    <h3 className="text-lg font-semibold mb-2">{point.title[language]}</h3>
-                    <p className="text-gray-200 leading-relaxed">{point.description[language]}</p>
+                {[1,2].map((idx) => (
+                  <div key={idx} className="bg-white/5 rounded-xl p-6 border-l-4 border-yellow-500">
+                    <div className="bg-yellow-500 text-black font-semibold w-8 h-8 rounded-full flex items-center justify-center mb-4">{idx}</div>
+                    <h3 className="text-lg font-semibold mb-2">{t(`certification.overview.point${idx}.title`)}</h3>
+                    <p className="text-gray-200 leading-relaxed">{t(`certification.overview.point${idx}.desc`)}</p>
                   </div>
                 ))}
               </div>
@@ -137,30 +137,30 @@ export default function CertificationPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: 'Silver', desc: 'home.silver', passRate: '72%', bg: 'bg-gradient-to-br from-gray-400 to-gray-600', textColor: 'text-white', icon: 'medal' },
-              { title: 'Gold', desc: 'home.gold', passRate: '48%', bg: 'bg-gradient-to-br from-yellow-500 to-amber-600', textColor: 'text-white', icon: 'trophy' },
-              { title: 'Platina', desc: 'home.platina', passRate: '26%', bg: 'bg-gradient-to-br from-gray-100 to-gray-300', textColor: 'text-gray-900', icon: 'gem' },
-              { title: 'Black', desc: 'home.black', passRate: '9%', bg: 'bg-gradient-to-br from-gray-900 to-black', textColor: 'text-white', icon: 'crown' }
+              { title: t('certification.silver.title'), desc: 'certification.silver.desc', passRate: '72%', bg: 'bg-gradient-to-br from-gray-400 to-gray-600', textColor: 'text-white', icon: 'medal' },
+              { title: t('certification.gold.title'), desc: 'certification.gold.desc', passRate: '48%', bg: 'bg-gradient-to-br from-yellow-500 to-amber-600', textColor: 'text-white', icon: 'trophy' },
+              { title: t('certification.platina.title'), desc: 'certification.platina.desc', passRate: '26%', bg: 'bg-gradient-to-br from-gray-100 to-gray-300', textColor: 'text-gray-900', icon: 'gem' },
+              { title: t('certification.black.title'), desc: 'certification.black.desc', passRate: '9%', bg: 'bg-gradient-to-br from-gray-900 to-black', textColor: 'text-white', icon: 'crown' }
             ].map((cert, index) => (
               <div 
                 key={index}
                 className="group perspective"
               >
                 <div 
-                  className={`rounded-xl overflow-hidden shadow-lg ${cert.title === 'Black' ? 'shadow-yellow-500/20' : ''} h-full transform-gpu transition-all duration-500 group-hover:shadow-2xl border border-gray-800`}
+                  className={`rounded-xl overflow-hidden shadow-lg ${cert.title === t('certification.black.title') ? 'shadow-yellow-500/20' : ''} h-full transform-gpu transition-all duration-500 group-hover:shadow-2xl border border-gray-800`}
                 >
                   <div className={`${cert.bg} h-24 relative flex items-center justify-center`}>
                     <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('/images/certificate-pattern.png')]"></div>
-                    <i className={`fas fa-${cert.icon} text-4xl ${cert.title === 'Platina' ? 'text-gray-900' : 'text-white'}`}></i>
+                    <i className={`fas fa-${cert.icon} text-4xl ${cert.title === t('certification.platina.title') ? 'text-gray-900' : 'text-white'}`}></i>
                     <div className="absolute -bottom-5 right-5 w-20 h-20 rounded-full bg-black/80 backdrop-blur-sm border border-gray-700 shadow-lg flex flex-col items-center justify-center">
-                      <span className={`text-sm font-semibold ${cert.title === 'Platina' ? 'text-gray-200' : 'text-white'}`}>{t('passRate')}</span>
-                      <span className={`text-lg font-bold ${cert.title === 'Gold' ? 'text-yellow-500' : cert.title === 'Platina' ? 'text-gray-200' : 'text-white'}`}>{cert.passRate}</span>
+                      <span className={`text-sm font-semibold ${cert.title === t('certification.platina.title') ? 'text-gray-200' : 'text-white'}`}>{t('passRate')}</span>
+                      <span className={`text-lg font-bold ${cert.title === t('certification.gold.title') ? 'text-yellow-500' : cert.title === t('certification.platina.title') ? 'text-gray-200' : 'text-white'}`}>{cert.passRate}</span>
                     </div>
                   </div>
                   <div className="p-8 bg-black flex-grow flex flex-col justify-between">
                     <div>
                       <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-xs font-semibold mb-6 backdrop-blur-sm">CERTIFICATION</span>
-                      <h3 className={`text-2xl font-bold mb-4 ${cert.title === 'Gold' ? 'text-yellow-500' : cert.title === 'Platina' ? 'text-gray-200' : cert.textColor}`}>{cert.title}</h3>
+                      <h3 className={`text-2xl font-bold mb-4 ${cert.title === t('certification.gold.title') ? 'text-yellow-500' : cert.title === t('certification.platina.title') ? 'text-gray-200' : cert.textColor}`}>{cert.title}</h3>
                       <p className="text-gray-300 opacity-90 mb-6">{t(cert.desc)}</p>
                     </div>
                   </div>
@@ -181,28 +181,25 @@ export default function CertificationPage() {
             <h2 
               className="text-4xl font-bold text-center mb-4"
             >
-              {certificationEvaluation.title[language]}
+              {t('certification.evaluation.method')}
             </h2>
             <div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
             ></div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {certificationEvaluation.processes.map((process, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white/5 rounded-xl p-8 border border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 text-left"
-                >
+              {['certification.eval.item1','certification.eval.item2','certification.eval.item3'].map((key, index) => (
+                <div key={index} className="bg-white/5 rounded-xl p-8 border border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 text-left">
                   <div className="flex justify-center mb-4">
                     <div className="bg-yellow-400 text-black w-14 h-14 flex items-center justify-center rounded-full text-3xl">
-                      <i className={`fas ${process.icon}`}></i>
+                      <i className={`fas ${['fa-file-alt','fa-code','fa-users'][index]}`}></i>
                     </div>
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-yellow-400 text-left">
-                    {process.title[language]}
+                    {t(key)}
                   </h3>
                   <p className="text-gray-200 text-left leading-relaxed">
-                    {process.description[language]}
+                    {t(`${key}.desc`)}
                   </p>
                 </div>
               ))}
@@ -221,7 +218,7 @@ export default function CertificationPage() {
             <h2 
               className="text-4xl font-bold text-center mb-4"
             >
-              {certificationCertificate.title[language]}
+              {t('certification.certificate.about')}
             </h2>
             <div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-14"
@@ -252,49 +249,46 @@ export default function CertificationPage() {
                   {t('certification.certificate.format')}
                 </h3>
                 <p className="mb-4 text-gray-200">
-                  {certificationCertificate.description[language]}
+                  {t('certification.certificate.desc')}
                 </p>
                 <ul className="mb-8 space-y-2">
-                  {certificationCertificate.details.map((detail, idx) => (
+                  {[1,2,3].map((idx) => (
                     <li key={idx} className="flex items-start">
                       <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                       <span className="text-gray-200">
-                        {detail[language]}
+                        {t(`certification.certificate.detail${idx}`)}
                       </span>
                     </li>
                   ))}
                 </ul>
-                
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
                   {t('certification.certificate.cycle')}
                 </h3>
                 <p className="mb-4 text-gray-200">
-                  {certificationCertificate.validityPeriod[language]}
+                  {t('certification.certificate.validity')}
                 </p>
-                
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
                   {t('certification.certificate.renewal')}
                 </h3>
                 <ul className="mb-4 space-y-2">
-                  {certificationCertificate.renewalInfo.map((info, idx) => (
+                  {[1,2].map((idx) => (
                     <li key={idx} className="flex items-start">
                       <svg className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                       <span className="text-gray-200">
-                        {info[language]}
+                        {t(`certification.certificate.renewal${idx}`)}
                       </span>
                     </li>
                   ))}
                 </ul>
-                
                 <h3 className="text-xl font-bold mb-2 text-yellow-400">
                   {t('certification.certificate.expiration')}
                 </h3>
                 <p className="text-gray-200">
-                  {certificationCertificate.expirationInfo[language]}
+                  {t('certification.certificate.expirationInfo')}
                 </p>
               </div>
             </div>
@@ -311,7 +305,7 @@ export default function CertificationPage() {
             <h2 
               className="text-4xl font-bold text-center mb-4"
             >
-              {certificationFeeSection.title[language]}
+              {t('certification.exam.fees')}
             </h2>
             <div 
               className="w-24 h-1 bg-yellow-400 mx-auto mb-6"
@@ -345,9 +339,9 @@ export default function CertificationPage() {
                       <tr key={`fee-${idx}`}
                         className={`border-b border-gray-800 hover:bg-white/5 transition-colors duration-200 ${idx % 2 === 0 ? 'bg-white/[0.02]' : ''}`}
                       >
-                        <td className="py-4 px-6 font-semibold">{fee.rank}</td>
+                        <td className="py-4 px-6 font-semibold">{t(`certification.${fee.rank.toLowerCase()}.title`)}</td>
                         <td className="py-4 px-6 text-yellow-400 font-semibold">{fee.fee}</td>
-                        <td className="py-4 px-6">{fee.renewal}</td>
+                        <td className="py-4 px-6">{t('certification.certificate.renewal')}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -368,12 +362,12 @@ export default function CertificationPage() {
             <h2 
               className="text-4xl font-bold mb-4"
             >
-              {certificationCTA.title[language]}
+              {t('certification.cta.title')}
             </h2>
             <p 
               className="text-xl mb-10 opacity-90 max-w-3xl mx-auto"
             >
-              {certificationCTA.subtitle[language]}
+              {t('certification.cta.subtitle')}
             </p>
             <div
             >
@@ -382,7 +376,7 @@ export default function CertificationPage() {
                 className="inline-flex items-center gap-2 px-8 py-4 bg-black hover:bg-gray-800 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 <span>
-                  {certificationCTA.buttonText[language]}
+                  {t('certification.cta.apply')}
                 </span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

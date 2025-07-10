@@ -152,6 +152,8 @@ type TranslationKeys =
   
   // Certification Page
   | 'certification.title' | 'certification.subtitle' | 'certification.desc'
+  | 'certification.about' | 'certification.overview.point1.title' | 'certification.overview.point1.desc'
+  | 'certification.overview.point2.title' | 'certification.overview.point2.desc'
   | 'certification.silver.title' | 'certification.silver.desc'
   | 'certification.gold.title' | 'certification.gold.desc'
   | 'certification.platina.title' | 'certification.platina.desc'
@@ -241,8 +243,7 @@ type TranslationKeys =
   | 'curriculum.stack.backend.list2'
   
   // Add these keys for certification evaluation text
-  | 'certification.evaluation.criteria.title.ja'
-  | 'certification.evaluation.criteria.title.en'
+  | 'certification.evaluation.criteria.title'
   
   // Certification page section titles
   | 'certification.about' | 'certification.ranks' | 'certification.evaluation.method'
@@ -628,18 +629,58 @@ const ja: TranslationsType = {
   'certification.title': '資格認定',
   'certification.subtitle': '能力を証明する4段階の認定制度',
   'certification.desc': '当プログラムでは、学習の成果を客観的に証明できる4段階の資格制度を設けています。',
+  'certification.about': '認定制度について',
+  'certification.overview.point1.title': '実践的なスキル評価',
+  'certification.overview.point1.desc': '理論だけでなく、実際のアプリケーション開発能力を評価します。',
+  'certification.overview.point2.title': '国際的な認知',
+  'certification.overview.point2.desc': 'グローバルに通用する技術者としてのスキルを証明します。',
   'certification.silver.title': 'Silver認定',
   'certification.silver.desc': 'AIを活用した基本的な開発スキルを有することを証明',
   'certification.gold.title': 'Gold認定',
   'certification.gold.desc': '実践的なアプリ開発ができるレベルに到達したことを証明',
   'certification.platina.title': 'Platinum認定',
-  'certification.platina.desc': '高度なAI統合と応用設計ができる上級者レベルの証明',
+  'certification.platina.desc': '高度なAI統合と応用設計ができる上級者の証明',
   'certification.black.title': 'Black認定',
   'certification.black.desc': '自立してイノベーションを起こせる最高レベルの証明',
   'certification.levels.title': '4つの認定ランク',
+  'certification.evaluation.method': '評価方法',
   'certification.eval.item1': 'アプリ完成度、設計力、AI活用度、実装力などで総合評価',
+  'certification.eval.item1.desc': '提出された書類とポートフォリオの審査',
   'certification.eval.item2': '合格者はPDF証明書発行 + 認定者リストに掲載（URL共有可）',
+  'certification.eval.item2.desc': 'AI活用技術とコーディングスキルの実技試験',
   'certification.eval.item3': '上位資格ほど難易度が高く、採用やVC評価にも有効',
+  'certification.eval.item3.desc': '技術力とコミュニケーション能力の確認',
+  'certification.certificate.about': '認定証について',
+  'certification.certificate.format': '証明書形式',
+  'certification.certificate.desc': 'デジタル技術を活用した最新の認定証システム',
+  'certification.certificate.detail1': 'デジタル証明書',
+  'certification.certificate.detail2': 'ブロックチェーン認証',
+  'certification.certificate.detail3': '国際的に認められた資格',
+  'certification.certificate.cycle': '認定サイクル',
+  'certification.certificate.validity': '3年間有効',
+  'certification.certificate.renewal': '更新要件',
+  'certification.certificate.renewal1': '継続教育要件',
+  'certification.certificate.renewal2': '技術更新の確認',
+  'certification.certificate.expiration': '有効期限・更新',
+  'certification.certificate.expirationInfo': '3年後に更新が必要',
+  'certification.exam.fees': '受験料金',
+  'certification.cta.title': '公式にAI技術者としてのスキルを証明し、キャリアの可能性を広げましょう。',
+  'certification.cta.subtitle': 'HyaQShiki認定は、生成AI時代におけるスキルを証明する強力なツールです。',
+  'certification.cta.apply': '認定試験に申し込む',
+  'certification.evaluation.criteria.title': '認定基準',
+  'certification.about': '認定資格について',
+  'certification.ranks': '認定ランク',
+  'certification.certificate.about': '証明書について',
+  'certification.certificate.format': '証明書の配布形式',
+  'certification.certificate.cycle': '認定サイクル',
+  'certification.certificate.renewal': '更新費用',
+  'certification.certificate.expiration': '更新期限・失効ルール',
+  'certification.exam.fees': '資格受験料',
+  'certification.evaluation.criteria': '評価基準：',
+  'certification.cta.title': 'AIスキルを公式に証明し、キャリアの可能性を広げませんか？',
+  'certification.cta.subtitle': 'HyaQShiki認定資格は、生成AI時代のスキルを証明する強力なツールです。',
+  'certification.cta.apply': '資格受験に申し込む',
+  'home.satisfaction.badge': 'サービス品質保証',
   
   // Corporate Page
   'corporate.title': '企業連携',
@@ -816,8 +857,7 @@ const ja: TranslationsType = {
   'curriculum.stack.backend.list2': 'Googleスプレッドシート',
   
   // Add these keys for certification evaluation text
-  'certification.evaluation.criteria.title.ja': '認定基準',
-  'certification.evaluation.criteria.title.en': 'Certification Criteria',
+  'certification.evaluation.criteria.title': '認定基準',
   
   // Certification page section titles
   'certification.about': '認定資格について',
@@ -1081,7 +1121,7 @@ const en: TranslationsType = {
   // Satisfaction Guarantee
   'pricing.guarantee.title': 'Satisfaction Guarantee',
   'pricing.guarantee.subtitle': '14-Day Full Refund Policy',
-  'pricing.guarantee.desc': 'We are confident in the quality of our program. That’s why HyaQShiki offers a 14-day full refund — no questions asked.',
+  'pricing.guarantee.desc': 'We are confident in the quality of our program. That's why HyaQShiki offers a 14-day full refund — no questions asked.',
   'pricing.guarantee.conditions.title': 'Eligibility Conditions',
   'pricing.guarantee.conditions.condition1': 'Request must be submitted within 14 days of enrollment',
   'pricing.guarantee.conditions.condition2': 'Must meet assignment submission and progress criteria',
@@ -1101,7 +1141,7 @@ const en: TranslationsType = {
   // Payment
   'pricing.payment.title': 'Payment Methods',
   'pricing.payment.credit.title': 'Credit Card',
-  'pricing.payment.credit.desc': 'We accept VISA, MasterCard, JCB, American Express, and Diners Club.',
+  'pricing.payment.credit.desc': 'We accept VISA, MasterCard, JCB, American Express, Diners Club.',
   'pricing.payment.bank.title': 'Bank Transfer',
   'pricing.payment.bank.desc': 'Bank transfer details will be provided after registration. Bank fees are the responsibility of the applicant.',
   'pricing.payment.installment.title': 'Installment Plan',
@@ -1122,7 +1162,7 @@ const en: TranslationsType = {
   'pricing.satisfaction.title': 'Satisfaction Guarantee',
   'pricing.satisfaction.alt': 'HyaQShiki Satisfaction Guarantee',
   'pricing.satisfaction.guarantee': '14-Day Full Refund Policy',
-  'pricing.satisfaction.desc': 'We are confident in the quality of our program. That’s why HyaQShiki offers a 14-day full refund — no questions asked.',
+  'pricing.satisfaction.desc': 'We are confident in the quality of our program. That's why HyaQShiki offers a 14-day full refund — no questions asked.',
   'pricing.satisfaction.eligibility': 'Eligibility Conditions',
   'pricing.satisfaction.application': 'How to Apply',
   'pricing.satisfaction.application.desc': 'Please inform your mentor or customer support if you wish to request a refund. A dedicated form will be provided for submission.',
@@ -1147,6 +1187,11 @@ const en: TranslationsType = {
   'certification.title': 'Certification',
   'certification.subtitle': 'Four-Level Certification System to Prove Your Skills',
   'certification.desc': 'Our program offers a four-level certification system to objectively prove your learning achievements.',
+  'certification.about': 'About Certification',
+  'certification.overview.point1.title': 'Practical Skill Assessment',
+  'certification.overview.point1.desc': 'Evaluates not only theory but also actual application development capabilities.',
+  'certification.overview.point2.title': 'International Recognition',
+  'certification.overview.point2.desc': 'Proves skills as a globally recognized engineer.',
   'certification.silver.title': 'Silver Certification',
   'certification.silver.desc': 'Proves basic development skills using AI',
   'certification.gold.title': 'Gold Certification',
@@ -1156,24 +1201,31 @@ const en: TranslationsType = {
   'certification.black.title': 'Black Certification',
   'certification.black.desc': 'Proves the highest level of independent innovation capability',
   'certification.levels.title': 'Four Certification Levels',
-  'certification.eval.item1': 'Comprehensive evaluation based on app completion, design skills, AI utilization, and implementation ability',
-  'certification.eval.item2': 'PDF certificate issued to passers + listed on certified list (URL sharing available)',
-  'certification.eval.item3': 'Higher certifications are more difficult and effective for hiring and VC evaluation',
-  'certification.about': 'About Certification',
-  'certification.ranks': 'Certification Levels',
   'certification.evaluation.method': 'Evaluation Method',
+  'certification.eval.item1': 'Comprehensive evaluation based on app completion, design skills, AI utilization, and implementation ability',
+  'certification.eval.item1.desc': 'Review of submitted documents and portfolio',
+  'certification.eval.item2': 'PDF certificate issued to passers + listed on certified list (URL sharing available)',
+  'certification.eval.item2.desc': 'Practical exam of AI utilization and coding skills',
+  'certification.eval.item3': 'Higher certifications are more difficult and effective for hiring and VC evaluation',
+  'certification.eval.item3.desc': 'Verification of technical skills and communication ability',
   'certification.certificate.about': 'About the Certificate',
   'certification.certificate.format': 'Certificate Format',
+  'certification.certificate.desc': 'Latest certificate system utilizing digital technology',
+  'certification.certificate.detail1': 'Digital certificate',
+  'certification.certificate.detail2': 'Blockchain verification',
+  'certification.certificate.detail3': 'Internationally recognized qualification',
   'certification.certificate.cycle': 'Certification Cycle',
-  'certification.certificate.renewal': 'Renewal Fee',
+  'certification.certificate.validity': 'Valid for 3 years',
+  'certification.certificate.renewal': 'Renewal Requirements',
+  'certification.certificate.renewal1': 'Continuing education requirements',
+  'certification.certificate.renewal2': 'Technology update verification',
   'certification.certificate.expiration': 'Renewal & Expiry Rules',
+  'certification.certificate.expirationInfo': 'Renewal required after 3 years',
   'certification.exam.fees': 'Exam Fee',
-  'certification.evaluation.criteria': 'Evaluation Criteria:',
   'certification.cta.title': 'Officially prove your AI skills and expand your career opportunities.',
   'certification.cta.subtitle': 'HyaQShiki Certification is a powerful tool to prove your skills in the era of generative AI.',
   'certification.cta.apply': 'Apply for Certification Exam',
-  'certification.evaluation.criteria.title.ja': 'Certification Criteria',
-  'certification.evaluation.criteria.title.en': 'Certification Criteria',
+  'certification.evaluation.criteria.title': 'Certification Criteria',
 
   // Corporate Page
   'corporate.title': 'Corporate Partnership',
