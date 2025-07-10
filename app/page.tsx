@@ -110,16 +110,25 @@ export default function HomePage() {
                 >
                   <motion.h1
                     className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 1.2, 
+                      delay: 0.4,
+                      ease: [0.25, 0.46, 0.45, 0.94] // ふわふわとしたイージング
+                    }}
                   >
                     {slides[currentSlide].title.split('\n').map((line, idx, arr) => (
                       <motion.span
                         key={idx}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.6 + idx * 0.1 }}
+                        initial={{ opacity: 0, y: 30, scale: 0.9, rotateX: -15 }}
+                        animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+                        transition={{ 
+                          duration: 1.0, 
+                          delay: 0.6 + idx * 0.15,
+                          ease: [0.34, 1.56, 0.64, 1] // バウンス効果付きのふわふわアニメーション
+                        }}
+                        style={{ display: 'inline-block' }}
                       >
                         {line}
                         {idx < arr.length - 1 && <br />}
@@ -128,16 +137,24 @@ export default function HomePage() {
                   </motion.h1>
                   <motion.p 
                     className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
+                    initial={{ opacity: 0, y: 25, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 1.0, 
+                      delay: 1.0,
+                      ease: [0.25, 0.46, 0.45, 0.94] // ふわふわとしたイージング
+                    }}
                   >
                     {slides[currentSlide].subtitle}
                   </motion.p>
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.0 }}
+                    initial={{ opacity: 0, y: 25, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 1.0, 
+                      delay: 1.4,
+                      ease: [0.34, 1.56, 0.64, 1] // バウンス効果付きのふわふわアニメーション
+                    }}
                   >
                     <a 
                       href="#features" 
