@@ -12,6 +12,7 @@ import Image from 'next/image';
 export default function HomePage() {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   // Slideshow data with 3 slides
   const slides = [
@@ -38,18 +39,24 @@ export default function HomePage() {
     
     // Slideshow auto-rotation
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      if (!isTransitioning) {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      }
     }, 5000); // Change slide every 5 seconds
     
     return () => {
       document.documentElement.style.scrollBehavior = '';
       clearInterval(interval);
     };
-  }, [slides.length]);
+  }, [slides.length, isTransitioning]);
 
   // Slideshow navigation
   const goToSlide = (index: number) => {
-    setCurrentSlide(index);
+    if (index !== currentSlide && !isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentSlide(index);
+      setTimeout(() => setIsTransitioning(false), 1000); // Transition duration
+    }
   };
 
   return (
@@ -59,67 +66,96 @@ export default function HomePage() {
       {/* Hero Section with Slideshow */}
       <div className="relative w-full">
         <div className="relative w-full">
-            <Parallax
-              blur={{ min: -15, max: 15 }}
-              bgImage={slides[currentSlide].image}
-              bgImageAlt={`Slide ${currentSlide + 1} Background`}
-              strength={400}
-              className="min-h-[80vh] md:min-h-screen flex items-center justify-center"
-              bgImageStyle={{
-                opacity: 0.5,
-                objectFit: 'cover',
-                objectPosition: 'center',
-                height: '100%',
-                width: '100%'
-              }}
-              renderLayer={percentage => (
-                <div 
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: 'black',
-                    opacity: 0.6
-                  }}
-                />
-              )}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              className="relative w-full"
             >
-            <div 
-                className="relative z-20 text-center max-w-4xl px-4 sm:px-6 py-8 md:py-0"
+              <Parallax
+                blur={{ min: -15, max: 15 }}
+                bgImage={slides[currentSlide].image}
+                bgImageAlt={`Slide ${currentSlide + 1} Background`}
+                strength={400}
+                className="min-h-[80vh] md:min-h-screen flex items-center justify-center"
+                bgImageStyle={{
+                  opacity: 0.5,
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  height: '100%',
+                  width: '100%'
+                }}
+                renderLayer={percentage => (
+                  <div 
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      backgroundColor: 'black',
+                      opacity: 0.6
+                    }}
+                  />
+                )}
               >
-              <h1
-                className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
+                <motion.div 
+                  className="relative z-20 text-center max-w-4xl px-4 sm:px-6 py-8 md:py-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                {slides[currentSlide].title.split('\n').map((line, idx, arr) => (
-                  <>
-                    {line}
-                    {idx < arr.length - 1 && <br />}
-                  </>
-                ))}
-              </h1>
-              <p 
-                  className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
-                >
-                  {slides[currentSlide].subtitle}
-              </p>
-              <div>
-                  <a 
-                    href="#features" 
-                    className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 text-sm sm:text-base transform-gpu touch-manipulation"
+                  <motion.h1
+                    className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-200 leading-tight"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
                   >
-                    {t('learnMore')}
-                  </a>
-              </div>
-            </div>
-            </Parallax>
+                    {slides[currentSlide].title.split('\n').map((line, idx, arr) => (
+                      <motion.span
+                        key={idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6 + idx * 0.1 }}
+                      >
+                        {line}
+                        {idx < arr.length - 1 && <br />}
+                      </motion.span>
+                    ))}
+                  </motion.h1>
+                  <motion.p 
+                    className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-yellow-50 leading-relaxed mb-6 sm:mb-8 md:mb-10 text-left whitespace-pre-line"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                  >
+                    {slides[currentSlide].subtitle}
+                  </motion.p>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.0 }}
+                  >
+                    <a 
+                      href="#features" 
+                      className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 text-sm sm:text-base transform-gpu touch-manipulation"
+                    >
+                      {t('learnMore')}
+                    </a>
+                  </motion.div>
+                </motion.div>
+              </Parallax>
+            </motion.div>
+          </AnimatePresence>
         </div>
         
         {/* Slideshow navigation dots */}
         <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 z-30 flex justify-center space-x-2 sm:space-x-3">
           {Array.from({ length: slides.length }).map((_, index) => (
-            <button
+            <motion.button
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-6 h-6 mx-2 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 transform-gpu touch-manipulation ${
@@ -128,6 +164,8 @@ export default function HomePage() {
                   : 'bg-gray-400 bg-opacity-50 hover:bg-opacity-75'
               }`}
               aria-label={`Go to slide ${index + 1}`}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             />
           ))}
         </div>
