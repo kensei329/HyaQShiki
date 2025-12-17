@@ -100,7 +100,7 @@ export default function HeroSection() {
                         x1="25%"
                         y1="0"
                         x2="50%"
-                        y2="75%"
+                        y2="70%"
                         stroke="#E6A915"
                         strokeWidth="3"
                         strokeLinecap="round"
@@ -110,7 +110,7 @@ export default function HeroSection() {
                         x1="75%"
                         y1="0"
                         x2="50%"
-                        y2="75%"
+                        y2="70%"
                         stroke="#E6A915"
                         strokeWidth="3"
                         strokeLinecap="round"
@@ -119,23 +119,25 @@ export default function HeroSection() {
                     
                     {/* AI処理 */}
                     <div className="flex items-center justify-center pt-16">
-                      <div className="bg-gradient-to-br from-navy to-accent p-8 rounded-2xl text-white text-center shadow-2xl relative z-10 hover:shadow-3xl transition-all duration-300 hover:scale-105">
-                    <svg
-                      className="w-20 h-20 mx-auto mb-3 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                      />
-                    </svg>
-                        <div className="font-bold text-lg">AI</div>
-                        <div className="text-sm mt-1">月額1,980円</div>
+                      <div className="bg-gradient-to-br from-navy to-accent px-12 py-6 rounded-2xl text-white shadow-2xl relative z-10 hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center gap-6">
+                        <svg
+                          className="w-16 h-16 text-white flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                          />
+                        </svg>
+                        <div className="text-center">
+                          <div className="font-bold text-2xl mb-1">AI</div>
+                          <div className="text-base">月額1,980円</div>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -104,15 +104,6 @@ export default function SolutionSection() {
                   <p className="text-gray-600 text-xs sm:text-sm">{step.detail}</p>
                 </div>
               </div>
-
-              {/* 矢印（最後以外） */}
-              {index < steps.length - 1 && (
-                <div className="flex justify-center my-4 md:my-0">
-                  <div className="text-2xl md:text-3xl text-accent md:rotate-0 rotate-90">
-                    ➡ AIが処理 ➡
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>
