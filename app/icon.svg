@@ -1,0 +1,43 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left Half: Document with Circuit Board -->
+  <path d="M2 4C2 2.89543 2.89543 2 4 2H16C16.5523 2 17 2.44772 17 3V15C17 15.5523 16.5523 16 16 16H4C2.89543 16 2 15.1046 2 14V4Z" fill="#0B2545"/>
+  <!-- Folded corner -->
+  <path d="M16 2L16 8L22 8L16 2Z" fill="#E6A915"/>
+  
+  <!-- Circuit board lines in document -->
+  <!-- Horizontal text lines (gold) -->
+  <line x1="4" y1="5" x2="14" y2="5" stroke="#E6A915" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="4" y1="7" x2="12" y2="7" stroke="#E6A915" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="4" y1="9" x2="14" y2="9" stroke="#E6A915" stroke-width="0.8" stroke-linecap="round"/>
+  
+  <!-- Circuit pattern (blue and gold) -->
+  <rect x="4" y="11" width="2" height="2" fill="#0B2545"/>
+  <rect x="7" y="11" width="2" height="2" fill="#E6A915"/>
+  <rect x="10" y="11" width="2" height="2" fill="#0B2545"/>
+  <line x1="6" y1="12" x2="7" y2="12" stroke="#E6A915" stroke-width="0.5"/>
+  <line x1="9" y1="12" x2="10" y2="12" stroke="#0B2545" stroke-width="0.5"/>
+  
+  <!-- Dissipating dots and lines (left edge) -->
+  <circle cx="2.5" cy="11" r="0.5" fill="#E6A915"/>
+  <circle cx="2.5" cy="13" r="0.5" fill="#0B2545"/>
+  <line x1="2" y1="11" x2="3.5" y2="11" stroke="#E6A915" stroke-width="0.3"/>
+  <line x1="2" y1="13" x2="3.5" y2="13" stroke="#0B2545" stroke-width="0.3"/>
+  
+  <!-- Right Half: Gear -->
+  <!-- Gear outer shape -->
+  <path d="M18 4C18 2.89543 18.8954 2 20 2H28C29.1046 2 30 2.89543 30 4V12C30 13.1046 29.1046 14 28 14H20C18.8954 14 18 13.1046 18 12V4Z" fill="#E6A915"/>
+  
+  <!-- Gear teeth (simplified for small size) -->
+  <path d="M20 4L20.8 2.5L21.8 2.5L22.5 4L23.5 4L24.2 5.5L25.2 5.5L24.5 7L25.5 7L26.2 8.5L27.2 8.5L26.5 10L25.5 10L24.8 11.5L23.8 11.5L23 10L22 10L21.3 11.5L20.3 11.5L19.5 10L18.5 10L17.8 8.5L18.8 8.5L19.5 7L18.5 7L17.8 5.5L18.8 5.5L19.5 4L20 4Z" fill="#E6A915" stroke="#0B2545" stroke-width="0.2"/>
+  
+  <!-- Gear center hub (blue) -->
+  <circle cx="22.5" cy="7" r="2.5" fill="#0B2545"/>
+  <circle cx="22.5" cy="7" r="1.5" fill="#E6A915"/>
+  
+  <!-- Gear spokes (gold) -->
+  <line x1="22.5" y1="4.5" x2="22.5" y2="5.5" stroke="#E6A915" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="22.5" y1="8.5" x2="22.5" y2="9.5" stroke="#E6A915" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="20" y1="7" x2="21" y2="7" stroke="#E6A915" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="24" y1="7" x2="25" y2="7" stroke="#E6A915" stroke-width="0.8" stroke-linecap="round"/>
+</svg>
+

@@ -1,5 +1,7 @@
 "use client";
 
+import Logo from "./Logo";
+
 export default function HeroSection() {
   const handleContactClick = () => {
     window.open("https://forms.gle/5wU7NEZzGDHpP4W67", "_blank");
@@ -15,9 +17,18 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto max-w-7xl">
+        {/* ロゴセクション（モバイル表示時のみ上部に表示） */}
+        <div className="md:hidden mb-8 flex justify-center">
+          <Logo />
+        </div>
+        
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* 左側：テキスト */}
+          {/* 左側：ロゴとテキスト */}
           <div className="space-y-6 relative z-10">
+            {/* ロゴ（PC表示時のみ表示） */}
+            <div className="hidden md:block mb-4">
+              <Logo />
+            </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight">
               FAX・紙整理の単純作業は、
               <br />

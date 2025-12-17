@@ -11,6 +11,9 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: "HyaQShiki-百式- - FAX・紙整理の単純作業を月額1,980円のAIにお任せ",
   description: "届いた資料の「リネーム・フォルダ分け・検索化」を完全自動化。HyaQShiki-百式-が、事務員様をルーチンワークから解放し、本来の業務へ戻します。",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
