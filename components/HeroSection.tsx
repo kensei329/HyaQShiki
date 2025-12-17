@@ -2,7 +2,7 @@
 
 export default function HeroSection() {
   const handleContactClick = () => {
-    window.location.href = "#contact";
+    window.open("https://forms.gle/5wU7NEZzGDHpP4W67", "_blank");
   };
 
   return (
@@ -36,7 +36,7 @@ export default function HeroSection() {
 
             <button
               onClick={handleContactClick}
-              className="w-full sm:w-auto px-8 py-4 bg-accent text-white text-base sm:text-lg font-bold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-xl hover:-translate-y-1 transform"
+              className="w-full sm:w-auto px-8 py-4 bg-accent text-white text-base sm:text-lg font-bold rounded-xl hover:bg-opacity-90 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 transform hover:scale-105"
             >
               無料でデモの問い合せ ＞
             </button>
@@ -44,12 +44,12 @@ export default function HeroSection() {
 
           {/* 右側：メインビジュアル */}
           <div className="relative z-10">
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
+            <div className="bg-white p-8 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300">
               <div className="space-y-6">
                 {/* FAX受信と紙の書類（並列） */}
                 <div className="grid grid-cols-2 gap-4">
                   {/* FAX受信 */}
-                  <div className="bg-gray-100 p-6 rounded-lg text-center">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
                     <svg
                       className="w-16 h-16 mx-auto mb-3 text-navy"
                       fill="none"
@@ -68,7 +68,7 @@ export default function HeroSection() {
                   </div>
 
                   {/* 紙の書類 */}
-                  <div className="bg-gray-100 p-6 rounded-lg text-center">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
                     <svg
                       className="w-16 h-16 mx-auto mb-3 text-navy"
                       fill="none"
@@ -119,7 +119,7 @@ export default function HeroSection() {
                     
                     {/* AI処理 */}
                     <div className="flex items-center justify-center pt-16">
-                      <div className="bg-gradient-to-br from-navy to-accent p-8 rounded-lg text-white text-center shadow-lg relative z-10">
+                      <div className="bg-gradient-to-br from-navy to-accent p-8 rounded-2xl text-white text-center shadow-2xl relative z-10 hover:shadow-3xl transition-all duration-300 hover:scale-105">
                     <svg
                       className="w-20 h-20 mx-auto mb-3 text-white"
                       fill="none"
@@ -160,7 +160,7 @@ export default function HeroSection() {
 
                 {/* 3つのステップ */}
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-lightGray p-4 rounded-lg text-center">
+                  <div className="bg-gradient-to-br from-lightGray to-white p-4 rounded-xl text-center hover:shadow-md transition-all duration-300">
                     <svg
                       className="w-12 h-12 mx-auto mb-2 text-navy"
                       fill="none"
@@ -177,7 +177,7 @@ export default function HeroSection() {
                     </svg>
                     <div className="text-xs font-medium">1. ファイル名を<br />自動変更</div>
                   </div>
-                  <div className="bg-lightGray p-4 rounded-lg text-center">
+                  <div className="bg-gradient-to-br from-lightGray to-white p-4 rounded-xl text-center hover:shadow-md transition-all duration-300">
                     <svg
                       className="w-12 h-12 mx-auto mb-2 text-navy"
                       fill="none"
@@ -194,7 +194,7 @@ export default function HeroSection() {
                     </svg>
                     <div className="text-xs font-medium">2. フォルダに<br />自動振り分け</div>
                   </div>
-                  <div className="bg-lightGray p-4 rounded-lg text-center">
+                  <div className="bg-gradient-to-br from-lightGray to-white p-4 rounded-xl text-center hover:shadow-md transition-all duration-300">
                     <svg
                       className="w-12 h-12 mx-auto mb-2 text-navy"
                       fill="none"

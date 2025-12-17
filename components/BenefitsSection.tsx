@@ -1,17 +1,62 @@
 export default function BenefitsSection() {
   const benefits = [
     {
-      icon: "😊",
+      icon: (
+        <svg
+          className="w-16 h-16 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      ),
       title: "社員の笑顔が増える",
       description: "面倒な作業から解放され、心理的な負担が激減。「楽になった」「ありがとう」という声が現場から上がります。",
     },
     {
-      icon: "💡",
+      icon: (
+        <svg
+          className="w-16 h-16 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+          />
+        </svg>
+      ),
       title: "クリエイティブな業務へ",
       description: "空いた時間で、丁寧な顧客対応や、社内環境の改善など、人にしかできない付加価値の高い業務に集中できます。",
     },
     {
-      icon: "⏱️",
+      icon: (
+        <svg
+          className="w-16 h-16 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      ),
       title: "残業ゼロの実現",
       description: "夕方に届いたFAX整理のために残る必要はもうありません。定時退社を促進し、ホワイトな職場環境を作ります。",
     },
@@ -39,11 +84,26 @@ export default function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all"
+              className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl card-hover"
             >
-              <div className="text-5xl mb-4 text-center">{benefit.icon}</div>
+              <div className="mb-6 flex justify-center">
+                <div className="p-4 bg-white/20 rounded-2xl backdrop-blur-sm">
+                  {benefit.icon}
+                </div>
+              </div>
               <div className="flex items-center gap-2 mb-4 justify-center">
-                <span className="text-2xl text-white">✅</span>
+                <svg
+                  className="w-6 h-6 text-accent"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
                 <h3 className="text-xl font-bold text-white text-center">
                   {benefit.title}
                 </h3>

@@ -2,8 +2,7 @@
 
 export default function Footer() {
   const handleContactClick = () => {
-    // デモ問い合わせの処理（後で実装）
-    alert("お問い合わせフォームへのリンクを設定してください");
+    window.open("https://forms.gle/5wU7NEZzGDHpP4W67", "_blank");
   };
 
   return (
@@ -20,7 +19,7 @@ export default function Footer() {
           </p>
           <button
             onClick={handleContactClick}
-            className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-accent text-white text-lg sm:text-xl font-bold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-xl hover:-translate-y-1 transform"
+            className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-accent text-white text-lg sm:text-xl font-bold rounded-xl hover:bg-opacity-90 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 transform hover:scale-105"
           >
             無料でデモの問い合せ ＞
           </button>

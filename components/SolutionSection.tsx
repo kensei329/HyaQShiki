@@ -91,7 +91,7 @@ export default function SolutionSection() {
                 </div>
 
                 {/* ステップ内容 */}
-                <div className="flex-1 bg-lightGray p-5 md:p-6 rounded-xl w-full">
+                <div className="flex-1 bg-gradient-to-br from-lightGray to-white p-5 md:p-6 rounded-2xl w-full shadow-md hover:shadow-lg transition-all duration-300">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
                     <span className="bg-accent text-white px-3 py-1 rounded-full font-bold text-xs sm:text-sm w-fit">
                       Step {step.number}
